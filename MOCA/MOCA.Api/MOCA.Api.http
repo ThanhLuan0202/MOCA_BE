@@ -1,0 +1,6 @@
+@MOCA.Api_HostAddress = http://localhost:5193
+
+GET {{MOCA.Api_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
