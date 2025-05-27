@@ -1,182 +1,290 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "D:\\luan\\hoc\\EXE02\\githubmoca\\MOCA_BE\\MOCA\\",
+  "WorkspaceRootPath": "G:\\EXE202\\MOCA_BE\\MOCA\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{648ABC71-2441-49BF-A2B8-12065EB123A2}|MOCA_Services\\MOCA_Services.csproj|d:\\luan\\hoc\\exe02\\githubmoca\\moca_be\\moca\\moca_services\\interfaces\\iauthenservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{648ABC71-2441-49BF-A2B8-12065EB123A2}|MOCA_Services\\MOCA_Services.csproj|solutionrelative:moca_services\\interfaces\\iauthenservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1324AB2A-7308-4CBB-8E32-DD94783E85CE}|MOCA.Api\\MOCA.Api.csproj|d:\\luan\\hoc\\exe02\\githubmoca\\moca_be\\moca\\moca.api\\controllers\\authencontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1324AB2A-7308-4CBB-8E32-DD94783E85CE}|MOCA.Api\\MOCA.Api.csproj|solutionrelative:moca.api\\controllers\\authencontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B809EE95-00E4-43EC-ACB3-D41FE58768B2}|MOCA_Repositories\\MOCA_Repositories.csproj|d:\\luan\\hoc\\exe02\\githubmoca\\moca_be\\moca\\moca_repositories\\dependencyinjection\\dependencyinjection.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B809EE95-00E4-43EC-ACB3-D41FE58768B2}|MOCA_Repositories\\MOCA_Repositories.csproj|solutionrelative:moca_repositories\\dependencyinjection\\dependencyinjection.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B809EE95-00E4-43EC-ACB3-D41FE58768B2}|MOCA_Repositories\\MOCA_Repositories.csproj|d:\\luan\\hoc\\exe02\\githubmoca\\moca_be\\moca\\moca_repositories\\unitofwork.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B809EE95-00E4-43EC-ACB3-D41FE58768B2}|MOCA_Repositories\\MOCA_Repositories.csproj|solutionrelative:moca_repositories\\unitofwork.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B809EE95-00E4-43EC-ACB3-D41FE58768B2}|MOCA_Repositories\\MOCA_Repositories.csproj|d:\\luan\\hoc\\exe02\\githubmoca\\moca_be\\moca\\moca_repositories\\dbcontext\\mocacontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B809EE95-00E4-43EC-ACB3-D41FE58768B2}|MOCA_Repositories\\MOCA_Repositories.csproj|solutionrelative:moca_repositories\\dbcontext\\mocacontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B809EE95-00E4-43EC-ACB3-D41FE58768B2}|MOCA_Repositories\\MOCA_Repositories.csproj|d:\\luan\\hoc\\exe02\\githubmoca\\moca_be\\moca\\moca_repositories\\iunitofwork.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B809EE95-00E4-43EC-ACB3-D41FE58768B2}|MOCA_Repositories\\MOCA_Repositories.csproj|solutionrelative:moca_repositories\\iunitofwork.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1324AB2A-7308-4CBB-8E32-DD94783E85CE}|MOCA.Api\\MOCA.Api.csproj|d:\\luan\\hoc\\exe02\\githubmoca\\moca_be\\moca\\moca.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1324AB2A-7308-4CBB-8E32-DD94783E85CE}|MOCA.Api\\MOCA.Api.csproj|solutionrelative:moca.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B809EE95-00E4-43EC-ACB3-D41FE58768B2}|MOCA_Repositories\\MOCA_Repositories.csproj|d:\\luan\\hoc\\exe02\\githubmoca\\moca_be\\moca\\moca_repositories\\mapping\\automapperprofile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{B809EE95-00E4-43EC-ACB3-D41FE58768B2}|MOCA_Repositories\\MOCA_Repositories.csproj|g:\\exe202\\moca_be\\moca\\moca_repositories\\mapping\\automapperprofile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{B809EE95-00E4-43EC-ACB3-D41FE58768B2}|MOCA_Repositories\\MOCA_Repositories.csproj|solutionrelative:moca_repositories\\mapping\\automapperprofile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B809EE95-00E4-43EC-ACB3-D41FE58768B2}|MOCA_Repositories\\MOCA_Repositories.csproj|d:\\luan\\hoc\\exe02\\githubmoca\\moca_be\\moca\\moca_repositories\\interfaces\\iauthenrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B809EE95-00E4-43EC-ACB3-D41FE58768B2}|MOCA_Repositories\\MOCA_Repositories.csproj|solutionrelative:moca_repositories\\interfaces\\iauthenrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{648ABC71-2441-49BF-A2B8-12065EB123A2}|MOCA_Services\\MOCA_Services.csproj|d:\\luan\\hoc\\exe02\\githubmoca\\moca_be\\moca\\moca_services\\dependencyinjection\\dependencyinjection.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{648ABC71-2441-49BF-A2B8-12065EB123A2}|MOCA_Services\\MOCA_Services.csproj|solutionrelative:moca_services\\dependencyinjection\\dependencyinjection.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{648ABC71-2441-49BF-A2B8-12065EB123A2}|MOCA_Services\\MOCA_Services.csproj|d:\\luan\\hoc\\exe02\\githubmoca\\moca_be\\moca\\moca_services\\services\\authenservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{648ABC71-2441-49BF-A2B8-12065EB123A2}|MOCA_Services\\MOCA_Services.csproj|solutionrelative:moca_services\\services\\authenservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B809EE95-00E4-43EC-ACB3-D41FE58768B2}|MOCA_Repositories\\MOCA_Repositories.csproj|d:\\luan\\hoc\\exe02\\githubmoca\\moca_be\\moca\\moca_repositories\\repositories\\authenrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{B809EE95-00E4-43EC-ACB3-D41FE58768B2}|MOCA_Repositories\\MOCA_Repositories.csproj|g:\\exe202\\moca_be\\moca\\moca_repositories\\repositories\\authenrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{B809EE95-00E4-43EC-ACB3-D41FE58768B2}|MOCA_Repositories\\MOCA_Repositories.csproj|solutionrelative:moca_repositories\\repositories\\authenrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B809EE95-00E4-43EC-ACB3-D41FE58768B2}|MOCA_Repositories\\MOCA_Repositories.csproj|d:\\luan\\hoc\\exe02\\githubmoca\\moca_be\\moca\\moca_repositories\\entities\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B809EE95-00E4-43EC-ACB3-D41FE58768B2}|MOCA_Repositories\\MOCA_Repositories.csproj|solutionrelative:moca_repositories\\entities\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{B809EE95-00E4-43EC-ACB3-D41FE58768B2}|MOCA_Repositories\\MOCA_Repositories.csproj|g:\\exe202\\moca_be\\moca\\moca_repositories\\repositories\\lessonsrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B809EE95-00E4-43EC-ACB3-D41FE58768B2}|MOCA_Repositories\\MOCA_Repositories.csproj|solutionrelative:moca_repositories\\repositories\\lessonsrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B809EE95-00E4-43EC-ACB3-D41FE58768B2}|MOCA_Repositories\\MOCA_Repositories.csproj|d:\\luan\\hoc\\exe02\\githubmoca\\moca_be\\moca\\moca_repositories\\repository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B809EE95-00E4-43EC-ACB3-D41FE58768B2}|MOCA_Repositories\\MOCA_Repositories.csproj|solutionrelative:moca_repositories\\repository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{B809EE95-00E4-43EC-ACB3-D41FE58768B2}|MOCA_Repositories\\MOCA_Repositories.csproj|g:\\exe202\\moca_be\\moca\\moca_repositories\\repositories\\chapterrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B809EE95-00E4-43EC-ACB3-D41FE58768B2}|MOCA_Repositories\\MOCA_Repositories.csproj|solutionrelative:moca_repositories\\repositories\\chapterrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B809EE95-00E4-43EC-ACB3-D41FE58768B2}|MOCA_Repositories\\MOCA_Repositories.csproj|d:\\luan\\hoc\\exe02\\githubmoca\\moca_be\\moca\\moca_repositories\\irepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B809EE95-00E4-43EC-ACB3-D41FE58768B2}|MOCA_Repositories\\MOCA_Repositories.csproj|solutionrelative:moca_repositories\\irepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{1324AB2A-7308-4CBB-8E32-DD94783E85CE}|MOCA.Api\\MOCA.Api.csproj|g:\\exe202\\moca_be\\moca\\moca.api\\controllers\\lessoncontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1324AB2A-7308-4CBB-8E32-DD94783E85CE}|MOCA.Api\\MOCA.Api.csproj|solutionrelative:moca.api\\controllers\\lessoncontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B809EE95-00E4-43EC-ACB3-D41FE58768B2}|MOCA_Repositories\\MOCA_Repositories.csproj|d:\\luan\\hoc\\exe02\\githubmoca\\moca_be\\moca\\moca_repositories\\generic\\genericrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B809EE95-00E4-43EC-ACB3-D41FE58768B2}|MOCA_Repositories\\MOCA_Repositories.csproj|solutionrelative:moca_repositories\\generic\\genericrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{B809EE95-00E4-43EC-ACB3-D41FE58768B2}|MOCA_Repositories\\MOCA_Repositories.csproj|g:\\exe202\\moca_be\\moca\\moca_repositories\\models\\lessondto\\lessonviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B809EE95-00E4-43EC-ACB3-D41FE58768B2}|MOCA_Repositories\\MOCA_Repositories.csproj|solutionrelative:moca_repositories\\models\\lessondto\\lessonviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B809EE95-00E4-43EC-ACB3-D41FE58768B2}|MOCA_Repositories\\MOCA_Repositories.csproj|d:\\luan\\hoc\\exe02\\githubmoca\\moca_be\\moca\\moca_repositories\\entities\\bookingpayment.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B809EE95-00E4-43EC-ACB3-D41FE58768B2}|MOCA_Repositories\\MOCA_Repositories.csproj|solutionrelative:moca_repositories\\entities\\bookingpayment.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{B809EE95-00E4-43EC-ACB3-D41FE58768B2}|MOCA_Repositories\\MOCA_Repositories.csproj|g:\\exe202\\moca_be\\moca\\moca_repositories\\repositories\\courserepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B809EE95-00E4-43EC-ACB3-D41FE58768B2}|MOCA_Repositories\\MOCA_Repositories.csproj|solutionrelative:moca_repositories\\repositories\\courserepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B809EE95-00E4-43EC-ACB3-D41FE58768B2}|MOCA_Repositories\\MOCA_Repositories.csproj|d:\\luan\\hoc\\exe02\\githubmoca\\moca_be\\moca\\moca_repositories\\entities\\babytracking.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B809EE95-00E4-43EC-ACB3-D41FE58768B2}|MOCA_Repositories\\MOCA_Repositories.csproj|solutionrelative:moca_repositories\\entities\\babytracking.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{B809EE95-00E4-43EC-ACB3-D41FE58768B2}|MOCA_Repositories\\MOCA_Repositories.csproj|g:\\exe202\\moca_be\\moca\\moca_repositories\\models\\coursedto\\createcoursemodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B809EE95-00E4-43EC-ACB3-D41FE58768B2}|MOCA_Repositories\\MOCA_Repositories.csproj|solutionrelative:moca_repositories\\models\\coursedto\\createcoursemodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B809EE95-00E4-43EC-ACB3-D41FE58768B2}|MOCA_Repositories\\MOCA_Repositories.csproj|d:\\luan\\hoc\\exe02\\githubmoca\\moca_be\\moca\\moca_repositories\\entities\\userpregnancy.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B809EE95-00E4-43EC-ACB3-D41FE58768B2}|MOCA_Repositories\\MOCA_Repositories.csproj|solutionrelative:moca_repositories\\entities\\userpregnancy.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{B809EE95-00E4-43EC-ACB3-D41FE58768B2}|MOCA_Repositories\\MOCA_Repositories.csproj|g:\\exe202\\moca_be\\moca\\moca_repositories\\models\\chapterdto\\updatechaptermodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B809EE95-00E4-43EC-ACB3-D41FE58768B2}|MOCA_Repositories\\MOCA_Repositories.csproj|solutionrelative:moca_repositories\\models\\chapterdto\\updatechaptermodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B809EE95-00E4-43EC-ACB3-D41FE58768B2}|MOCA_Repositories\\MOCA_Repositories.csproj|d:\\luan\\hoc\\exe02\\githubmoca\\moca_be\\moca\\moca_repositories\\entities\\role.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B809EE95-00E4-43EC-ACB3-D41FE58768B2}|MOCA_Repositories\\MOCA_Repositories.csproj|solutionrelative:moca_repositories\\entities\\role.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{B809EE95-00E4-43EC-ACB3-D41FE58768B2}|MOCA_Repositories\\MOCA_Repositories.csproj|g:\\exe202\\moca_be\\moca\\moca_repositories\\models\\coursedto\\updatecoursemodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B809EE95-00E4-43EC-ACB3-D41FE58768B2}|MOCA_Repositories\\MOCA_Repositories.csproj|solutionrelative:moca_repositories\\models\\coursedto\\updatecoursemodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B809EE95-00E4-43EC-ACB3-D41FE58768B2}|MOCA_Repositories\\MOCA_Repositories.csproj|d:\\luan\\hoc\\exe02\\githubmoca\\moca_be\\moca\\moca_repositories\\entities\\reflect.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B809EE95-00E4-43EC-ACB3-D41FE58768B2}|MOCA_Repositories\\MOCA_Repositories.csproj|solutionrelative:moca_repositories\\entities\\reflect.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{B809EE95-00E4-43EC-ACB3-D41FE58768B2}|MOCA_Repositories\\MOCA_Repositories.csproj|g:\\exe202\\moca_be\\moca\\moca_repositories\\enitities\\lesson.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B809EE95-00E4-43EC-ACB3-D41FE58768B2}|MOCA_Repositories\\MOCA_Repositories.csproj|solutionrelative:moca_repositories\\enitities\\lesson.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B809EE95-00E4-43EC-ACB3-D41FE58768B2}|MOCA_Repositories\\MOCA_Repositories.csproj|d:\\luan\\hoc\\exe02\\githubmoca\\moca_be\\moca\\moca_repositories\\entities\\purchasepackage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B809EE95-00E4-43EC-ACB3-D41FE58768B2}|MOCA_Repositories\\MOCA_Repositories.csproj|solutionrelative:moca_repositories\\entities\\purchasepackage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{B809EE95-00E4-43EC-ACB3-D41FE58768B2}|MOCA_Repositories\\MOCA_Repositories.csproj|g:\\exe202\\moca_be\\moca\\moca_repositories\\models\\chapterdto\\chapterviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B809EE95-00E4-43EC-ACB3-D41FE58768B2}|MOCA_Repositories\\MOCA_Repositories.csproj|solutionrelative:moca_repositories\\models\\chapterdto\\chapterviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B809EE95-00E4-43EC-ACB3-D41FE58768B2}|MOCA_Repositories\\MOCA_Repositories.csproj|d:\\luan\\hoc\\exe02\\githubmoca\\moca_be\\moca\\moca_repositories\\entities\\purchasedcourse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B809EE95-00E4-43EC-ACB3-D41FE58768B2}|MOCA_Repositories\\MOCA_Repositories.csproj|solutionrelative:moca_repositories\\entities\\purchasedcourse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{B809EE95-00E4-43EC-ACB3-D41FE58768B2}|MOCA_Repositories\\MOCA_Repositories.csproj|g:\\exe202\\moca_be\\moca\\moca_repositories\\models\\lessondto\\addlessonmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B809EE95-00E4-43EC-ACB3-D41FE58768B2}|MOCA_Repositories\\MOCA_Repositories.csproj|solutionrelative:moca_repositories\\models\\lessondto\\addlessonmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B809EE95-00E4-43EC-ACB3-D41FE58768B2}|MOCA_Repositories\\MOCA_Repositories.csproj|d:\\luan\\hoc\\exe02\\githubmoca\\moca_be\\moca\\moca_repositories\\entities\\pregnancytracking.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B809EE95-00E4-43EC-ACB3-D41FE58768B2}|MOCA_Repositories\\MOCA_Repositories.csproj|solutionrelative:moca_repositories\\entities\\pregnancytracking.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{1324AB2A-7308-4CBB-8E32-DD94783E85CE}|MOCA.Api\\MOCA.Api.csproj|g:\\exe202\\moca_be\\moca\\moca.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1324AB2A-7308-4CBB-8E32-DD94783E85CE}|MOCA.Api\\MOCA.Api.csproj|solutionrelative:moca.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B809EE95-00E4-43EC-ACB3-D41FE58768B2}|MOCA_Repositories\\MOCA_Repositories.csproj|d:\\luan\\hoc\\exe02\\githubmoca\\moca_be\\moca\\moca_repositories\\entities\\postlike.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B809EE95-00E4-43EC-ACB3-D41FE58768B2}|MOCA_Repositories\\MOCA_Repositories.csproj|solutionrelative:moca_repositories\\entities\\postlike.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{1324AB2A-7308-4CBB-8E32-DD94783E85CE}|MOCA.Api\\MOCA.Api.csproj|g:\\exe202\\moca_be\\moca\\moca.api\\controllers\\authencontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1324AB2A-7308-4CBB-8E32-DD94783E85CE}|MOCA.Api\\MOCA.Api.csproj|solutionrelative:moca.api\\controllers\\authencontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B809EE95-00E4-43EC-ACB3-D41FE58768B2}|MOCA_Repositories\\MOCA_Repositories.csproj|d:\\luan\\hoc\\exe02\\githubmoca\\moca_be\\moca\\moca_repositories\\entities\\package.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B809EE95-00E4-43EC-ACB3-D41FE58768B2}|MOCA_Repositories\\MOCA_Repositories.csproj|solutionrelative:moca_repositories\\entities\\package.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{648ABC71-2441-49BF-A2B8-12065EB123A2}|MOCA_Services\\MOCA_Services.csproj|g:\\exe202\\moca_be\\moca\\moca_services\\interfaces\\ichapterservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{648ABC71-2441-49BF-A2B8-12065EB123A2}|MOCA_Services\\MOCA_Services.csproj|solutionrelative:moca_services\\interfaces\\ichapterservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B809EE95-00E4-43EC-ACB3-D41FE58768B2}|MOCA_Repositories\\MOCA_Repositories.csproj|d:\\luan\\hoc\\exe02\\githubmoca\\moca_be\\moca\\moca_repositories\\entities\\momprofile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B809EE95-00E4-43EC-ACB3-D41FE58768B2}|MOCA_Repositories\\MOCA_Repositories.csproj|solutionrelative:moca_repositories\\entities\\momprofile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{648ABC71-2441-49BF-A2B8-12065EB123A2}|MOCA_Services\\MOCA_Services.csproj|g:\\exe202\\moca_be\\moca\\moca_services\\interfaces\\ilessonservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{648ABC71-2441-49BF-A2B8-12065EB123A2}|MOCA_Services\\MOCA_Services.csproj|solutionrelative:moca_services\\interfaces\\ilessonservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B809EE95-00E4-43EC-ACB3-D41FE58768B2}|MOCA_Repositories\\MOCA_Repositories.csproj|d:\\luan\\hoc\\exe02\\githubmoca\\moca_be\\moca\\moca_repositories\\entities\\messageswithdoctor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B809EE95-00E4-43EC-ACB3-D41FE58768B2}|MOCA_Repositories\\MOCA_Repositories.csproj|solutionrelative:moca_repositories\\entities\\messageswithdoctor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{648ABC71-2441-49BF-A2B8-12065EB123A2}|MOCA_Services\\MOCA_Services.csproj|g:\\exe202\\moca_be\\moca\\moca_services\\interfaces\\icourseservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{648ABC71-2441-49BF-A2B8-12065EB123A2}|MOCA_Services\\MOCA_Services.csproj|solutionrelative:moca_services\\interfaces\\icourseservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B809EE95-00E4-43EC-ACB3-D41FE58768B2}|MOCA_Repositories\\MOCA_Repositories.csproj|d:\\luan\\hoc\\exe02\\githubmoca\\moca_be\\moca\\moca_repositories\\entities\\lesson.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B809EE95-00E4-43EC-ACB3-D41FE58768B2}|MOCA_Repositories\\MOCA_Repositories.csproj|solutionrelative:moca_repositories\\entities\\lesson.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{648ABC71-2441-49BF-A2B8-12065EB123A2}|MOCA_Services\\MOCA_Services.csproj|g:\\exe202\\moca_be\\moca\\moca_services\\interfaces\\iauthenservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{648ABC71-2441-49BF-A2B8-12065EB123A2}|MOCA_Services\\MOCA_Services.csproj|solutionrelative:moca_services\\interfaces\\iauthenservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B809EE95-00E4-43EC-ACB3-D41FE58768B2}|MOCA_Repositories\\MOCA_Repositories.csproj|d:\\luan\\hoc\\exe02\\githubmoca\\moca_be\\moca\\moca_repositories\\entities\\feedback.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B809EE95-00E4-43EC-ACB3-D41FE58768B2}|MOCA_Repositories\\MOCA_Repositories.csproj|solutionrelative:moca_repositories\\entities\\feedback.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B809EE95-00E4-43EC-ACB3-D41FE58768B2}|MOCA_Repositories\\MOCA_Repositories.csproj|d:\\luan\\hoc\\exe02\\githubmoca\\moca_be\\moca\\moca_repositories\\entities\\doctorprofile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B809EE95-00E4-43EC-ACB3-D41FE58768B2}|MOCA_Repositories\\MOCA_Repositories.csproj|solutionrelative:moca_repositories\\entities\\doctorprofile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B809EE95-00E4-43EC-ACB3-D41FE58768B2}|MOCA_Repositories\\MOCA_Repositories.csproj|d:\\luan\\hoc\\exe02\\githubmoca\\moca_be\\moca\\moca_repositories\\entities\\doctorcontact.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B809EE95-00E4-43EC-ACB3-D41FE58768B2}|MOCA_Repositories\\MOCA_Repositories.csproj|solutionrelative:moca_repositories\\entities\\doctorcontact.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B809EE95-00E4-43EC-ACB3-D41FE58768B2}|MOCA_Repositories\\MOCA_Repositories.csproj|d:\\luan\\hoc\\exe02\\githubmoca\\moca_be\\moca\\moca_repositories\\entities\\doctorbooking.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B809EE95-00E4-43EC-ACB3-D41FE58768B2}|MOCA_Repositories\\MOCA_Repositories.csproj|solutionrelative:moca_repositories\\entities\\doctorbooking.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B809EE95-00E4-43EC-ACB3-D41FE58768B2}|MOCA_Repositories\\MOCA_Repositories.csproj|d:\\luan\\hoc\\exe02\\githubmoca\\moca_be\\moca\\moca_repositories\\entities\\discount.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B809EE95-00E4-43EC-ACB3-D41FE58768B2}|MOCA_Repositories\\MOCA_Repositories.csproj|solutionrelative:moca_repositories\\entities\\discount.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B809EE95-00E4-43EC-ACB3-D41FE58768B2}|MOCA_Repositories\\MOCA_Repositories.csproj|d:\\luan\\hoc\\exe02\\githubmoca\\moca_be\\moca\\moca_repositories\\entities\\coursecategory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B809EE95-00E4-43EC-ACB3-D41FE58768B2}|MOCA_Repositories\\MOCA_Repositories.csproj|solutionrelative:moca_repositories\\entities\\coursecategory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B809EE95-00E4-43EC-ACB3-D41FE58768B2}|MOCA_Repositories\\MOCA_Repositories.csproj|d:\\luan\\hoc\\exe02\\githubmoca\\moca_be\\moca\\moca_repositories\\entities\\course.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B809EE95-00E4-43EC-ACB3-D41FE58768B2}|MOCA_Repositories\\MOCA_Repositories.csproj|solutionrelative:moca_repositories\\entities\\course.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B809EE95-00E4-43EC-ACB3-D41FE58768B2}|MOCA_Repositories\\MOCA_Repositories.csproj|d:\\luan\\hoc\\exe02\\githubmoca\\moca_be\\moca\\moca_repositories\\entities\\communityreply.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B809EE95-00E4-43EC-ACB3-D41FE58768B2}|MOCA_Repositories\\MOCA_Repositories.csproj|solutionrelative:moca_repositories\\entities\\communityreply.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B809EE95-00E4-43EC-ACB3-D41FE58768B2}|MOCA_Repositories\\MOCA_Repositories.csproj|d:\\luan\\hoc\\exe02\\githubmoca\\moca_be\\moca\\moca_repositories\\entities\\communitypost.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B809EE95-00E4-43EC-ACB3-D41FE58768B2}|MOCA_Repositories\\MOCA_Repositories.csproj|solutionrelative:moca_repositories\\entities\\communitypost.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B809EE95-00E4-43EC-ACB3-D41FE58768B2}|MOCA_Repositories\\MOCA_Repositories.csproj|d:\\luan\\hoc\\exe02\\githubmoca\\moca_be\\moca\\moca_repositories\\entities\\advertisement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B809EE95-00E4-43EC-ACB3-D41FE58768B2}|MOCA_Repositories\\MOCA_Repositories.csproj|solutionrelative:moca_repositories\\entities\\advertisement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B809EE95-00E4-43EC-ACB3-D41FE58768B2}|MOCA_Repositories\\MOCA_Repositories.csproj|d:\\luan\\hoc\\exe02\\githubmoca\\moca_be\\moca\\moca_repositories\\entities\\chapter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B809EE95-00E4-43EC-ACB3-D41FE58768B2}|MOCA_Repositories\\MOCA_Repositories.csproj|solutionrelative:moca_repositories\\entities\\chapter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B809EE95-00E4-43EC-ACB3-D41FE58768B2}|MOCA_Repositories\\MOCA_Repositories.csproj|d:\\luan\\hoc\\exe02\\githubmoca\\moca_be\\moca\\moca_repositories\\entities\\bookmark.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B809EE95-00E4-43EC-ACB3-D41FE58768B2}|MOCA_Repositories\\MOCA_Repositories.csproj|solutionrelative:moca_repositories\\entities\\bookmark.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1324AB2A-7308-4CBB-8E32-DD94783E85CE}|MOCA.Api\\MOCA.Api.csproj|d:\\luan\\hoc\\exe02\\githubmoca\\moca_be\\moca\\moca.api\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{1324AB2A-7308-4CBB-8E32-DD94783E85CE}|MOCA.Api\\MOCA.Api.csproj|solutionrelative:moca.api\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B809EE95-00E4-43EC-ACB3-D41FE58768B2}|MOCA_Repositories\\MOCA_Repositories.csproj|d:\\luan\\hoc\\exe02\\githubmoca\\moca_be\\moca\\moca_repositories\\models\\login\\registerloginmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{B809EE95-00E4-43EC-ACB3-D41FE58768B2}|MOCA_Repositories\\MOCA_Repositories.csproj|g:\\exe202\\moca_be\\moca\\moca_repositories\\models\\login\\registerloginmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{B809EE95-00E4-43EC-ACB3-D41FE58768B2}|MOCA_Repositories\\MOCA_Repositories.csproj|solutionrelative:moca_repositories\\models\\login\\registerloginmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B809EE95-00E4-43EC-ACB3-D41FE58768B2}|MOCA_Repositories\\MOCA_Repositories.csproj|d:\\luan\\hoc\\exe02\\githubmoca\\moca_be\\moca\\moca_repositories\\models\\login\\loginmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{B809EE95-00E4-43EC-ACB3-D41FE58768B2}|MOCA_Repositories\\MOCA_Repositories.csproj|g:\\exe202\\moca_be\\moca\\moca_repositories\\models\\login\\loginmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{B809EE95-00E4-43EC-ACB3-D41FE58768B2}|MOCA_Repositories\\MOCA_Repositories.csproj|solutionrelative:moca_repositories\\models\\login\\loginmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B809EE95-00E4-43EC-ACB3-D41FE58768B2}|MOCA_Repositories\\MOCA_Repositories.csproj|g:\\exe202\\moca_be\\moca\\moca_repositories\\models\\chapterdto\\addchaptermodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B809EE95-00E4-43EC-ACB3-D41FE58768B2}|MOCA_Repositories\\MOCA_Repositories.csproj|solutionrelative:moca_repositories\\models\\chapterdto\\addchaptermodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B809EE95-00E4-43EC-ACB3-D41FE58768B2}|MOCA_Repositories\\MOCA_Repositories.csproj|g:\\exe202\\moca_be\\moca\\moca_repositories\\models\\coursedto\\coursesearchoptions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B809EE95-00E4-43EC-ACB3-D41FE58768B2}|MOCA_Repositories\\MOCA_Repositories.csproj|solutionrelative:moca_repositories\\models\\coursedto\\coursesearchoptions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{648ABC71-2441-49BF-A2B8-12065EB123A2}|MOCA_Services\\MOCA_Services.csproj|g:\\exe202\\moca_be\\moca\\moca_services\\services\\authenservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{648ABC71-2441-49BF-A2B8-12065EB123A2}|MOCA_Services\\MOCA_Services.csproj|solutionrelative:moca_services\\services\\authenservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{648ABC71-2441-49BF-A2B8-12065EB123A2}|MOCA_Services\\MOCA_Services.csproj|g:\\exe202\\moca_be\\moca\\moca_services\\dependencyinjection\\dependencyinjection.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{648ABC71-2441-49BF-A2B8-12065EB123A2}|MOCA_Services\\MOCA_Services.csproj|solutionrelative:moca_services\\dependencyinjection\\dependencyinjection.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1324AB2A-7308-4CBB-8E32-DD94783E85CE}|MOCA.Api\\MOCA.Api.csproj|g:\\exe202\\moca_be\\moca\\moca.api\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{1324AB2A-7308-4CBB-8E32-DD94783E85CE}|MOCA.Api\\MOCA.Api.csproj|solutionrelative:moca.api\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B809EE95-00E4-43EC-ACB3-D41FE58768B2}|MOCA_Repositories\\MOCA_Repositories.csproj|g:\\exe202\\moca_be\\moca\\moca_repositories\\models\\coursedto\\courseviewget.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B809EE95-00E4-43EC-ACB3-D41FE58768B2}|MOCA_Repositories\\MOCA_Repositories.csproj|solutionrelative:moca_repositories\\models\\coursedto\\courseviewget.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B809EE95-00E4-43EC-ACB3-D41FE58768B2}|MOCA_Repositories\\MOCA_Repositories.csproj|g:\\exe202\\moca_be\\moca\\moca_repositories\\interfaces\\icourserepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B809EE95-00E4-43EC-ACB3-D41FE58768B2}|MOCA_Repositories\\MOCA_Repositories.csproj|solutionrelative:moca_repositories\\interfaces\\icourserepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B809EE95-00E4-43EC-ACB3-D41FE58768B2}|MOCA_Repositories\\MOCA_Repositories.csproj|g:\\exe202\\moca_be\\moca\\moca_repositories\\interfaces\\ichapterrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B809EE95-00E4-43EC-ACB3-D41FE58768B2}|MOCA_Repositories\\MOCA_Repositories.csproj|solutionrelative:moca_repositories\\interfaces\\ichapterrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B809EE95-00E4-43EC-ACB3-D41FE58768B2}|MOCA_Repositories\\MOCA_Repositories.csproj|g:\\exe202\\moca_be\\moca\\moca_repositories\\interfaces\\ilessonsrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B809EE95-00E4-43EC-ACB3-D41FE58768B2}|MOCA_Repositories\\MOCA_Repositories.csproj|solutionrelative:moca_repositories\\interfaces\\ilessonsrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B809EE95-00E4-43EC-ACB3-D41FE58768B2}|MOCA_Repositories\\MOCA_Repositories.csproj|g:\\exe202\\moca_be\\moca\\moca_repositories\\interfaces\\iauthenrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B809EE95-00E4-43EC-ACB3-D41FE58768B2}|MOCA_Repositories\\MOCA_Repositories.csproj|solutionrelative:moca_repositories\\interfaces\\iauthenrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{648ABC71-2441-49BF-A2B8-12065EB123A2}|MOCA_Services\\MOCA_Services.csproj|g:\\exe202\\moca_be\\moca\\moca_services\\services\\chapterservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{648ABC71-2441-49BF-A2B8-12065EB123A2}|MOCA_Services\\MOCA_Services.csproj|solutionrelative:moca_services\\services\\chapterservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{648ABC71-2441-49BF-A2B8-12065EB123A2}|MOCA_Services\\MOCA_Services.csproj|g:\\exe202\\moca_be\\moca\\moca_services\\services\\courseservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{648ABC71-2441-49BF-A2B8-12065EB123A2}|MOCA_Services\\MOCA_Services.csproj|solutionrelative:moca_services\\services\\courseservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{648ABC71-2441-49BF-A2B8-12065EB123A2}|MOCA_Services\\MOCA_Services.csproj|g:\\exe202\\moca_be\\moca\\moca_services\\services\\lessonservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{648ABC71-2441-49BF-A2B8-12065EB123A2}|MOCA_Services\\MOCA_Services.csproj|solutionrelative:moca_services\\services\\lessonservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B809EE95-00E4-43EC-ACB3-D41FE58768B2}|MOCA_Repositories\\MOCA_Repositories.csproj|g:\\exe202\\moca_be\\moca\\moca_repositories\\models\\lessondto\\updatelessonmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B809EE95-00E4-43EC-ACB3-D41FE58768B2}|MOCA_Repositories\\MOCA_Repositories.csproj|solutionrelative:moca_repositories\\models\\lessondto\\updatelessonmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B809EE95-00E4-43EC-ACB3-D41FE58768B2}|MOCA_Repositories\\MOCA_Repositories.csproj|g:\\exe202\\moca_be\\moca\\moca_repositories\\enitities\\chapter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B809EE95-00E4-43EC-ACB3-D41FE58768B2}|MOCA_Repositories\\MOCA_Repositories.csproj|solutionrelative:moca_repositories\\enitities\\chapter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B809EE95-00E4-43EC-ACB3-D41FE58768B2}|MOCA_Repositories\\MOCA_Repositories.csproj|g:\\exe202\\moca_be\\moca\\moca_repositories\\enitities\\course.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B809EE95-00E4-43EC-ACB3-D41FE58768B2}|MOCA_Repositories\\MOCA_Repositories.csproj|solutionrelative:moca_repositories\\enitities\\course.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B809EE95-00E4-43EC-ACB3-D41FE58768B2}|MOCA_Repositories\\MOCA_Repositories.csproj|g:\\exe202\\moca_be\\moca\\moca_repositories\\enitities\\babytracking.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B809EE95-00E4-43EC-ACB3-D41FE58768B2}|MOCA_Repositories\\MOCA_Repositories.csproj|solutionrelative:moca_repositories\\enitities\\babytracking.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B809EE95-00E4-43EC-ACB3-D41FE58768B2}|MOCA_Repositories\\MOCA_Repositories.csproj|g:\\exe202\\moca_be\\moca\\moca_repositories\\enitities\\coursecategory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B809EE95-00E4-43EC-ACB3-D41FE58768B2}|MOCA_Repositories\\MOCA_Repositories.csproj|solutionrelative:moca_repositories\\enitities\\coursecategory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B809EE95-00E4-43EC-ACB3-D41FE58768B2}|MOCA_Repositories\\MOCA_Repositories.csproj|g:\\exe202\\moca_be\\moca\\moca_repositories\\enitities\\doctorbooking.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B809EE95-00E4-43EC-ACB3-D41FE58768B2}|MOCA_Repositories\\MOCA_Repositories.csproj|solutionrelative:moca_repositories\\enitities\\doctorbooking.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B809EE95-00E4-43EC-ACB3-D41FE58768B2}|MOCA_Repositories\\MOCA_Repositories.csproj|g:\\exe202\\moca_be\\moca\\moca_repositories\\enitities\\bookingpayment.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B809EE95-00E4-43EC-ACB3-D41FE58768B2}|MOCA_Repositories\\MOCA_Repositories.csproj|solutionrelative:moca_repositories\\enitities\\bookingpayment.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B809EE95-00E4-43EC-ACB3-D41FE58768B2}|MOCA_Repositories\\MOCA_Repositories.csproj|g:\\exe202\\moca_be\\moca\\moca_repositories\\enitities\\advertisement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B809EE95-00E4-43EC-ACB3-D41FE58768B2}|MOCA_Repositories\\MOCA_Repositories.csproj|solutionrelative:moca_repositories\\enitities\\advertisement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B809EE95-00E4-43EC-ACB3-D41FE58768B2}|MOCA_Repositories\\MOCA_Repositories.csproj|g:\\exe202\\moca_be\\moca\\moca_repositories\\enitities\\feedback.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B809EE95-00E4-43EC-ACB3-D41FE58768B2}|MOCA_Repositories\\MOCA_Repositories.csproj|solutionrelative:moca_repositories\\enitities\\feedback.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B809EE95-00E4-43EC-ACB3-D41FE58768B2}|MOCA_Repositories\\MOCA_Repositories.csproj|g:\\exe202\\moca_be\\moca\\moca_repositories\\generic\\genericrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B809EE95-00E4-43EC-ACB3-D41FE58768B2}|MOCA_Repositories\\MOCA_Repositories.csproj|solutionrelative:moca_repositories\\generic\\genericrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B809EE95-00E4-43EC-ACB3-D41FE58768B2}|MOCA_Repositories\\MOCA_Repositories.csproj|g:\\exe202\\moca_be\\moca\\moca_repositories\\enitities\\purchasedcourse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B809EE95-00E4-43EC-ACB3-D41FE58768B2}|MOCA_Repositories\\MOCA_Repositories.csproj|solutionrelative:moca_repositories\\enitities\\purchasedcourse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B809EE95-00E4-43EC-ACB3-D41FE58768B2}|MOCA_Repositories\\MOCA_Repositories.csproj|g:\\exe202\\moca_be\\moca\\moca_repositories\\enitities\\userpregnancy.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B809EE95-00E4-43EC-ACB3-D41FE58768B2}|MOCA_Repositories\\MOCA_Repositories.csproj|solutionrelative:moca_repositories\\enitities\\userpregnancy.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B809EE95-00E4-43EC-ACB3-D41FE58768B2}|MOCA_Repositories\\MOCA_Repositories.csproj|g:\\exe202\\moca_be\\moca\\moca_repositories\\efpt.config.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{B809EE95-00E4-43EC-ACB3-D41FE58768B2}|MOCA_Repositories\\MOCA_Repositories.csproj|solutionrelative:moca_repositories\\efpt.config.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B809EE95-00E4-43EC-ACB3-D41FE58768B2}|MOCA_Repositories\\MOCA_Repositories.csproj|g:\\exe202\\moca_be\\moca\\moca_repositories\\extensions\\chapterextensions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B809EE95-00E4-43EC-ACB3-D41FE58768B2}|MOCA_Repositories\\MOCA_Repositories.csproj|solutionrelative:moca_repositories\\extensions\\chapterextensions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B809EE95-00E4-43EC-ACB3-D41FE58768B2}|MOCA_Repositories\\MOCA_Repositories.csproj|g:\\exe202\\moca_be\\moca\\moca_repositories\\models\\filter\\filtercriteria.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B809EE95-00E4-43EC-ACB3-D41FE58768B2}|MOCA_Repositories\\MOCA_Repositories.csproj|solutionrelative:moca_repositories\\models\\filter\\filtercriteria.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B809EE95-00E4-43EC-ACB3-D41FE58768B2}|MOCA_Repositories\\MOCA_Repositories.csproj|g:\\exe202\\moca_be\\moca\\moca_repositories\\migrations\\mocacontextmodelsnapshot.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B809EE95-00E4-43EC-ACB3-D41FE58768B2}|MOCA_Repositories\\MOCA_Repositories.csproj|solutionrelative:moca_repositories\\migrations\\mocacontextmodelsnapshot.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B809EE95-00E4-43EC-ACB3-D41FE58768B2}|MOCA_Repositories\\MOCA_Repositories.csproj|g:\\exe202\\moca_be\\moca\\moca_repositories\\dbcontext\\mocacontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B809EE95-00E4-43EC-ACB3-D41FE58768B2}|MOCA_Repositories\\MOCA_Repositories.csproj|solutionrelative:moca_repositories\\dbcontext\\mocacontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B809EE95-00E4-43EC-ACB3-D41FE58768B2}|MOCA_Repositories\\MOCA_Repositories.csproj|g:\\exe202\\moca_be\\moca\\moca_repositories\\unitofwork.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B809EE95-00E4-43EC-ACB3-D41FE58768B2}|MOCA_Repositories\\MOCA_Repositories.csproj|solutionrelative:moca_repositories\\unitofwork.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B809EE95-00E4-43EC-ACB3-D41FE58768B2}|MOCA_Repositories\\MOCA_Repositories.csproj|g:\\exe202\\moca_be\\moca\\moca_repositories\\iunitofwork.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B809EE95-00E4-43EC-ACB3-D41FE58768B2}|MOCA_Repositories\\MOCA_Repositories.csproj|solutionrelative:moca_repositories\\iunitofwork.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B809EE95-00E4-43EC-ACB3-D41FE58768B2}|MOCA_Repositories\\MOCA_Repositories.csproj|g:\\exe202\\moca_be\\moca\\moca_repositories\\enitities\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B809EE95-00E4-43EC-ACB3-D41FE58768B2}|MOCA_Repositories\\MOCA_Repositories.csproj|solutionrelative:moca_repositories\\enitities\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B809EE95-00E4-43EC-ACB3-D41FE58768B2}|MOCA_Repositories\\MOCA_Repositories.csproj|g:\\exe202\\moca_be\\moca\\moca_repositories\\repository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B809EE95-00E4-43EC-ACB3-D41FE58768B2}|MOCA_Repositories\\MOCA_Repositories.csproj|solutionrelative:moca_repositories\\repository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B809EE95-00E4-43EC-ACB3-D41FE58768B2}|MOCA_Repositories\\MOCA_Repositories.csproj|g:\\exe202\\moca_be\\moca\\moca_repositories\\irepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B809EE95-00E4-43EC-ACB3-D41FE58768B2}|MOCA_Repositories\\MOCA_Repositories.csproj|solutionrelative:moca_repositories\\irepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B809EE95-00E4-43EC-ACB3-D41FE58768B2}|MOCA_Repositories\\MOCA_Repositories.csproj|g:\\exe202\\moca_be\\moca\\moca_repositories\\enitities\\role.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B809EE95-00E4-43EC-ACB3-D41FE58768B2}|MOCA_Repositories\\MOCA_Repositories.csproj|solutionrelative:moca_repositories\\enitities\\role.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B809EE95-00E4-43EC-ACB3-D41FE58768B2}|MOCA_Repositories\\MOCA_Repositories.csproj|g:\\exe202\\moca_be\\moca\\moca_repositories\\enitities\\reflect.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B809EE95-00E4-43EC-ACB3-D41FE58768B2}|MOCA_Repositories\\MOCA_Repositories.csproj|solutionrelative:moca_repositories\\enitities\\reflect.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B809EE95-00E4-43EC-ACB3-D41FE58768B2}|MOCA_Repositories\\MOCA_Repositories.csproj|g:\\exe202\\moca_be\\moca\\moca_repositories\\enitities\\purchasepackage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B809EE95-00E4-43EC-ACB3-D41FE58768B2}|MOCA_Repositories\\MOCA_Repositories.csproj|solutionrelative:moca_repositories\\enitities\\purchasepackage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B809EE95-00E4-43EC-ACB3-D41FE58768B2}|MOCA_Repositories\\MOCA_Repositories.csproj|g:\\exe202\\moca_be\\moca\\moca_repositories\\enitities\\pregnancytracking.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B809EE95-00E4-43EC-ACB3-D41FE58768B2}|MOCA_Repositories\\MOCA_Repositories.csproj|solutionrelative:moca_repositories\\enitities\\pregnancytracking.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B809EE95-00E4-43EC-ACB3-D41FE58768B2}|MOCA_Repositories\\MOCA_Repositories.csproj|g:\\exe202\\moca_be\\moca\\moca_repositories\\enitities\\postlike.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B809EE95-00E4-43EC-ACB3-D41FE58768B2}|MOCA_Repositories\\MOCA_Repositories.csproj|solutionrelative:moca_repositories\\enitities\\postlike.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B809EE95-00E4-43EC-ACB3-D41FE58768B2}|MOCA_Repositories\\MOCA_Repositories.csproj|g:\\exe202\\moca_be\\moca\\moca_repositories\\enitities\\package.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B809EE95-00E4-43EC-ACB3-D41FE58768B2}|MOCA_Repositories\\MOCA_Repositories.csproj|solutionrelative:moca_repositories\\enitities\\package.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B809EE95-00E4-43EC-ACB3-D41FE58768B2}|MOCA_Repositories\\MOCA_Repositories.csproj|g:\\exe202\\moca_be\\moca\\moca_repositories\\enitities\\momprofile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B809EE95-00E4-43EC-ACB3-D41FE58768B2}|MOCA_Repositories\\MOCA_Repositories.csproj|solutionrelative:moca_repositories\\enitities\\momprofile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B809EE95-00E4-43EC-ACB3-D41FE58768B2}|MOCA_Repositories\\MOCA_Repositories.csproj|g:\\exe202\\moca_be\\moca\\moca_repositories\\enitities\\messageswithdoctor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B809EE95-00E4-43EC-ACB3-D41FE58768B2}|MOCA_Repositories\\MOCA_Repositories.csproj|solutionrelative:moca_repositories\\enitities\\messageswithdoctor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B809EE95-00E4-43EC-ACB3-D41FE58768B2}|MOCA_Repositories\\MOCA_Repositories.csproj|g:\\exe202\\moca_be\\moca\\moca_repositories\\enitities\\doctorprofile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B809EE95-00E4-43EC-ACB3-D41FE58768B2}|MOCA_Repositories\\MOCA_Repositories.csproj|solutionrelative:moca_repositories\\enitities\\doctorprofile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B809EE95-00E4-43EC-ACB3-D41FE58768B2}|MOCA_Repositories\\MOCA_Repositories.csproj|g:\\exe202\\moca_be\\moca\\moca_repositories\\enitities\\doctorcontact.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B809EE95-00E4-43EC-ACB3-D41FE58768B2}|MOCA_Repositories\\MOCA_Repositories.csproj|solutionrelative:moca_repositories\\enitities\\doctorcontact.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B809EE95-00E4-43EC-ACB3-D41FE58768B2}|MOCA_Repositories\\MOCA_Repositories.csproj|g:\\exe202\\moca_be\\moca\\moca_repositories\\enitities\\discount.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B809EE95-00E4-43EC-ACB3-D41FE58768B2}|MOCA_Repositories\\MOCA_Repositories.csproj|solutionrelative:moca_repositories\\enitities\\discount.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B809EE95-00E4-43EC-ACB3-D41FE58768B2}|MOCA_Repositories\\MOCA_Repositories.csproj|g:\\exe202\\moca_be\\moca\\moca_repositories\\enitities\\communityreply.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B809EE95-00E4-43EC-ACB3-D41FE58768B2}|MOCA_Repositories\\MOCA_Repositories.csproj|solutionrelative:moca_repositories\\enitities\\communityreply.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B809EE95-00E4-43EC-ACB3-D41FE58768B2}|MOCA_Repositories\\MOCA_Repositories.csproj|g:\\exe202\\moca_be\\moca\\moca_repositories\\enitities\\communitypost.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B809EE95-00E4-43EC-ACB3-D41FE58768B2}|MOCA_Repositories\\MOCA_Repositories.csproj|solutionrelative:moca_repositories\\enitities\\communitypost.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B809EE95-00E4-43EC-ACB3-D41FE58768B2}|MOCA_Repositories\\MOCA_Repositories.csproj|g:\\exe202\\moca_be\\moca\\moca_repositories\\enitities\\bookmark.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B809EE95-00E4-43EC-ACB3-D41FE58768B2}|MOCA_Repositories\\MOCA_Repositories.csproj|solutionrelative:moca_repositories\\enitities\\bookmark.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B809EE95-00E4-43EC-ACB3-D41FE58768B2}|MOCA_Repositories\\MOCA_Repositories.csproj|g:\\exe202\\moca_be\\moca\\moca_repositories\\migrations\\20250523081952_addstatustolessonsandchapters.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B809EE95-00E4-43EC-ACB3-D41FE58768B2}|MOCA_Repositories\\MOCA_Repositories.csproj|solutionrelative:moca_repositories\\migrations\\20250523081952_addstatustolessonsandchapters.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -186,561 +294,184 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 7,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "UnitOfWork.cs",
-              "DocumentMoniker": "D:\\luan\\hoc\\EXE02\\githubmoca\\MOCA_BE\\MOCA\\MOCA_Repositories\\UnitOfWork.cs",
-              "RelativeDocumentMoniker": "MOCA_Repositories\\UnitOfWork.cs",
-              "ToolTip": "D:\\luan\\hoc\\EXE02\\githubmoca\\MOCA_BE\\MOCA\\MOCA_Repositories\\UnitOfWork.cs",
-              "RelativeToolTip": "MOCA_Repositories\\UnitOfWork.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAJAAAAAAAAAA==",
+              "DocumentIndex": 2,
+              "Title": "LessonsRepository.cs",
+              "DocumentMoniker": "G:\\EXE202\\MOCA_BE\\MOCA\\MOCA_Repositories\\Repositories\\LessonsRepository.cs",
+              "RelativeDocumentMoniker": "MOCA_Repositories\\Repositories\\LessonsRepository.cs",
+              "ToolTip": "G:\\EXE202\\MOCA_BE\\MOCA\\MOCA_Repositories\\Repositories\\LessonsRepository.cs",
+              "RelativeToolTip": "MOCA_Repositories\\Repositories\\LessonsRepository.cs",
+              "ViewState": "AgIAACUAAAAAAAAAAAAYwDgAAAAPAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-22T17:56:07.017Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "IUnitOfWork.cs",
-              "DocumentMoniker": "D:\\luan\\hoc\\EXE02\\githubmoca\\MOCA_BE\\MOCA\\MOCA_Repositories\\IUnitOfWork.cs",
-              "RelativeDocumentMoniker": "MOCA_Repositories\\IUnitOfWork.cs",
-              "ToolTip": "D:\\luan\\hoc\\EXE02\\githubmoca\\MOCA_BE\\MOCA\\MOCA_Repositories\\IUnitOfWork.cs",
-              "RelativeToolTip": "MOCA_Repositories\\IUnitOfWork.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAFAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-22T17:55:42.901Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "AuthenController.cs",
-              "DocumentMoniker": "D:\\luan\\hoc\\EXE02\\githubmoca\\MOCA_BE\\MOCA\\MOCA.Api\\Controllers\\AuthenController.cs",
-              "RelativeDocumentMoniker": "MOCA.Api\\Controllers\\AuthenController.cs",
-              "ToolTip": "D:\\luan\\hoc\\EXE02\\githubmoca\\MOCA_BE\\MOCA\\MOCA.Api\\Controllers\\AuthenController.cs",
-              "RelativeToolTip": "MOCA.Api\\Controllers\\AuthenController.cs",
-              "ViewState": "AgIAABwAAAAAAAAAAAAAwCsAAAA2AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-22T17:54:20.511Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "Program.cs",
-              "DocumentMoniker": "D:\\luan\\hoc\\EXE02\\githubmoca\\MOCA_BE\\MOCA\\MOCA.Api\\Program.cs",
-              "RelativeDocumentMoniker": "MOCA.Api\\Program.cs",
-              "ToolTip": "D:\\luan\\hoc\\EXE02\\githubmoca\\MOCA_BE\\MOCA\\MOCA.Api\\Program.cs",
-              "RelativeToolTip": "MOCA.Api\\Program.cs",
-              "ViewState": "AgIAAAgAAAAAAAAAAAAYwBcAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-22T17:37:56.186Z",
+              "WhenOpened": "2025-05-23T13:41:21.525Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 9,
-              "Title": "DependencyInjection.cs",
-              "DocumentMoniker": "D:\\luan\\hoc\\EXE02\\githubmoca\\MOCA_BE\\MOCA\\MOCA_Services\\DependencyInjection\\DependencyInjection.cs",
-              "RelativeDocumentMoniker": "MOCA_Services\\DependencyInjection\\DependencyInjection.cs",
-              "ToolTip": "D:\\luan\\hoc\\EXE02\\githubmoca\\MOCA_BE\\MOCA\\MOCA_Services\\DependencyInjection\\DependencyInjection.cs",
-              "RelativeToolTip": "MOCA_Services\\DependencyInjection\\DependencyInjection.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABcAAAAFAAAAAAAAAA==",
+              "Title": "UpdateCourseModel.cs",
+              "DocumentMoniker": "G:\\EXE202\\MOCA_BE\\MOCA\\MOCA_Repositories\\Models\\CourseDTO\\UpdateCourseModel.cs",
+              "RelativeDocumentMoniker": "MOCA_Repositories\\Models\\CourseDTO\\UpdateCourseModel.cs",
+              "ToolTip": "G:\\EXE202\\MOCA_BE\\MOCA\\MOCA_Repositories\\Models\\CourseDTO\\UpdateCourseModel.cs",
+              "RelativeToolTip": "MOCA_Repositories\\Models\\CourseDTO\\UpdateCourseModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-22T17:37:41.182Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "DependencyInjection.cs",
-              "DocumentMoniker": "D:\\luan\\hoc\\EXE02\\githubmoca\\MOCA_BE\\MOCA\\MOCA_Repositories\\DependencyInjection\\DependencyInjection.cs",
-              "RelativeDocumentMoniker": "MOCA_Repositories\\DependencyInjection\\DependencyInjection.cs",
-              "ToolTip": "D:\\luan\\hoc\\EXE02\\githubmoca\\MOCA_BE\\MOCA\\MOCA_Repositories\\DependencyInjection\\DependencyInjection.cs",
-              "RelativeToolTip": "MOCA_Repositories\\DependencyInjection\\DependencyInjection.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-22T17:37:10.984Z",
+              "WhenOpened": "2025-05-27T13:38:58.361Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 10,
-              "Title": "AuthenService.cs",
-              "DocumentMoniker": "D:\\luan\\hoc\\EXE02\\githubmoca\\MOCA_BE\\MOCA\\MOCA_Services\\Services\\AuthenService.cs",
-              "RelativeDocumentMoniker": "MOCA_Services\\Services\\AuthenService.cs",
-              "ToolTip": "D:\\luan\\hoc\\EXE02\\githubmoca\\MOCA_BE\\MOCA\\MOCA_Services\\Services\\AuthenService.cs",
-              "RelativeToolTip": "MOCA_Services\\Services\\AuthenService.cs",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAAB4AAAAJAAAAAAAAAA==",
+              "Title": "Lesson.cs",
+              "DocumentMoniker": "G:\\EXE202\\MOCA_BE\\MOCA\\MOCA_Repositories\\Enitities\\Lesson.cs",
+              "RelativeDocumentMoniker": "MOCA_Repositories\\Enitities\\Lesson.cs",
+              "ToolTip": "G:\\EXE202\\MOCA_BE\\MOCA\\MOCA_Repositories\\Enitities\\Lesson.cs",
+              "RelativeToolTip": "MOCA_Repositories\\Enitities\\Lesson.cs",
+              "ViewState": "AgIAAAQAAAAAAAAAAAAgwBwAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-22T17:35:37.593Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "IAuthenService.cs",
-              "DocumentMoniker": "D:\\luan\\hoc\\EXE02\\githubmoca\\MOCA_BE\\MOCA\\MOCA_Services\\Interfaces\\IAuthenService.cs",
-              "RelativeDocumentMoniker": "MOCA_Services\\Interfaces\\IAuthenService.cs",
-              "ToolTip": "D:\\luan\\hoc\\EXE02\\githubmoca\\MOCA_BE\\MOCA\\MOCA_Services\\Interfaces\\IAuthenService.cs",
-              "RelativeToolTip": "MOCA_Services\\Interfaces\\IAuthenService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAqwBAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-22T17:34:56.455Z",
+              "WhenOpened": "2025-05-27T08:27:53.276Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 4,
-              "Title": "MOCAContext.cs",
-              "DocumentMoniker": "D:\\luan\\hoc\\EXE02\\githubmoca\\MOCA_BE\\MOCA\\MOCA_Repositories\\DBContext\\MOCAContext.cs",
-              "RelativeDocumentMoniker": "MOCA_Repositories\\DBContext\\MOCAContext.cs",
-              "ToolTip": "D:\\luan\\hoc\\EXE02\\githubmoca\\MOCA_BE\\MOCA\\MOCA_Repositories\\DBContext\\MOCAContext.cs",
-              "RelativeToolTip": "MOCA_Repositories\\DBContext\\MOCAContext.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAAAAAAAAAAAA==",
+              "Title": "LessonController.cs",
+              "DocumentMoniker": "G:\\EXE202\\MOCA_BE\\MOCA\\MOCA.Api\\Controllers\\LessonController.cs",
+              "RelativeDocumentMoniker": "MOCA.Api\\Controllers\\LessonController.cs",
+              "ToolTip": "G:\\EXE202\\MOCA_BE\\MOCA\\MOCA.Api\\Controllers\\LessonController.cs",
+              "RelativeToolTip": "MOCA.Api\\Controllers\\LessonController.cs",
+              "ViewState": "AgIAAJkAAAAAAAAAAAAkwLEAAABBAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-22T17:20:17.886Z",
+              "WhenOpened": "2025-05-23T14:49:23.572Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 0,
               "Title": "AutoMapperProfile.cs",
-              "DocumentMoniker": "D:\\luan\\hoc\\EXE02\\githubmoca\\MOCA_BE\\MOCA\\MOCA_Repositories\\Mapping\\AutoMapperProfile.cs",
+              "DocumentMoniker": "G:\\EXE202\\MOCA_BE\\MOCA\\MOCA_Repositories\\Mapping\\AutoMapperProfile.cs",
               "RelativeDocumentMoniker": "MOCA_Repositories\\Mapping\\AutoMapperProfile.cs",
-              "ToolTip": "D:\\luan\\hoc\\EXE02\\githubmoca\\MOCA_BE\\MOCA\\MOCA_Repositories\\Mapping\\AutoMapperProfile.cs",
+              "ToolTip": "G:\\EXE202\\MOCA_BE\\MOCA\\MOCA_Repositories\\Mapping\\AutoMapperProfile.cs",
               "RelativeToolTip": "MOCA_Repositories\\Mapping\\AutoMapperProfile.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAEAAAAAAAAAAAAiwBQAAAAMAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-05-22T17:39:26.344Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
-              "Title": "IRepository.cs",
-              "DocumentMoniker": "D:\\luan\\hoc\\EXE02\\githubmoca\\MOCA_BE\\MOCA\\MOCA_Repositories\\IRepository.cs",
-              "RelativeDocumentMoniker": "MOCA_Repositories\\IRepository.cs",
-              "ToolTip": "D:\\luan\\hoc\\EXE02\\githubmoca\\MOCA_BE\\MOCA\\MOCA_Repositories\\IRepository.cs",
-              "RelativeToolTip": "MOCA_Repositories\\IRepository.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAAAAAAAAAAAA==",
+              "DocumentIndex": 3,
+              "Title": "ChapterRepository.cs",
+              "DocumentMoniker": "G:\\EXE202\\MOCA_BE\\MOCA\\MOCA_Repositories\\Repositories\\ChapterRepository.cs",
+              "RelativeDocumentMoniker": "MOCA_Repositories\\Repositories\\ChapterRepository.cs",
+              "ToolTip": "G:\\EXE202\\MOCA_BE\\MOCA\\MOCA_Repositories\\Repositories\\ChapterRepository.cs",
+              "RelativeToolTip": "MOCA_Repositories\\Repositories\\ChapterRepository.cs",
+              "ViewState": "AgIAAEoAAAAAAAAAAAAgwBIAAABFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-22T17:26:25.524Z",
+              "WhenOpened": "2025-05-27T08:14:57.749Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
-              "Title": "Repository.cs",
-              "DocumentMoniker": "D:\\luan\\hoc\\EXE02\\githubmoca\\MOCA_BE\\MOCA\\MOCA_Repositories\\Repository.cs",
-              "RelativeDocumentMoniker": "MOCA_Repositories\\Repository.cs",
-              "ToolTip": "D:\\luan\\hoc\\EXE02\\githubmoca\\MOCA_BE\\MOCA\\MOCA_Repositories\\Repository.cs",
-              "RelativeToolTip": "MOCA_Repositories\\Repository.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAmAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-22T17:25:34.503Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 15,
-              "Title": "GenericRepository.cs",
-              "DocumentMoniker": "D:\\luan\\hoc\\EXE02\\githubmoca\\MOCA_BE\\MOCA\\MOCA_Repositories\\Generic\\GenericRepository.cs",
-              "RelativeDocumentMoniker": "MOCA_Repositories\\Generic\\GenericRepository.cs",
-              "ToolTip": "D:\\luan\\hoc\\EXE02\\githubmoca\\MOCA_BE\\MOCA\\MOCA_Repositories\\Generic\\GenericRepository.cs",
-              "RelativeToolTip": "MOCA_Repositories\\Generic\\GenericRepository.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAmAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-22T17:21:32.248Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "IAuthenRepository.cs",
-              "DocumentMoniker": "D:\\luan\\hoc\\EXE02\\githubmoca\\MOCA_BE\\MOCA\\MOCA_Repositories\\Interfaces\\IAuthenRepository.cs",
-              "RelativeDocumentMoniker": "MOCA_Repositories\\Interfaces\\IAuthenRepository.cs",
-              "ToolTip": "D:\\luan\\hoc\\EXE02\\githubmoca\\MOCA_BE\\MOCA\\MOCA_Repositories\\Interfaces\\IAuthenRepository.cs",
-              "RelativeToolTip": "MOCA_Repositories\\Interfaces\\IAuthenRepository.cs",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAmwA0AAAAHAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-22T17:07:19.64Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 18,
-              "Title": "UserPregnancy.cs",
-              "DocumentMoniker": "D:\\luan\\hoc\\EXE02\\githubmoca\\MOCA_BE\\MOCA\\MOCA_Repositories\\Entities\\UserPregnancy.cs",
-              "RelativeDocumentMoniker": "MOCA_Repositories\\Entities\\UserPregnancy.cs",
-              "ToolTip": "D:\\luan\\hoc\\EXE02\\githubmoca\\MOCA_BE\\MOCA\\MOCA_Repositories\\Entities\\UserPregnancy.cs",
-              "RelativeToolTip": "MOCA_Repositories\\Entities\\UserPregnancy.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-22T17:20:04.736Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 17,
-              "Title": "BabyTracking.cs",
-              "DocumentMoniker": "D:\\luan\\hoc\\EXE02\\githubmoca\\MOCA_BE\\MOCA\\MOCA_Repositories\\Entities\\BabyTracking.cs",
-              "RelativeDocumentMoniker": "MOCA_Repositories\\Entities\\BabyTracking.cs",
-              "ToolTip": "D:\\luan\\hoc\\EXE02\\githubmoca\\MOCA_BE\\MOCA\\MOCA_Repositories\\Entities\\BabyTracking.cs",
-              "RelativeToolTip": "MOCA_Repositories\\Entities\\BabyTracking.cs",
-              "ViewState": "AgIAAA8AAAAAAAAAAAA5wB0AAAAeAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-22T17:18:16.758Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 16,
-              "Title": "BookingPayment.cs",
-              "DocumentMoniker": "D:\\luan\\hoc\\EXE02\\githubmoca\\MOCA_BE\\MOCA\\MOCA_Repositories\\Entities\\BookingPayment.cs",
-              "RelativeDocumentMoniker": "MOCA_Repositories\\Entities\\BookingPayment.cs",
-              "ToolTip": "D:\\luan\\hoc\\EXE02\\githubmoca\\MOCA_BE\\MOCA\\MOCA_Repositories\\Entities\\BookingPayment.cs",
-              "RelativeToolTip": "MOCA_Repositories\\Entities\\BookingPayment.cs",
-              "ViewState": "AgIAAAsAAAAAAAAAAAA5wBkAAAAcAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-22T17:18:19.459Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 1,
               "Title": "AuthenRepository.cs",
-              "DocumentMoniker": "D:\\luan\\hoc\\EXE02\\githubmoca\\MOCA_BE\\MOCA\\MOCA_Repositories\\Repositories\\AuthenRepository.cs",
+              "DocumentMoniker": "G:\\EXE202\\MOCA_BE\\MOCA\\MOCA_Repositories\\Repositories\\AuthenRepository.cs",
               "RelativeDocumentMoniker": "MOCA_Repositories\\Repositories\\AuthenRepository.cs",
-              "ToolTip": "D:\\luan\\hoc\\EXE02\\githubmoca\\MOCA_BE\\MOCA\\MOCA_Repositories\\Repositories\\AuthenRepository.cs",
+              "ToolTip": "G:\\EXE202\\MOCA_BE\\MOCA\\MOCA_Repositories\\Repositories\\AuthenRepository.cs",
               "RelativeToolTip": "MOCA_Repositories\\Repositories\\AuthenRepository.cs",
-              "ViewState": "AgIAABQAAAAAAAAAAAAxwCYAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAACYAAAAAAAAAAAAAADMAAABFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-05-22T17:13:37.971Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "User.cs",
-              "DocumentMoniker": "D:\\luan\\hoc\\EXE02\\githubmoca\\MOCA_BE\\MOCA\\MOCA_Repositories\\Entities\\User.cs",
-              "RelativeDocumentMoniker": "MOCA_Repositories\\Entities\\User.cs",
-              "ToolTip": "D:\\luan\\hoc\\EXE02\\githubmoca\\MOCA_BE\\MOCA\\MOCA_Repositories\\Entities\\User.cs",
-              "RelativeToolTip": "MOCA_Repositories\\Entities\\User.cs",
-              "ViewState": "AgIAABwAAAAAAAAAAAA7wC8AAAAAAAAAAAAAAA==",
+              "DocumentIndex": 6,
+              "Title": "CourseRepository.cs",
+              "DocumentMoniker": "G:\\EXE202\\MOCA_BE\\MOCA\\MOCA_Repositories\\Repositories\\CourseRepository.cs",
+              "RelativeDocumentMoniker": "MOCA_Repositories\\Repositories\\CourseRepository.cs",
+              "ToolTip": "G:\\EXE202\\MOCA_BE\\MOCA\\MOCA_Repositories\\Repositories\\CourseRepository.cs",
+              "RelativeToolTip": "MOCA_Repositories\\Repositories\\CourseRepository.cs",
+              "ViewState": "AgIAALsAAAAAhOL7txMIwA8AAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-22T16:54:58.244Z",
+              "WhenOpened": "2025-05-27T09:10:29.743Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "LessonViewModel.cs",
+              "DocumentMoniker": "G:\\EXE202\\MOCA_BE\\MOCA\\MOCA_Repositories\\Models\\LessonDTO\\LessonViewModel.cs",
+              "RelativeDocumentMoniker": "MOCA_Repositories\\Models\\LessonDTO\\LessonViewModel.cs",
+              "ToolTip": "G:\\EXE202\\MOCA_BE\\MOCA\\MOCA_Repositories\\Models\\LessonDTO\\LessonViewModel.cs",
+              "RelativeToolTip": "MOCA_Repositories\\Models\\LessonDTO\\LessonViewModel.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAgAAAAEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-23T13:34:04.119Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "CreateCourseModel.cs",
+              "DocumentMoniker": "G:\\EXE202\\MOCA_BE\\MOCA\\MOCA_Repositories\\Models\\CourseDTO\\CreateCourseModel.cs",
+              "RelativeDocumentMoniker": "MOCA_Repositories\\Models\\CourseDTO\\CreateCourseModel.cs",
+              "ToolTip": "G:\\EXE202\\MOCA_BE\\MOCA\\MOCA_Repositories\\Models\\CourseDTO\\CreateCourseModel.cs",
+              "RelativeToolTip": "MOCA_Repositories\\Models\\CourseDTO\\CreateCourseModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAsAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-27T09:00:43.033Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "UpdateChapterModel.cs",
+              "DocumentMoniker": "G:\\EXE202\\MOCA_BE\\MOCA\\MOCA_Repositories\\Models\\ChapterDTO\\UpdateChapterModel.cs",
+              "RelativeDocumentMoniker": "MOCA_Repositories\\Models\\ChapterDTO\\UpdateChapterModel.cs",
+              "ToolTip": "G:\\EXE202\\MOCA_BE\\MOCA\\MOCA_Repositories\\Models\\ChapterDTO\\UpdateChapterModel.cs",
+              "RelativeToolTip": "MOCA_Repositories\\Models\\ChapterDTO\\UpdateChapterModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAtAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-27T08:11:31.018Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "ChapterViewModel.cs",
+              "DocumentMoniker": "G:\\EXE202\\MOCA_BE\\MOCA\\MOCA_Repositories\\Models\\ChapterDTO\\ChapterViewModel.cs",
+              "RelativeDocumentMoniker": "MOCA_Repositories\\Models\\ChapterDTO\\ChapterViewModel.cs",
+              "ToolTip": "G:\\EXE202\\MOCA_BE\\MOCA\\MOCA_Repositories\\Models\\ChapterDTO\\ChapterViewModel.cs",
+              "RelativeToolTip": "MOCA_Repositories\\Models\\ChapterDTO\\ChapterViewModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAhAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-27T08:05:39.146Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "AddLessonModel.cs",
+              "DocumentMoniker": "G:\\EXE202\\MOCA_BE\\MOCA\\MOCA_Repositories\\Models\\LessonDTO\\AddLessonModel.cs",
+              "RelativeDocumentMoniker": "MOCA_Repositories\\Models\\LessonDTO\\AddLessonModel.cs",
+              "ToolTip": "G:\\EXE202\\MOCA_BE\\MOCA\\MOCA_Repositories\\Models\\LessonDTO\\AddLessonModel.cs",
+              "RelativeToolTip": "MOCA_Repositories\\Models\\LessonDTO\\AddLessonModel.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAuwBEAAAAwAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-23T08:26:08.984Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 19,
-              "Title": "Role.cs",
-              "DocumentMoniker": "D:\\luan\\hoc\\EXE02\\githubmoca\\MOCA_BE\\MOCA\\MOCA_Repositories\\Entities\\Role.cs",
-              "RelativeDocumentMoniker": "MOCA_Repositories\\Entities\\Role.cs",
-              "ToolTip": "D:\\luan\\hoc\\EXE02\\githubmoca\\MOCA_BE\\MOCA\\MOCA_Repositories\\Entities\\Role.cs",
-              "RelativeToolTip": "MOCA_Repositories\\Entities\\Role.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAmAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-22T17:19:57.414Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 20,
-              "Title": "RefLect.cs",
-              "DocumentMoniker": "D:\\luan\\hoc\\EXE02\\githubmoca\\MOCA_BE\\MOCA\\MOCA_Repositories\\Entities\\RefLect.cs",
-              "RelativeDocumentMoniker": "MOCA_Repositories\\Entities\\RefLect.cs",
-              "ToolTip": "D:\\luan\\hoc\\EXE02\\githubmoca\\MOCA_BE\\MOCA\\MOCA_Repositories\\Entities\\RefLect.cs",
-              "RelativeToolTip": "MOCA_Repositories\\Entities\\RefLect.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAmAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-22T17:19:54.334Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 21,
-              "Title": "PurchasePackage.cs",
-              "DocumentMoniker": "D:\\luan\\hoc\\EXE02\\githubmoca\\MOCA_BE\\MOCA\\MOCA_Repositories\\Entities\\PurchasePackage.cs",
-              "RelativeDocumentMoniker": "MOCA_Repositories\\Entities\\PurchasePackage.cs",
-              "ToolTip": "D:\\luan\\hoc\\EXE02\\githubmoca\\MOCA_BE\\MOCA\\MOCA_Repositories\\Entities\\PurchasePackage.cs",
-              "RelativeToolTip": "MOCA_Repositories\\Entities\\PurchasePackage.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAmAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-22T17:19:50.772Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 22,
-              "Title": "PurchasedCourse.cs",
-              "DocumentMoniker": "D:\\luan\\hoc\\EXE02\\githubmoca\\MOCA_BE\\MOCA\\MOCA_Repositories\\Entities\\PurchasedCourse.cs",
-              "RelativeDocumentMoniker": "MOCA_Repositories\\Entities\\PurchasedCourse.cs",
-              "ToolTip": "D:\\luan\\hoc\\EXE02\\githubmoca\\MOCA_BE\\MOCA\\MOCA_Repositories\\Entities\\PurchasedCourse.cs",
-              "RelativeToolTip": "MOCA_Repositories\\Entities\\PurchasedCourse.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAmAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-22T17:19:47.617Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 23,
-              "Title": "PregnancyTracking.cs",
-              "DocumentMoniker": "D:\\luan\\hoc\\EXE02\\githubmoca\\MOCA_BE\\MOCA\\MOCA_Repositories\\Entities\\PregnancyTracking.cs",
-              "RelativeDocumentMoniker": "MOCA_Repositories\\Entities\\PregnancyTracking.cs",
-              "ToolTip": "D:\\luan\\hoc\\EXE02\\githubmoca\\MOCA_BE\\MOCA\\MOCA_Repositories\\Entities\\PregnancyTracking.cs",
-              "RelativeToolTip": "MOCA_Repositories\\Entities\\PregnancyTracking.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAmAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-22T17:19:43.999Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 24,
-              "Title": "PostLike.cs",
-              "DocumentMoniker": "D:\\luan\\hoc\\EXE02\\githubmoca\\MOCA_BE\\MOCA\\MOCA_Repositories\\Entities\\PostLike.cs",
-              "RelativeDocumentMoniker": "MOCA_Repositories\\Entities\\PostLike.cs",
-              "ToolTip": "D:\\luan\\hoc\\EXE02\\githubmoca\\MOCA_BE\\MOCA\\MOCA_Repositories\\Entities\\PostLike.cs",
-              "RelativeToolTip": "MOCA_Repositories\\Entities\\PostLike.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAmAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-22T17:19:40.789Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 25,
-              "Title": "Package.cs",
-              "DocumentMoniker": "D:\\luan\\hoc\\EXE02\\githubmoca\\MOCA_BE\\MOCA\\MOCA_Repositories\\Entities\\Package.cs",
-              "RelativeDocumentMoniker": "MOCA_Repositories\\Entities\\Package.cs",
-              "ToolTip": "D:\\luan\\hoc\\EXE02\\githubmoca\\MOCA_BE\\MOCA\\MOCA_Repositories\\Entities\\Package.cs",
-              "RelativeToolTip": "MOCA_Repositories\\Entities\\Package.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAmAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-22T17:19:37.806Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 26,
-              "Title": "MomProfile.cs",
-              "DocumentMoniker": "D:\\luan\\hoc\\EXE02\\githubmoca\\MOCA_BE\\MOCA\\MOCA_Repositories\\Entities\\MomProfile.cs",
-              "RelativeDocumentMoniker": "MOCA_Repositories\\Entities\\MomProfile.cs",
-              "ToolTip": "D:\\luan\\hoc\\EXE02\\githubmoca\\MOCA_BE\\MOCA\\MOCA_Repositories\\Entities\\MomProfile.cs",
-              "RelativeToolTip": "MOCA_Repositories\\Entities\\MomProfile.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAmAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-22T17:19:34.774Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 27,
-              "Title": "MessagesWithDoctor.cs",
-              "DocumentMoniker": "D:\\luan\\hoc\\EXE02\\githubmoca\\MOCA_BE\\MOCA\\MOCA_Repositories\\Entities\\MessagesWithDoctor.cs",
-              "RelativeDocumentMoniker": "MOCA_Repositories\\Entities\\MessagesWithDoctor.cs",
-              "ToolTip": "D:\\luan\\hoc\\EXE02\\githubmoca\\MOCA_BE\\MOCA\\MOCA_Repositories\\Entities\\MessagesWithDoctor.cs",
-              "RelativeToolTip": "MOCA_Repositories\\Entities\\MessagesWithDoctor.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAmAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-22T17:19:31.637Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 28,
-              "Title": "Lesson.cs",
-              "DocumentMoniker": "D:\\luan\\hoc\\EXE02\\githubmoca\\MOCA_BE\\MOCA\\MOCA_Repositories\\Entities\\Lesson.cs",
-              "RelativeDocumentMoniker": "MOCA_Repositories\\Entities\\Lesson.cs",
-              "ToolTip": "D:\\luan\\hoc\\EXE02\\githubmoca\\MOCA_BE\\MOCA\\MOCA_Repositories\\Entities\\Lesson.cs",
-              "RelativeToolTip": "MOCA_Repositories\\Entities\\Lesson.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAmAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-22T17:19:28.065Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 29,
-              "Title": "Feedback.cs",
-              "DocumentMoniker": "D:\\luan\\hoc\\EXE02\\githubmoca\\MOCA_BE\\MOCA\\MOCA_Repositories\\Entities\\Feedback.cs",
-              "RelativeDocumentMoniker": "MOCA_Repositories\\Entities\\Feedback.cs",
-              "ToolTip": "D:\\luan\\hoc\\EXE02\\githubmoca\\MOCA_BE\\MOCA\\MOCA_Repositories\\Entities\\Feedback.cs",
-              "RelativeToolTip": "MOCA_Repositories\\Entities\\Feedback.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAmAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-22T17:19:24.712Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 30,
-              "Title": "DoctorProfile.cs",
-              "DocumentMoniker": "D:\\luan\\hoc\\EXE02\\githubmoca\\MOCA_BE\\MOCA\\MOCA_Repositories\\Entities\\DoctorProfile.cs",
-              "RelativeDocumentMoniker": "MOCA_Repositories\\Entities\\DoctorProfile.cs",
-              "ToolTip": "D:\\luan\\hoc\\EXE02\\githubmoca\\MOCA_BE\\MOCA\\MOCA_Repositories\\Entities\\DoctorProfile.cs",
-              "RelativeToolTip": "MOCA_Repositories\\Entities\\DoctorProfile.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAmAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-22T17:19:21.973Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 31,
-              "Title": "DoctorContact.cs",
-              "DocumentMoniker": "D:\\luan\\hoc\\EXE02\\githubmoca\\MOCA_BE\\MOCA\\MOCA_Repositories\\Entities\\DoctorContact.cs",
-              "RelativeDocumentMoniker": "MOCA_Repositories\\Entities\\DoctorContact.cs",
-              "ToolTip": "D:\\luan\\hoc\\EXE02\\githubmoca\\MOCA_BE\\MOCA\\MOCA_Repositories\\Entities\\DoctorContact.cs",
-              "RelativeToolTip": "MOCA_Repositories\\Entities\\DoctorContact.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAmAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-22T17:19:19.129Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 32,
-              "Title": "DoctorBooking.cs",
-              "DocumentMoniker": "D:\\luan\\hoc\\EXE02\\githubmoca\\MOCA_BE\\MOCA\\MOCA_Repositories\\Entities\\DoctorBooking.cs",
-              "RelativeDocumentMoniker": "MOCA_Repositories\\Entities\\DoctorBooking.cs",
-              "ToolTip": "D:\\luan\\hoc\\EXE02\\githubmoca\\MOCA_BE\\MOCA\\MOCA_Repositories\\Entities\\DoctorBooking.cs",
-              "RelativeToolTip": "MOCA_Repositories\\Entities\\DoctorBooking.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAmAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-22T17:19:15.554Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 33,
-              "Title": "Discount.cs",
-              "DocumentMoniker": "D:\\luan\\hoc\\EXE02\\githubmoca\\MOCA_BE\\MOCA\\MOCA_Repositories\\Entities\\Discount.cs",
-              "RelativeDocumentMoniker": "MOCA_Repositories\\Entities\\Discount.cs",
-              "ToolTip": "D:\\luan\\hoc\\EXE02\\githubmoca\\MOCA_BE\\MOCA\\MOCA_Repositories\\Entities\\Discount.cs",
-              "RelativeToolTip": "MOCA_Repositories\\Entities\\Discount.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAmAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-22T17:19:11.688Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 34,
-              "Title": "CourseCategory.cs",
-              "DocumentMoniker": "D:\\luan\\hoc\\EXE02\\githubmoca\\MOCA_BE\\MOCA\\MOCA_Repositories\\Entities\\CourseCategory.cs",
-              "RelativeDocumentMoniker": "MOCA_Repositories\\Entities\\CourseCategory.cs",
-              "ToolTip": "D:\\luan\\hoc\\EXE02\\githubmoca\\MOCA_BE\\MOCA\\MOCA_Repositories\\Entities\\CourseCategory.cs",
-              "RelativeToolTip": "MOCA_Repositories\\Entities\\CourseCategory.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAmAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-22T17:18:46.204Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 35,
-              "Title": "Course.cs",
-              "DocumentMoniker": "D:\\luan\\hoc\\EXE02\\githubmoca\\MOCA_BE\\MOCA\\MOCA_Repositories\\Entities\\Course.cs",
-              "RelativeDocumentMoniker": "MOCA_Repositories\\Entities\\Course.cs",
-              "ToolTip": "D:\\luan\\hoc\\EXE02\\githubmoca\\MOCA_BE\\MOCA\\MOCA_Repositories\\Entities\\Course.cs",
-              "RelativeToolTip": "MOCA_Repositories\\Entities\\Course.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABgAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-22T17:18:42.183Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 36,
-              "Title": "CommunityReply.cs",
-              "DocumentMoniker": "D:\\luan\\hoc\\EXE02\\githubmoca\\MOCA_BE\\MOCA\\MOCA_Repositories\\Entities\\CommunityReply.cs",
-              "RelativeDocumentMoniker": "MOCA_Repositories\\Entities\\CommunityReply.cs",
-              "ToolTip": "D:\\luan\\hoc\\EXE02\\githubmoca\\MOCA_BE\\MOCA\\MOCA_Repositories\\Entities\\CommunityReply.cs",
-              "RelativeToolTip": "MOCA_Repositories\\Entities\\CommunityReply.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAmAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-22T17:18:32.926Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 37,
-              "Title": "CommunityPost.cs",
-              "DocumentMoniker": "D:\\luan\\hoc\\EXE02\\githubmoca\\MOCA_BE\\MOCA\\MOCA_Repositories\\Entities\\CommunityPost.cs",
-              "RelativeDocumentMoniker": "MOCA_Repositories\\Entities\\CommunityPost.cs",
-              "ToolTip": "D:\\luan\\hoc\\EXE02\\githubmoca\\MOCA_BE\\MOCA\\MOCA_Repositories\\Entities\\CommunityPost.cs",
-              "RelativeToolTip": "MOCA_Repositories\\Entities\\CommunityPost.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAmAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-22T17:18:29.51Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 39,
-              "Title": "Chapter.cs",
-              "DocumentMoniker": "D:\\luan\\hoc\\EXE02\\githubmoca\\MOCA_BE\\MOCA\\MOCA_Repositories\\Entities\\Chapter.cs",
-              "RelativeDocumentMoniker": "MOCA_Repositories\\Entities\\Chapter.cs",
-              "ToolTip": "D:\\luan\\hoc\\EXE02\\githubmoca\\MOCA_BE\\MOCA\\MOCA_Repositories\\Entities\\Chapter.cs",
-              "RelativeToolTip": "MOCA_Repositories\\Entities\\Chapter.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAmAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-22T17:18:25.951Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 40,
-              "Title": "Bookmark.cs",
-              "DocumentMoniker": "D:\\luan\\hoc\\EXE02\\githubmoca\\MOCA_BE\\MOCA\\MOCA_Repositories\\Entities\\Bookmark.cs",
-              "RelativeDocumentMoniker": "MOCA_Repositories\\Entities\\Bookmark.cs",
-              "ToolTip": "D:\\luan\\hoc\\EXE02\\githubmoca\\MOCA_BE\\MOCA\\MOCA_Repositories\\Entities\\Bookmark.cs",
-              "RelativeToolTip": "MOCA_Repositories\\Entities\\Bookmark.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAmAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-22T17:18:22.143Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 38,
-              "Title": "Advertisement.cs",
-              "DocumentMoniker": "D:\\luan\\hoc\\EXE02\\githubmoca\\MOCA_BE\\MOCA\\MOCA_Repositories\\Entities\\Advertisement.cs",
-              "RelativeDocumentMoniker": "MOCA_Repositories\\Entities\\Advertisement.cs",
-              "ToolTip": "D:\\luan\\hoc\\EXE02\\githubmoca\\MOCA_BE\\MOCA\\MOCA_Repositories\\Entities\\Advertisement.cs",
-              "RelativeToolTip": "MOCA_Repositories\\Entities\\Advertisement.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-22T17:18:01.138Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 41,
-              "Title": "appsettings.json",
-              "DocumentMoniker": "D:\\luan\\hoc\\EXE02\\githubmoca\\MOCA_BE\\MOCA\\MOCA.Api\\appsettings.json",
-              "RelativeDocumentMoniker": "MOCA.Api\\appsettings.json",
-              "ToolTip": "D:\\luan\\hoc\\EXE02\\githubmoca\\MOCA_BE\\MOCA\\MOCA.Api\\appsettings.json",
-              "RelativeToolTip": "MOCA.Api\\appsettings.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAACIAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-05-22T17:17:03.545Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 42,
               "Title": "RegisterLoginModel.cs",
-              "DocumentMoniker": "D:\\luan\\hoc\\EXE02\\githubmoca\\MOCA_BE\\MOCA\\MOCA_Repositories\\Models\\Login\\RegisterLoginModel.cs",
+              "DocumentMoniker": "G:\\EXE202\\MOCA_BE\\MOCA\\MOCA_Repositories\\Models\\Login\\RegisterLoginModel.cs",
               "RelativeDocumentMoniker": "MOCA_Repositories\\Models\\Login\\RegisterLoginModel.cs",
-              "ToolTip": "D:\\luan\\hoc\\EXE02\\githubmoca\\MOCA_BE\\MOCA\\MOCA_Repositories\\Models\\Login\\RegisterLoginModel.cs",
+              "ToolTip": "G:\\EXE202\\MOCA_BE\\MOCA\\MOCA_Repositories\\Models\\Login\\RegisterLoginModel.cs",
               "RelativeToolTip": "MOCA_Repositories\\Models\\Login\\RegisterLoginModel.cs",
               "ViewState": "AgIAAAYAAAAAAAAAAAAAABkAAAApAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -749,15 +480,743 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 43,
+              "DocumentIndex": 18,
+              "Title": "IAuthenService.cs",
+              "DocumentMoniker": "G:\\EXE202\\MOCA_BE\\MOCA\\MOCA_Services\\Interfaces\\IAuthenService.cs",
+              "RelativeDocumentMoniker": "MOCA_Services\\Interfaces\\IAuthenService.cs",
+              "ToolTip": "G:\\EXE202\\MOCA_BE\\MOCA\\MOCA_Services\\Interfaces\\IAuthenService.cs",
+              "RelativeToolTip": "MOCA_Services\\Interfaces\\IAuthenService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAqwBAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-22T17:34:56.455Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "Program.cs",
+              "DocumentMoniker": "G:\\EXE202\\MOCA_BE\\MOCA\\MOCA.Api\\Program.cs",
+              "RelativeDocumentMoniker": "MOCA.Api\\Program.cs",
+              "ToolTip": "G:\\EXE202\\MOCA_BE\\MOCA\\MOCA.Api\\Program.cs",
+              "RelativeToolTip": "MOCA.Api\\Program.cs",
+              "ViewState": "AgIAAEIAAAAAAAAAAAAuwEkAAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-22T17:37:56.186Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "ILessonServices.cs",
+              "DocumentMoniker": "G:\\EXE202\\MOCA_BE\\MOCA\\MOCA_Services\\Interfaces\\ILessonServices.cs",
+              "RelativeDocumentMoniker": "MOCA_Services\\Interfaces\\ILessonServices.cs",
+              "ToolTip": "G:\\EXE202\\MOCA_BE\\MOCA\\MOCA_Services\\Interfaces\\ILessonServices.cs",
+              "RelativeToolTip": "MOCA_Services\\Interfaces\\ILessonServices.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-23T14:42:55.926Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "IChapterServices.cs",
+              "DocumentMoniker": "G:\\EXE202\\MOCA_BE\\MOCA\\MOCA_Services\\Interfaces\\IChapterServices.cs",
+              "RelativeDocumentMoniker": "MOCA_Services\\Interfaces\\IChapterServices.cs",
+              "ToolTip": "G:\\EXE202\\MOCA_BE\\MOCA\\MOCA_Services\\Interfaces\\IChapterServices.cs",
+              "RelativeToolTip": "MOCA_Services\\Interfaces\\IChapterServices.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAuwAoAAAAlAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-27T08:47:36.498Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "ICourseServices.cs",
+              "DocumentMoniker": "G:\\EXE202\\MOCA_BE\\MOCA\\MOCA_Services\\Interfaces\\ICourseServices.cs",
+              "RelativeDocumentMoniker": "MOCA_Services\\Interfaces\\ICourseServices.cs",
+              "ToolTip": "G:\\EXE202\\MOCA_BE\\MOCA\\MOCA_Services\\Interfaces\\ICourseServices.cs",
+              "RelativeToolTip": "MOCA_Services\\Interfaces\\ICourseServices.cs",
+              "ViewState": "AgIAAAIAAAAAAAAAAAAUwAsAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-27T09:38:56.638Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "AuthenController.cs",
+              "DocumentMoniker": "G:\\EXE202\\MOCA_BE\\MOCA\\MOCA.Api\\Controllers\\AuthenController.cs",
+              "RelativeDocumentMoniker": "MOCA.Api\\Controllers\\AuthenController.cs",
+              "ToolTip": "G:\\EXE202\\MOCA_BE\\MOCA\\MOCA.Api\\Controllers\\AuthenController.cs",
+              "RelativeToolTip": "MOCA.Api\\Controllers\\AuthenController.cs",
+              "ViewState": "AgIAAEgAAAAAAAAAAAAYwDYAAAAwAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-22T17:54:20.511Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
               "Title": "LoginModel.cs",
-              "DocumentMoniker": "D:\\luan\\hoc\\EXE02\\githubmoca\\MOCA_BE\\MOCA\\MOCA_Repositories\\Models\\Login\\LoginModel.cs",
+              "DocumentMoniker": "G:\\EXE202\\MOCA_BE\\MOCA\\MOCA_Repositories\\Models\\Login\\LoginModel.cs",
               "RelativeDocumentMoniker": "MOCA_Repositories\\Models\\Login\\LoginModel.cs",
-              "ToolTip": "D:\\luan\\hoc\\EXE02\\githubmoca\\MOCA_BE\\MOCA\\MOCA_Repositories\\Models\\Login\\LoginModel.cs",
+              "ToolTip": "G:\\EXE202\\MOCA_BE\\MOCA\\MOCA_Repositories\\Models\\Login\\LoginModel.cs",
               "RelativeToolTip": "MOCA_Repositories\\Models\\Login\\LoginModel.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAoAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-05-22T17:05:31.996Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "AddChapterModel.cs",
+              "DocumentMoniker": "G:\\EXE202\\MOCA_BE\\MOCA\\MOCA_Repositories\\Models\\ChapterDTO\\AddChapterModel.cs",
+              "RelativeDocumentMoniker": "MOCA_Repositories\\Models\\ChapterDTO\\AddChapterModel.cs",
+              "ToolTip": "G:\\EXE202\\MOCA_BE\\MOCA\\MOCA_Repositories\\Models\\ChapterDTO\\AddChapterModel.cs",
+              "RelativeToolTip": "MOCA_Repositories\\Models\\ChapterDTO\\AddChapterModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAtAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-27T08:08:41.301Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "CourseSearchOptions.cs",
+              "DocumentMoniker": "G:\\EXE202\\MOCA_BE\\MOCA\\MOCA_Repositories\\Models\\CourseDTO\\CourseSearchOptions.cs",
+              "RelativeDocumentMoniker": "MOCA_Repositories\\Models\\CourseDTO\\CourseSearchOptions.cs",
+              "ToolTip": "G:\\EXE202\\MOCA_BE\\MOCA\\MOCA_Repositories\\Models\\CourseDTO\\CourseSearchOptions.cs",
+              "RelativeToolTip": "MOCA_Repositories\\Models\\CourseDTO\\CourseSearchOptions.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAsAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-27T09:09:12.206Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 23,
+              "Title": "AuthenService.cs",
+              "DocumentMoniker": "G:\\EXE202\\MOCA_BE\\MOCA\\MOCA_Services\\Services\\AuthenService.cs",
+              "RelativeDocumentMoniker": "MOCA_Services\\Services\\AuthenService.cs",
+              "ToolTip": "G:\\EXE202\\MOCA_BE\\MOCA\\MOCA_Services\\Services\\AuthenService.cs",
+              "RelativeToolTip": "MOCA_Services\\Services\\AuthenService.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAAB4AAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-22T17:35:37.593Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 24,
+              "Title": "DependencyInjection.cs",
+              "DocumentMoniker": "G:\\EXE202\\MOCA_BE\\MOCA\\MOCA_Services\\DependencyInjection\\DependencyInjection.cs",
+              "RelativeDocumentMoniker": "MOCA_Services\\DependencyInjection\\DependencyInjection.cs",
+              "ToolTip": "G:\\EXE202\\MOCA_BE\\MOCA\\MOCA_Services\\DependencyInjection\\DependencyInjection.cs",
+              "RelativeToolTip": "MOCA_Services\\DependencyInjection\\DependencyInjection.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAABEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-22T17:37:41.182Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 26,
+              "Title": "CourseViewGET.cs",
+              "DocumentMoniker": "G:\\EXE202\\MOCA_BE\\MOCA\\MOCA_Repositories\\Models\\CourseDTO\\CourseViewGET.cs",
+              "RelativeDocumentMoniker": "MOCA_Repositories\\Models\\CourseDTO\\CourseViewGET.cs",
+              "ToolTip": "G:\\EXE202\\MOCA_BE\\MOCA\\MOCA_Repositories\\Models\\CourseDTO\\CourseViewGET.cs",
+              "RelativeToolTip": "MOCA_Repositories\\Models\\CourseDTO\\CourseViewGET.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAsAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-27T08:55:13.23Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 25,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "G:\\EXE202\\MOCA_BE\\MOCA\\MOCA.Api\\appsettings.json",
+              "RelativeDocumentMoniker": "MOCA.Api\\appsettings.json",
+              "ToolTip": "G:\\EXE202\\MOCA_BE\\MOCA\\MOCA.Api\\appsettings.json",
+              "RelativeToolTip": "MOCA.Api\\appsettings.json",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAAAgAAAAEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-05-22T17:17:03.545Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 27,
+              "Title": "ICourseRepository.cs",
+              "DocumentMoniker": "G:\\EXE202\\MOCA_BE\\MOCA\\MOCA_Repositories\\Interfaces\\ICourseRepository.cs",
+              "RelativeDocumentMoniker": "MOCA_Repositories\\Interfaces\\ICourseRepository.cs",
+              "ToolTip": "G:\\EXE202\\MOCA_BE\\MOCA\\MOCA_Repositories\\Interfaces\\ICourseRepository.cs",
+              "RelativeToolTip": "MOCA_Repositories\\Interfaces\\ICourseRepository.cs",
+              "ViewState": "AgIAAAIAAAAAAAAAAAAUwAoAAAAmAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-27T08:52:26.375Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 29,
+              "Title": "ILessonsRepository.cs",
+              "DocumentMoniker": "G:\\EXE202\\MOCA_BE\\MOCA\\MOCA_Repositories\\Interfaces\\ILessonsRepository.cs",
+              "RelativeDocumentMoniker": "MOCA_Repositories\\Interfaces\\ILessonsRepository.cs",
+              "ToolTip": "G:\\EXE202\\MOCA_BE\\MOCA\\MOCA_Repositories\\Interfaces\\ILessonsRepository.cs",
+              "RelativeToolTip": "MOCA_Repositories\\Interfaces\\ILessonsRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAApAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-23T08:24:10.203Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 30,
+              "Title": "IAuthenRepository.cs",
+              "DocumentMoniker": "G:\\EXE202\\MOCA_BE\\MOCA\\MOCA_Repositories\\Interfaces\\IAuthenRepository.cs",
+              "RelativeDocumentMoniker": "MOCA_Repositories\\Interfaces\\IAuthenRepository.cs",
+              "ToolTip": "G:\\EXE202\\MOCA_BE\\MOCA\\MOCA_Repositories\\Interfaces\\IAuthenRepository.cs",
+              "RelativeToolTip": "MOCA_Repositories\\Interfaces\\IAuthenRepository.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAmwBAAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-22T17:07:19.64Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 28,
+              "Title": "IChapterRepository.cs",
+              "DocumentMoniker": "G:\\EXE202\\MOCA_BE\\MOCA\\MOCA_Repositories\\Interfaces\\IChapterRepository.cs",
+              "RelativeDocumentMoniker": "MOCA_Repositories\\Interfaces\\IChapterRepository.cs",
+              "ToolTip": "G:\\EXE202\\MOCA_BE\\MOCA\\MOCA_Repositories\\Interfaces\\IChapterRepository.cs",
+              "RelativeToolTip": "MOCA_Repositories\\Interfaces\\IChapterRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAAhAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-27T08:04:24.221Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 31,
+              "Title": "ChapterServices.cs",
+              "DocumentMoniker": "G:\\EXE202\\MOCA_BE\\MOCA\\MOCA_Services\\Services\\ChapterServices.cs",
+              "RelativeDocumentMoniker": "MOCA_Services\\Services\\ChapterServices.cs",
+              "ToolTip": "G:\\EXE202\\MOCA_BE\\MOCA\\MOCA_Services\\Services\\ChapterServices.cs",
+              "RelativeToolTip": "MOCA_Services\\Services\\ChapterServices.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAzAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-27T08:48:18.095Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 32,
+              "Title": "CourseServices.cs",
+              "DocumentMoniker": "G:\\EXE202\\MOCA_BE\\MOCA\\MOCA_Services\\Services\\CourseServices.cs",
+              "RelativeDocumentMoniker": "MOCA_Services\\Services\\CourseServices.cs",
+              "ToolTip": "G:\\EXE202\\MOCA_BE\\MOCA\\MOCA_Services\\Services\\CourseServices.cs",
+              "RelativeToolTip": "MOCA_Services\\Services\\CourseServices.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAA9AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-27T09:40:03.461Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 33,
+              "Title": "LessonServices.cs",
+              "DocumentMoniker": "G:\\EXE202\\MOCA_BE\\MOCA\\MOCA_Services\\Services\\LessonServices.cs",
+              "RelativeDocumentMoniker": "MOCA_Services\\Services\\LessonServices.cs",
+              "ToolTip": "G:\\EXE202\\MOCA_BE\\MOCA\\MOCA_Services\\Services\\LessonServices.cs",
+              "RelativeToolTip": "MOCA_Services\\Services\\LessonServices.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAABCAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-23T14:45:12.478Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 34,
+              "Title": "UpdateLessonModel.cs",
+              "DocumentMoniker": "G:\\EXE202\\MOCA_BE\\MOCA\\MOCA_Repositories\\Models\\LessonDTO\\UpdateLessonModel.cs",
+              "RelativeDocumentMoniker": "MOCA_Repositories\\Models\\LessonDTO\\UpdateLessonModel.cs",
+              "ToolTip": "G:\\EXE202\\MOCA_BE\\MOCA\\MOCA_Repositories\\Models\\LessonDTO\\UpdateLessonModel.cs",
+              "RelativeToolTip": "MOCA_Repositories\\Models\\LessonDTO\\UpdateLessonModel.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAoAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-23T08:26:55.149Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 35,
+              "Title": "Chapter.cs",
+              "DocumentMoniker": "G:\\EXE202\\MOCA_BE\\MOCA\\MOCA_Repositories\\Enitities\\Chapter.cs",
+              "RelativeDocumentMoniker": "MOCA_Repositories\\Enitities\\Chapter.cs",
+              "ToolTip": "G:\\EXE202\\MOCA_BE\\MOCA\\MOCA_Repositories\\Enitities\\Chapter.cs",
+              "RelativeToolTip": "MOCA_Repositories\\Enitities\\Chapter.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAZAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-27T08:28:01.179Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 36,
+              "Title": "Course.cs",
+              "DocumentMoniker": "G:\\EXE202\\MOCA_BE\\MOCA\\MOCA_Repositories\\Enitities\\Course.cs",
+              "RelativeDocumentMoniker": "MOCA_Repositories\\Enitities\\Course.cs",
+              "ToolTip": "G:\\EXE202\\MOCA_BE\\MOCA\\MOCA_Repositories\\Enitities\\Course.cs",
+              "RelativeToolTip": "MOCA_Repositories\\Enitities\\Course.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAAAUAAAAlAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-27T13:31:59.682Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 37,
+              "Title": "BabyTracking.cs",
+              "DocumentMoniker": "G:\\EXE202\\MOCA_BE\\MOCA\\MOCA_Repositories\\Enitities\\BabyTracking.cs",
+              "RelativeDocumentMoniker": "MOCA_Repositories\\Enitities\\BabyTracking.cs",
+              "ToolTip": "G:\\EXE202\\MOCA_BE\\MOCA\\MOCA_Repositories\\Enitities\\BabyTracking.cs",
+              "RelativeToolTip": "MOCA_Repositories\\Enitities\\BabyTracking.cs",
+              "ViewState": "AgIAABAAAAAAAAAAAAAgwB0AAAAeAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-22T17:18:16.758Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 38,
+              "Title": "CourseCategory.cs",
+              "DocumentMoniker": "G:\\EXE202\\MOCA_BE\\MOCA\\MOCA_Repositories\\Enitities\\CourseCategory.cs",
+              "RelativeDocumentMoniker": "MOCA_Repositories\\Enitities\\CourseCategory.cs",
+              "ToolTip": "G:\\EXE202\\MOCA_BE\\MOCA\\MOCA_Repositories\\Enitities\\CourseCategory.cs",
+              "RelativeToolTip": "MOCA_Repositories\\Enitities\\CourseCategory.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAmAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-22T17:18:46.204Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 40,
+              "Title": "BookingPayment.cs",
+              "DocumentMoniker": "G:\\EXE202\\MOCA_BE\\MOCA\\MOCA_Repositories\\Enitities\\BookingPayment.cs",
+              "RelativeDocumentMoniker": "MOCA_Repositories\\Enitities\\BookingPayment.cs",
+              "ToolTip": "G:\\EXE202\\MOCA_BE\\MOCA\\MOCA_Repositories\\Enitities\\BookingPayment.cs",
+              "RelativeToolTip": "MOCA_Repositories\\Enitities\\BookingPayment.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAwBkAAAAcAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-22T17:18:19.459Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 41,
+              "Title": "Advertisement.cs",
+              "DocumentMoniker": "G:\\EXE202\\MOCA_BE\\MOCA\\MOCA_Repositories\\Enitities\\Advertisement.cs",
+              "RelativeDocumentMoniker": "MOCA_Repositories\\Enitities\\Advertisement.cs",
+              "ToolTip": "G:\\EXE202\\MOCA_BE\\MOCA\\MOCA_Repositories\\Enitities\\Advertisement.cs",
+              "RelativeToolTip": "MOCA_Repositories\\Enitities\\Advertisement.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-22T17:18:01.138Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 39,
+              "Title": "DoctorBooking.cs",
+              "DocumentMoniker": "G:\\EXE202\\MOCA_BE\\MOCA\\MOCA_Repositories\\Enitities\\DoctorBooking.cs",
+              "RelativeDocumentMoniker": "MOCA_Repositories\\Enitities\\DoctorBooking.cs",
+              "ToolTip": "G:\\EXE202\\MOCA_BE\\MOCA\\MOCA_Repositories\\Enitities\\DoctorBooking.cs",
+              "RelativeToolTip": "MOCA_Repositories\\Enitities\\DoctorBooking.cs",
+              "ViewState": "AgIAABIAAAAAAAAAAAAowAUAAAAlAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-22T17:19:15.554Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 42,
+              "Title": "Feedback.cs",
+              "DocumentMoniker": "G:\\EXE202\\MOCA_BE\\MOCA\\MOCA_Repositories\\Enitities\\Feedback.cs",
+              "RelativeDocumentMoniker": "MOCA_Repositories\\Enitities\\Feedback.cs",
+              "ToolTip": "G:\\EXE202\\MOCA_BE\\MOCA\\MOCA_Repositories\\Enitities\\Feedback.cs",
+              "RelativeToolTip": "MOCA_Repositories\\Enitities\\Feedback.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAmAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-22T17:19:24.712Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 43,
+              "Title": "GenericRepository.cs",
+              "DocumentMoniker": "G:\\EXE202\\MOCA_BE\\MOCA\\MOCA_Repositories\\Generic\\GenericRepository.cs",
+              "RelativeDocumentMoniker": "MOCA_Repositories\\Generic\\GenericRepository.cs",
+              "ToolTip": "G:\\EXE202\\MOCA_BE\\MOCA\\MOCA_Repositories\\Generic\\GenericRepository.cs",
+              "RelativeToolTip": "MOCA_Repositories\\Generic\\GenericRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAmAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-22T17:21:32.248Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 44,
+              "Title": "PurchasedCourse.cs",
+              "DocumentMoniker": "G:\\EXE202\\MOCA_BE\\MOCA\\MOCA_Repositories\\Enitities\\PurchasedCourse.cs",
+              "RelativeDocumentMoniker": "MOCA_Repositories\\Enitities\\PurchasedCourse.cs",
+              "ToolTip": "G:\\EXE202\\MOCA_BE\\MOCA\\MOCA_Repositories\\Enitities\\PurchasedCourse.cs",
+              "RelativeToolTip": "MOCA_Repositories\\Enitities\\PurchasedCourse.cs",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAYwAUAAAAmAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-22T17:19:47.617Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 45,
+              "Title": "UserPregnancy.cs",
+              "DocumentMoniker": "G:\\EXE202\\MOCA_BE\\MOCA\\MOCA_Repositories\\Enitities\\UserPregnancy.cs",
+              "RelativeDocumentMoniker": "MOCA_Repositories\\Enitities\\UserPregnancy.cs",
+              "ToolTip": "G:\\EXE202\\MOCA_BE\\MOCA\\MOCA_Repositories\\Enitities\\UserPregnancy.cs",
+              "RelativeToolTip": "MOCA_Repositories\\Enitities\\UserPregnancy.cs",
+              "ViewState": "AgIAAAUAAAAAAAAAAAAAwAsAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-22T17:20:04.736Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 46,
+              "Title": "efpt.config.json",
+              "DocumentMoniker": "G:\\EXE202\\MOCA_BE\\MOCA\\MOCA_Repositories\\efpt.config.json",
+              "RelativeDocumentMoniker": "MOCA_Repositories\\efpt.config.json",
+              "ToolTip": "G:\\EXE202\\MOCA_BE\\MOCA\\MOCA_Repositories\\efpt.config.json",
+              "RelativeToolTip": "MOCA_Repositories\\efpt.config.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-05-27T08:42:01.559Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 47,
+              "Title": "ChapterExtensions.cs",
+              "DocumentMoniker": "G:\\EXE202\\MOCA_BE\\MOCA\\MOCA_Repositories\\Extensions\\ChapterExtensions.cs",
+              "RelativeDocumentMoniker": "MOCA_Repositories\\Extensions\\ChapterExtensions.cs",
+              "ToolTip": "G:\\EXE202\\MOCA_BE\\MOCA\\MOCA_Repositories\\Extensions\\ChapterExtensions.cs",
+              "RelativeToolTip": "MOCA_Repositories\\Extensions\\ChapterExtensions.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABgAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-27T08:39:25.327Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 48,
+              "Title": "FilterCriteria.cs",
+              "DocumentMoniker": "G:\\EXE202\\MOCA_BE\\MOCA\\MOCA_Repositories\\Models\\Filter\\FilterCriteria.cs",
+              "RelativeDocumentMoniker": "MOCA_Repositories\\Models\\Filter\\FilterCriteria.cs",
+              "ToolTip": "G:\\EXE202\\MOCA_BE\\MOCA\\MOCA_Repositories\\Models\\Filter\\FilterCriteria.cs",
+              "RelativeToolTip": "MOCA_Repositories\\Models\\Filter\\FilterCriteria.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-23T13:40:42.518Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 49,
+              "Title": "MOCAContextModelSnapshot.cs",
+              "DocumentMoniker": "G:\\EXE202\\MOCA_BE\\MOCA\\MOCA_Repositories\\Migrations\\MOCAContextModelSnapshot.cs",
+              "RelativeDocumentMoniker": "MOCA_Repositories\\Migrations\\MOCAContextModelSnapshot.cs",
+              "ToolTip": "G:\\EXE202\\MOCA_BE\\MOCA\\MOCA_Repositories\\Migrations\\MOCAContextModelSnapshot.cs",
+              "RelativeToolTip": "MOCA_Repositories\\Migrations\\MOCAContextModelSnapshot.cs",
+              "ViewState": "AgIAAGEAAAAAAAAAAAAQwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-23T08:23:22.022Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 70,
+              "Title": "20250523081952_AddStatusToLessonsAndChapters.cs",
+              "DocumentMoniker": "G:\\EXE202\\MOCA_BE\\MOCA\\MOCA_Repositories\\Migrations\\20250523081952_AddStatusToLessonsAndChapters.cs",
+              "RelativeDocumentMoniker": "MOCA_Repositories\\Migrations\\20250523081952_AddStatusToLessonsAndChapters.cs",
+              "ToolTip": "G:\\EXE202\\MOCA_BE\\MOCA\\MOCA_Repositories\\Migrations\\20250523081952_AddStatusToLessonsAndChapters.cs",
+              "RelativeToolTip": "MOCA_Repositories\\Migrations\\20250523081952_AddStatusToLessonsAndChapters.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-23T08:19:52.28Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 50,
+              "Title": "MOCAContext.cs",
+              "DocumentMoniker": "G:\\EXE202\\MOCA_BE\\MOCA\\MOCA_Repositories\\DBContext\\MOCAContext.cs",
+              "RelativeDocumentMoniker": "MOCA_Repositories\\DBContext\\MOCAContext.cs",
+              "ToolTip": "G:\\EXE202\\MOCA_BE\\MOCA\\MOCA_Repositories\\DBContext\\MOCAContext.cs",
+              "RelativeToolTip": "MOCA_Repositories\\DBContext\\MOCAContext.cs",
+              "ViewState": "AgIAAI0AAAAAAAAAAAAmwKEAAAALAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-22T17:20:17.886Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 52,
+              "Title": "IUnitOfWork.cs",
+              "DocumentMoniker": "G:\\EXE202\\MOCA_BE\\MOCA\\MOCA_Repositories\\IUnitOfWork.cs",
+              "RelativeDocumentMoniker": "MOCA_Repositories\\IUnitOfWork.cs",
+              "ToolTip": "G:\\EXE202\\MOCA_BE\\MOCA\\MOCA_Repositories\\IUnitOfWork.cs",
+              "RelativeToolTip": "MOCA_Repositories\\IUnitOfWork.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-22T17:55:42.901Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 51,
+              "Title": "UnitOfWork.cs",
+              "DocumentMoniker": "G:\\EXE202\\MOCA_BE\\MOCA\\MOCA_Repositories\\UnitOfWork.cs",
+              "RelativeDocumentMoniker": "MOCA_Repositories\\UnitOfWork.cs",
+              "ToolTip": "G:\\EXE202\\MOCA_BE\\MOCA\\MOCA_Repositories\\UnitOfWork.cs",
+              "RelativeToolTip": "MOCA_Repositories\\UnitOfWork.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-22T17:56:07.017Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 55,
+              "Title": "IRepository.cs",
+              "DocumentMoniker": "G:\\EXE202\\MOCA_BE\\MOCA\\MOCA_Repositories\\IRepository.cs",
+              "RelativeDocumentMoniker": "MOCA_Repositories\\IRepository.cs",
+              "ToolTip": "G:\\EXE202\\MOCA_BE\\MOCA\\MOCA_Repositories\\IRepository.cs",
+              "RelativeToolTip": "MOCA_Repositories\\IRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-22T17:26:25.524Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 54,
+              "Title": "Repository.cs",
+              "DocumentMoniker": "G:\\EXE202\\MOCA_BE\\MOCA\\MOCA_Repositories\\Repository.cs",
+              "RelativeDocumentMoniker": "MOCA_Repositories\\Repository.cs",
+              "ToolTip": "G:\\EXE202\\MOCA_BE\\MOCA\\MOCA_Repositories\\Repository.cs",
+              "RelativeToolTip": "MOCA_Repositories\\Repository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAmAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-22T17:25:34.503Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 53,
+              "Title": "User.cs",
+              "DocumentMoniker": "G:\\EXE202\\MOCA_BE\\MOCA\\MOCA_Repositories\\Enitities\\User.cs",
+              "RelativeDocumentMoniker": "MOCA_Repositories\\Enitities\\User.cs",
+              "ToolTip": "G:\\EXE202\\MOCA_BE\\MOCA\\MOCA_Repositories\\Enitities\\User.cs",
+              "RelativeToolTip": "MOCA_Repositories\\Enitities\\User.cs",
+              "ViewState": "AgIAAB0AAAAAAAAAAAAkwC8AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-22T16:54:58.244Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 56,
+              "Title": "Role.cs",
+              "DocumentMoniker": "G:\\EXE202\\MOCA_BE\\MOCA\\MOCA_Repositories\\Enitities\\Role.cs",
+              "RelativeDocumentMoniker": "MOCA_Repositories\\Enitities\\Role.cs",
+              "ToolTip": "G:\\EXE202\\MOCA_BE\\MOCA\\MOCA_Repositories\\Enitities\\Role.cs",
+              "RelativeToolTip": "MOCA_Repositories\\Enitities\\Role.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAmAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-22T17:19:57.414Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 57,
+              "Title": "RefLect.cs",
+              "DocumentMoniker": "G:\\EXE202\\MOCA_BE\\MOCA\\MOCA_Repositories\\Enitities\\RefLect.cs",
+              "RelativeDocumentMoniker": "MOCA_Repositories\\Enitities\\RefLect.cs",
+              "ToolTip": "G:\\EXE202\\MOCA_BE\\MOCA\\MOCA_Repositories\\Enitities\\RefLect.cs",
+              "RelativeToolTip": "MOCA_Repositories\\Enitities\\RefLect.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAmAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-22T17:19:54.334Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 58,
+              "Title": "PurchasePackage.cs",
+              "DocumentMoniker": "G:\\EXE202\\MOCA_BE\\MOCA\\MOCA_Repositories\\Enitities\\PurchasePackage.cs",
+              "RelativeDocumentMoniker": "MOCA_Repositories\\Enitities\\PurchasePackage.cs",
+              "ToolTip": "G:\\EXE202\\MOCA_BE\\MOCA\\MOCA_Repositories\\Enitities\\PurchasePackage.cs",
+              "RelativeToolTip": "MOCA_Repositories\\Enitities\\PurchasePackage.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAmAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-22T17:19:50.772Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 59,
+              "Title": "PregnancyTracking.cs",
+              "DocumentMoniker": "G:\\EXE202\\MOCA_BE\\MOCA\\MOCA_Repositories\\Enitities\\PregnancyTracking.cs",
+              "RelativeDocumentMoniker": "MOCA_Repositories\\Enitities\\PregnancyTracking.cs",
+              "ToolTip": "G:\\EXE202\\MOCA_BE\\MOCA\\MOCA_Repositories\\Enitities\\PregnancyTracking.cs",
+              "RelativeToolTip": "MOCA_Repositories\\Enitities\\PregnancyTracking.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAmAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-22T17:19:43.999Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 60,
+              "Title": "PostLike.cs",
+              "DocumentMoniker": "G:\\EXE202\\MOCA_BE\\MOCA\\MOCA_Repositories\\Enitities\\PostLike.cs",
+              "RelativeDocumentMoniker": "MOCA_Repositories\\Enitities\\PostLike.cs",
+              "ToolTip": "G:\\EXE202\\MOCA_BE\\MOCA\\MOCA_Repositories\\Enitities\\PostLike.cs",
+              "RelativeToolTip": "MOCA_Repositories\\Enitities\\PostLike.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAmAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-22T17:19:40.789Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 61,
+              "Title": "Package.cs",
+              "DocumentMoniker": "G:\\EXE202\\MOCA_BE\\MOCA\\MOCA_Repositories\\Enitities\\Package.cs",
+              "RelativeDocumentMoniker": "MOCA_Repositories\\Enitities\\Package.cs",
+              "ToolTip": "G:\\EXE202\\MOCA_BE\\MOCA\\MOCA_Repositories\\Enitities\\Package.cs",
+              "RelativeToolTip": "MOCA_Repositories\\Enitities\\Package.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAmAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-22T17:19:37.806Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 62,
+              "Title": "MomProfile.cs",
+              "DocumentMoniker": "G:\\EXE202\\MOCA_BE\\MOCA\\MOCA_Repositories\\Enitities\\MomProfile.cs",
+              "RelativeDocumentMoniker": "MOCA_Repositories\\Enitities\\MomProfile.cs",
+              "ToolTip": "G:\\EXE202\\MOCA_BE\\MOCA\\MOCA_Repositories\\Enitities\\MomProfile.cs",
+              "RelativeToolTip": "MOCA_Repositories\\Enitities\\MomProfile.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAmAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-22T17:19:34.774Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 63,
+              "Title": "MessagesWithDoctor.cs",
+              "DocumentMoniker": "G:\\EXE202\\MOCA_BE\\MOCA\\MOCA_Repositories\\Enitities\\MessagesWithDoctor.cs",
+              "RelativeDocumentMoniker": "MOCA_Repositories\\Enitities\\MessagesWithDoctor.cs",
+              "ToolTip": "G:\\EXE202\\MOCA_BE\\MOCA\\MOCA_Repositories\\Enitities\\MessagesWithDoctor.cs",
+              "RelativeToolTip": "MOCA_Repositories\\Enitities\\MessagesWithDoctor.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAmAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-22T17:19:31.637Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 64,
+              "Title": "DoctorProfile.cs",
+              "DocumentMoniker": "G:\\EXE202\\MOCA_BE\\MOCA\\MOCA_Repositories\\Enitities\\DoctorProfile.cs",
+              "RelativeDocumentMoniker": "MOCA_Repositories\\Enitities\\DoctorProfile.cs",
+              "ToolTip": "G:\\EXE202\\MOCA_BE\\MOCA\\MOCA_Repositories\\Enitities\\DoctorProfile.cs",
+              "RelativeToolTip": "MOCA_Repositories\\Enitities\\DoctorProfile.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAmAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-22T17:19:21.973Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 65,
+              "Title": "DoctorContact.cs",
+              "DocumentMoniker": "G:\\EXE202\\MOCA_BE\\MOCA\\MOCA_Repositories\\Enitities\\DoctorContact.cs",
+              "RelativeDocumentMoniker": "MOCA_Repositories\\Enitities\\DoctorContact.cs",
+              "ToolTip": "G:\\EXE202\\MOCA_BE\\MOCA\\MOCA_Repositories\\Enitities\\DoctorContact.cs",
+              "RelativeToolTip": "MOCA_Repositories\\Enitities\\DoctorContact.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAmAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-22T17:19:19.129Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 66,
+              "Title": "Discount.cs",
+              "DocumentMoniker": "G:\\EXE202\\MOCA_BE\\MOCA\\MOCA_Repositories\\Enitities\\Discount.cs",
+              "RelativeDocumentMoniker": "MOCA_Repositories\\Enitities\\Discount.cs",
+              "ToolTip": "G:\\EXE202\\MOCA_BE\\MOCA\\MOCA_Repositories\\Enitities\\Discount.cs",
+              "RelativeToolTip": "MOCA_Repositories\\Enitities\\Discount.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAmAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-22T17:19:11.688Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 67,
+              "Title": "CommunityReply.cs",
+              "DocumentMoniker": "G:\\EXE202\\MOCA_BE\\MOCA\\MOCA_Repositories\\Enitities\\CommunityReply.cs",
+              "RelativeDocumentMoniker": "MOCA_Repositories\\Enitities\\CommunityReply.cs",
+              "ToolTip": "G:\\EXE202\\MOCA_BE\\MOCA\\MOCA_Repositories\\Enitities\\CommunityReply.cs",
+              "RelativeToolTip": "MOCA_Repositories\\Enitities\\CommunityReply.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAmAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-22T17:18:32.926Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 68,
+              "Title": "CommunityPost.cs",
+              "DocumentMoniker": "G:\\EXE202\\MOCA_BE\\MOCA\\MOCA_Repositories\\Enitities\\CommunityPost.cs",
+              "RelativeDocumentMoniker": "MOCA_Repositories\\Enitities\\CommunityPost.cs",
+              "ToolTip": "G:\\EXE202\\MOCA_BE\\MOCA\\MOCA_Repositories\\Enitities\\CommunityPost.cs",
+              "RelativeToolTip": "MOCA_Repositories\\Enitities\\CommunityPost.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAmAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-22T17:18:29.51Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 69,
+              "Title": "Bookmark.cs",
+              "DocumentMoniker": "G:\\EXE202\\MOCA_BE\\MOCA\\MOCA_Repositories\\Enitities\\Bookmark.cs",
+              "RelativeDocumentMoniker": "MOCA_Repositories\\Enitities\\Bookmark.cs",
+              "ToolTip": "G:\\EXE202\\MOCA_BE\\MOCA\\MOCA_Repositories\\Enitities\\Bookmark.cs",
+              "RelativeToolTip": "MOCA_Repositories\\Enitities\\Bookmark.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAmAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-22T17:18:22.143Z",
               "EditorCaption": ""
             }
           ]

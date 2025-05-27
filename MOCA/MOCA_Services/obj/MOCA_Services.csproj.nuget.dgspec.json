@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "D:\\luan\\hoc\\EXE02\\githubmoca\\MOCA_BE\\MOCA\\MOCA_Services\\MOCA_Services.csproj": {}
+    "G:\\EXE202\\MOCA_BE\\MOCA\\MOCA_Services\\MOCA_Services.csproj": {}
   },
   "projects": {
-    "D:\\luan\\hoc\\EXE02\\githubmoca\\MOCA_BE\\MOCA\\MOCA_Repositories\\MOCA_Repositories.csproj": {
+    "G:\\EXE202\\MOCA_BE\\MOCA\\MOCA_Repositories\\MOCA_Repositories.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\luan\\hoc\\EXE02\\githubmoca\\MOCA_BE\\MOCA\\MOCA_Repositories\\MOCA_Repositories.csproj",
+        "projectUniqueName": "G:\\EXE202\\MOCA_BE\\MOCA\\MOCA_Repositories\\MOCA_Repositories.csproj",
         "projectName": "MOCA_Repositories",
-        "projectPath": "D:\\luan\\hoc\\EXE02\\githubmoca\\MOCA_BE\\MOCA\\MOCA_Repositories\\MOCA_Repositories.csproj",
-        "packagesPath": "C:\\Users\\luann\\.nuget\\packages\\",
-        "outputPath": "D:\\luan\\hoc\\EXE02\\githubmoca\\MOCA_BE\\MOCA\\MOCA_Repositories\\obj\\",
+        "projectPath": "G:\\EXE202\\MOCA_BE\\MOCA\\MOCA_Repositories\\MOCA_Repositories.csproj",
+        "packagesPath": "C:\\Users\\Khanh Hung\\.nuget\\packages\\",
+        "outputPath": "G:\\EXE202\\MOCA_BE\\MOCA\\MOCA_Repositories\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\luann\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Khanh Hung\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -58,6 +58,10 @@
             "BCrypt.Net-Next": {
               "target": "Package",
               "version": "[4.0.3, )"
+            },
+            "Microsoft.AspNetCore.Http.Features": {
+              "target": "Package",
+              "version": "[5.0.17, )"
             },
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",
@@ -112,20 +116,20 @@
         }
       }
     },
-    "D:\\luan\\hoc\\EXE02\\githubmoca\\MOCA_BE\\MOCA\\MOCA_Services\\MOCA_Services.csproj": {
+    "G:\\EXE202\\MOCA_BE\\MOCA\\MOCA_Services\\MOCA_Services.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\luan\\hoc\\EXE02\\githubmoca\\MOCA_BE\\MOCA\\MOCA_Services\\MOCA_Services.csproj",
+        "projectUniqueName": "G:\\EXE202\\MOCA_BE\\MOCA\\MOCA_Services\\MOCA_Services.csproj",
         "projectName": "MOCA_Services",
-        "projectPath": "D:\\luan\\hoc\\EXE02\\githubmoca\\MOCA_BE\\MOCA\\MOCA_Services\\MOCA_Services.csproj",
-        "packagesPath": "C:\\Users\\luann\\.nuget\\packages\\",
-        "outputPath": "D:\\luan\\hoc\\EXE02\\githubmoca\\MOCA_BE\\MOCA\\MOCA_Services\\obj\\",
+        "projectPath": "G:\\EXE202\\MOCA_BE\\MOCA\\MOCA_Services\\MOCA_Services.csproj",
+        "packagesPath": "C:\\Users\\Khanh Hung\\.nuget\\packages\\",
+        "outputPath": "G:\\EXE202\\MOCA_BE\\MOCA\\MOCA_Services\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\luann\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Khanh Hung\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -141,8 +145,8 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "D:\\luan\\hoc\\EXE02\\githubmoca\\MOCA_BE\\MOCA\\MOCA_Repositories\\MOCA_Repositories.csproj": {
-                "projectPath": "D:\\luan\\hoc\\EXE02\\githubmoca\\MOCA_BE\\MOCA\\MOCA_Repositories\\MOCA_Repositories.csproj"
+              "G:\\EXE202\\MOCA_BE\\MOCA\\MOCA_Repositories\\MOCA_Repositories.csproj": {
+                "projectPath": "G:\\EXE202\\MOCA_BE\\MOCA\\MOCA_Repositories\\MOCA_Repositories.csproj"
               }
             }
           }

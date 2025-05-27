@@ -120,6 +120,23 @@
           "Microsoft.AspNetCore.App"
         ]
       },
+      "Microsoft.AspNetCore.Http.Features/5.0.17": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Extensions.Primitives": "5.0.1",
+          "System.IO.Pipelines": "5.0.2"
+        },
+        "compile": {
+          "lib/net5.0/Microsoft.AspNetCore.Http.Features.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net5.0/Microsoft.AspNetCore.Http.Features.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "Microsoft.Bcl.AsyncInterfaces/6.0.0": {
         "type": "package",
         "compile": {
@@ -1384,7 +1401,7 @@
       "System.IO.Pipelines/6.0.3": {
         "type": "package",
         "compile": {
-          "lib/net6.0/_._": {
+          "lib/net6.0/System.IO.Pipelines.dll": {
             "related": ".xml"
           }
         },
@@ -1720,6 +1737,7 @@
         "dependencies": {
           "AutoMapper": "8.1.1",
           "BCrypt.Net-Next": "4.0.3",
+          "Microsoft.AspNetCore.Http.Features": "5.0.17",
           "Microsoft.EntityFrameworkCore": "8.0.5",
           "Microsoft.EntityFrameworkCore.SqlServer": "8.0.5",
           "Microsoft.Extensions.Configuration": "8.0.0",
@@ -1882,6 +1900,25 @@
         "lib/net8.0/Microsoft.AspNetCore.Authentication.JwtBearer.xml",
         "microsoft.aspnetcore.authentication.jwtbearer.8.0.5.nupkg.sha512",
         "microsoft.aspnetcore.authentication.jwtbearer.nuspec"
+      ]
+    },
+    "Microsoft.AspNetCore.Http.Features/5.0.17": {
+      "sha512": "3jG2xS+dx8DDCGV/F+STdPTg89lX3ao3dF/VEPvJaz3wzBIjuadipTtYNEXDIVuOPZwb6jdmhrX9jkzOIBm5cw==",
+      "type": "package",
+      "path": "microsoft.aspnetcore.http.features/5.0.17",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "THIRD-PARTY-NOTICES.TXT",
+        "lib/net461/Microsoft.AspNetCore.Http.Features.dll",
+        "lib/net461/Microsoft.AspNetCore.Http.Features.xml",
+        "lib/net5.0/Microsoft.AspNetCore.Http.Features.dll",
+        "lib/net5.0/Microsoft.AspNetCore.Http.Features.xml",
+        "lib/netstandard2.0/Microsoft.AspNetCore.Http.Features.dll",
+        "lib/netstandard2.0/Microsoft.AspNetCore.Http.Features.xml",
+        "microsoft.aspnetcore.http.features.5.0.17.nupkg.sha512",
+        "microsoft.aspnetcore.http.features.nuspec"
       ]
     },
     "Microsoft.Bcl.AsyncInterfaces/6.0.0": {
@@ -4756,23 +4793,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\luann\\.nuget\\packages\\": {},
+    "C:\\Users\\Khanh Hung\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\luan\\hoc\\EXE02\\githubmoca\\MOCA_BE\\MOCA\\MOCA.Api\\MOCA.Api.csproj",
+      "projectUniqueName": "G:\\EXE202\\MOCA_BE\\MOCA\\MOCA.Api\\MOCA.Api.csproj",
       "projectName": "MOCA.Api",
-      "projectPath": "D:\\luan\\hoc\\EXE02\\githubmoca\\MOCA_BE\\MOCA\\MOCA.Api\\MOCA.Api.csproj",
-      "packagesPath": "C:\\Users\\luann\\.nuget\\packages\\",
-      "outputPath": "D:\\luan\\hoc\\EXE02\\githubmoca\\MOCA_BE\\MOCA\\MOCA.Api\\obj\\",
+      "projectPath": "G:\\EXE202\\MOCA_BE\\MOCA\\MOCA.Api\\MOCA.Api.csproj",
+      "packagesPath": "C:\\Users\\Khanh Hung\\.nuget\\packages\\",
+      "outputPath": "G:\\EXE202\\MOCA_BE\\MOCA\\MOCA.Api\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\luann\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Khanh Hung\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -4788,8 +4825,8 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "D:\\luan\\hoc\\EXE02\\githubmoca\\MOCA_BE\\MOCA\\MOCA_Services\\MOCA_Services.csproj": {
-              "projectPath": "D:\\luan\\hoc\\EXE02\\githubmoca\\MOCA_BE\\MOCA\\MOCA_Services\\MOCA_Services.csproj"
+            "G:\\EXE202\\MOCA_BE\\MOCA\\MOCA_Services\\MOCA_Services.csproj": {
+              "projectPath": "G:\\EXE202\\MOCA_BE\\MOCA\\MOCA_Services\\MOCA_Services.csproj"
             }
           }
         }

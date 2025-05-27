@@ -14,7 +14,9 @@ namespace MOCA_Services.DependencyInjection
         public static IServiceCollection AddServices(this IServiceCollection service)
         {
             service.AddTransient<IAuthenService, AuthenService>();
-
+            service.AddTransient<ILessonServices, LessonServices>();
+            service.AddTransient<IChapterServices, ChapterServices>();
+            service.AddTransient<ICourseServices, CourseServices>();
 
 
 

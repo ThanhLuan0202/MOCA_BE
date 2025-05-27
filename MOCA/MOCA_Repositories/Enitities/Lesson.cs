@@ -23,5 +23,7 @@ public partial class Lesson
 
     public int? OrderIndex { get; set; }
 
+    public string Status { get; set; }
+
     public virtual Chapter Chapter { get; set; }
 }

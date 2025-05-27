@@ -49,6 +49,7 @@ namespace MOCA_Repositories.Repositories
 
             var claims = new[]
             {
+        new Claim(ClaimTypes.NameIdentifier, user.UserId.ToString()),
         new Claim(ClaimTypes.Name, user.FullName),
         new Claim(ClaimTypes.Role, user.Role.RoleName),
         new Claim(ClaimTypes.Email, user.Email),

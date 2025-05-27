@@ -15,6 +15,8 @@ public partial class Chapter
 
     public int? OrderIndex { get; set; }
 
+    public string Status { get; set; }
+
     public virtual Course Course { get; set; }
 
     public virtual ICollection<Lesson> Lessons { get; set; } = new List<Lesson>();

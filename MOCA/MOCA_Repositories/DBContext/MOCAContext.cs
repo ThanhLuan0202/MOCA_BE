@@ -154,6 +154,7 @@ public partial class MOCAContext : DbContext
             entity.HasKey(e => e.ChapterId).HasName("PK__Chapters__0893A36A9F44940D");
 
             entity.Property(e => e.Title).HasMaxLength(255);
+            entity.Property(e => e.Status).HasMaxLength(20);
 
             entity.HasOne(d => d.Course).WithMany(p => p.Chapters)
                 .HasForeignKey(d => d.CourseId)
@@ -300,6 +301,7 @@ public partial class MOCAContext : DbContext
             entity.Property(e => e.CreateDate).HasColumnType("datetime");
             entity.Property(e => e.Title).HasMaxLength(255);
             entity.Property(e => e.VideoUrl).HasMaxLength(255);
+            entity.Property(e => e.Status).HasMaxLength(20);
 
             entity.HasOne(d => d.Chapter).WithMany(p => p.Lessons)
                 .HasForeignKey(d => d.ChapterId)

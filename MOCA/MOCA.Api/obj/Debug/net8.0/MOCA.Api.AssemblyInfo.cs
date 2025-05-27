@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("MOCA.Api")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+d7dbafc546bbe1f9057d3beb51c1e1df60235c0c")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+4c119e47eeb993436aa23d9c5b8b1539acdfa13f")]
 [assembly: System.Reflection.AssemblyProductAttribute("MOCA.Api")]
 [assembly: System.Reflection.AssemblyTitleAttribute("MOCA.Api")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

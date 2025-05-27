@@ -115,6 +115,243 @@
           }
         }
       }
+    },
+    "/add-lesson": {
+      "post": {
+        "tags": [
+          "Lesson"
+        ],
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "ChapterId": {
+                    "type": "integer",
+                    "format": "int32"
+                  },
+                  "Title": {
+                    "type": "string"
+                  },
+                  "Content": {
+                    "type": "string"
+                  },
+                  "VideoURL": {
+                    "type": "string"
+                  },
+                  "Duration": {
+                    "type": "integer",
+                    "format": "int32"
+                  },
+                  "OrderIndex": {
+                    "type": "integer",
+                    "format": "int32"
+                  }
+                }
+              },
+              "encoding": {
+                "ChapterId": {
+                  "style": "form"
+                },
+                "Title": {
+                  "style": "form"
+                },
+                "Content": {
+                  "style": "form"
+                },
+                "VideoURL": {
+                  "style": "form"
+                },
+                "Duration": {
+                  "style": "form"
+                },
+                "OrderIndex": {
+                  "style": "form"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/update-lesson/{id}": {
+      "put": {
+        "tags": [
+          "Lesson"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "ChapterId": {
+                    "type": "integer",
+                    "format": "int32"
+                  },
+                  "Title": {
+                    "type": "string"
+                  },
+                  "Content": {
+                    "type": "string"
+                  },
+                  "VideoURL": {
+                    "type": "string",
+                    "format": "binary"
+                  },
+                  "Duration": {
+                    "type": "integer",
+                    "format": "int32"
+                  },
+                  "OrderIndex": {
+                    "type": "integer",
+                    "format": "int32"
+                  }
+                }
+              },
+              "encoding": {
+                "ChapterId": {
+                  "style": "form"
+                },
+                "Title": {
+                  "style": "form"
+                },
+                "Content": {
+                  "style": "form"
+                },
+                "VideoURL": {
+                  "style": "form"
+                },
+                "Duration": {
+                  "style": "form"
+                },
+                "OrderIndex": {
+                  "style": "form"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/view-lesson": {
+      "get": {
+        "tags": [
+          "Lesson"
+        ],
+        "parameters": [
+          {
+            "name": "filterOn",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          },
+          {
+            "name": "filterQuery",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          },
+          {
+            "name": "sortBy",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "isAscending",
+            "in": "query",
+            "schema": {
+              "type": "boolean",
+              "default": true
+            }
+          },
+          {
+            "name": "pageNumber",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32",
+              "default": 1
+            }
+          },
+          {
+            "name": "pageSize",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32",
+              "default": 10
+            }
+          },
+          {
+            "name": "filterDuration",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/delete-lesson": {
+      "delete": {
+        "tags": [
+          "Lesson"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
     }
   },
   "components": {
@@ -265,6 +502,10 @@
           "orderIndex": {
             "type": "integer",
             "format": "int32",
+            "nullable": true
+          },
+          "status": {
+            "type": "string",
             "nullable": true
           },
           "course": {
@@ -728,6 +969,10 @@
           "orderIndex": {
             "type": "integer",
             "format": "int32",
+            "nullable": true
+          },
+          "status": {
+            "type": "string",
             "nullable": true
           },
           "chapter": {
