@@ -12,6 +12,6 @@ namespace MOCA_Repositories.Interfaces
     public interface IAuthenRepository
     {
         Task<string> Login(LoginModel model);
-        Task<User> Register(User newUser);
+        Task<User> Register(RegisterLoginModel newUser);
     }
 }

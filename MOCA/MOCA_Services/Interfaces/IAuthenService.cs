@@ -11,6 +11,6 @@ namespace MOCA_Services.Interfaces
     public interface IAuthenService
     {
         Task<string> Login(LoginModel model);
-        Task<User> Register(User newUser);
+        Task<User> Register(RegisterLoginModel newUser);
     }
 }

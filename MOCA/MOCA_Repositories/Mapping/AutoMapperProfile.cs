@@ -7,6 +7,8 @@ using AutoMapper;
 using MOCA_Repositories.Enitities;
 using MOCA_Repositories.Models;
 using MOCA_Repositories.Models.LessonDTO;
+using MOCA_Repositories.Models.Login;
+using MOCA_Repositories.Models.PackageDTO;
 
 namespace MOCA_Repositories.Mapping
 {
@@ -18,10 +20,14 @@ namespace MOCA_Repositories.Mapping
             CreateMap<Lesson, LessonViewModel>();
             CreateMap<Lesson, AddLessonModel>().ReverseMap();
             CreateMap<Lesson, UpdateLessonModel>().ReverseMap();
-            
 
 
+            CreateMap<RegisterLoginModel, User>().ReverseMap();
 
+
+            CreateMap<CreatePackageModel, Package>().ReverseMap();
+            CreateMap<UpdatePackageModel, Package>().ReverseMap();
+            CreateMap<Package, ViewPackageModel >().ReverseMap();
 
 
 

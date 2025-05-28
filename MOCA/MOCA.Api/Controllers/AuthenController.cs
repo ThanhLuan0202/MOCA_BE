@@ -67,17 +67,21 @@ namespace MOCA.Api.Controllers
                 return StatusCode(StatusCodes.Status500InternalServerError, new { code = 500, message = ex.Message });
             }
         }
+        [HttpPost]
+        [Route("Register")]
 
-        // PUT api/<AuthenController>/5
-        [HttpPut("{id}")]
-        public void Put(int id, [FromBody] string value)
+        public async Task<ActionResult<User>> Register([FromForm] RegisterLoginModel registerLoginModel)
         {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+            var newUser = _mapper.Map<User>(registerLoginModel);
+
+            await _authenService.Register(registerLoginModel);
+
+            return Ok(newUser);
         }
 
-        // DELETE api/<AuthenController>/5
-        [HttpDelete("{id}")]
-        public void Delete(int id)
-        {
-        }
     }
 }

@@ -25,9 +25,9 @@ namespace MOCA_Services.Services
 
         }
 
-        public Task<User> Register(User newUser)
+        public Task<User> Register(RegisterLoginModel newUser)
         {
-            throw new NotImplementedException();
+            return _authenRepository.Register(newUser);
         }
     }
 }
