@@ -19,14 +19,14 @@ namespace MOCA_Repositories.Repositories
     {
         private readonly MOCAContext _context;
         private readonly IMapper _mapper;
-        public LessonsRepository(MOCAContext context, IMapper mapper) : base(context)    
+        public LessonsRepository(MOCAContext context, IMapper mapper) : base(context)
         {
             _context = context;
             _mapper = mapper;
         }
         public async Task<List<Lesson>> AddLessonAsync(AddLessonModel addLessonModel, int userId)
         {
-            var lessons = new List<Lesson>(); 
+            var lessons = new List<Lesson>();
 
             var chapter = await _context.Chapters.Include(x => x.Course)
                 .FirstOrDefaultAsync(c => c.ChapterId == addLessonModel.ChapterId);
@@ -47,11 +47,17 @@ namespace MOCA_Repositories.Repositories
                 throw new InvalidOperationException($"Lesson title '{addLessonModel.Title}' must be unique within the chapter.");
             }
 
-            // Sử dụng AutoMapper map AddLessonModel -> Lesson
-            var lesson = _mapper.Map<Lesson>(addLessonModel);
-
-            // Gán thêm các thuộc tính không có trong AddLessonModel hoặc cần override
-            lesson.Status = "Active";
+            var lesson = new Lesson
+            {
+                ChapterId = addLessonModel.ChapterId,
+                Title = addLessonModel.Title,
+                Content = addLessonModel.Content,
+                VideoUrl = addLessonModel.VideoURL,
+                Duration = addLessonModel.Duration,
+                OrderIndex = addLessonModel.OrderIndex,
+                CreateDate = DateTime.UtcNow,
+                Status = "Active"
+            };
 
             //if (addLessonModel.VideoURL != null)
             //{
@@ -61,9 +67,9 @@ namespace MOCA_Repositories.Repositories
             //}
 
             Entities.Add(lesson);
-            lessons.Add(lesson); 
+            lessons.Add(lesson);
             await _context.SaveChangesAsync();
-            return lessons; 
+            return lessons;
         }
 
         public async Task<Lesson> DeleteLessonAsync(int id)
@@ -77,9 +83,9 @@ namespace MOCA_Repositories.Repositories
                 throw new KeyNotFoundException($"Lesson {id} does not exist.");
             }
 
-            lesson.Status = "Inactive";
+            lesson.Status = "InActive";
+            _context.Entry(lesson).Property(x => x.Status).IsModified = true;
             await _context.SaveChangesAsync();
-
             return lesson;
         }
 
@@ -92,13 +98,29 @@ namespace MOCA_Repositories.Repositories
 
         public async Task UpdateLessonAsync(int id, UpdateLessonModel updateLessonModel)
         {
-            var lesson = await Entities.FindAsync(id);
-            _mapper.Map(updateLessonModel, lesson);
+            var lesson = await Entities.Include(x => x.Chapter).FirstOrDefaultAsync(x => x.LessonId == id);
+
 
             if (lesson == null)
             {
                 throw new KeyNotFoundException("Lesson does not exist.");
             }
+
+            if (!string.IsNullOrEmpty(updateLessonModel.Title))
+                lesson.Title = updateLessonModel.Title;
+
+            if (!string.IsNullOrEmpty(updateLessonModel.Content))
+                lesson.Content = updateLessonModel.Content;
+
+            if (!string.IsNullOrEmpty(updateLessonModel.VideoURL))
+                lesson.VideoUrl = updateLessonModel.VideoURL;
+
+            if (updateLessonModel.Duration.HasValue)
+                lesson.Duration = updateLessonModel.Duration.Value;
+
+            if (updateLessonModel.OrderIndex.HasValue)
+                lesson.OrderIndex = updateLessonModel.OrderIndex.Value;
+
 
             if (updateLessonModel.ChapterId.HasValue)
             {
@@ -176,8 +198,22 @@ namespace MOCA_Repositories.Repositories
             }
 
             var skip = (pageNumber - 1) * pageSize;
-            var lessons = _mapper.Map<List<LessonViewModel>>(lessonsQuery);
-            return lessons.Skip(skip).Take(pageSize).ToList();
+            var lessons = await lessonsQuery
+                .Skip(skip)
+                .Take(pageSize)
+                .Select(x => new LessonViewModel
+                {
+                    LessonId = x.LessonId,
+                    Title = x.Title,
+                    Content = x.Content,
+                    VideoURL = x.VideoUrl,
+                    Duration = x.Duration,
+                    OrderIndex = x.OrderIndex,
+                    ChapterId = x.ChapterId,
+                    Status = x.Status
+                })
+                .ToListAsync();
+            return lessons;
         }
     }
 }

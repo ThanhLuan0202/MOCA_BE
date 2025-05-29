@@ -14,13 +14,11 @@ namespace MOCA.Api.Controllers
         private readonly ILessonServices _lessonServices;
         private readonly IChapterServices _chapterServices;
         private readonly IUnitOfWork _unitOfWork;
-        private readonly IMapper _mapper;
 
-        public LessonController(ILessonServices lessonServices, IUnitOfWork unitOfWork, IMapper mapper, IChapterServices chapterServices)
+        public LessonController(ILessonServices lessonServices, IUnitOfWork unitOfWork, IChapterServices chapterServices)
         {
             _lessonServices = lessonServices;
             _unitOfWork = unitOfWork;
-            _mapper = mapper;
             _chapterServices = chapterServices;
         }
 
@@ -111,7 +109,18 @@ namespace MOCA.Api.Controllers
                 _unitOfWork.SaveChanges();
                 _unitOfWork.CommitTransaction();
 
-                return Ok(updatedLesson);
+                return Ok(new LessonViewModel
+                {
+                    LessonId = updatedLesson.LessonId,
+                    ChapterId = updatedLesson.ChapterId,
+                    Title = updatedLesson.Title,
+                    Content = updatedLesson.Content,
+                    VideoURL = updatedLesson.VideoUrl,
+                    CreateDate = updatedLesson.CreateDate,
+                    Duration = updatedLesson.Duration,
+                    OrderIndex = updatedLesson.OrderIndex,
+                    Status = updatedLesson.Status
+                });
             }
             catch (KeyNotFoundException ex)
             {
@@ -144,11 +153,9 @@ namespace MOCA.Api.Controllers
                 return Unauthorized("User is not logged in.");
             }
 
-            var userNameIdentifierClaim = User.Claims.FirstOrDefault(c => c.Type == ClaimTypes.NameIdentifier);
-            if (userNameIdentifierClaim == null)
-            {
+            var userId = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
+            if (userId == null)
                 return Unauthorized("User not authenticated.");
-            }
 
             try
             {
@@ -163,10 +170,9 @@ namespace MOCA.Api.Controllers
                         filters.Add(new FilterCriteria { FilterOn = filterOn[i], FilterQuery = filterQuery[i] });
                     }
                 }
-                string userId = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
-                var userIdFromToken = int.Parse(userId);
-                var lessonDomains = await _lessonServices.ViewActiveLessonsAsync(
-                    userIdFromToken,
+                var userIdInt = int.Parse(userId);
+                var lessons = await _lessonServices.ViewActiveLessonsAsync(
+                    userIdInt,
                     filters,
                     sortBy,
                     isAscending,
@@ -175,9 +181,21 @@ namespace MOCA.Api.Controllers
                     filterDuration
                 );
 
-                var lessonDTOs = _mapper.Map<List<LessonViewModel>>(lessonDomains);
+                var lessonViewModels = lessons.Select(lesson => new LessonViewModel
+                {
+                    LessonId = lesson.LessonId,
+                    ChapterId = lesson.ChapterId,
+                    Title = lesson.Title,
+                    Content = lesson.Content,
+                    VideoURL = lesson.VideoURL,
+                    CreateDate = lesson.CreateDate,
+                    Duration = lesson.Duration,
+                    OrderIndex = lesson.OrderIndex,
+                    Status = lesson.Status
+                }).ToList();
 
-                return Ok(lessonDTOs);
+                return Ok(lessonViewModels);
+
             }
             catch (InvalidOperationException ex)
             {
@@ -224,7 +242,18 @@ namespace MOCA.Api.Controllers
                 }
 
                 var deletedLesson = await _lessonServices.DeleteLessonAsync(id);
-                return Ok(_mapper.Map<LessonViewModel>(deletedLesson));
+                return Ok(new LessonViewModel
+                {
+                    LessonId = deletedLesson.LessonId,
+                    ChapterId = deletedLesson.ChapterId,
+                    Title = deletedLesson.Title,
+                    Content = deletedLesson.Content,
+                    VideoURL = deletedLesson.VideoUrl,
+                    CreateDate = deletedLesson.CreateDate,
+                    Duration = deletedLesson.Duration,
+                    OrderIndex = deletedLesson.OrderIndex,
+                    Status = deletedLesson.Status
+                });
             }
             catch (KeyNotFoundException ex)
             {
