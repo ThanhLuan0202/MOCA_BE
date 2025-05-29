@@ -90,7 +90,10 @@ namespace MOCA_Repositories.Repositories
                                 .Where(c => c.Status.ToLower() == "active");
             return (IEnumerable<CourseViewGET>)query;
         }
-
+        public async Task<Course> GetByIdAllStatusAsync(int id)
+        {
+            return await Entities.FirstOrDefaultAsync(x => x.CourseId == id);
+        }
         public async Task<IEnumerable<CourseViewGET>> GetAllCourseActiveAsync(CourseSearchOptions searchOptions)
         {
             var query = Entities.Include(c => c.Category)

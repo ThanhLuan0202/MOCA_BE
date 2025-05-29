@@ -11,6 +11,7 @@ namespace MOCA_Repositories.Interfaces
     public interface ICourseRepository
     {
         Task<Course> GetByIdAsync(int id);
+        Task<Course> GetByIdAllStatusAsync(int id);
         Task<IEnumerable<CourseViewGET>> GetAllAsync();
         Task<Course> AddCourseAsync(CreateCourseModel createCourseModel, int userId);
         Task<Course> UpdateAsync(int id, UpdateCourseModel course);

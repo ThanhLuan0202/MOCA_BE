@@ -1,13 +1,13 @@
+using System.Text;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Options;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
 using MOCA_Repositories.DBContext;
 using MOCA_Repositories.DependencyInjection;
 using MOCA_Repositories.Mapping;
-using MOCA_Repositories.Mapping;
 using MOCA_Services.DependencyInjection;
-using System.Text;
 var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddCors(options =>
 {
@@ -62,17 +62,33 @@ builder.Services.AddSwaggerGen(option =>
 
 
 builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
-             .AddJwtBearer(options => options.TokenValidationParameters = new Microsoft.IdentityModel.Tokens.TokenValidationParameters
-             {
-                 ValidateIssuer = true,
-                 ValidateAudience = true,
-                 ValidateLifetime = true,
-                 ValidateIssuerSigningKey = true,
-                 ValidIssuer = builder.Configuration["Jwt:Issuer"],
-                 ValidAudience = builder.Configuration["Jwt:Audience"],
-                 IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(builder.Configuration["Jwt:Key"]))
-             
-             });
+    .AddJwtBearer(options => 
+    {
+        options.TokenValidationParameters = new Microsoft.IdentityModel.Tokens.TokenValidationParameters
+        {
+            ValidateIssuer = true,
+            ValidateAudience = true,
+            ValidateLifetime = true,
+            ValidateIssuerSigningKey = true,
+            ValidIssuer = builder.Configuration["Jwt:Issuer"],
+            ValidAudience = builder.Configuration["Jwt:Audience"],
+            IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(builder.Configuration["Jwt:Key"]))
+        };
+
+        options.Events = new JwtBearerEvents
+        {
+            OnMessageReceived = context =>
+            {
+                var authHeader = context.Request.Headers["Authorization"].FirstOrDefault();
+                if (!string.IsNullOrEmpty(authHeader))
+            {
+                context.Token = authHeader; 
+            }
+            return Task.CompletedTask;
+        }
+    };
+});
+
 
 
 var app = builder.Build();

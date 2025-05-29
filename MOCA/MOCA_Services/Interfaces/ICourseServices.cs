@@ -12,6 +12,7 @@ namespace MOCA_Services.Interfaces
     {
         Task<Course> GetByIdAsync(int id);
         Task<IEnumerable<CourseViewGET>> GetAllAsync();
+        Task<Course> GetByIdAllStatusAsync(int id);
         Task<Course> AddCourseAsync(CreateCourseModel createCourseModel, int userId);
         Task<Course> UpdateAsync(int id, UpdateCourseModel course);
         Task<Course> DeleteAsync(int id);

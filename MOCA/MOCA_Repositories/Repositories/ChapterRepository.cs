@@ -86,6 +86,7 @@ namespace MOCA_Repositories.Repositories
             }
 
             chapter.Status = "Inactive";
+            _context.Entry(chapter).Property(x => x.Status).IsModified = true;
             await _context.SaveChangesAsync();
 
             return chapter;
@@ -176,11 +177,11 @@ namespace MOCA_Repositories.Repositories
             var chapters = await chaptersQuery
                 .Select(c => new ChapterViewModel
                 {
+                    ChapterId = c.ChapterId,
                     CourseId = c.CourseId,
                     Title = c.Title,
                     OrderIndex = c.OrderIndex,
                     Status = c.Status,
-                    Course = c.Course
                 })
                 .ToListAsync();
 

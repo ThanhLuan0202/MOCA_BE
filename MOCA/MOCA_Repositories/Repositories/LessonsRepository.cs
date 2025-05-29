@@ -83,7 +83,7 @@ namespace MOCA_Repositories.Repositories
                 throw new KeyNotFoundException($"Lesson {id} does not exist.");
             }
 
-            lesson.Status = "InActive";
+            lesson.Status = "Inactive";
             _context.Entry(lesson).Property(x => x.Status).IsModified = true;
             await _context.SaveChangesAsync();
             return lesson;

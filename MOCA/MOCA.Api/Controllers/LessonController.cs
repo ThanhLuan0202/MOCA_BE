@@ -9,6 +9,8 @@ using MOCA_Services.Interfaces;
 
 namespace MOCA.Api.Controllers
 {
+    [Route("api/[controller]")]
+    [ApiController]
     public class LessonController : ControllerBase
     {
         private readonly ILessonServices _lessonServices;
