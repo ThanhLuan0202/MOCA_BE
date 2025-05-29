@@ -101,7 +101,7 @@ namespace MOCA_Repositories.Repositories
                     Email = user.Email,
                     Password = password,
                     PhoneNumber = user.PhoneNumber,
-                    Status = "Acitve"
+                    Status = "Active"
                 };
 
 

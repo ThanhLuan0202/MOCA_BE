@@ -9028,11 +9028,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\luan\\hoc\\EXE02\\2\\MOCA_BE\\MOCA\\MOCA_Repositories\\MOCA_Repositories.csproj",
+      "projectUniqueName": "D:\\luan\\exe2\\MOCA_BE\\MOCA\\MOCA_Repositories\\MOCA_Repositories.csproj",
       "projectName": "MOCA_Repositories",
-      "projectPath": "D:\\luan\\hoc\\EXE02\\2\\MOCA_BE\\MOCA\\MOCA_Repositories\\MOCA_Repositories.csproj",
+      "projectPath": "D:\\luan\\exe2\\MOCA_BE\\MOCA\\MOCA_Repositories\\MOCA_Repositories.csproj",
       "packagesPath": "C:\\Users\\luann\\.nuget\\packages\\",
-      "outputPath": "D:\\luan\\hoc\\EXE02\\2\\MOCA_BE\\MOCA\\MOCA_Repositories\\obj\\",
+      "outputPath": "D:\\luan\\exe2\\MOCA_BE\\MOCA\\MOCA_Repositories\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

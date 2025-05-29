@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("MOCA_Repositories")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+2792a228f02448933712130e30d4b6ee903bb62a")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+97a4114f38329c80b9c1f2c9df2775dc81a0fc85")]
 [assembly: System.Reflection.AssemblyProductAttribute("MOCA_Repositories")]
 [assembly: System.Reflection.AssemblyTitleAttribute("MOCA_Repositories")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

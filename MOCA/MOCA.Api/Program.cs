@@ -77,12 +77,7 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
 
 var app = builder.Build();
 
-// Configure the HTTP request pipeline.
-//if (app.Environment.IsDevelopment())
-//{
-//    app.UseSwagger();
-//    app.UseSwaggerUI();
-//}
+
 
 app.UseSwagger();
 if (app.Environment.IsDevelopment())
@@ -93,12 +88,14 @@ if (!app.Environment.IsDevelopment())
 {
     app.UseSwaggerUI(options =>
     {
-        options.SwaggerEndpoint("/swagger/v1/swagger.json", "v1");
-        options.RoutePrefix = string.Empty;
+        options.SwaggerEndpoint("/swagger/v1/swagger.json", "MOCA API V1");
+        options.InjectJavascript("/swagger/custom.js"); 
+        options.RoutePrefix = string.Empty; 
     });
 }
 
 app.UseHttpsRedirection();
+app.UseCors("AllowAll");
 
 app.UseAuthentication();
 
@@ -106,6 +103,5 @@ app.UseAuthorization();
 
 app.MapControllers();
 
-app.UseCors("AllowAll");
 
 app.Run();

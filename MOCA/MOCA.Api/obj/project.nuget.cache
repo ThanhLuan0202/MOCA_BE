@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "iscgfjXLObM=",
+  "dgSpecHash": "OMZjAUNTsU0=",
   "success": true,
-  "projectFilePath": "D:\\luan\\hoc\\EXE02\\2\\MOCA_BE\\MOCA\\MOCA.Api\\MOCA.Api.csproj",
+  "projectFilePath": "D:\\luan\\exe2\\MOCA_BE\\MOCA\\MOCA.Api\\MOCA.Api.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\luann\\.nuget\\packages\\automapper\\12.0.1\\automapper.12.0.1.nupkg.sha512",
     "C:\\Users\\luann\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\12.0.1\\automapper.extensions.microsoft.dependencyinjection.12.0.1.nupkg.sha512",

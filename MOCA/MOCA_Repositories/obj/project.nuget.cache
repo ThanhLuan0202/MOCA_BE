@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "SLSaG8uTJkY=",
+  "dgSpecHash": "MP7y7pYHSKE=",
   "success": true,
-  "projectFilePath": "D:\\luan\\hoc\\EXE02\\2\\MOCA_BE\\MOCA\\MOCA_Repositories\\MOCA_Repositories.csproj",
+  "projectFilePath": "D:\\luan\\exe2\\MOCA_BE\\MOCA\\MOCA_Repositories\\MOCA_Repositories.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\luann\\.nuget\\packages\\automapper\\8.1.1\\automapper.8.1.1.nupkg.sha512",
     "C:\\Users\\luann\\.nuget\\packages\\azure.core\\1.35.0\\azure.core.1.35.0.nupkg.sha512",

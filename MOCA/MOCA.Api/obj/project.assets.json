@@ -9525,11 +9525,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\luan\\hoc\\EXE02\\2\\MOCA_BE\\MOCA\\MOCA.Api\\MOCA.Api.csproj",
+      "projectUniqueName": "D:\\luan\\exe2\\MOCA_BE\\MOCA\\MOCA.Api\\MOCA.Api.csproj",
       "projectName": "MOCA.Api",
-      "projectPath": "D:\\luan\\hoc\\EXE02\\2\\MOCA_BE\\MOCA\\MOCA.Api\\MOCA.Api.csproj",
+      "projectPath": "D:\\luan\\exe2\\MOCA_BE\\MOCA\\MOCA.Api\\MOCA.Api.csproj",
       "packagesPath": "C:\\Users\\luann\\.nuget\\packages\\",
-      "outputPath": "D:\\luan\\hoc\\EXE02\\2\\MOCA_BE\\MOCA\\MOCA.Api\\obj\\",
+      "outputPath": "D:\\luan\\exe2\\MOCA_BE\\MOCA\\MOCA.Api\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -9551,8 +9551,8 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "D:\\luan\\hoc\\EXE02\\2\\MOCA_BE\\MOCA\\MOCA_Services\\MOCA_Services.csproj": {
-              "projectPath": "D:\\luan\\hoc\\EXE02\\2\\MOCA_BE\\MOCA\\MOCA_Services\\MOCA_Services.csproj"
+            "D:\\luan\\exe2\\MOCA_BE\\MOCA\\MOCA_Services\\MOCA_Services.csproj": {
+              "projectPath": "D:\\luan\\exe2\\MOCA_BE\\MOCA\\MOCA_Services\\MOCA_Services.csproj"
             }
           }
         }
