@@ -7,6 +7,12 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Models\DoctorProfileDTO\**" />
+    <EmbeddedResource Remove="Models\DoctorProfileDTO\**" />
+    <None Remove="Models\DoctorProfileDTO\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="AutoMapper" Version="8.1.1" />
     <PackageReference Include="BCrypt.Net-Next" Version="4.0.3" />
 	  <PackageReference Include="FirebaseStorage.net" Version="1.0.3" />
@@ -26,10 +32,6 @@
     <PackageReference Include="Microsoft.Extensions.Configuration" Version="8.0.0" />
     <PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="8.0.0" />
     <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="8.0.1" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Models\DoctorProfileDTO\" />
   </ItemGroup>
 
 </Project>

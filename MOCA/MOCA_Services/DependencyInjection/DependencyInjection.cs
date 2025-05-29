@@ -19,6 +19,7 @@ namespace MOCA_Services.DependencyInjection
             service.AddTransient<ICourseServices, CourseServices>();
 
             service.AddTransient<IPackageService, PackageService>();
+            service.AddTransient<IMomProfileService, MomProfileService>();
 
 
 
