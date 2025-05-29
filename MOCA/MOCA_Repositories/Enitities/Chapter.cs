@@ -16,6 +16,5 @@ public partial class Chapter
     public virtual Course? Course { get; set; }
 
     public string Status { get; set; }
-
     public virtual ICollection<Lesson> Lessons { get; set; } = new List<Lesson>();
 }

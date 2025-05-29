@@ -7,7 +7,7 @@ public partial class MomProfile
 {
     public int UserId { get; set; }
 
-    public int? MomId { get; set; }
+    public int MomId { get; set; }
 
     public DateOnly? DateOfBirth { get; set; }
 
