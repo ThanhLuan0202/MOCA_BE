@@ -19,10 +19,9 @@ namespace MOCA_Repositories.DependencyInjection
             service.AddTransient<ILessonsRepository, LessonsRepository>();
             service.AddTransient<IChapterRepository, ChapterRepository>();
             service.AddTransient<ICourseRepository, CourseRepository>();
-
-
             service.AddTransient<IPacakgeRepository, PackageRepository>();
             service.AddTransient<IMomProfileRepository, MomProfileRepository>();
+            service.AddTransient<IDoctorProfileRepository, DoctorProfileRepository>();
 
 
 
