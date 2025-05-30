@@ -60,7 +60,8 @@ namespace MOCA_Repositories.Repositories
 
         public async Task<MomProfile> GetMomProfileByIdAsync(int id)
         {
-            var checkMom = await _context.MomProfiles.FirstOrDefaultAsync(x => x.MomId == id);
+            var checkMom = await _context.MomProfiles.Include(x => x.User).FirstOrDefaultAsync(x => x.MomId == id);
+
             if (checkMom == null)
             {
                 throw new Exception($"Mom profile {id} is not exist!");
@@ -69,9 +70,20 @@ namespace MOCA_Repositories.Repositories
            
         }
 
+        public async Task<MomProfile> GetMomProfileByUserIdAsync(int id)
+        {
+            var check = await _context.MomProfiles.Include(x => x.User).FirstOrDefaultAsync(x => x.UserId == id);
+            if (check == null)
+            {
+                throw new Exception($"Mom profile {id} is not exist!");
+            }
+
+            return check;
+        }
+
         public async Task<MomProfile> UpdateMomProfileAsync(int id, UpdateMomProfileModel updateMomPr)
         {
-            var checkMom = await _context.MomProfiles.FirstOrDefaultAsync(x => x.MomId == id);
+            var checkMom = await _context.MomProfiles.Include(x => x.User).FirstOrDefaultAsync(x => x.MomId == id);
             if (checkMom == null)
             {
                 throw new Exception($"Mom profile {id} is not exist!");

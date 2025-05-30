@@ -72,6 +72,7 @@ public partial class MOCAContext : DbContext
     //    protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     //#warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see https://go.microsoft.com/fwlink/?LinkId=723263.
     //        => optionsBuilder.UseSqlServer("Data Source=LUANNE\\LUANNE;Initial Catalog=MOCA;Persist Security Info=True;User ID=sa;Password=12345;TrustServerCertificate=True");
+
     public static string GetConnectionString(string connectionStringName)
     {
         var config = new ConfigurationBuilder()
@@ -85,11 +86,12 @@ public partial class MOCAContext : DbContext
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         => optionsBuilder.UseSqlServer(GetConnectionString("DefaultConnection")).UseQueryTrackingBehavior(QueryTrackingBehavior.NoTracking);
+
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         modelBuilder.Entity<Advertisement>(entity =>
         {
-            entity.HasKey(e => e.AdId).HasName("PK__Advertis__7130D5AEBEEEAAD2");
+            entity.HasKey(e => e.AdId).HasName("PK__Advertis__7130D5AEEAC19E1F");
 
             entity.Property(e => e.CreateDate).HasColumnType("datetime");
             entity.Property(e => e.EndDate).HasColumnType("datetime");
@@ -101,7 +103,7 @@ public partial class MOCAContext : DbContext
 
         modelBuilder.Entity<BabyTracking>(entity =>
         {
-            entity.HasKey(e => e.CheckupBabyId).HasName("PK__BabyTrac__D24787C607A6BF53");
+            entity.HasKey(e => e.CheckupBabyId).HasName("PK__BabyTrac__D24787C65166FBB5");
 
             entity.ToTable("BabyTracking");
 
@@ -119,7 +121,7 @@ public partial class MOCAContext : DbContext
 
         modelBuilder.Entity<BookingPayment>(entity =>
         {
-            entity.HasKey(e => e.PaymentId).HasName("PK__BookingP__9B556A38FD39ABCD");
+            entity.HasKey(e => e.PaymentId).HasName("PK__BookingP__9B556A385DFE0A3C");
 
             entity.Property(e => e.Amount).HasColumnType("decimal(10, 2)");
             entity.Property(e => e.CreateDate).HasColumnType("datetime");
@@ -134,7 +136,7 @@ public partial class MOCAContext : DbContext
 
         modelBuilder.Entity<Bookmark>(entity =>
         {
-            entity.HasKey(e => e.BookmarkId).HasName("PK__Bookmark__541A3A91AF20BCB1");
+            entity.HasKey(e => e.BookmarkId).HasName("PK__Bookmark__541A3A9182DFBFC6");
 
             entity.Property(e => e.BookmarkId).HasColumnName("BookmarkID");
             entity.Property(e => e.CreateDate).HasColumnType("datetime");
@@ -147,7 +149,7 @@ public partial class MOCAContext : DbContext
 
         modelBuilder.Entity<Chapter>(entity =>
         {
-            entity.HasKey(e => e.ChapterId).HasName("PK__Chapters__0893A36A8552B4D1");
+            entity.HasKey(e => e.ChapterId).HasName("PK__Chapters__0893A36A3A5BB820");
 
             entity.Property(e => e.Title).HasMaxLength(255);
 
@@ -158,7 +160,7 @@ public partial class MOCAContext : DbContext
 
         modelBuilder.Entity<CommunityPost>(entity =>
         {
-            entity.HasKey(e => e.PostId).HasName("PK__Communit__AA12601829A1FC60");
+            entity.HasKey(e => e.PostId).HasName("PK__Communit__AA1260189D4C542C");
 
             entity.Property(e => e.Content).HasColumnType("text");
             entity.Property(e => e.CreateDate).HasColumnType("datetime");
@@ -174,7 +176,7 @@ public partial class MOCAContext : DbContext
 
         modelBuilder.Entity<CommunityReply>(entity =>
         {
-            entity.HasKey(e => e.ReplyId).HasName("PK__Communit__C25E460953C90681");
+            entity.HasKey(e => e.ReplyId).HasName("PK__Communit__C25E46096FA36449");
 
             entity.Property(e => e.Content).HasColumnType("text");
             entity.Property(e => e.CreatedDate).HasColumnType("datetime");
@@ -194,7 +196,7 @@ public partial class MOCAContext : DbContext
 
         modelBuilder.Entity<Course>(entity =>
         {
-            entity.HasKey(e => e.CourseId).HasName("PK__Courses__C92D71A7A4AFEE07");
+            entity.HasKey(e => e.CourseId).HasName("PK__Courses__C92D71A73B54427E");
 
             entity.Property(e => e.CourseTitle).HasMaxLength(255);
             entity.Property(e => e.CreateDate).HasColumnType("datetime");
@@ -215,7 +217,7 @@ public partial class MOCAContext : DbContext
 
         modelBuilder.Entity<CourseCategory>(entity =>
         {
-            entity.HasKey(e => e.CategoryId).HasName("PK__CourseCa__19093A2BE68598C6");
+            entity.HasKey(e => e.CategoryId).HasName("PK__CourseCa__19093A2B53F7E7B3");
 
             entity.Property(e => e.CategoryId).HasColumnName("CategoryID");
             entity.Property(e => e.Name).HasMaxLength(100);
@@ -223,7 +225,7 @@ public partial class MOCAContext : DbContext
 
         modelBuilder.Entity<Discount>(entity =>
         {
-            entity.HasKey(e => e.DiscountId).HasName("PK__Discount__E43F6DF64968A801");
+            entity.HasKey(e => e.DiscountId).HasName("PK__Discount__E43F6DF6F2E6067C");
 
             entity.Property(e => e.DiscountId).HasColumnName("DiscountID");
             entity.Property(e => e.Code).HasMaxLength(100);
@@ -235,7 +237,7 @@ public partial class MOCAContext : DbContext
 
         modelBuilder.Entity<DoctorBooking>(entity =>
         {
-            entity.HasKey(e => e.BookingId).HasName("PK__DoctorBo__73951AEDDB0303DB");
+            entity.HasKey(e => e.BookingId).HasName("PK__DoctorBo__73951AED1152B807");
 
             entity.Property(e => e.BookingDate).HasColumnType("datetime");
             entity.Property(e => e.Notes).HasColumnType("text");
@@ -254,7 +256,7 @@ public partial class MOCAContext : DbContext
 
         modelBuilder.Entity<DoctorContact>(entity =>
         {
-            entity.HasKey(e => e.ContactId).HasName("PK__DoctorCo__5C66259B0AAE8913");
+            entity.HasKey(e => e.ContactId).HasName("PK__DoctorCo__5C66259BD78292D6");
 
             entity.Property(e => e.ContactDate).HasColumnType("datetime");
             entity.Property(e => e.ContactMethod).HasMaxLength(50);
@@ -271,7 +273,7 @@ public partial class MOCAContext : DbContext
 
         modelBuilder.Entity<DoctorProfile>(entity =>
         {
-            entity.HasKey(e => e.DoctorId).HasName("PK__DoctorPr__2DC00EBF1B3419EB");
+            entity.HasKey(e => e.DoctorId).HasName("PK__DoctorPr__2DC00EBFF45FC243");
 
             entity.Property(e => e.FullName).HasMaxLength(255);
             entity.Property(e => e.Specialization).HasMaxLength(100);
@@ -284,7 +286,7 @@ public partial class MOCAContext : DbContext
 
         modelBuilder.Entity<Feedback>(entity =>
         {
-            entity.HasKey(e => e.FeedbackId).HasName("PK__Feedback__6A4BEDF6A311F023");
+            entity.HasKey(e => e.FeedbackId).HasName("PK__Feedback__6A4BEDF6BF3DC92B");
 
             entity.Property(e => e.FeedbackId).HasColumnName("FeedbackID");
             entity.Property(e => e.Comment).HasColumnType("text");
@@ -294,7 +296,7 @@ public partial class MOCAContext : DbContext
 
         modelBuilder.Entity<Lesson>(entity =>
         {
-            entity.HasKey(e => e.LessonId).HasName("PK__Lessons__B084ACD0D3B0AAB7");
+            entity.HasKey(e => e.LessonId).HasName("PK__Lessons__B084ACD0C4D2DFDE");
 
             entity.Property(e => e.Content).HasColumnType("text");
             entity.Property(e => e.CreateDate).HasColumnType("datetime");
@@ -308,7 +310,7 @@ public partial class MOCAContext : DbContext
 
         modelBuilder.Entity<MessagesWithDoctor>(entity =>
         {
-            entity.HasKey(e => e.MessageId).HasName("PK__Messages__C87C0C9CBFD2284D");
+            entity.HasKey(e => e.MessageId).HasName("PK__Messages__C87C0C9CF44BE54D");
 
             entity.ToTable("MessagesWithDoctor");
 
@@ -322,26 +324,21 @@ public partial class MOCAContext : DbContext
 
         modelBuilder.Entity<MomProfile>(entity =>
         {
-            entity.HasKey(e => e.UserId).HasName("PK__MomProfi__1788CCACB10499F8");
+            entity.HasKey(e => e.MomId).HasName("PK__MomProfi__C5D0E583F1939CBC");
 
-            entity.Property(e => e.UserId)
-                .ValueGeneratedNever()
-                .HasColumnName("UserID");
+            entity.Property(e => e.MomId).HasColumnName("MomID");
             entity.Property(e => e.BloodType).HasMaxLength(20);
             entity.Property(e => e.MaritalStatus).HasMaxLength(50);
-            entity.Property(e => e.MomId)
-                .ValueGeneratedOnAdd()
-                .HasColumnName("MomID");
+            entity.Property(e => e.UserId).HasColumnName("UserID");
 
-            entity.HasOne(d => d.User).WithOne(p => p.MomProfile)
-                .HasForeignKey<MomProfile>(d => d.UserId)
-                .OnDelete(DeleteBehavior.ClientSetNull)
+            entity.HasOne(d => d.User).WithMany(p => p.MomProfiles)
+                .HasForeignKey(d => d.UserId)
                 .HasConstraintName("FK_MomProfiles_Users");
         });
 
         modelBuilder.Entity<Package>(entity =>
         {
-            entity.HasKey(e => e.PackageId).HasName("PK__Packages__322035EC52884187");
+            entity.HasKey(e => e.PackageId).HasName("PK__Packages__322035ECBAA07F41");
 
             entity.Property(e => e.PackageId).HasColumnName("PackageID");
             entity.Property(e => e.PackageName).HasMaxLength(255);
@@ -350,7 +347,7 @@ public partial class MOCAContext : DbContext
 
         modelBuilder.Entity<PostLike>(entity =>
         {
-            entity.HasKey(e => e.LikeId).HasName("PK__PostLike__A2922C145FB821A0");
+            entity.HasKey(e => e.LikeId).HasName("PK__PostLike__A2922C145CDB73B7");
 
             entity.Property(e => e.CreatedDate).HasColumnType("datetime");
 
@@ -365,7 +362,7 @@ public partial class MOCAContext : DbContext
 
         modelBuilder.Entity<PregnancyTracking>(entity =>
         {
-            entity.HasKey(e => e.TrackingId).HasName("PK__Pregnanc__3C19EDD16ED51EA7");
+            entity.HasKey(e => e.TrackingId).HasName("PK__Pregnanc__3C19EDD191DDE92B");
 
             entity.ToTable("PregnancyTracking");
 
@@ -382,7 +379,7 @@ public partial class MOCAContext : DbContext
 
         modelBuilder.Entity<PurchasePackage>(entity =>
         {
-            entity.HasKey(e => e.PurchasePackageId).HasName("PK__Purchase__C3B05BF021EC9E0A");
+            entity.HasKey(e => e.PurchasePackageId).HasName("PK__Purchase__C3B05BF013B87B00");
 
             entity.ToTable("PurchasePackage");
 
@@ -408,7 +405,7 @@ public partial class MOCAContext : DbContext
 
         modelBuilder.Entity<PurchasedCourse>(entity =>
         {
-            entity.HasKey(e => e.PurchasedId).HasName("PK__Purchase__2B7C245C9EDB4BBB");
+            entity.HasKey(e => e.PurchasedId).HasName("PK__Purchase__2B7C245C31F15238");
 
             entity.Property(e => e.PurchasedId).HasColumnName("PurchasedID");
             entity.Property(e => e.CourseId).HasColumnName("CourseID");
@@ -432,18 +429,13 @@ public partial class MOCAContext : DbContext
 
         modelBuilder.Entity<RefLect>(entity =>
         {
-            entity.HasKey(e => e.RefLectId).HasName("PK__RefLect__42A5357D943C89A6");
+            entity.HasKey(e => e.RefLectId).HasName("PK__RefLect__42A5357DE77C4085");
 
             entity.ToTable("RefLect");
 
             entity.Property(e => e.RefLectId).HasColumnName("RefLectID");
-            entity.Property(e => e.CourseId).HasColumnName("CourseID");
             entity.Property(e => e.Status).HasMaxLength(50);
             entity.Property(e => e.UserId).HasColumnName("UserID");
-
-            entity.HasOne(d => d.Course).WithMany(p => p.RefLects)
-                .HasForeignKey(d => d.CourseId)
-                .HasConstraintName("FK_RefLect_Courses");
 
             entity.HasOne(d => d.User).WithMany(p => p.RefLects)
                 .HasForeignKey(d => d.UserId)
@@ -452,7 +444,7 @@ public partial class MOCAContext : DbContext
 
         modelBuilder.Entity<Role>(entity =>
         {
-            entity.HasKey(e => e.RoleId).HasName("PK__Roles__8AFACE3A25D42610");
+            entity.HasKey(e => e.RoleId).HasName("PK__Roles__8AFACE3A2377654B");
 
             entity.Property(e => e.RoleId).HasColumnName("RoleID");
             entity.Property(e => e.RoleName).HasMaxLength(100);
@@ -460,7 +452,7 @@ public partial class MOCAContext : DbContext
 
         modelBuilder.Entity<User>(entity =>
         {
-            entity.HasKey(e => e.UserId).HasName("PK__Users__1788CCAC01F32BAF");
+            entity.HasKey(e => e.UserId).HasName("PK__Users__1788CCACC73252E8");
 
             entity.Property(e => e.UserId).HasColumnName("UserID");
             entity.Property(e => e.Email).HasMaxLength(255);
@@ -477,14 +469,14 @@ public partial class MOCAContext : DbContext
 
         modelBuilder.Entity<UserPregnancy>(entity =>
         {
-            entity.HasKey(e => e.PregnancyId).HasName("PK__UserPreg__06D66108342C765D");
+            entity.HasKey(e => e.PregnancyId).HasName("PK__UserPreg__06D66108F8C73EC0");
 
             entity.Property(e => e.PregnancyId).HasColumnName("PregnancyID");
             entity.Property(e => e.CreatedAt).HasColumnType("datetime");
-            entity.Property(e => e.UserId).HasColumnName("UserID");
+            entity.Property(e => e.MomId).HasColumnName("MomID");
 
-            entity.HasOne(d => d.User).WithMany(p => p.UserPregnancies)
-                .HasForeignKey(d => d.UserId)
+            entity.HasOne(d => d.Mom).WithMany(p => p.UserPregnancies)
+                .HasForeignKey(d => d.MomId)
                 .HasConstraintName("FK_UserPregnancies_Users");
         });
 

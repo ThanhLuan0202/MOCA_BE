@@ -33,7 +33,7 @@ public partial class User
 
     public virtual ICollection<DoctorProfile> DoctorProfiles { get; set; } = new List<DoctorProfile>();
 
-    public virtual MomProfile? MomProfile { get; set; }
+    public virtual ICollection<MomProfile> MomProfiles { get; set; } = new List<MomProfile>();
 
     public virtual ICollection<PostLike> PostLikes { get; set; } = new List<PostLike>();
 
@@ -44,6 +44,4 @@ public partial class User
     public virtual ICollection<RefLect> RefLects { get; set; } = new List<RefLect>();
 
     public virtual Role? Role { get; set; }
-
-    public virtual ICollection<UserPregnancy> UserPregnancies { get; set; } = new List<UserPregnancy>();
 }

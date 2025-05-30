@@ -7,7 +7,7 @@ public partial class UserPregnancy
 {
     public int PregnancyId { get; set; }
 
-    public int? UserId { get; set; }
+    public int? MomId { get; set; }
 
     public DateOnly? StartDate { get; set; }
 
@@ -19,7 +19,7 @@ public partial class UserPregnancy
 
     public virtual ICollection<BabyTracking> BabyTrackings { get; set; } = new List<BabyTracking>();
 
-    public virtual ICollection<PregnancyTracking> PregnancyTrackings { get; set; } = new List<PregnancyTracking>();
+    public virtual MomProfile? Mom { get; set; }
 
-    public virtual User? User { get; set; }
+    public virtual ICollection<PregnancyTracking> PregnancyTrackings { get; set; } = new List<PregnancyTracking>();
 }

@@ -9,13 +9,13 @@ public partial class RefLect
 
     public int? UserId { get; set; }
 
-    public int? CourseId { get; set; }
+    public int? TextReport { get; set; }
 
-    public DateOnly? RefDate { get; set; }
+    public string? ImageReport { get; set; }
+
+    public DateOnly? CreateDate { get; set; }
 
     public string? Status { get; set; }
-
-    public virtual Course? Course { get; set; }
 
     public virtual User? User { get; set; }
 }

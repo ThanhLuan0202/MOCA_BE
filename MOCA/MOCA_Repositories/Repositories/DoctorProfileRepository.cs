@@ -71,7 +71,7 @@ namespace MOCA_Repositories.Repositories
 
         public async Task<DoctorProfile> GetDoctorProfileByIdAsync(int id)
         {
-            var checkDoc = await _context.DoctorProfiles.FirstOrDefaultAsync(x => x.DoctorId == id && x.Status.Equals("Active"));
+            var checkDoc = await _context.DoctorProfiles.Include(x => x.User).FirstOrDefaultAsync(x => x.DoctorId == id && x.Status.Equals("Active"));
 
             if (checkDoc == null)
             {
@@ -83,7 +83,7 @@ namespace MOCA_Repositories.Repositories
 
         public async Task<DoctorProfile> UpdateDoctorProfileAsync(int id, DoctorProfile updateDoctorProfile)
         {
-            var checkDoc = await _context.DoctorProfiles.FirstOrDefaultAsync(x => x.DoctorId == id && x.Status.Equals("Active"));
+            var checkDoc = await _context.DoctorProfiles.Include(x => x.User).FirstOrDefaultAsync(x => x.DoctorId == id && x.Status.Equals("Active"));
 
             if (checkDoc == null)
             {

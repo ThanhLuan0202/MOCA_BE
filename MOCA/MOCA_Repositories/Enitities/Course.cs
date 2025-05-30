@@ -31,7 +31,5 @@ public partial class Course
 
     public virtual ICollection<PurchasedCourse> PurchasedCourses { get; set; } = new List<PurchasedCourse>();
 
-    public virtual ICollection<RefLect> RefLects { get; set; } = new List<RefLect>();
-
     public virtual User? User { get; set; }
 }

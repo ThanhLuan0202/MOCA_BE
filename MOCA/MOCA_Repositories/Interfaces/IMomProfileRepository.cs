@@ -17,5 +17,8 @@ namespace MOCA_Repositories.Interfaces
         Task<MomProfile> UpdateMomProfileAsync(int id, UpdateMomProfileModel updateMomPr);
 
         Task<MomProfile> GetMomProfileByIdAsync(int id);
+
+        Task<MomProfile> GetMomProfileByUserIdAsync(int id);
+
     }
 }
