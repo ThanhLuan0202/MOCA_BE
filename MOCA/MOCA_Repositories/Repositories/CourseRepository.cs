@@ -15,11 +15,9 @@ namespace MOCA_Repositories.Repositories
     public class CourseRepository : Repository<Course>, ICourseRepository
     {
         private readonly MOCAContext _context;
-        private readonly IMapper _map;
-        public CourseRepository(MOCAContext context, IMapper mapper) : base(context) 
+        public CourseRepository(MOCAContext context) : base(context)
         {
             _context = context;
-            _map = mapper;
         }
 
         public async Task<Course> AddCourseAsync(CreateCourseModel createCourseModel, int userId)
@@ -49,7 +47,7 @@ namespace MOCA_Repositories.Repositories
                 CategoryId = createCourseModel.CategoryId,
                 CourseTitle = createCourseModel.CourseTitle,
                 Description = createCourseModel.Description,
-                Status = createCourseModel.Status,
+                Status = "Active",
                 Price = createCourseModel.Price,
                 UserId = userId,
                 CreateDate = createCourseModel.CreateDate ?? DateTime.UtcNow.AddHours(7),
@@ -75,7 +73,8 @@ namespace MOCA_Repositories.Repositories
                 throw new KeyNotFoundException($"Course with Id {id} not found.");
             }
 
-            course.Status = "InActive";
+            course.Status = "Inactive";
+            _context.Entry(course).Property(x => x.Status).IsModified = true;
             await _context.SaveChangesAsync();
 
             return course;
@@ -86,9 +85,24 @@ namespace MOCA_Repositories.Repositories
             var query = Entities.Include(c => c.Category)
                                 .Include(c => c.User)
                                 .Include(c => c.PurchasedCourses)
-                                     //.ThenInclude(pc => pc.Feedbacks)
+                                //.ThenInclude(pc => pc.Feedbacks)
                                 .Where(c => c.Status.ToLower() == "active");
-            return (IEnumerable<CourseViewGET>)query;
+            var result = await query
+                .Select(c => new CourseViewGET
+                {
+                    CourseId = c.CourseId,
+                    UserId = c.UserId,
+                    CategoryId = c.CategoryId,
+                    CourseTitle = c.CourseTitle,
+                    Description = c.Description,
+                    CreateDate = c.CreateDate,
+                    Status = c.Status,
+                    Image = c.Image,
+                    Price = c.Price
+                })
+                .ToListAsync();
+
+            return result;
         }
         public async Task<Course> GetByIdAllStatusAsync(int id)
         {
@@ -100,9 +114,8 @@ namespace MOCA_Repositories.Repositories
                                 .Include(c => c.User)
                                 .Include(c => c.Chapters)
                                 .Include(c => c.PurchasedCourses)
-                                     //.ThenInclude(pc => pc.Feedback)
                                 .Where(c => c.Status.ToLower() == "active");
-            
+
             if (!string.IsNullOrEmpty(searchOptions.CourseTitle))
             {
                 query = query.Where(c => c.CourseTitle.Contains(searchOptions.CourseTitle));
@@ -113,13 +126,25 @@ namespace MOCA_Repositories.Repositories
                 query = query.Where(c => c.Category.Name.Contains(searchOptions.CategoryName));
             }
 
-
             var courses = await query.ToListAsync();
 
-            var courseViews = _map.Map<IEnumerable<CourseViewGET>>(courses);
+            var courseViews = courses.Select(c => new CourseViewGET
+            {
+                CourseId = c.CourseId,
+                UserId = c.UserId,
+                CategoryId = c.CategoryId,
+                CourseTitle = c.CourseTitle,
+                Description = c.Description,
+                CreateDate = c.CreateDate,
+                Status = c.Status,
+                Image = c.Image,
+                Price = c.Price
+            });
 
             return courseViews.OrderByDescending(c => c.CourseTitle);
         }
+
+
 
         public async Task<Course> GetByIdAsync(int id)
         {

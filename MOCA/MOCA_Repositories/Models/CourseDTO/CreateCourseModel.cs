@@ -10,15 +10,13 @@ namespace MOCA_Repositories.Models.CourseDTO
     {
         public int? CategoryId { get; set; }
 
-        public string CourseTitle { get; set; }
+        public string? CourseTitle { get; set; }
 
-        public string Description { get; set; }
+        public string? Description { get; set; }
 
         public DateTime? CreateDate { get; set; }
 
-        public string Status { get; set; }
-
-        public string Image { get; set; }
+        public string? Image { get; set; }
 
         public decimal? Price { get; set; }
     }

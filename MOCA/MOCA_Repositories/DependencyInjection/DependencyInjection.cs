@@ -24,6 +24,7 @@ namespace MOCA_Repositories.DependencyInjection
             service.AddTransient<IDoctorProfileRepository, DoctorProfileRepository>();
             service.AddTransient<IUserPregnanciesRepository, UserPregnanciesRepository>();
             service.AddTransient<IPregnancyTrackingRepository, PregnancyTrackingRepository>();
+            service.AddTransient<IPurchasedCourseRepository, PurchasedCourseRepository>();
 
 
 
