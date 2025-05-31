@@ -27,7 +27,7 @@ namespace MOCA_Repositories.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK__Advertis__7130D5AE62AAF22A", x => x.AdId);
+                    table.PrimaryKey("PK__Advertis__7130D5AEEAC19E1F", x => x.AdId);
                 });
 
             migrationBuilder.CreateTable(
@@ -40,7 +40,7 @@ namespace MOCA_Repositories.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK__CourseCa__19093A2B63A28863", x => x.CategoryID);
+                    table.PrimaryKey("PK__CourseCa__19093A2B53F7E7B3", x => x.CategoryID);
                 });
 
             migrationBuilder.CreateTable(
@@ -59,39 +59,7 @@ namespace MOCA_Repositories.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK__Discount__E43F6DF65F48C105", x => x.DiscountID);
-                });
-
-            migrationBuilder.CreateTable(
-                name: "DoctorProfiles",
-                columns: table => new
-                {
-                    DoctorId = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    FullName = table.Column<string>(type: "nvarchar(255)", maxLength: 255, nullable: true),
-                    Specialization = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: true),
-                    Description = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    Status = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: true)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK__DoctorPr__2DC00EBF544FBAEB", x => x.DoctorId);
-                });
-
-            migrationBuilder.CreateTable(
-                name: "Feedbacks",
-                columns: table => new
-                {
-                    FeedbackID = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    UserName = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: true),
-                    Rating = table.Column<int>(type: "int", nullable: true),
-                    Comment = table.Column<string>(type: "text", nullable: true),
-                    CreateDate = table.Column<DateTime>(type: "datetime", nullable: true)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK__Feedback__6A4BEDF6AA495A4B", x => x.FeedbackID);
+                    table.PrimaryKey("PK__Discount__E43F6DF6F2E6067C", x => x.DiscountID);
                 });
 
             migrationBuilder.CreateTable(
@@ -105,7 +73,7 @@ namespace MOCA_Repositories.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK__Packages__322035ECA9B61943", x => x.PackageID);
+                    table.PrimaryKey("PK__Packages__322035ECBAA07F41", x => x.PackageID);
                 });
 
             migrationBuilder.CreateTable(
@@ -118,7 +86,7 @@ namespace MOCA_Repositories.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK__Roles__8AFACE3A604EAF89", x => x.RoleID);
+                    table.PrimaryKey("PK__Roles__8AFACE3A2377654B", x => x.RoleID);
                 });
 
             migrationBuilder.CreateTable(
@@ -129,7 +97,6 @@ namespace MOCA_Repositories.Migrations
                         .Annotation("SqlServer:Identity", "1, 1"),
                     RoleID = table.Column<int>(type: "int", nullable: true),
                     FullName = table.Column<string>(type: "nvarchar(255)", maxLength: 255, nullable: true),
-                    DoB = table.Column<DateTime>(type: "datetime2", nullable: true),
                     Email = table.Column<string>(type: "nvarchar(255)", maxLength: 255, nullable: true),
                     Password = table.Column<string>(type: "nvarchar(255)", maxLength: 255, nullable: true),
                     PhoneNumber = table.Column<string>(type: "nvarchar(20)", maxLength: 20, nullable: true),
@@ -138,7 +105,7 @@ namespace MOCA_Repositories.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK__Users__1788CCACD023DAF0", x => x.UserID);
+                    table.PrimaryKey("PK__Users__1788CCACC73252E8", x => x.UserID);
                     table.ForeignKey(
                         name: "FK_Users_Roles",
                         column: x => x.RoleID,
@@ -162,7 +129,7 @@ namespace MOCA_Repositories.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK__Communit__AA126018E720D5B6", x => x.PostId);
+                    table.PrimaryKey("PK__Communit__AA1260189D4C542C", x => x.PostId);
                     table.ForeignKey(
                         name: "FK_CommunityPosts_Users",
                         column: x => x.UserId,
@@ -187,7 +154,7 @@ namespace MOCA_Repositories.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK__Courses__C92D71A75652E6E3", x => x.CourseId);
+                    table.PrimaryKey("PK__Courses__C92D71A73B54427E", x => x.CourseId);
                     table.ForeignKey(
                         name: "FK_Courses_Categories",
                         column: x => x.CategoryId,
@@ -201,57 +168,22 @@ namespace MOCA_Repositories.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "DoctorBookings",
+                name: "DoctorProfiles",
                 columns: table => new
                 {
-                    BookingId = table.Column<int>(type: "int", nullable: false)
+                    DoctorId = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     UserId = table.Column<int>(type: "int", nullable: true),
-                    DoctorId = table.Column<int>(type: "int", nullable: true),
-                    BookingDate = table.Column<DateTime>(type: "datetime", nullable: true),
-                    ConsultationType = table.Column<byte>(type: "tinyint", nullable: true),
-                    RequiredDeposit = table.Column<decimal>(type: "decimal(10,2)", nullable: true),
-                    Status = table.Column<string>(type: "nvarchar(20)", maxLength: 20, nullable: true),
-                    Notes = table.Column<string>(type: "text", nullable: true),
-                    Price = table.Column<decimal>(type: "decimal(10,2)", nullable: true)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK__DoctorBo__73951AED853F6024", x => x.BookingId);
-                    table.ForeignKey(
-                        name: "FK_DoctorBookings_Doctors",
-                        column: x => x.DoctorId,
-                        principalTable: "DoctorProfiles",
-                        principalColumn: "DoctorId");
-                    table.ForeignKey(
-                        name: "FK_DoctorBookings_Users",
-                        column: x => x.UserId,
-                        principalTable: "Users",
-                        principalColumn: "UserID");
-                });
-
-            migrationBuilder.CreateTable(
-                name: "DoctorContacts",
-                columns: table => new
-                {
-                    ContactId = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    UserId = table.Column<int>(type: "int", nullable: true),
-                    DoctorId = table.Column<int>(type: "int", nullable: true),
-                    ContactDate = table.Column<DateTime>(type: "datetime", nullable: true),
-                    ContactMethod = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: true),
+                    FullName = table.Column<string>(type: "nvarchar(255)", maxLength: 255, nullable: true),
+                    Specialization = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: true),
+                    Description = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Status = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: true)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK__DoctorCo__5C66259B7C94B0BC", x => x.ContactId);
+                    table.PrimaryKey("PK__DoctorPr__2DC00EBFF45FC243", x => x.DoctorId);
                     table.ForeignKey(
-                        name: "FK_DoctorContacts_Doctors",
-                        column: x => x.DoctorId,
-                        principalTable: "DoctorProfiles",
-                        principalColumn: "DoctorId");
-                    table.ForeignKey(
-                        name: "FK_DoctorContacts_Users",
+                        name: "FK_DoctorProfiles_Users",
                         column: x => x.UserId,
                         principalTable: "Users",
                         principalColumn: "UserID");
@@ -261,9 +193,9 @@ namespace MOCA_Repositories.Migrations
                 name: "MomProfiles",
                 columns: table => new
                 {
-                    UserID = table.Column<int>(type: "int", nullable: false),
                     MomID = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
+                    UserID = table.Column<int>(type: "int", nullable: true),
                     DateOfBirth = table.Column<DateOnly>(type: "date", nullable: true),
                     Address = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     MaritalStatus = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: true),
@@ -272,7 +204,7 @@ namespace MOCA_Repositories.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK__MomProfi__1788CCAC5C5D1197", x => x.UserID);
+                    table.PrimaryKey("PK__MomProfi__C5D0E583F1939CBC", x => x.MomID);
                     table.ForeignKey(
                         name: "FK_MomProfiles_Users",
                         column: x => x.UserID,
@@ -294,7 +226,7 @@ namespace MOCA_Repositories.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK__Purchase__C3B05BF074796988", x => x.PurchasePackageID);
+                    table.PrimaryKey("PK__Purchase__C3B05BF013B87B00", x => x.PurchasePackageID);
                     table.ForeignKey(
                         name: "FK_PurchasePackage_Discounts",
                         column: x => x.DiscountID,
@@ -313,22 +245,22 @@ namespace MOCA_Repositories.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "UserPregnancies",
+                name: "RefLect",
                 columns: table => new
                 {
-                    PregnancyID = table.Column<int>(type: "int", nullable: false)
+                    RefLectID = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     UserID = table.Column<int>(type: "int", nullable: true),
-                    StartDate = table.Column<DateOnly>(type: "date", nullable: true),
-                    DueDate = table.Column<DateOnly>(type: "date", nullable: true),
-                    Notes = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    CreatedAt = table.Column<DateTime>(type: "datetime", nullable: true)
+                    TextReport = table.Column<int>(type: "int", nullable: true),
+                    ImageReport = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    CreateDate = table.Column<DateOnly>(type: "date", nullable: true),
+                    Status = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: true)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK__UserPreg__06D6610832C55802", x => x.PregnancyID);
+                    table.PrimaryKey("PK__RefLect__42A5357DE77C4085", x => x.RefLectID);
                     table.ForeignKey(
-                        name: "FK_UserPregnancies_Users",
+                        name: "FK_RefLect_Users",
                         column: x => x.UserID,
                         principalTable: "Users",
                         principalColumn: "UserID");
@@ -348,7 +280,7 @@ namespace MOCA_Repositories.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK__Communit__C25E4609EF2A9D22", x => x.ReplyId);
+                    table.PrimaryKey("PK__Communit__C25E46096FA36449", x => x.ReplyId);
                     table.ForeignKey(
                         name: "FK_CommunityReplies_Parent",
                         column: x => x.ParentReplyId,
@@ -378,7 +310,7 @@ namespace MOCA_Repositories.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK__PostLike__A2922C14A45F3614", x => x.LikeId);
+                    table.PrimaryKey("PK__PostLike__A2922C145CDB73B7", x => x.LikeId);
                     table.ForeignKey(
                         name: "FK_PostLikes_Posts",
                         column: x => x.PostId,
@@ -403,7 +335,7 @@ namespace MOCA_Repositories.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK__Bookmark__541A3A911198F40C", x => x.BookmarkID);
+                    table.PrimaryKey("PK__Bookmark__541A3A9182DFBFC6", x => x.BookmarkID);
                     table.ForeignKey(
                         name: "FK_Bookmarks_Courses",
                         column: x => x.CourseId,
@@ -419,14 +351,37 @@ namespace MOCA_Repositories.Migrations
                         .Annotation("SqlServer:Identity", "1, 1"),
                     CourseId = table.Column<int>(type: "int", nullable: true),
                     Title = table.Column<string>(type: "nvarchar(255)", maxLength: 255, nullable: true),
-                    OrderIndex = table.Column<int>(type: "int", nullable: true)
+                    OrderIndex = table.Column<int>(type: "int", nullable: true),
+                    Status = table.Column<string>(type: "nvarchar(max)", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK__Chapters__0893A36A9F44940D", x => x.ChapterId);
+                    table.PrimaryKey("PK__Chapters__0893A36A3A5BB820", x => x.ChapterId);
                     table.ForeignKey(
                         name: "FK_Chapters_Courses",
                         column: x => x.CourseId,
+                        principalTable: "Courses",
+                        principalColumn: "CourseId");
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Feedbacks",
+                columns: table => new
+                {
+                    FeedbackID = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    UserID = table.Column<int>(type: "int", nullable: true),
+                    CourseID = table.Column<int>(type: "int", nullable: true),
+                    Rating = table.Column<int>(type: "int", nullable: true),
+                    Comment = table.Column<string>(type: "text", nullable: true),
+                    CreateDate = table.Column<DateTime>(type: "datetime", nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK__Feedback__6A4BEDF6BF3DC92B", x => x.FeedbackID);
+                    table.ForeignKey(
+                        name: "FK_Feedback_Course",
+                        column: x => x.CourseID,
                         principalTable: "Courses",
                         principalColumn: "CourseId");
                 });
@@ -445,7 +400,7 @@ namespace MOCA_Repositories.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK__Purchase__2B7C245CF483F722", x => x.PurchasedID);
+                    table.PrimaryKey("PK__Purchase__2B7C245C31F15238", x => x.PurchasedID);
                     table.ForeignKey(
                         name: "FK_PurchasedCourses_Courses",
                         column: x => x.CourseID,
@@ -464,29 +419,107 @@ namespace MOCA_Repositories.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "RefLect",
+                name: "DoctorBookings",
                 columns: table => new
                 {
-                    RefLectID = table.Column<int>(type: "int", nullable: false)
+                    BookingId = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    UserID = table.Column<int>(type: "int", nullable: true),
-                    CourseID = table.Column<int>(type: "int", nullable: true),
-                    RefDate = table.Column<DateOnly>(type: "date", nullable: true),
+                    UserId = table.Column<int>(type: "int", nullable: true),
+                    DoctorId = table.Column<int>(type: "int", nullable: true),
+                    BookingDate = table.Column<DateTime>(type: "datetime", nullable: true),
+                    ConsultationType = table.Column<byte>(type: "tinyint", nullable: true),
+                    RequiredDeposit = table.Column<decimal>(type: "decimal(10,2)", nullable: true),
+                    Status = table.Column<string>(type: "nvarchar(20)", maxLength: 20, nullable: true),
+                    Notes = table.Column<string>(type: "text", nullable: true),
+                    Price = table.Column<decimal>(type: "decimal(10,2)", nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK__DoctorBo__73951AED1152B807", x => x.BookingId);
+                    table.ForeignKey(
+                        name: "FK_DoctorBookings_Doctors",
+                        column: x => x.DoctorId,
+                        principalTable: "DoctorProfiles",
+                        principalColumn: "DoctorId");
+                    table.ForeignKey(
+                        name: "FK_DoctorBookings_Users",
+                        column: x => x.UserId,
+                        principalTable: "Users",
+                        principalColumn: "UserID");
+                });
+
+            migrationBuilder.CreateTable(
+                name: "DoctorContacts",
+                columns: table => new
+                {
+                    ContactId = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    UserId = table.Column<int>(type: "int", nullable: true),
+                    DoctorId = table.Column<int>(type: "int", nullable: true),
+                    ContactDate = table.Column<DateTime>(type: "datetime", nullable: true),
+                    ContactMethod = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: true),
                     Status = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: true)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK__RefLect__42A5357DD3C3B807", x => x.RefLectID);
+                    table.PrimaryKey("PK__DoctorCo__5C66259BD78292D6", x => x.ContactId);
                     table.ForeignKey(
-                        name: "FK_RefLect_Courses",
-                        column: x => x.CourseID,
-                        principalTable: "Courses",
-                        principalColumn: "CourseId");
+                        name: "FK_DoctorContacts_Doctors",
+                        column: x => x.DoctorId,
+                        principalTable: "DoctorProfiles",
+                        principalColumn: "DoctorId");
                     table.ForeignKey(
-                        name: "FK_RefLect_Users",
-                        column: x => x.UserID,
+                        name: "FK_DoctorContacts_Users",
+                        column: x => x.UserId,
                         principalTable: "Users",
                         principalColumn: "UserID");
+                });
+
+            migrationBuilder.CreateTable(
+                name: "UserPregnancies",
+                columns: table => new
+                {
+                    PregnancyID = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    MomID = table.Column<int>(type: "int", nullable: true),
+                    StartDate = table.Column<DateOnly>(type: "date", nullable: true),
+                    DueDate = table.Column<DateOnly>(type: "date", nullable: true),
+                    Notes = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    CreatedAt = table.Column<DateTime>(type: "datetime", nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK__UserPreg__06D66108F8C73EC0", x => x.PregnancyID);
+                    table.ForeignKey(
+                        name: "FK_UserPregnancies_Users",
+                        column: x => x.MomID,
+                        principalTable: "MomProfiles",
+                        principalColumn: "MomID");
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Lessons",
+                columns: table => new
+                {
+                    LessonId = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    ChapterId = table.Column<int>(type: "int", nullable: true),
+                    Title = table.Column<string>(type: "nvarchar(255)", maxLength: 255, nullable: true),
+                    Content = table.Column<string>(type: "text", nullable: true),
+                    VideoUrl = table.Column<string>(type: "nvarchar(255)", maxLength: 255, nullable: true),
+                    CreateDate = table.Column<DateTime>(type: "datetime", nullable: true),
+                    Duration = table.Column<int>(type: "int", nullable: true),
+                    OrderIndex = table.Column<int>(type: "int", nullable: true),
+                    Status = table.Column<string>(type: "nvarchar(max)", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK__Lessons__B084ACD0C4D2DFDE", x => x.LessonId);
+                    table.ForeignKey(
+                        name: "FK_Lessons_Chapters",
+                        column: x => x.ChapterId,
+                        principalTable: "Chapters",
+                        principalColumn: "ChapterId");
                 });
 
             migrationBuilder.CreateTable(
@@ -505,7 +538,7 @@ namespace MOCA_Repositories.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK__BookingP__9B556A3813C6E44E", x => x.PaymentId);
+                    table.PrimaryKey("PK__BookingP__9B556A385DFE0A3C", x => x.PaymentId);
                     table.ForeignKey(
                         name: "FK_BookingPayments_Bookings",
                         column: x => x.BookingId,
@@ -526,7 +559,7 @@ namespace MOCA_Repositories.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK__Messages__C87C0C9CC4087D53", x => x.MessageId);
+                    table.PrimaryKey("PK__Messages__C87C0C9CF44BE54D", x => x.MessageId);
                     table.ForeignKey(
                         name: "FK_MessagesWithDoctor_Contact",
                         column: x => x.ContactId,
@@ -552,7 +585,7 @@ namespace MOCA_Repositories.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK__BabyTrac__D24787C68A333B52", x => x.CheckupBabyID);
+                    table.PrimaryKey("PK__BabyTrac__D24787C65166FBB5", x => x.CheckupBabyID);
                     table.ForeignKey(
                         name: "FK_BabyTracking_Pregnancy",
                         column: x => x.PregnancyID,
@@ -575,36 +608,12 @@ namespace MOCA_Repositories.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK__Pregnanc__3C19EDD10D63A85E", x => x.TrackingID);
+                    table.PrimaryKey("PK__Pregnanc__3C19EDD191DDE92B", x => x.TrackingID);
                     table.ForeignKey(
                         name: "FK_PregnancyTracking_Pregnancy",
                         column: x => x.PregnancyID,
                         principalTable: "UserPregnancies",
                         principalColumn: "PregnancyID");
-                });
-
-            migrationBuilder.CreateTable(
-                name: "Lessons",
-                columns: table => new
-                {
-                    LessonId = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    ChapterId = table.Column<int>(type: "int", nullable: true),
-                    Title = table.Column<string>(type: "nvarchar(255)", maxLength: 255, nullable: true),
-                    Content = table.Column<string>(type: "text", nullable: true),
-                    VideoUrl = table.Column<string>(type: "nvarchar(255)", maxLength: 255, nullable: true),
-                    CreateDate = table.Column<DateTime>(type: "datetime", nullable: true),
-                    Duration = table.Column<int>(type: "int", nullable: true),
-                    OrderIndex = table.Column<int>(type: "int", nullable: true)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK__Lessons__B084ACD04686859D", x => x.LessonId);
-                    table.ForeignKey(
-                        name: "FK_Lessons_Chapters",
-                        column: x => x.ChapterId,
-                        principalTable: "Chapters",
-                        principalColumn: "ChapterId");
                 });
 
             migrationBuilder.CreateIndex(
@@ -678,6 +687,16 @@ namespace MOCA_Repositories.Migrations
                 column: "UserId");
 
             migrationBuilder.CreateIndex(
+                name: "IX_DoctorProfiles_UserId",
+                table: "DoctorProfiles",
+                column: "UserId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Feedbacks_CourseID",
+                table: "Feedbacks",
+                column: "CourseID");
+
+            migrationBuilder.CreateIndex(
                 name: "IX_Lessons_ChapterId",
                 table: "Lessons",
                 column: "ChapterId");
@@ -686,6 +705,11 @@ namespace MOCA_Repositories.Migrations
                 name: "IX_MessagesWithDoctor_ContactId",
                 table: "MessagesWithDoctor",
                 column: "ContactId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_MomProfiles_UserID",
+                table: "MomProfiles",
+                column: "UserID");
 
             migrationBuilder.CreateIndex(
                 name: "IX_PostLikes_PostId",
@@ -733,19 +757,14 @@ namespace MOCA_Repositories.Migrations
                 column: "UserID");
 
             migrationBuilder.CreateIndex(
-                name: "IX_RefLect_CourseID",
-                table: "RefLect",
-                column: "CourseID");
-
-            migrationBuilder.CreateIndex(
                 name: "IX_RefLect_UserID",
                 table: "RefLect",
                 column: "UserID");
 
             migrationBuilder.CreateIndex(
-                name: "IX_UserPregnancies_UserID",
+                name: "IX_UserPregnancies_MomID",
                 table: "UserPregnancies",
-                column: "UserID");
+                column: "MomID");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Users_RoleID",
@@ -779,9 +798,6 @@ namespace MOCA_Repositories.Migrations
 
             migrationBuilder.DropTable(
                 name: "MessagesWithDoctor");
-
-            migrationBuilder.DropTable(
-                name: "MomProfiles");
 
             migrationBuilder.DropTable(
                 name: "PostLikes");
@@ -824,6 +840,9 @@ namespace MOCA_Repositories.Migrations
 
             migrationBuilder.DropTable(
                 name: "DoctorProfiles");
+
+            migrationBuilder.DropTable(
+                name: "MomProfiles");
 
             migrationBuilder.DropTable(
                 name: "CourseCategories");

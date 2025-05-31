@@ -291,7 +291,13 @@ public partial class MOCAContext : DbContext
             entity.Property(e => e.FeedbackId).HasColumnName("FeedbackID");
             entity.Property(e => e.Comment).HasColumnType("text");
             entity.Property(e => e.CreateDate).HasColumnType("datetime");
-            entity.Property(e => e.UserName).HasMaxLength(100);
+            entity.Property(e => e.UserId).HasColumnName("UserID");
+            entity.Property(e => e.CourseId).HasColumnName("CourseID");
+
+            entity.HasOne(d => d.Course)
+                .WithMany(p => p.Feedbacks)
+                .HasForeignKey(d => d.CourseId)
+                .HasConstraintName("FK_Feedback_Course");
         });
 
         modelBuilder.Entity<Lesson>(entity =>

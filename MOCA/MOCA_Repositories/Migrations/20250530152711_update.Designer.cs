@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace MOCA_Repositories.Migrations
 {
     [DbContext(typeof(MOCAContext))]
-    [Migration("20250522170242_update")]
+    [Migration("20250530152711_update")]
     partial class update
     {
         /// <inheritdoc />
@@ -25,7 +25,7 @@ namespace MOCA_Repositories.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
-            modelBuilder.Entity("MOCA_Repositories.Models.Advertisement", b =>
+            modelBuilder.Entity("MOCA_Repositories.Enitities.Advertisement", b =>
                 {
                     b.Property<int>("AdId")
                         .ValueGeneratedOnAdd()
@@ -58,12 +58,12 @@ namespace MOCA_Repositories.Migrations
                         .HasColumnType("nvarchar(255)");
 
                     b.HasKey("AdId")
-                        .HasName("PK__Advertis__7130D5AE62AAF22A");
+                        .HasName("PK__Advertis__7130D5AEEAC19E1F");
 
                     b.ToTable("Advertisements");
                 });
 
-            modelBuilder.Entity("MOCA_Repositories.Models.BabyTracking", b =>
+            modelBuilder.Entity("MOCA_Repositories.Enitities.BabyTracking", b =>
                 {
                     b.Property<int>("CheckupBabyId")
                         .ValueGeneratedOnAdd()
@@ -102,14 +102,14 @@ namespace MOCA_Repositories.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("CheckupBabyId")
-                        .HasName("PK__BabyTrac__D24787C68A333B52");
+                        .HasName("PK__BabyTrac__D24787C65166FBB5");
 
                     b.HasIndex("PregnancyId");
 
                     b.ToTable("BabyTracking", (string)null);
                 });
 
-            modelBuilder.Entity("MOCA_Repositories.Models.BookingPayment", b =>
+            modelBuilder.Entity("MOCA_Repositories.Enitities.BookingPayment", b =>
                 {
                     b.Property<int>("PaymentId")
                         .ValueGeneratedOnAdd()
@@ -141,14 +141,14 @@ namespace MOCA_Repositories.Migrations
                         .HasColumnType("nvarchar(100)");
 
                     b.HasKey("PaymentId")
-                        .HasName("PK__BookingP__9B556A3813C6E44E");
+                        .HasName("PK__BookingP__9B556A385DFE0A3C");
 
                     b.HasIndex("BookingId");
 
                     b.ToTable("BookingPayments");
                 });
 
-            modelBuilder.Entity("MOCA_Repositories.Models.Bookmark", b =>
+            modelBuilder.Entity("MOCA_Repositories.Enitities.Bookmark", b =>
                 {
                     b.Property<int>("BookmarkId")
                         .ValueGeneratedOnAdd()
@@ -168,14 +168,14 @@ namespace MOCA_Repositories.Migrations
                         .HasColumnType("nvarchar(100)");
 
                     b.HasKey("BookmarkId")
-                        .HasName("PK__Bookmark__541A3A911198F40C");
+                        .HasName("PK__Bookmark__541A3A9182DFBFC6");
 
                     b.HasIndex("CourseId");
 
                     b.ToTable("Bookmarks");
                 });
 
-            modelBuilder.Entity("MOCA_Repositories.Models.Chapter", b =>
+            modelBuilder.Entity("MOCA_Repositories.Enitities.Chapter", b =>
                 {
                     b.Property<int>("ChapterId")
                         .ValueGeneratedOnAdd()
@@ -189,19 +189,23 @@ namespace MOCA_Repositories.Migrations
                     b.Property<int?>("OrderIndex")
                         .HasColumnType("int");
 
+                    b.Property<string>("Status")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("Title")
                         .HasMaxLength(255)
                         .HasColumnType("nvarchar(255)");
 
                     b.HasKey("ChapterId")
-                        .HasName("PK__Chapters__0893A36A9F44940D");
+                        .HasName("PK__Chapters__0893A36A3A5BB820");
 
                     b.HasIndex("CourseId");
 
                     b.ToTable("Chapters");
                 });
 
-            modelBuilder.Entity("MOCA_Repositories.Models.CommunityPost", b =>
+            modelBuilder.Entity("MOCA_Repositories.Enitities.CommunityPost", b =>
                 {
                     b.Property<int>("PostId")
                         .ValueGeneratedOnAdd()
@@ -235,14 +239,14 @@ namespace MOCA_Repositories.Migrations
                         .HasColumnType("int");
 
                     b.HasKey("PostId")
-                        .HasName("PK__Communit__AA126018E720D5B6");
+                        .HasName("PK__Communit__AA1260189D4C542C");
 
                     b.HasIndex("UserId");
 
                     b.ToTable("CommunityPosts");
                 });
 
-            modelBuilder.Entity("MOCA_Repositories.Models.CommunityReply", b =>
+            modelBuilder.Entity("MOCA_Repositories.Enitities.CommunityReply", b =>
                 {
                     b.Property<int>("ReplyId")
                         .ValueGeneratedOnAdd()
@@ -266,7 +270,7 @@ namespace MOCA_Repositories.Migrations
                         .HasColumnType("int");
 
                     b.HasKey("ReplyId")
-                        .HasName("PK__Communit__C25E4609EF2A9D22");
+                        .HasName("PK__Communit__C25E46096FA36449");
 
                     b.HasIndex("ParentReplyId");
 
@@ -277,7 +281,7 @@ namespace MOCA_Repositories.Migrations
                     b.ToTable("CommunityReplies");
                 });
 
-            modelBuilder.Entity("MOCA_Repositories.Models.Course", b =>
+            modelBuilder.Entity("MOCA_Repositories.Enitities.Course", b =>
                 {
                     b.Property<int>("CourseId")
                         .ValueGeneratedOnAdd()
@@ -314,7 +318,7 @@ namespace MOCA_Repositories.Migrations
                         .HasColumnName("UserID");
 
                     b.HasKey("CourseId")
-                        .HasName("PK__Courses__C92D71A75652E6E3");
+                        .HasName("PK__Courses__C92D71A73B54427E");
 
                     b.HasIndex("CategoryId");
 
@@ -323,7 +327,7 @@ namespace MOCA_Repositories.Migrations
                     b.ToTable("Courses");
                 });
 
-            modelBuilder.Entity("MOCA_Repositories.Models.CourseCategory", b =>
+            modelBuilder.Entity("MOCA_Repositories.Enitities.CourseCategory", b =>
                 {
                     b.Property<int>("CategoryId")
                         .ValueGeneratedOnAdd()
@@ -337,12 +341,12 @@ namespace MOCA_Repositories.Migrations
                         .HasColumnType("nvarchar(100)");
 
                     b.HasKey("CategoryId")
-                        .HasName("PK__CourseCa__19093A2B63A28863");
+                        .HasName("PK__CourseCa__19093A2B53F7E7B3");
 
                     b.ToTable("CourseCategories");
                 });
 
-            modelBuilder.Entity("MOCA_Repositories.Models.Discount", b =>
+            modelBuilder.Entity("MOCA_Repositories.Enitities.Discount", b =>
                 {
                     b.Property<int>("DiscountId")
                         .ValueGeneratedOnAdd()
@@ -374,12 +378,12 @@ namespace MOCA_Repositories.Migrations
                         .HasColumnType("decimal(10, 2)");
 
                     b.HasKey("DiscountId")
-                        .HasName("PK__Discount__E43F6DF65F48C105");
+                        .HasName("PK__Discount__E43F6DF6F2E6067C");
 
                     b.ToTable("Discounts");
                 });
 
-            modelBuilder.Entity("MOCA_Repositories.Models.DoctorBooking", b =>
+            modelBuilder.Entity("MOCA_Repositories.Enitities.DoctorBooking", b =>
                 {
                     b.Property<int>("BookingId")
                         .ValueGeneratedOnAdd()
@@ -413,7 +417,7 @@ namespace MOCA_Repositories.Migrations
                         .HasColumnType("int");
 
                     b.HasKey("BookingId")
-                        .HasName("PK__DoctorBo__73951AED853F6024");
+                        .HasName("PK__DoctorBo__73951AED1152B807");
 
                     b.HasIndex("DoctorId");
 
@@ -422,7 +426,7 @@ namespace MOCA_Repositories.Migrations
                     b.ToTable("DoctorBookings");
                 });
 
-            modelBuilder.Entity("MOCA_Repositories.Models.DoctorContact", b =>
+            modelBuilder.Entity("MOCA_Repositories.Enitities.DoctorContact", b =>
                 {
                     b.Property<int>("ContactId")
                         .ValueGeneratedOnAdd()
@@ -448,7 +452,7 @@ namespace MOCA_Repositories.Migrations
                         .HasColumnType("int");
 
                     b.HasKey("ContactId")
-                        .HasName("PK__DoctorCo__5C66259B7C94B0BC");
+                        .HasName("PK__DoctorCo__5C66259BD78292D6");
 
                     b.HasIndex("DoctorId");
 
@@ -457,7 +461,7 @@ namespace MOCA_Repositories.Migrations
                     b.ToTable("DoctorContacts");
                 });
 
-            modelBuilder.Entity("MOCA_Repositories.Models.DoctorProfile", b =>
+            modelBuilder.Entity("MOCA_Repositories.Enitities.DoctorProfile", b =>
                 {
                     b.Property<int>("DoctorId")
                         .ValueGeneratedOnAdd()
@@ -480,13 +484,18 @@ namespace MOCA_Repositories.Migrations
                         .HasMaxLength(50)
                         .HasColumnType("nvarchar(50)");
 
+                    b.Property<int?>("UserId")
+                        .HasColumnType("int");
+
                     b.HasKey("DoctorId")
-                        .HasName("PK__DoctorPr__2DC00EBF544FBAEB");
+                        .HasName("PK__DoctorPr__2DC00EBFF45FC243");
+
+                    b.HasIndex("UserId");
 
                     b.ToTable("DoctorProfiles");
                 });
 
-            modelBuilder.Entity("MOCA_Repositories.Models.Feedback", b =>
+            modelBuilder.Entity("MOCA_Repositories.Enitities.Feedback", b =>
                 {
                     b.Property<int>("FeedbackId")
                         .ValueGeneratedOnAdd()
@@ -498,23 +507,29 @@ namespace MOCA_Repositories.Migrations
                     b.Property<string>("Comment")
                         .HasColumnType("text");
 
+                    b.Property<int?>("CourseId")
+                        .HasColumnType("int")
+                        .HasColumnName("CourseID");
+
                     b.Property<DateTime?>("CreateDate")
                         .HasColumnType("datetime");
 
                     b.Property<int?>("Rating")
                         .HasColumnType("int");
 
-                    b.Property<string>("UserName")
-                        .HasMaxLength(100)
-                        .HasColumnType("nvarchar(100)");
+                    b.Property<int?>("UserId")
+                        .HasColumnType("int")
+                        .HasColumnName("UserID");
 
                     b.HasKey("FeedbackId")
-                        .HasName("PK__Feedback__6A4BEDF6AA495A4B");
+                        .HasName("PK__Feedback__6A4BEDF6BF3DC92B");
+
+                    b.HasIndex("CourseId");
 
                     b.ToTable("Feedbacks");
                 });
 
-            modelBuilder.Entity("MOCA_Repositories.Models.Lesson", b =>
+            modelBuilder.Entity("MOCA_Repositories.Enitities.Lesson", b =>
                 {
                     b.Property<int>("LessonId")
                         .ValueGeneratedOnAdd()
@@ -537,6 +552,10 @@ namespace MOCA_Repositories.Migrations
                     b.Property<int?>("OrderIndex")
                         .HasColumnType("int");
 
+                    b.Property<string>("Status")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("Title")
                         .HasMaxLength(255)
                         .HasColumnType("nvarchar(255)");
@@ -546,14 +565,14 @@ namespace MOCA_Repositories.Migrations
                         .HasColumnType("nvarchar(255)");
 
                     b.HasKey("LessonId")
-                        .HasName("PK__Lessons__B084ACD04686859D");
+                        .HasName("PK__Lessons__B084ACD0C4D2DFDE");
 
                     b.HasIndex("ChapterId");
 
                     b.ToTable("Lessons");
                 });
 
-            modelBuilder.Entity("MOCA_Repositories.Models.MessagesWithDoctor", b =>
+            modelBuilder.Entity("MOCA_Repositories.Enitities.MessagesWithDoctor", b =>
                 {
                     b.Property<int>("MessageId")
                         .ValueGeneratedOnAdd()
@@ -575,18 +594,21 @@ namespace MOCA_Repositories.Migrations
                         .HasColumnType("nvarchar(20)");
 
                     b.HasKey("MessageId")
-                        .HasName("PK__Messages__C87C0C9CC4087D53");
+                        .HasName("PK__Messages__C87C0C9CF44BE54D");
 
                     b.HasIndex("ContactId");
 
                     b.ToTable("MessagesWithDoctor", (string)null);
                 });
 
-            modelBuilder.Entity("MOCA_Repositories.Models.MomProfile", b =>
+            modelBuilder.Entity("MOCA_Repositories.Enitities.MomProfile", b =>
                 {
-                    b.Property<int>("UserId")
+                    b.Property<int>("MomId")
+                        .ValueGeneratedOnAdd()
                         .HasColumnType("int")
-                        .HasColumnName("UserID");
+                        .HasColumnName("MomID");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("MomId"));
 
                     b.Property<string>("Address")
                         .HasColumnType("nvarchar(max)");
@@ -605,20 +627,19 @@ namespace MOCA_Repositories.Migrations
                     b.Property<string>("MedicalHistory")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("MomId")
-                        .ValueGeneratedOnAdd()
+                    b.Property<int?>("UserId")
                         .HasColumnType("int")
-                        .HasColumnName("MomID");
+                        .HasColumnName("UserID");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("MomId"));
+                    b.HasKey("MomId")
+                        .HasName("PK__MomProfi__C5D0E583F1939CBC");
 
-                    b.HasKey("UserId")
-                        .HasName("PK__MomProfi__1788CCAC5C5D1197");
+                    b.HasIndex("UserId");
 
                     b.ToTable("MomProfiles");
                 });
 
-            modelBuilder.Entity("MOCA_Repositories.Models.Package", b =>
+            modelBuilder.Entity("MOCA_Repositories.Enitities.Package", b =>
                 {
                     b.Property<int>("PackageId")
                         .ValueGeneratedOnAdd()
@@ -636,12 +657,12 @@ namespace MOCA_Repositories.Migrations
                         .HasColumnType("nvarchar(50)");
 
                     b.HasKey("PackageId")
-                        .HasName("PK__Packages__322035ECA9B61943");
+                        .HasName("PK__Packages__322035ECBAA07F41");
 
                     b.ToTable("Packages");
                 });
 
-            modelBuilder.Entity("MOCA_Repositories.Models.PostLike", b =>
+            modelBuilder.Entity("MOCA_Repositories.Enitities.PostLike", b =>
                 {
                     b.Property<int>("LikeId")
                         .ValueGeneratedOnAdd()
@@ -659,7 +680,7 @@ namespace MOCA_Repositories.Migrations
                         .HasColumnType("int");
 
                     b.HasKey("LikeId")
-                        .HasName("PK__PostLike__A2922C14A45F3614");
+                        .HasName("PK__PostLike__A2922C145CDB73B7");
 
                     b.HasIndex("PostId");
 
@@ -668,7 +689,7 @@ namespace MOCA_Repositories.Migrations
                     b.ToTable("PostLikes");
                 });
 
-            modelBuilder.Entity("MOCA_Repositories.Models.PregnancyTracking", b =>
+            modelBuilder.Entity("MOCA_Repositories.Enitities.PregnancyTracking", b =>
                 {
                     b.Property<int>("TrackingId")
                         .ValueGeneratedOnAdd()
@@ -698,14 +719,14 @@ namespace MOCA_Repositories.Migrations
                         .HasColumnType("decimal(5, 2)");
 
                     b.HasKey("TrackingId")
-                        .HasName("PK__Pregnanc__3C19EDD10D63A85E");
+                        .HasName("PK__Pregnanc__3C19EDD191DDE92B");
 
                     b.HasIndex("PregnancyId");
 
                     b.ToTable("PregnancyTracking", (string)null);
                 });
 
-            modelBuilder.Entity("MOCA_Repositories.Models.PurchasePackage", b =>
+            modelBuilder.Entity("MOCA_Repositories.Enitities.PurchasePackage", b =>
                 {
                     b.Property<int>("PurchasePackageId")
                         .ValueGeneratedOnAdd()
@@ -734,7 +755,7 @@ namespace MOCA_Repositories.Migrations
                         .HasColumnName("UserID");
 
                     b.HasKey("PurchasePackageId")
-                        .HasName("PK__Purchase__C3B05BF074796988");
+                        .HasName("PK__Purchase__C3B05BF013B87B00");
 
                     b.HasIndex("DiscountId");
 
@@ -745,7 +766,7 @@ namespace MOCA_Repositories.Migrations
                     b.ToTable("PurchasePackage", (string)null);
                 });
 
-            modelBuilder.Entity("MOCA_Repositories.Models.PurchasedCourse", b =>
+            modelBuilder.Entity("MOCA_Repositories.Enitities.PurchasedCourse", b =>
                 {
                     b.Property<int>("PurchasedId")
                         .ValueGeneratedOnAdd()
@@ -774,7 +795,7 @@ namespace MOCA_Repositories.Migrations
                         .HasColumnName("UserID");
 
                     b.HasKey("PurchasedId")
-                        .HasName("PK__Purchase__2B7C245CF483F722");
+                        .HasName("PK__Purchase__2B7C245C31F15238");
 
                     b.HasIndex("CourseId");
 
@@ -785,7 +806,7 @@ namespace MOCA_Repositories.Migrations
                     b.ToTable("PurchasedCourses");
                 });
 
-            modelBuilder.Entity("MOCA_Repositories.Models.RefLect", b =>
+            modelBuilder.Entity("MOCA_Repositories.Enitities.RefLect", b =>
                 {
                     b.Property<int>("RefLectId")
                         .ValueGeneratedOnAdd()
@@ -794,32 +815,32 @@ namespace MOCA_Repositories.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("RefLectId"));
 
-                    b.Property<int?>("CourseId")
-                        .HasColumnType("int")
-                        .HasColumnName("CourseID");
-
-                    b.Property<DateOnly?>("RefDate")
+                    b.Property<DateOnly?>("CreateDate")
                         .HasColumnType("date");
+
+                    b.Property<string>("ImageReport")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Status")
                         .HasMaxLength(50)
                         .HasColumnType("nvarchar(50)");
+
+                    b.Property<int?>("TextReport")
+                        .HasColumnType("int");
 
                     b.Property<int?>("UserId")
                         .HasColumnType("int")
                         .HasColumnName("UserID");
 
                     b.HasKey("RefLectId")
-                        .HasName("PK__RefLect__42A5357DD3C3B807");
-
-                    b.HasIndex("CourseId");
+                        .HasName("PK__RefLect__42A5357DE77C4085");
 
                     b.HasIndex("UserId");
 
                     b.ToTable("RefLect", (string)null);
                 });
 
-            modelBuilder.Entity("MOCA_Repositories.Models.Role", b =>
+            modelBuilder.Entity("MOCA_Repositories.Enitities.Role", b =>
                 {
                     b.Property<int>("RoleId")
                         .ValueGeneratedOnAdd()
@@ -833,12 +854,12 @@ namespace MOCA_Repositories.Migrations
                         .HasColumnType("nvarchar(100)");
 
                     b.HasKey("RoleId")
-                        .HasName("PK__Roles__8AFACE3A604EAF89");
+                        .HasName("PK__Roles__8AFACE3A2377654B");
 
                     b.ToTable("Roles");
                 });
 
-            modelBuilder.Entity("MOCA_Repositories.Models.User", b =>
+            modelBuilder.Entity("MOCA_Repositories.Enitities.User", b =>
                 {
                     b.Property<int>("UserId")
                         .ValueGeneratedOnAdd()
@@ -846,9 +867,6 @@ namespace MOCA_Repositories.Migrations
                         .HasColumnName("UserID");
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("UserId"));
-
-                    b.Property<DateTime?>("DoB")
-                        .HasColumnType("datetime2");
 
                     b.Property<string>("Email")
                         .HasMaxLength(255)
@@ -878,14 +896,14 @@ namespace MOCA_Repositories.Migrations
                         .HasColumnType("nvarchar(50)");
 
                     b.HasKey("UserId")
-                        .HasName("PK__Users__1788CCACD023DAF0");
+                        .HasName("PK__Users__1788CCACC73252E8");
 
                     b.HasIndex("RoleId");
 
                     b.ToTable("Users");
                 });
 
-            modelBuilder.Entity("MOCA_Repositories.Models.UserPregnancy", b =>
+            modelBuilder.Entity("MOCA_Repositories.Enitities.UserPregnancy", b =>
                 {
                     b.Property<int>("PregnancyId")
                         .ValueGeneratedOnAdd()
@@ -900,27 +918,27 @@ namespace MOCA_Repositories.Migrations
                     b.Property<DateOnly?>("DueDate")
                         .HasColumnType("date");
 
+                    b.Property<int?>("MomId")
+                        .HasColumnType("int")
+                        .HasColumnName("MomID");
+
                     b.Property<string>("Notes")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<DateOnly?>("StartDate")
                         .HasColumnType("date");
 
-                    b.Property<int?>("UserId")
-                        .HasColumnType("int")
-                        .HasColumnName("UserID");
-
                     b.HasKey("PregnancyId")
-                        .HasName("PK__UserPreg__06D6610832C55802");
+                        .HasName("PK__UserPreg__06D66108F8C73EC0");
 
-                    b.HasIndex("UserId");
+                    b.HasIndex("MomId");
 
                     b.ToTable("UserPregnancies");
                 });
 
-            modelBuilder.Entity("MOCA_Repositories.Models.BabyTracking", b =>
+            modelBuilder.Entity("MOCA_Repositories.Enitities.BabyTracking", b =>
                 {
-                    b.HasOne("MOCA_Repositories.Models.UserPregnancy", "Pregnancy")
+                    b.HasOne("MOCA_Repositories.Enitities.UserPregnancy", "Pregnancy")
                         .WithMany("BabyTrackings")
                         .HasForeignKey("PregnancyId")
                         .HasConstraintName("FK_BabyTracking_Pregnancy");
@@ -928,9 +946,9 @@ namespace MOCA_Repositories.Migrations
                     b.Navigation("Pregnancy");
                 });
 
-            modelBuilder.Entity("MOCA_Repositories.Models.BookingPayment", b =>
+            modelBuilder.Entity("MOCA_Repositories.Enitities.BookingPayment", b =>
                 {
-                    b.HasOne("MOCA_Repositories.Models.DoctorBooking", "Booking")
+                    b.HasOne("MOCA_Repositories.Enitities.DoctorBooking", "Booking")
                         .WithMany("BookingPayments")
                         .HasForeignKey("BookingId")
                         .HasConstraintName("FK_BookingPayments_Bookings");
@@ -938,9 +956,9 @@ namespace MOCA_Repositories.Migrations
                     b.Navigation("Booking");
                 });
 
-            modelBuilder.Entity("MOCA_Repositories.Models.Bookmark", b =>
+            modelBuilder.Entity("MOCA_Repositories.Enitities.Bookmark", b =>
                 {
-                    b.HasOne("MOCA_Repositories.Models.Course", "Course")
+                    b.HasOne("MOCA_Repositories.Enitities.Course", "Course")
                         .WithMany("Bookmarks")
                         .HasForeignKey("CourseId")
                         .HasConstraintName("FK_Bookmarks_Courses");
@@ -948,9 +966,9 @@ namespace MOCA_Repositories.Migrations
                     b.Navigation("Course");
                 });
 
-            modelBuilder.Entity("MOCA_Repositories.Models.Chapter", b =>
+            modelBuilder.Entity("MOCA_Repositories.Enitities.Chapter", b =>
                 {
-                    b.HasOne("MOCA_Repositories.Models.Course", "Course")
+                    b.HasOne("MOCA_Repositories.Enitities.Course", "Course")
                         .WithMany("Chapters")
                         .HasForeignKey("CourseId")
                         .HasConstraintName("FK_Chapters_Courses");
@@ -958,9 +976,9 @@ namespace MOCA_Repositories.Migrations
                     b.Navigation("Course");
                 });
 
-            modelBuilder.Entity("MOCA_Repositories.Models.CommunityPost", b =>
+            modelBuilder.Entity("MOCA_Repositories.Enitities.CommunityPost", b =>
                 {
-                    b.HasOne("MOCA_Repositories.Models.User", "User")
+                    b.HasOne("MOCA_Repositories.Enitities.User", "User")
                         .WithMany("CommunityPosts")
                         .HasForeignKey("UserId")
                         .HasConstraintName("FK_CommunityPosts_Users");
@@ -968,19 +986,19 @@ namespace MOCA_Repositories.Migrations
                     b.Navigation("User");
                 });
 
-            modelBuilder.Entity("MOCA_Repositories.Models.CommunityReply", b =>
+            modelBuilder.Entity("MOCA_Repositories.Enitities.CommunityReply", b =>
                 {
-                    b.HasOne("MOCA_Repositories.Models.CommunityReply", "ParentReply")
+                    b.HasOne("MOCA_Repositories.Enitities.CommunityReply", "ParentReply")
                         .WithMany("InverseParentReply")
                         .HasForeignKey("ParentReplyId")
                         .HasConstraintName("FK_CommunityReplies_Parent");
 
-                    b.HasOne("MOCA_Repositories.Models.CommunityPost", "Post")
+                    b.HasOne("MOCA_Repositories.Enitities.CommunityPost", "Post")
                         .WithMany("CommunityReplies")
                         .HasForeignKey("PostId")
                         .HasConstraintName("FK_CommunityReplies_Posts");
 
-                    b.HasOne("MOCA_Repositories.Models.User", "User")
+                    b.HasOne("MOCA_Repositories.Enitities.User", "User")
                         .WithMany("CommunityReplies")
                         .HasForeignKey("UserId")
                         .HasConstraintName("FK_CommunityReplies_Users");
@@ -992,14 +1010,14 @@ namespace MOCA_Repositories.Migrations
                     b.Navigation("User");
                 });
 
-            modelBuilder.Entity("MOCA_Repositories.Models.Course", b =>
+            modelBuilder.Entity("MOCA_Repositories.Enitities.Course", b =>
                 {
-                    b.HasOne("MOCA_Repositories.Models.CourseCategory", "Category")
+                    b.HasOne("MOCA_Repositories.Enitities.CourseCategory", "Category")
                         .WithMany("Courses")
                         .HasForeignKey("CategoryId")
                         .HasConstraintName("FK_Courses_Categories");
 
-                    b.HasOne("MOCA_Repositories.Models.User", "User")
+                    b.HasOne("MOCA_Repositories.Enitities.User", "User")
                         .WithMany("Courses")
                         .HasForeignKey("UserId")
                         .HasConstraintName("FK_Courses_Users");
@@ -1009,14 +1027,14 @@ namespace MOCA_Repositories.Migrations
                     b.Navigation("User");
                 });
 
-            modelBuilder.Entity("MOCA_Repositories.Models.DoctorBooking", b =>
+            modelBuilder.Entity("MOCA_Repositories.Enitities.DoctorBooking", b =>
                 {
-                    b.HasOne("MOCA_Repositories.Models.DoctorProfile", "Doctor")
+                    b.HasOne("MOCA_Repositories.Enitities.DoctorProfile", "Doctor")
                         .WithMany("DoctorBookings")
                         .HasForeignKey("DoctorId")
                         .HasConstraintName("FK_DoctorBookings_Doctors");
 
-                    b.HasOne("MOCA_Repositories.Models.User", "User")
+                    b.HasOne("MOCA_Repositories.Enitities.User", "User")
                         .WithMany("DoctorBookings")
                         .HasForeignKey("UserId")
                         .HasConstraintName("FK_DoctorBookings_Users");
@@ -1026,14 +1044,14 @@ namespace MOCA_Repositories.Migrations
                     b.Navigation("User");
                 });
 
-            modelBuilder.Entity("MOCA_Repositories.Models.DoctorContact", b =>
+            modelBuilder.Entity("MOCA_Repositories.Enitities.DoctorContact", b =>
                 {
-                    b.HasOne("MOCA_Repositories.Models.DoctorProfile", "Doctor")
+                    b.HasOne("MOCA_Repositories.Enitities.DoctorProfile", "Doctor")
                         .WithMany("DoctorContacts")
                         .HasForeignKey("DoctorId")
                         .HasConstraintName("FK_DoctorContacts_Doctors");
 
-                    b.HasOne("MOCA_Repositories.Models.User", "User")
+                    b.HasOne("MOCA_Repositories.Enitities.User", "User")
                         .WithMany("DoctorContacts")
                         .HasForeignKey("UserId")
                         .HasConstraintName("FK_DoctorContacts_Users");
@@ -1043,9 +1061,29 @@ namespace MOCA_Repositories.Migrations
                     b.Navigation("User");
                 });
 
-            modelBuilder.Entity("MOCA_Repositories.Models.Lesson", b =>
+            modelBuilder.Entity("MOCA_Repositories.Enitities.DoctorProfile", b =>
                 {
-                    b.HasOne("MOCA_Repositories.Models.Chapter", "Chapter")
+                    b.HasOne("MOCA_Repositories.Enitities.User", "User")
+                        .WithMany("DoctorProfiles")
+                        .HasForeignKey("UserId")
+                        .HasConstraintName("FK_DoctorProfiles_Users");
+
+                    b.Navigation("User");
+                });
+
+            modelBuilder.Entity("MOCA_Repositories.Enitities.Feedback", b =>
+                {
+                    b.HasOne("MOCA_Repositories.Enitities.Course", "Course")
+                        .WithMany("Feedbacks")
+                        .HasForeignKey("CourseId")
+                        .HasConstraintName("FK_Feedback_Course");
+
+                    b.Navigation("Course");
+                });
+
+            modelBuilder.Entity("MOCA_Repositories.Enitities.Lesson", b =>
+                {
+                    b.HasOne("MOCA_Repositories.Enitities.Chapter", "Chapter")
                         .WithMany("Lessons")
                         .HasForeignKey("ChapterId")
                         .HasConstraintName("FK_Lessons_Chapters");
@@ -1053,9 +1091,9 @@ namespace MOCA_Repositories.Migrations
                     b.Navigation("Chapter");
                 });
 
-            modelBuilder.Entity("MOCA_Repositories.Models.MessagesWithDoctor", b =>
+            modelBuilder.Entity("MOCA_Repositories.Enitities.MessagesWithDoctor", b =>
                 {
-                    b.HasOne("MOCA_Repositories.Models.DoctorContact", "Contact")
+                    b.HasOne("MOCA_Repositories.Enitities.DoctorContact", "Contact")
                         .WithMany("MessagesWithDoctors")
                         .HasForeignKey("ContactId")
                         .HasConstraintName("FK_MessagesWithDoctor_Contact");
@@ -1063,25 +1101,24 @@ namespace MOCA_Repositories.Migrations
                     b.Navigation("Contact");
                 });
 
-            modelBuilder.Entity("MOCA_Repositories.Models.MomProfile", b =>
+            modelBuilder.Entity("MOCA_Repositories.Enitities.MomProfile", b =>
                 {
-                    b.HasOne("MOCA_Repositories.Models.User", "User")
-                        .WithOne("MomProfile")
-                        .HasForeignKey("MOCA_Repositories.Models.MomProfile", "UserId")
-                        .IsRequired()
+                    b.HasOne("MOCA_Repositories.Enitities.User", "User")
+                        .WithMany("MomProfiles")
+                        .HasForeignKey("UserId")
                         .HasConstraintName("FK_MomProfiles_Users");
 
                     b.Navigation("User");
                 });
 
-            modelBuilder.Entity("MOCA_Repositories.Models.PostLike", b =>
+            modelBuilder.Entity("MOCA_Repositories.Enitities.PostLike", b =>
                 {
-                    b.HasOne("MOCA_Repositories.Models.CommunityPost", "Post")
+                    b.HasOne("MOCA_Repositories.Enitities.CommunityPost", "Post")
                         .WithMany("PostLikes")
                         .HasForeignKey("PostId")
                         .HasConstraintName("FK_PostLikes_Posts");
 
-                    b.HasOne("MOCA_Repositories.Models.User", "User")
+                    b.HasOne("MOCA_Repositories.Enitities.User", "User")
                         .WithMany("PostLikes")
                         .HasForeignKey("UserId")
                         .HasConstraintName("FK_PostLikes_Users");
@@ -1091,9 +1128,9 @@ namespace MOCA_Repositories.Migrations
                     b.Navigation("User");
                 });
 
-            modelBuilder.Entity("MOCA_Repositories.Models.PregnancyTracking", b =>
+            modelBuilder.Entity("MOCA_Repositories.Enitities.PregnancyTracking", b =>
                 {
-                    b.HasOne("MOCA_Repositories.Models.UserPregnancy", "Pregnancy")
+                    b.HasOne("MOCA_Repositories.Enitities.UserPregnancy", "Pregnancy")
                         .WithMany("PregnancyTrackings")
                         .HasForeignKey("PregnancyId")
                         .HasConstraintName("FK_PregnancyTracking_Pregnancy");
@@ -1101,19 +1138,19 @@ namespace MOCA_Repositories.Migrations
                     b.Navigation("Pregnancy");
                 });
 
-            modelBuilder.Entity("MOCA_Repositories.Models.PurchasePackage", b =>
+            modelBuilder.Entity("MOCA_Repositories.Enitities.PurchasePackage", b =>
                 {
-                    b.HasOne("MOCA_Repositories.Models.Discount", "Discount")
+                    b.HasOne("MOCA_Repositories.Enitities.Discount", "Discount")
                         .WithMany("PurchasePackages")
                         .HasForeignKey("DiscountId")
                         .HasConstraintName("FK_PurchasePackage_Discounts");
 
-                    b.HasOne("MOCA_Repositories.Models.Package", "Package")
+                    b.HasOne("MOCA_Repositories.Enitities.Package", "Package")
                         .WithMany("PurchasePackages")
                         .HasForeignKey("PackageId")
                         .HasConstraintName("FK_PurchasePackage_Packages");
 
-                    b.HasOne("MOCA_Repositories.Models.User", "User")
+                    b.HasOne("MOCA_Repositories.Enitities.User", "User")
                         .WithMany("PurchasePackages")
                         .HasForeignKey("UserId")
                         .HasConstraintName("FK_PurchasePackage_Users");
@@ -1125,19 +1162,19 @@ namespace MOCA_Repositories.Migrations
                     b.Navigation("User");
                 });
 
-            modelBuilder.Entity("MOCA_Repositories.Models.PurchasedCourse", b =>
+            modelBuilder.Entity("MOCA_Repositories.Enitities.PurchasedCourse", b =>
                 {
-                    b.HasOne("MOCA_Repositories.Models.Course", "Course")
+                    b.HasOne("MOCA_Repositories.Enitities.Course", "Course")
                         .WithMany("PurchasedCourses")
                         .HasForeignKey("CourseId")
                         .HasConstraintName("FK_PurchasedCourses_Courses");
 
-                    b.HasOne("MOCA_Repositories.Models.Discount", "Discount")
+                    b.HasOne("MOCA_Repositories.Enitities.Discount", "Discount")
                         .WithMany("PurchasedCourses")
                         .HasForeignKey("DiscountId")
                         .HasConstraintName("FK_PurchasedCourses_Discounts");
 
-                    b.HasOne("MOCA_Repositories.Models.User", "User")
+                    b.HasOne("MOCA_Repositories.Enitities.User", "User")
                         .WithMany("PurchasedCourses")
                         .HasForeignKey("UserId")
                         .HasConstraintName("FK_PurchasedCourses_Users");
@@ -1149,26 +1186,19 @@ namespace MOCA_Repositories.Migrations
                     b.Navigation("User");
                 });
 
-            modelBuilder.Entity("MOCA_Repositories.Models.RefLect", b =>
+            modelBuilder.Entity("MOCA_Repositories.Enitities.RefLect", b =>
                 {
-                    b.HasOne("MOCA_Repositories.Models.Course", "Course")
-                        .WithMany("RefLects")
-                        .HasForeignKey("CourseId")
-                        .HasConstraintName("FK_RefLect_Courses");
-
-                    b.HasOne("MOCA_Repositories.Models.User", "User")
+                    b.HasOne("MOCA_Repositories.Enitities.User", "User")
                         .WithMany("RefLects")
                         .HasForeignKey("UserId")
                         .HasConstraintName("FK_RefLect_Users");
 
-                    b.Navigation("Course");
-
                     b.Navigation("User");
                 });
 
-            modelBuilder.Entity("MOCA_Repositories.Models.User", b =>
+            modelBuilder.Entity("MOCA_Repositories.Enitities.User", b =>
                 {
-                    b.HasOne("MOCA_Repositories.Models.Role", "Role")
+                    b.HasOne("MOCA_Repositories.Enitities.Role", "Role")
                         .WithMany("Users")
                         .HasForeignKey("RoleId")
                         .HasConstraintName("FK_Users_Roles");
@@ -1176,84 +1206,89 @@ namespace MOCA_Repositories.Migrations
                     b.Navigation("Role");
                 });
 
-            modelBuilder.Entity("MOCA_Repositories.Models.UserPregnancy", b =>
+            modelBuilder.Entity("MOCA_Repositories.Enitities.UserPregnancy", b =>
                 {
-                    b.HasOne("MOCA_Repositories.Models.User", "User")
+                    b.HasOne("MOCA_Repositories.Enitities.MomProfile", "Mom")
                         .WithMany("UserPregnancies")
-                        .HasForeignKey("UserId")
+                        .HasForeignKey("MomId")
                         .HasConstraintName("FK_UserPregnancies_Users");
 
-                    b.Navigation("User");
+                    b.Navigation("Mom");
                 });
 
-            modelBuilder.Entity("MOCA_Repositories.Models.Chapter", b =>
+            modelBuilder.Entity("MOCA_Repositories.Enitities.Chapter", b =>
                 {
                     b.Navigation("Lessons");
                 });
 
-            modelBuilder.Entity("MOCA_Repositories.Models.CommunityPost", b =>
+            modelBuilder.Entity("MOCA_Repositories.Enitities.CommunityPost", b =>
                 {
                     b.Navigation("CommunityReplies");
 
                     b.Navigation("PostLikes");
                 });
 
-            modelBuilder.Entity("MOCA_Repositories.Models.CommunityReply", b =>
+            modelBuilder.Entity("MOCA_Repositories.Enitities.CommunityReply", b =>
                 {
                     b.Navigation("InverseParentReply");
                 });
 
-            modelBuilder.Entity("MOCA_Repositories.Models.Course", b =>
+            modelBuilder.Entity("MOCA_Repositories.Enitities.Course", b =>
                 {
                     b.Navigation("Bookmarks");
 
                     b.Navigation("Chapters");
 
-                    b.Navigation("PurchasedCourses");
+                    b.Navigation("Feedbacks");
 
-                    b.Navigation("RefLects");
+                    b.Navigation("PurchasedCourses");
                 });
 
-            modelBuilder.Entity("MOCA_Repositories.Models.CourseCategory", b =>
+            modelBuilder.Entity("MOCA_Repositories.Enitities.CourseCategory", b =>
                 {
                     b.Navigation("Courses");
                 });
 
-            modelBuilder.Entity("MOCA_Repositories.Models.Discount", b =>
+            modelBuilder.Entity("MOCA_Repositories.Enitities.Discount", b =>
                 {
                     b.Navigation("PurchasePackages");
 
                     b.Navigation("PurchasedCourses");
                 });
 
-            modelBuilder.Entity("MOCA_Repositories.Models.DoctorBooking", b =>
+            modelBuilder.Entity("MOCA_Repositories.Enitities.DoctorBooking", b =>
                 {
                     b.Navigation("BookingPayments");
                 });
 
-            modelBuilder.Entity("MOCA_Repositories.Models.DoctorContact", b =>
+            modelBuilder.Entity("MOCA_Repositories.Enitities.DoctorContact", b =>
                 {
                     b.Navigation("MessagesWithDoctors");
                 });
 
-            modelBuilder.Entity("MOCA_Repositories.Models.DoctorProfile", b =>
+            modelBuilder.Entity("MOCA_Repositories.Enitities.DoctorProfile", b =>
                 {
                     b.Navigation("DoctorBookings");
 
                     b.Navigation("DoctorContacts");
                 });
 
-            modelBuilder.Entity("MOCA_Repositories.Models.Package", b =>
+            modelBuilder.Entity("MOCA_Repositories.Enitities.MomProfile", b =>
+                {
+                    b.Navigation("UserPregnancies");
+                });
+
+            modelBuilder.Entity("MOCA_Repositories.Enitities.Package", b =>
                 {
                     b.Navigation("PurchasePackages");
                 });
 
-            modelBuilder.Entity("MOCA_Repositories.Models.Role", b =>
+            modelBuilder.Entity("MOCA_Repositories.Enitities.Role", b =>
                 {
                     b.Navigation("Users");
                 });
 
-            modelBuilder.Entity("MOCA_Repositories.Models.User", b =>
+            modelBuilder.Entity("MOCA_Repositories.Enitities.User", b =>
                 {
                     b.Navigation("CommunityPosts");
 
@@ -1265,7 +1300,9 @@ namespace MOCA_Repositories.Migrations
 
                     b.Navigation("DoctorContacts");
 
-                    b.Navigation("MomProfile");
+                    b.Navigation("DoctorProfiles");
+
+                    b.Navigation("MomProfiles");
 
                     b.Navigation("PostLikes");
 
@@ -1274,11 +1311,9 @@ namespace MOCA_Repositories.Migrations
                     b.Navigation("PurchasedCourses");
 
                     b.Navigation("RefLects");
-
-                    b.Navigation("UserPregnancies");
                 });
 
-            modelBuilder.Entity("MOCA_Repositories.Models.UserPregnancy", b =>
+            modelBuilder.Entity("MOCA_Repositories.Enitities.UserPregnancy", b =>
                 {
                     b.Navigation("BabyTrackings");
 

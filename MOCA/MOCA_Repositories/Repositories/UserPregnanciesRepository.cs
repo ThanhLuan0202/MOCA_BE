@@ -67,6 +67,18 @@ namespace MOCA_Repositories.Repositories
 
         }
 
+        public async Task<UserPregnancy> GetUserPregnancyByMomIdAsync(int id)
+        {
+            var checkMom = await _context.UserPregnancies.Include(x => x.Mom).FirstOrDefaultAsync(x => x.MomId == id );
+
+            if (checkMom == null)
+            {
+                throw new Exception($"Mom profile {id} is not exist!");
+            }
+
+            return checkMom;
+        }
+
         public async Task<UserPregnancy> UpdateUserPregnancyAsync(int id, UserPregnancy updateMomPr)
         {
             var check = await _context.UserPregnancies.Include(x => x.Mom).FirstOrDefaultAsync(x => x.PregnancyId == id);
