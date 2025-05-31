@@ -14,9 +14,11 @@ builder.Services.AddCors(options =>
 {
     options.AddPolicy("AllowAll", policy =>
     {
-        policy.AllowAnyOrigin()
+        policy.WithOrigins("http://localhost:5173")  
+              .AllowAnyHeader()
               .AllowAnyMethod()
-              .AllowAnyHeader();
+              .AllowCredentials(); 
+
     });
 });
 // Add services to the container.
@@ -119,6 +121,8 @@ if (!app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
+
+
 app.UseCors("AllowAll");
 
 app.UseAuthentication();
@@ -126,6 +130,8 @@ app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapControllers();
+
+
 app.UseDeveloperExceptionPage();
 
 

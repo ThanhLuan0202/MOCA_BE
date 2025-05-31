@@ -52,7 +52,7 @@ namespace MOCA.Api.Controllers
                     HttpOnly = false,
                     Secure = true,   // Chạy trên HTTPS
                     SameSite = SameSiteMode.None, // Hoặc SameSiteMode.Lax nếu chỉ cần GET requests
-                    Expires = DateTime.Now.AddDays(7),
+                    Expires = DateTime.UtcNow.AddMinutes(15),
                     Path = "/",
                     //Domain = "coursev1.vercel.app"
                 };
