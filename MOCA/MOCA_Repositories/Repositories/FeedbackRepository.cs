@@ -65,6 +65,7 @@ namespace MOCA_Repositories.Repositories
 
             existing.Rating = feedback.Rating;
             existing.Comment = feedback.Comment;
+            _context.Feedbacks.Update(existing);
             await _context.SaveChangesAsync();
 
             return existing;
