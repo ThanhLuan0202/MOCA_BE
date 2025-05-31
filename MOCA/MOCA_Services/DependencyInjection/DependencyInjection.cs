@@ -24,7 +24,7 @@ namespace MOCA_Services.DependencyInjection
             service.AddTransient<IPregnancyTrackingService, PregnancyTrackingService>();
             service.AddTransient<IPurchasedCourseServices, PurchasedCourseServices>();
             service.AddTransient<IBabyTrackingService, BabyTrackingService>();
-
+            service.AddTransient<IFeedbackService, FeedbackService>();
 
 
 
