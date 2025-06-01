@@ -6,6 +6,7 @@ using Microsoft.OpenApi.Models;
 using MOCA_Repositories.DBContext;
 using MOCA_Repositories.DependencyInjection;
 using MOCA_Repositories.Mapping;
+using MOCA_Repositories.Models.ModelMail;
 using MOCA_Services.DependencyInjection;
 using System.Text;
 using System.Text.Json.Serialization;
@@ -25,6 +26,7 @@ builder.Services.AddCors(options =>
 builder.Services.AddDbContext<MOCAContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
+builder.Services.Configure<MailSettings>(builder.Configuration.GetSection("MailSettings"));
 builder.Services.AddAutoMapper(typeof(AutoMapperProfile));
 
 

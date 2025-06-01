@@ -1,6 +1,8 @@
 ﻿using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using MOCA_Repositories;
+using MOCA_Repositories.DBContext;
 using MOCA_Repositories.Enitities;
 using MOCA_Repositories.Models.Login;
 using MOCA_Services.Interfaces;
@@ -16,13 +18,14 @@ namespace MOCA.Api.Controllers
         private readonly IAuthenService _authenService;
         private readonly IMapper _mapper;
         private readonly IUnitOfWork _unitOfWork;
+        private readonly MOCAContext _context;
 
-
-        public AuthenController(IMapper mapper, IAuthenService authenService, IUnitOfWork unitOfWork)
+        public AuthenController(IMapper mapper, IAuthenService authenService, IUnitOfWork unitOfWork, MOCAContext context)
         {
             _authenService = authenService;
             _mapper = mapper;
             _unitOfWork = unitOfWork;
+            _context = context;
         }
         
         
@@ -82,6 +85,37 @@ namespace MOCA.Api.Controllers
 
             return Ok(newUser);
         }
+
+
+
+        [HttpGet("verify-email")]
+        public async Task<IActionResult> VerifyEmail(string email)
+        {
+            try
+            {
+                var user = await _context.Users.FirstOrDefaultAsync(x => x.Email == email);
+                if (user == null)
+                {
+                    return NotFound("Người dùng không tồn tại.");
+                }
+
+                if (user.Status == "Active")
+                {
+                    return Ok("Email đã được xác nhận trước đó.");
+                }
+
+                user.Status = "Active";
+                _context.Users.Update(user);
+                await _context.SaveChangesAsync();
+
+                return Ok("Xác nhận email thành công!");
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, $"Lỗi xác nhận email: {ex.Message}");
+            }
+        }
+
 
     }
 }

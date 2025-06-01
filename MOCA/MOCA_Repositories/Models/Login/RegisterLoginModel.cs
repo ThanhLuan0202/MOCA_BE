@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Http;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -17,7 +18,8 @@ namespace MOCA_Repositories.Models.Login
         public int? RoleId { get; set; }
 
         public string FullName { get; set; }
-
+        [Required]
+        [EmailAddress(ErrorMessage = "Email không hợp lệ")]
         public string Email { get; set; }
 
         public string Password { get; set; }
@@ -26,7 +28,7 @@ namespace MOCA_Repositories.Models.Login
 
         public IFormFile? Image { get; set; }
 
-        public string Status = "Active";
+        public string Status = "Pending";
 
 
     }

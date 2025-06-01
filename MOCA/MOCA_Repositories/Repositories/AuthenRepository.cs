@@ -17,7 +17,6 @@ using System.Linq;
 using System.Security.Claims;
 using System.Text;
 using System.Threading.Tasks;
-
 namespace MOCA_Repositories.Repositories
 {
     public class AuthenRepository : Repository<User>, IAuthenRepository
@@ -25,7 +24,6 @@ namespace MOCA_Repositories.Repositories
         private readonly MOCAContext _DbContext;
         private readonly IConfiguration _configuration;
         private readonly IMapper _mapper;
-
         public AuthenRepository(MOCAContext DbContext, IConfiguration configuration, IMapper mapper) : base(DbContext)
         {
             _DbContext = DbContext;
@@ -101,7 +99,7 @@ namespace MOCA_Repositories.Repositories
                     Email = user.Email,
                     Password = password,
                     PhoneNumber = user.PhoneNumber,
-                    Status = "Active"
+                    Status = "Pending"
                 };
 
 
@@ -112,6 +110,8 @@ namespace MOCA_Repositories.Repositories
                 }
                 await Entities.AddAsync(newUser);
                 await _DbContext.SaveChangesAsync();
+
+
 
                 return newUser;
             }
