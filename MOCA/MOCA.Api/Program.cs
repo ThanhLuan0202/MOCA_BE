@@ -28,6 +28,7 @@ builder.Services.AddDbContext<MOCAContext>(options =>
 
 builder.Services.Configure<MailSettings>(builder.Configuration.GetSection("MailSettings"));
 builder.Services.AddAutoMapper(typeof(AutoMapperProfile));
+builder.Services.AddHttpClient();
 
 
 builder.Services.AddRepository().AddServices();
