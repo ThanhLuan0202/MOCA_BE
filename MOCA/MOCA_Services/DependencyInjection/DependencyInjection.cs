@@ -26,7 +26,8 @@ namespace MOCA_Services.DependencyInjection
             service.AddTransient<IBabyTrackingService, BabyTrackingService>();
             service.AddTransient<IFeedbackService, FeedbackService>();
             service.AddTransient<IEmailService, EmailService>();
-
+            service.AddTransient<ICourseCategoryService, CourseCategoryService>();
+            service.AddTransient<IDiscountService, DiscountService>();
 
 
 
