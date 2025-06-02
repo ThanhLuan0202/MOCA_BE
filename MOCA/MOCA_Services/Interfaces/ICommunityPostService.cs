@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using MOCA_Repositories.Enitities;
-using MOCA_Repositories.Models.CommunityPost;
+using MOCA_Repositories.Models.CommunityPostDTO;
 
 namespace MOCA_Services.Interfaces
 {

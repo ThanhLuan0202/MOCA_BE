@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MOCA_Repositories.Models.CommunityPost
+namespace MOCA_Repositories.Models.CommunityPostDTO
 {
     public class CreateCommunityPostModel
     {

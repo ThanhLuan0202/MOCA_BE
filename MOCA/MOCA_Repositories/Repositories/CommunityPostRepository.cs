@@ -7,7 +7,7 @@ using Microsoft.EntityFrameworkCore;
 using MOCA_Repositories.DBContext;
 using MOCA_Repositories.Enitities;
 using MOCA_Repositories.Interfaces;
-using MOCA_Repositories.Models.CommunityPost;
+using MOCA_Repositories.Models.CommunityPostDTO;
 
 namespace MOCA_Repositories.Repositories
 {

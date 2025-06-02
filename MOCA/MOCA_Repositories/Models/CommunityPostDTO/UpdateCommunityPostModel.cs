@@ -4,14 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MOCA_Repositories.Models.CommunityPost
+namespace MOCA_Repositories.Models.CommunityPostDTO
 {
-    public class ViewCommunityPostModel
+    public class UpdateCommunityPostModel
     {
-        public int PostId { get; set; }
-
-        public int? UserId { get; set; }
-
         public string? Title { get; set; }
 
         public string? Content { get; set; }
@@ -20,8 +16,5 @@ namespace MOCA_Repositories.Models.CommunityPost
 
         public string? ImageUrl { get; set; }
 
-        public string? Status { get; set; }
-
-        public DateTime? CreateDate { get; set; }
     }
 }

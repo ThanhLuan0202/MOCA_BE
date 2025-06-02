@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using MOCA_Repositories.Enitities;
 using MOCA_Repositories.Interfaces;
-using MOCA_Repositories.Models.CommunityPost;
+using MOCA_Repositories.Models.CommunityPostDTO;
 using MOCA_Services.Interfaces;
 
 namespace MOCA_Services.Services

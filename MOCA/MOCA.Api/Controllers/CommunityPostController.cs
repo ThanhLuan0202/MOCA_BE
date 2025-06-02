@@ -2,7 +2,7 @@
 using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.AspNetCore.Mvc;
 using MOCA_Repositories.Enitities;
-using MOCA_Repositories.Models.CommunityPost;
+using MOCA_Repositories.Models.CommunityPostDTO;
 using MOCA_Repositories.Models.FeedbackDTO;
 using MOCA_Services.Interfaces;
 using MOCA_Services.Services;
