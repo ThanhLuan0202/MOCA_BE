@@ -29,7 +29,7 @@ namespace MOCA_Services.DependencyInjection
             service.AddTransient<ICourseCategoryService, CourseCategoryService>();
             service.AddTransient<IDiscountService, DiscountService>();
             service.AddTransient<IVnPayService, VnPayService>();
-
+            service.AddTransient<ICommunityPostService, CommunityPostService>();
 
 
 
