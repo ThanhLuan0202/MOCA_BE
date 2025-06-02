@@ -30,7 +30,7 @@ namespace MOCA_Repositories.DependencyInjection
             service.AddTransient<ICourseCategoryRepository, CourseCategoryRepository>();
             service.AddTransient<IDiscountRepository, DiscountRepository>();
             service.AddTransient<ICommunityPostRepository, CommunityPostRepository>();
-
+            service.AddTransient<ICommunityReplyRepository, CommunityReplyRepository>();
 
 
             return service;

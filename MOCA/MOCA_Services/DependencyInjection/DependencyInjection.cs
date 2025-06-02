@@ -30,7 +30,7 @@ namespace MOCA_Services.DependencyInjection
             service.AddTransient<IDiscountService, DiscountService>();
             service.AddTransient<IVnPayService, VnPayService>();
             service.AddTransient<ICommunityPostService, CommunityPostService>();
-
+            service.AddTransient<ICommunityReplyService, CommunityReplyService>();  
 
 
             return service;

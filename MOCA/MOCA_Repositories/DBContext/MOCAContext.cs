@@ -180,6 +180,7 @@ public partial class MOCAContext : DbContext
 
             entity.Property(e => e.Content).HasColumnType("text");
             entity.Property(e => e.CreatedDate).HasColumnType("datetime");
+            entity.Property(e => e.Status).HasMaxLength(50);
 
             entity.HasOne(d => d.ParentReply).WithMany(p => p.InverseParentReply)
                 .HasForeignKey(d => d.ParentReplyId)

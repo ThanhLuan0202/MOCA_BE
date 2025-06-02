@@ -13,6 +13,8 @@ public partial class CommunityReply
 
     public string? Content { get; set; }
 
+    public string? Status { get; set; }
+
     public int? ParentReplyId { get; set; }
 
     public DateTime? CreatedDate { get; set; }
