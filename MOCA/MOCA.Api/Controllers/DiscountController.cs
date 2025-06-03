@@ -129,8 +129,8 @@ namespace MOCA.Api.Controllers
         }
 
 
-        [HttpDelete("{id}")]
-        public async Task<IActionResult> Delete(int id)
+        [HttpPut("{id}/deactivate")]
+        public async Task<IActionResult> Deactivate(int id)
         {
             var deleted = await _discountService.DeleteAsync(id);
 

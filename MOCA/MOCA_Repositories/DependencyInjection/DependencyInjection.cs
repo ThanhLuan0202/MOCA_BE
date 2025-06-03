@@ -32,6 +32,12 @@ namespace MOCA_Repositories.DependencyInjection
             service.AddTransient<ICommunityPostRepository, CommunityPostRepository>();
             service.AddTransient<ICommunityReplyRepository, CommunityReplyRepository>();
             service.AddTransient<IPostLikeRepository, PostLikeRepository>();    
+            service.AddTransient<IAdvertisementRepository, AdvertisementRepository>();
+
+
+
+
+
 
             return service;
         }

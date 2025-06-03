@@ -151,8 +151,8 @@ namespace MOCA.Api.Controllers
 
 
 
-        [HttpDelete("{id}")]
-        public async Task<IActionResult> Delete(int id)
+        [HttpPut("{id}/deactivate")]
+        public async Task<IActionResult> Deactivate(int id)
         {
             if (!User.Identity?.IsAuthenticated ?? false)
                 return Unauthorized("User is not authenticated.");
