@@ -31,7 +31,7 @@ namespace MOCA_Services.DependencyInjection
             service.AddTransient<IVnPayService, VnPayService>();
             service.AddTransient<ICommunityPostService, CommunityPostService>();
             service.AddTransient<ICommunityReplyService, CommunityReplyService>();  
-
+            service.AddTransient<IPostLikeService, PostLikeService>();
 
             return service;
         }
