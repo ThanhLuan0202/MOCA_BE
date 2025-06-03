@@ -11,6 +11,8 @@ public partial class Discount
 
     public string? Description { get; set; }
 
+    public string? DiscountType { get; set; }
+
     public decimal? Value { get; set; }
 
     public int? MaxUsage { get; set; }
@@ -23,5 +25,6 @@ public partial class Discount
 
     public virtual ICollection<PurchasePackage> PurchasePackages { get; set; } = new List<PurchasePackage>();
 
-    public virtual ICollection<PurchasedCourse> PurchasedCourses { get; set; } = new List<PurchasedCourse>();
+    public virtual ICollection<OrderCourse> OrderCourses { get; set; } = new List<OrderCourse>();
+
 }

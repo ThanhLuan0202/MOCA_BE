@@ -35,6 +35,8 @@ public partial class MOCAContext : DbContext
 
     public virtual DbSet<CourseCategory> CourseCategories { get; set; }
 
+    public virtual DbSet<CoursePayment> CoursePayments { get; set; }
+
     public virtual DbSet<Discount> Discounts { get; set; }
 
     public virtual DbSet<DoctorBooking> DoctorBookings { get; set; }
@@ -50,6 +52,10 @@ public partial class MOCAContext : DbContext
     public virtual DbSet<MessagesWithDoctor> MessagesWithDoctors { get; set; }
 
     public virtual DbSet<MomProfile> MomProfiles { get; set; }
+
+    public virtual DbSet<OrderCourse> OrderCourses { get; set; }
+
+    public virtual DbSet<OrderCourseDetail> OrderCourseDetails { get; set; }
 
     public virtual DbSet<Package> Packages { get; set; }
 
@@ -231,6 +237,7 @@ public partial class MOCAContext : DbContext
             entity.Property(e => e.DiscountId).HasColumnName("DiscountID");
             entity.Property(e => e.Code).HasMaxLength(100);
             entity.Property(e => e.Description).HasColumnType("text");
+            entity.Property(e => e.DiscountType).HasMaxLength(50);
             entity.Property(e => e.EndDate).HasColumnType("datetime");
             entity.Property(e => e.StartDate).HasColumnType("datetime");
             entity.Property(e => e.Value).HasColumnType("decimal(10, 2)");
@@ -416,18 +423,12 @@ public partial class MOCAContext : DbContext
 
             entity.Property(e => e.PurchasedId).HasColumnName("PurchasedID");
             entity.Property(e => e.CourseId).HasColumnName("CourseID");
-            entity.Property(e => e.DiscountId).HasColumnName("DiscountID");
-            entity.Property(e => e.PurchaseDate).HasColumnType("datetime");
             entity.Property(e => e.Status).HasMaxLength(20);
             entity.Property(e => e.UserId).HasColumnName("UserID");
 
             entity.HasOne(d => d.Course).WithMany(p => p.PurchasedCourses)
                 .HasForeignKey(d => d.CourseId)
                 .HasConstraintName("FK_PurchasedCourses_Courses");
-
-            entity.HasOne(d => d.Discount).WithMany(p => p.PurchasedCourses)
-                .HasForeignKey(d => d.DiscountId)
-                .HasConstraintName("FK_PurchasedCourses_Discounts");
 
             entity.HasOne(d => d.User).WithMany(p => p.PurchasedCourses)
                 .HasForeignKey(d => d.UserId)
@@ -486,6 +487,73 @@ public partial class MOCAContext : DbContext
                 .HasForeignKey(d => d.MomId)
                 .HasConstraintName("FK_UserPregnancies_Users");
         });
+
+        modelBuilder.Entity<CoursePayment>(entity =>
+        {
+            entity.HasKey(e => e.PaymentId).HasName("PK_CoursePayment");
+
+            entity.Property(e => e.PaymentCode).HasMaxLength(100);
+            entity.Property(e => e.TransactionIdResponse).HasMaxLength(100);
+            entity.Property(e => e.PaymentGateway).HasMaxLength(100);
+            entity.Property(e => e.CreatedDate).HasColumnType("datetime");
+            entity.Property(e => e.Amount).HasColumnType("float");
+            entity.Property(e => e.Description).HasMaxLength(500);
+            entity.Property(e => e.Status).HasMaxLength(50);
+
+            entity.HasOne(d => d.OrderCourse)
+                .WithMany(p => p.CoursePayments)
+                .HasForeignKey(d => d.OrderId)
+                .HasConstraintName("FK_CoursePayments_OrderCourses");
+        });
+
+
+        modelBuilder.Entity<OrderCourse>(entity =>
+        {
+            entity.HasKey(e => e.OrderId).HasName("PK__OrderCourse");
+
+            entity.Property(e => e.OrderPrice).HasColumnType("decimal(18,2)");
+            entity.Property(e => e.PaymentMethod).HasMaxLength(50);
+            entity.Property(e => e.Status).HasMaxLength(50);
+            entity.Property(e => e.CreatedDate).HasColumnType("datetime");
+
+            entity.HasOne(d => d.User)
+                .WithMany(p => p.OrderCourses)
+                .HasForeignKey(d => d.UserId)
+                .HasConstraintName("FK_OrderCourses_Users");
+
+            entity.HasOne(o => o.Discount)
+                .WithMany(d => d.OrderCourses)
+                .HasForeignKey(o => o.DiscountId)
+                .HasConstraintName("FK_OrderCourses_Discounts");
+
+            entity.HasMany(d => d.OrderCourseDetails)
+                .WithOne(p => p.OrderCourse)
+                .HasForeignKey(p => p.OrderId)
+                .HasConstraintName("FK_OrderCourseDetails_OrderCourses");
+
+            entity.HasMany(d => d.CoursePayments)
+                .WithOne(p => p.OrderCourse)
+                .HasForeignKey(p => p.OrderId)
+                .HasConstraintName("FK_CoursePayments_OrderCourses");
+        });
+
+        modelBuilder.Entity<OrderCourseDetail>(entity =>
+        {
+            entity.HasKey(e => e.OrderDetailId).HasName("PK__OrderCourseDetail");
+
+            entity.Property(e => e.Price).HasColumnType("decimal(18,2)");
+
+            entity.HasOne(d => d.OrderCourse)
+                .WithMany(p => p.OrderCourseDetails)
+                .HasForeignKey(d => d.OrderId)
+                .HasConstraintName("FK_OrderCourseDetails_OrderCourses");
+
+            entity.HasOne(d => d.Course)
+                .WithMany(p => p.OrderCourseDetails)
+                .HasForeignKey(d => d.CourseId)
+                .HasConstraintName("FK_OrderCourseDetails_Courses");
+        });
+
 
         OnModelCreatingPartial(modelBuilder);
     }

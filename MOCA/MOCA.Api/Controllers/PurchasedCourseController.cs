@@ -26,9 +26,9 @@ namespace MOCA.Api.Controllers
                 PurchasedId = p.PurchasedId,
                 CourseId = p.CourseId,
                 UserId = p.UserId,
-                PurchaseDate = p.PurchaseDate,
+                //PurchaseDate = p.PurchaseDate,
                 Status = p.Status,
-                DiscountId = p.DiscountId,
+                //DiscountId = p.DiscountId,
             }).ToList();
 
             return Ok(result);
@@ -45,9 +45,9 @@ namespace MOCA.Api.Controllers
                 PurchasedId = purchasedCourse.PurchasedId,
                 CourseId = purchasedCourse.CourseId,
                 UserId = purchasedCourse.UserId,
-                PurchaseDate = purchasedCourse.PurchaseDate,
+                //PurchaseDate = purchasedCourse.PurchaseDate,
                 Status = purchasedCourse.Status,
-                DiscountId = purchasedCourse.DiscountId,
+                //DiscountId = purchasedCourse.DiscountId,
             };
 
             return Ok(result);
@@ -76,9 +76,9 @@ namespace MOCA.Api.Controllers
                     PurchasedId = created.PurchasedId,
                     CourseId = created.CourseId,
                     UserId = created.UserId,
-                    PurchaseDate = created.PurchaseDate,
+                    //PurchaseDate = created.PurchaseDate,
                     Status = created.Status,
-                    DiscountId = created.DiscountId,
+                    //DiscountId = created.DiscountId,
                 };
 
                 return CreatedAtAction(nameof(GetById), new { id = result.PurchasedId }, result);
@@ -127,9 +127,9 @@ namespace MOCA.Api.Controllers
                     PurchasedId = updated.PurchasedId,
                     CourseId = updated.CourseId,
                     UserId = updated.UserId,
-                    PurchaseDate = updated.PurchaseDate,
+                    //PurchaseDate = updated.PurchaseDate,
                     Status = updated.Status,
-                    DiscountId = updated.DiscountId,
+                    //DiscountId = updated.DiscountId,
                 };
 
                 return Ok(result);
@@ -176,7 +176,7 @@ namespace MOCA.Api.Controllers
             return Ok(new
             {
                 message = "PurchasedCourse deactivated successfully.",
-                DiscountId = deleted.DiscountId,
+                //DiscountId = deleted.DiscountId,
                 Status = deleted.Status
             });
         }

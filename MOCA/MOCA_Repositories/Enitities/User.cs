@@ -43,5 +43,7 @@ public partial class User
 
     public virtual ICollection<RefLect> RefLects { get; set; } = new List<RefLect>();
 
+    public virtual ICollection<OrderCourse> OrderCourses { get; set; } = new List<OrderCourse>();
+
     public virtual Role? Role { get; set; }
 }

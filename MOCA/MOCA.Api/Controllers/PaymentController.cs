@@ -26,7 +26,7 @@ namespace MOCA.Api.Controllers
             {
                 CourseId = courseId,
                 UserId = userId,
-                PurchaseDate = DateTime.UtcNow,
+                //PurchaseDate = DateTime.UtcNow,
                 Status = "Pending"
             };
 

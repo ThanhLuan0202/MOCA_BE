@@ -34,4 +34,6 @@ public partial class Course
     public virtual User? User { get; set; }
 
     public virtual ICollection<Feedback> Feedbacks { get; set; } = new List<Feedback>();
+
+    public virtual ICollection<OrderCourseDetail> OrderCourseDetails { get; set; } = new HashSet<OrderCourseDetail>();
 }

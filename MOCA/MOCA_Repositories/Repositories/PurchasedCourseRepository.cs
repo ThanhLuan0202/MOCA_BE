@@ -56,9 +56,9 @@ namespace MOCA_Repositories.Repositories
             {
                 CourseId = create.CourseId,
                 UserId = userId,
-                PurchaseDate = DateTime.UtcNow,
+                //PurchaseDate = DateTime.UtcNow,
                 Status = "Active",
-                DiscountId = create.DiscountId
+                //DiscountId = create.DiscountId
             };
 
             _context.PurchasedCourses.Add(newPurchasedCourse);
@@ -79,15 +79,15 @@ namespace MOCA_Repositories.Repositories
 
             purchasedCourse.Status = "Inactive";
 
-            if (purchasedCourse.DiscountId.HasValue)
-            {
-                var discount = await _context.Discounts.FindAsync(purchasedCourse.DiscountId.Value);
-                if (discount != null)
-                {
-                    discount.MaxUsage += 1;
-                    _context.Discounts.Update(discount);
-                }
-            }
+            //if (purchasedCourse.DiscountId.HasValue)
+            //{
+            //    var discount = await _context.Discounts.FindAsync(purchasedCourse.DiscountId.Value);
+            //    if (discount != null)
+            //    {
+            //        discount.MaxUsage += 1;
+            //        _context.Discounts.Update(discount);
+            //    }
+            //}
 
             try
             {
@@ -146,33 +146,33 @@ namespace MOCA_Repositories.Repositories
                 existing.CourseId = update.CourseId;
             }
 
-            if (update.DiscountId.HasValue && update.DiscountId != existing.DiscountId)
-            {
-                if (existing.DiscountId.HasValue)
-                {
-                    var oldDiscount = await _context.Discounts.FindAsync(existing.DiscountId.Value);
-                    if (oldDiscount != null)
-                    {
-                        oldDiscount.MaxUsage += 1;
-                        _context.Discounts.Update(oldDiscount);
-                    }
-                }
+            //if (update.DiscountId.HasValue && update.DiscountId != existing.DiscountId)
+            //{
+            //    if (existing.DiscountId.HasValue)
+            //    {
+            //        var oldDiscount = await _context.Discounts.FindAsync(existing.DiscountId.Value);
+            //        if (oldDiscount != null)
+            //        {
+            //            oldDiscount.MaxUsage += 1;
+            //            _context.Discounts.Update(oldDiscount);
+            //        }
+            //    }
 
-                var newDiscount = await _context.Discounts
-                    .FirstOrDefaultAsync(d =>
-                        d.DiscountId == update.DiscountId.Value &&
-                        d.IsActive == true &&
-                        d.MaxUsage > 0);
+            //    var newDiscount = await _context.Discounts
+            //        .FirstOrDefaultAsync(d =>
+            //            d.DiscountId == update.DiscountId.Value &&
+            //            d.IsActive == true &&
+            //            d.MaxUsage > 0);
 
-                if (newDiscount == null)
-                    throw new ArgumentException($"Discount with ID {update.DiscountId.Value} is invalid, inactive, or out of usage.");
+            //    if (newDiscount == null)
+            //        throw new ArgumentException($"Discount with ID {update.DiscountId.Value} is invalid, inactive, or out of usage.");
 
-                newDiscount.MaxUsage -= 1;
-                _context.Discounts.Update(newDiscount);
+            //    newDiscount.MaxUsage -= 1;
+            //    _context.Discounts.Update(newDiscount);
 
-                existing.DiscountId = update.DiscountId;
-            }
-            existing.PurchaseDate = DateTime.UtcNow;
+            //    existing.DiscountId = update.DiscountId;
+            //}
+            //existing.PurchaseDate = DateTime.UtcNow;
             existing.Status = "Active";
 
             await _context.SaveChangesAsync();
