@@ -34,6 +34,7 @@ namespace MOCA_Repositories.Repositories
             {
                 Code = create.Code,
                 Description = create.Description,
+                DiscountType = create.DiscountType,
                 Value = create.Value,
                 MaxUsage = create.MaxUsage,
                 StartDate = create.StartDate,
@@ -116,8 +117,8 @@ namespace MOCA_Repositories.Repositories
                         throw new InvalidOperationException("Another discount with the same code already exists.");
                 }
 
-                existing.Code = update.Code;
-                existing.StartDate = update.StartDate;
+                existing.Code = update.Code ?? existing.Code;
+                existing.StartDate = update.StartDate ?? existing.StartDate;
             }
 
             if (update.StartDate != null && update.EndDate != null &&
@@ -126,10 +127,11 @@ namespace MOCA_Repositories.Repositories
                 throw new InvalidOperationException("End date must be after start date.");
             }
 
-            existing.Description = update.Description;
-            existing.Value = update.Value;
-            existing.MaxUsage = update.MaxUsage;
-            existing.EndDate = update.EndDate;
+            existing.Description = update.Description ?? existing.Description;
+            existing.DiscountType = update.DiscountType ?? existing.DiscountType;
+            existing.Value = update.Value ?? existing.Value;
+            existing.MaxUsage = update.MaxUsage ?? existing.MaxUsage;
+            existing.EndDate = update.EndDate ?? existing.EndDate;
 
             _context.Discounts.Update(existing);
             await _context.SaveChangesAsync();

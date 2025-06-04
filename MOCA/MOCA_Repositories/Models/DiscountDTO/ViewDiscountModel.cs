@@ -14,6 +14,8 @@ namespace MOCA_Repositories.Models.DiscountDTO
 
         public string? Description { get; set; }
 
+        public string? DiscountType { get; set; }
+
         public decimal? Value { get; set; }
 
         public int? MaxUsage { get; set; }
