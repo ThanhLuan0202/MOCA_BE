@@ -75,9 +75,21 @@ namespace MOCA_Repositories.Repositories
             return query;
         }
 
-        public async Task<BabyTracking> GetBabyTrackingByIdAsync(int id)
+        public async Task<BabyTracking> GetBabyTrackingByIdAsync(string id)
         {
-            var check = await _context.BabyTrackings.Include(x => x.Pregnancy).FirstOrDefaultAsync(x => x.CheckupBabyId == id);
+            if (!int.TryParse(id, out int idUser))
+            {
+                throw new ArgumentException("Invalid user ID");
+            }
+
+            var checkMom = await _profileRepository.GetMomProfileByUserIdAsync(idUser);
+            if (checkMom == null)
+            {
+                throw new Exception($"Mom profile not found for user {idUser}");
+            }
+
+            var userPre = await _userPregnanciesRepository.GetUserPregnancyByMomIdAsync(checkMom.MomId);
+            var check = await _context.BabyTrackings.Include(x => x.Pregnancy).FirstOrDefaultAsync(x => x.PregnancyId == userPre.PregnancyId);
             if (check == null)
             {
                 throw new Exception($"Baby tracking {id} is not exist!");

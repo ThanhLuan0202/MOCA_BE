@@ -33,6 +33,9 @@ namespace MOCA_Services.DependencyInjection
             service.AddTransient<ICommunityReplyService, CommunityReplyService>();  
             service.AddTransient<IPostLikeService, PostLikeService>();
             service.AddTransient<IAdvertisementService, AdvertisementService>();
+            service.AddTransient<IChatAdviceService, ChatAdviceService>();
+            service.AddTransient<IPurchasedPackageService, PurchasedPackageService>();
+
 
 
 
