@@ -62,7 +62,7 @@ namespace MOCA_Services.Services
                 prompt.AppendLine($"- Ngày: {t.CheckupDate:dd/MM/yyyy}, Nhịp tim thai: {t.FetalHeartRate}, Ước lượng cân nặng thai nhi : {t.EstimatedWeight}, Chỉ số nước ối : {t.AmnioticFluidIndex}, Vị trí nhau thai:{t.PlacentaPosition}, Ghi chú của bác sĩ sau khi khám:{t.DoctorComment}");
             }
 
-            prompt.AppendLine("Dựa vào các thông tin trên, hãy phân tích và đưa ra lời khuyên chi tiết cho thai phụ.");
+            prompt.AppendLine("Dựa vào các thông tin trên, hãy phân tích và đưa ra lời khuyên chi tiết nhất cho thai phụ. Nhớ là chi tiết và chính xác nhất nhé, phân tích từng chỉ số, thông tin mà được cung cấp, dễ hiểu, và một điều quan trọng là phải sử dụng thái độ và câu từ dịu dàng và thân thiện nhất. ");
 
             var requestBody = new
             {

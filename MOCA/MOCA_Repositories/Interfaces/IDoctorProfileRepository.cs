@@ -16,6 +16,8 @@ namespace MOCA_Repositories.Interfaces
         Task<DoctorProfile> DeleteDoctorProfileAsync(int id);
 
         Task<DoctorProfile> GetDoctorProfileByIdAsync(int id);
+        Task<DoctorProfile> GetDoctorProfileByUserIdAsync(string userId);
+
 
     }
 }

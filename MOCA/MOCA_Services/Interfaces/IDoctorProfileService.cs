@@ -16,6 +16,7 @@ namespace MOCA_Services.Interfaces
 
         Task<DoctorProfile> GetDoctorProfileByIdAsync(int id);
 
+        Task<DoctorProfile> GetDoctorProfileByUserIdAsync(string userId);
 
     }
 }

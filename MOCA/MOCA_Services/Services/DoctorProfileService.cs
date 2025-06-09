@@ -38,6 +38,11 @@ namespace MOCA_Services.Services
             return _repo.GetDoctorProfileByIdAsync(id);
         }
 
+        public Task<DoctorProfile> GetDoctorProfileByUserIdAsync(string userId)
+        {
+            return _repo.GetDoctorProfileByUserIdAsync(userId);
+        }
+
         public Task<DoctorProfile> UpdateDoctorProfileAsync(int id, DoctorProfile updateDoctorProfile)
         {
             return _repo.UpdateDoctorProfileAsync(id, updateDoctorProfile);

@@ -1,11 +1,17 @@
 ﻿using AutoMapper;
+using Google.Apis.Auth;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.IdentityModel.Tokens;
+using Microsoft.SqlServer.Server;
 using MOCA_Repositories;
 using MOCA_Repositories.DBContext;
 using MOCA_Repositories.Enitities;
 using MOCA_Repositories.Models.Login;
 using MOCA_Services.Interfaces;
+using System.IdentityModel.Tokens.Jwt;
+using System.Security.Claims;
+using System.Text;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -19,13 +25,15 @@ namespace MOCA.Api.Controllers
         private readonly IMapper _mapper;
         private readonly IUnitOfWork _unitOfWork;
         private readonly MOCAContext _context;
+        private readonly IConfiguration _configuration;
 
-        public AuthenController(IMapper mapper, IAuthenService authenService, IUnitOfWork unitOfWork, MOCAContext context)
+        public AuthenController(IMapper mapper, IAuthenService authenService, IUnitOfWork unitOfWork, MOCAContext context, IConfiguration configuration)
         {
             _authenService = authenService;
             _mapper = mapper;
             _unitOfWork = unitOfWork;
             _context = context;
+            _configuration = configuration;
         }
         
         
@@ -49,12 +57,11 @@ namespace MOCA.Api.Controllers
                 {
                     return Unauthorized(new { code = 401, message = "Invalid username or password" });
                 }
-                // Lưu token vào cookie HTTP-only
                 var cookieOptions = new CookieOptions
                 {
                     HttpOnly = false,
-                    Secure = true,   // Chạy trên HTTPS
-                    SameSite = SameSiteMode.None, // Hoặc SameSiteMode.Lax nếu chỉ cần GET requests
+                    Secure = true,  
+                    SameSite = SameSiteMode.None, 
                     Expires = DateTime.UtcNow.AddMinutes(15),
                     Path = "/",
                     //Domain = "coursev1.vercel.app"
@@ -116,6 +123,63 @@ namespace MOCA.Api.Controllers
             }
         }
 
+        [HttpPost("login-google")]
+        public async Task<IActionResult> LoginWithGoogle([FromBody] GoogleLoginModel model)
+        {
+            if (string.IsNullOrEmpty(model.IdToken))
+                return BadRequest("Token không hợp lệ");
+
+            try
+            {
+                var payload = await GoogleJsonWebSignature.ValidateAsync(model.IdToken);
+                var user = await _context.Users.FirstOrDefaultAsync(u => u.Email == payload.Email);
+
+                if (user == null)
+                {
+                    user = new User
+                    {
+                        FullName = payload.Name,
+                        Email = payload.Email,
+                        Image = payload.Picture,
+                        Status = "Active",
+                        RoleId = 2 
+                    };
+                    await _context.Users.AddAsync(user);
+                    await _context.SaveChangesAsync();
+                }
+
+                var claims = new[]
+                {
+            new Claim(ClaimTypes.NameIdentifier, user.UserId.ToString()),
+            new Claim(ClaimTypes.Name, user.FullName ?? ""),
+            new Claim(ClaimTypes.Email, user.Email ?? ""),
+            new Claim("Image", user.Image ?? ""),
+        };
+
+                var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_configuration["Jwt:Key"]));
+                var credentials = new SigningCredentials(key, SecurityAlgorithms.HmacSha256);
+
+                var token = new JwtSecurityToken(
+                    _configuration["Jwt:Issuer"],
+                    _configuration["Jwt:Audience"],
+                    claims,
+                    expires: DateTime.UtcNow.AddMinutes(30),
+                    signingCredentials: credentials
+                );
+
+                var jwt = new JwtSecurityTokenHandler().WriteToken(token);
+
+                return Ok(new { token = jwt, code = 200, message = "Google login successful" });
+            }
+            catch (InvalidJwtException)
+            {
+                return Unauthorized(new { code = 401, message = "Token không hợp lệ từ Google" });
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, new { code = 500, message = ex.Message });
+            }
+        }
 
     }
 }

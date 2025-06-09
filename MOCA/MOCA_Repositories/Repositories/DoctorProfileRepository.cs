@@ -81,6 +81,20 @@ namespace MOCA_Repositories.Repositories
             return checkDoc;
         }
 
+        public async Task<DoctorProfile> GetDoctorProfileByUserIdAsync(string userId)
+        {
+            if (!int.TryParse(userId, out int idUser))
+            {
+                throw new ArgumentException("Invalid user ID");
+
+            }
+
+            var checkDoctor = await _context.DoctorProfiles.Include(x => x.User).FirstOrDefaultAsync(c => c.UserId == idUser);
+
+            return checkDoctor;
+
+        }
+
         public async Task<DoctorProfile> UpdateDoctorProfileAsync(int id, DoctorProfile updateDoctorProfile)
         {
             var checkDoc = await _context.DoctorProfiles.Include(x => x.User).FirstOrDefaultAsync(x => x.DoctorId == id && x.Status.Equals("Active"));
