@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using MOCA_Repositories.Enitities;
+using MOCA_Repositories.Enums;
 using MOCA_Repositories.Interfaces;
 using MOCA_Repositories.Models.CourseCartDTO;
 using MOCA_Repositories.Repositories;
@@ -61,13 +62,39 @@ namespace MOCA_Services.Services
             var discount = await _orderCourseRepository.GetDiscountByIdAsync(discountId)
                 ?? throw new KeyNotFoundException("Discount not found.");
 
+            if (discount.IsActive != true)
+                throw new InvalidOperationException("Discount is inactive.");
+
+            var now = DateTime.UtcNow;
+            if (discount.StartDate != null && discount.StartDate > now)
+                throw new InvalidOperationException("Discount is not yet active.");
+
+            if (discount.EndDate != null && discount.EndDate < now)
+                throw new InvalidOperationException("Discount has expired.");
+
             var total = cart.Items.Sum(i => i.Price);
             decimal discountValue = 0;
 
-            if (discount.DiscountType == "Percent")
-                discountValue = total * (discount.Value ?? 0) / 100;
-            else if (discount.DiscountType == "Amount")
-                discountValue = discount.Value ?? 0;
+            switch (discount.DiscountType)
+            {
+                case DiscountType.Percent:
+                    if (discount.Value is null || discount.Value <= 0 || discount.Value > 100)
+                        throw new InvalidOperationException("Invalid percent discount value.");
+                    discountValue = total * discount.Value.Value / 100;
+                    break;
+
+                case DiscountType.Amount:
+                    if (discount.Value is null || discount.Value <= 0)
+                        throw new InvalidOperationException("Invalid amount discount value.");
+                    discountValue = discount.Value.Value;
+                    break;
+
+                default:
+                    throw new InvalidOperationException("Unsupported discount type.");
+            }
+
+            if (discountValue > total)
+                discountValue = total;
 
             cart.DiscountId = discountId;
             cart.DiscountValue = discountValue;
@@ -75,6 +102,7 @@ namespace MOCA_Services.Services
             _courseCartRepository.SaveCart(cart);
             return cart;
         }
+
 
         public async Task<int> CheckoutAsync(int userId, string paymentMethod)
         {

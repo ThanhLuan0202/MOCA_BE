@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using MOCA_Repositories.Enums;
 
 namespace MOCA_Repositories.Enitities;
 
@@ -11,7 +12,7 @@ public partial class Discount
 
     public string? Description { get; set; }
 
-    public string? DiscountType { get; set; }
+    public DiscountType DiscountType { get; set; }
 
     public decimal? Value { get; set; }
 

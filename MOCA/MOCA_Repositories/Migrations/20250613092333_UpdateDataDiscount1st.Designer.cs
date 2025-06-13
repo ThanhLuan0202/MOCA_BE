@@ -4,6 +4,7 @@ using MOCA_Repositories.DBContext;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace MOCA_Repositories.Migrations
 {
     [DbContext(typeof(MOCAContext))]
-    partial class MOCAContextModelSnapshot : ModelSnapshot
+    [Migration("20250613092333_UpdateDataDiscount1st")]
+    partial class UpdateDataDiscount1st
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

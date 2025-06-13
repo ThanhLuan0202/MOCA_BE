@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using MOCA_Repositories.DBContext;
 using MOCA_Repositories.Enitities;
+using MOCA_Repositories.Enums;
 using MOCA_Repositories.Interfaces;
 using MOCA_Repositories.Models.DiscountDTO;
 
@@ -30,6 +31,22 @@ namespace MOCA_Repositories.Repositories
                 throw new InvalidOperationException("End date must be after start date.");
             }
 
+            if (!Enum.IsDefined(typeof(DiscountType), create.DiscountType))
+            {
+                throw new InvalidOperationException("Invalid DiscountType.");
+            }
+
+            if (create.DiscountType == DiscountType.Percent)
+            {
+                if (create.Value is null || create.Value <= 0 || create.Value > 100)
+                    throw new InvalidOperationException("For 'Percent' discount, value must be between 1 and 100.");
+            }
+            else if (create.DiscountType == DiscountType.Amount)
+            {
+                if (create.Value is null || create.Value <= 0)
+                    throw new InvalidOperationException("For 'Amount' discount, value must be a positive number.");
+            }
+
             var discount = new Discount
             {
                 Code = create.Code,
@@ -47,6 +64,7 @@ namespace MOCA_Repositories.Repositories
 
             return discount;
         }
+
 
 
         public async Task<Discount> DeleteAsync(int id)
@@ -97,14 +115,13 @@ namespace MOCA_Repositories.Repositories
             if (existing.StartDate <= DateTime.Now)
             {
                 if (update.StartDate != existing.StartDate)
-                {
                     throw new InvalidOperationException("Cannot modify start date after the discount has started.");
-                }
 
                 if (update.Code != existing.Code)
-                {
                     throw new InvalidOperationException("Cannot modify code after the discount has started.");
-                }
+
+                if (update.DiscountType != null && update.DiscountType != existing.DiscountType)
+                    throw new InvalidOperationException("Cannot modify discount type after the discount has started.");
             }
             else
             {
@@ -119,6 +136,9 @@ namespace MOCA_Repositories.Repositories
 
                 existing.Code = update.Code ?? existing.Code;
                 existing.StartDate = update.StartDate ?? existing.StartDate;
+
+                if (update.DiscountType != null)
+                    existing.DiscountType = update.DiscountType.Value;
             }
 
             if (update.StartDate != null && update.EndDate != null &&
@@ -127,8 +147,21 @@ namespace MOCA_Repositories.Repositories
                 throw new InvalidOperationException("End date must be after start date.");
             }
 
+            // Validate Value based on DiscountType
+            var discountType = update.DiscountType ?? existing.DiscountType;
+
+            if (discountType == DiscountType.Percent)
+            {
+                if (update.Value != null && (update.Value <= 0 || update.Value > 100))
+                    throw new InvalidOperationException("For 'Percent' discount, value must be between 1 and 100.");
+            }
+            else if (discountType == DiscountType.Amount)
+            {
+                if (update.Value != null && update.Value <= 0)
+                    throw new InvalidOperationException("For 'Amount' discount, value must be a positive number.");
+            }
+
             existing.Description = update.Description ?? existing.Description;
-            existing.DiscountType = update.DiscountType ?? existing.DiscountType;
             existing.Value = update.Value ?? existing.Value;
             existing.MaxUsage = update.MaxUsage ?? existing.MaxUsage;
             existing.EndDate = update.EndDate ?? existing.EndDate;
@@ -138,6 +171,7 @@ namespace MOCA_Repositories.Repositories
 
             return existing;
         }
+
 
 
     }

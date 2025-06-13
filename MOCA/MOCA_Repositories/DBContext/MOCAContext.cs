@@ -237,7 +237,7 @@ public partial class MOCAContext : DbContext
             entity.Property(e => e.DiscountId).HasColumnName("DiscountID");
             entity.Property(e => e.Code).HasMaxLength(100);
             entity.Property(e => e.Description).HasColumnType("text");
-            entity.Property(e => e.DiscountType).HasMaxLength(50);
+            entity.Property(e => e.DiscountType).HasConversion<string>().HasMaxLength(50);
             entity.Property(e => e.EndDate).HasColumnType("datetime");
             entity.Property(e => e.StartDate).HasColumnType("datetime");
             entity.Property(e => e.Value).HasColumnType("decimal(10, 2)");
