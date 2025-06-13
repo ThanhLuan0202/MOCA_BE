@@ -28,7 +28,7 @@ namespace MOCA_Services.DependencyInjection
             service.AddTransient<IEmailService, EmailService>();
             service.AddTransient<ICourseCategoryService, CourseCategoryService>();
             service.AddTransient<IDiscountService, DiscountService>();
-            service.AddTransient<IVnPayService, VnPayService>();
+            service.AddTransient<ICourseVnPayService, CourseVnPayService>();
             service.AddTransient<ICommunityPostService, CommunityPostService>();
             service.AddTransient<ICommunityReplyService, CommunityReplyService>();  
             service.AddTransient<IPostLikeService, PostLikeService>();
@@ -37,8 +37,8 @@ namespace MOCA_Services.DependencyInjection
             service.AddTransient<IPurchasedPackageService, PurchasedPackageService>();
             service.AddTransient<IDoctorBookingService, DoctorBookingService>();
             service.AddTransient<ICourseCartService, CourseCartService>();
-            
-
+            service.AddTransient<IOrderCourseService, OrderCourseService>();
+            service.AddTransient<ICoursePaymentService, CoursePaymentService>();
 
 
 

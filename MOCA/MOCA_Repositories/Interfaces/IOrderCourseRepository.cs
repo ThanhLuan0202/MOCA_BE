@@ -11,5 +11,7 @@ namespace MOCA_Repositories.Interfaces
     {
         Task<int> CreateOrderAsync(OrderCourse order);
         Task<Discount?> GetDiscountByIdAsync(int discountId);
+        Task<OrderCourse?> GetByIdWithDetailsAsync(int orderId);
+        Task UpdateAsync(OrderCourse order);
     }
 }

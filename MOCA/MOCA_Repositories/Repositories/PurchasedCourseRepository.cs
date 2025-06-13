@@ -185,5 +185,24 @@ namespace MOCA_Repositories.Repositories
                 .AnyAsync(x => x.UserId == userId && x.CourseId == courseId && x.Status == "Completed");
         }
 
+        public async Task<List<PurchasedCourse>> CreateFromOrderAsync(OrderCourse order)
+        {
+            var purchasedCourses = order.OrderCourseDetails.Select(d => new PurchasedCourse
+            {
+                UserId = order.UserId,
+                CourseId = d.CourseId,
+                Status = "Active"
+            }).ToList();
+
+            await AddRangeAsync(purchasedCourses);
+            return purchasedCourses;
+        }
+
+        public async Task AddRangeAsync(List<PurchasedCourse> courses)
+        {
+            await _context.PurchasedCourses.AddRangeAsync(courses);
+            await _context.SaveChangesAsync();
+        }
+
     }
 }

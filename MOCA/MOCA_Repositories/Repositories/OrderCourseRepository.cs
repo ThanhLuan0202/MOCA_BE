@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Microsoft.EntityFrameworkCore;
 using MOCA_Repositories.DBContext;
 using MOCA_Repositories.Enitities;
 using MOCA_Repositories.Interfaces;
@@ -26,6 +27,18 @@ namespace MOCA_Repositories.Repositories
         public async Task<Discount?> GetDiscountByIdAsync(int discountId)
         {
             return await _context.Discounts.FindAsync(discountId);
+        }
+
+        public async Task<OrderCourse?> GetByIdWithDetailsAsync(int orderId)
+        {
+            return await _context.OrderCourses
+                .Include(o => o.OrderCourseDetails)
+                .FirstOrDefaultAsync(o => o.OrderId == orderId);
+        }
+        public async Task UpdateAsync(OrderCourse order)
+        {
+            _context.OrderCourses.Update(order);
+            await _context.SaveChangesAsync();
         }
     }
 }

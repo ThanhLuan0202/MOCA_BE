@@ -3,14 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Microsoft.AspNetCore.Http;
 using MOCA_Repositories.Enitities;
 
 namespace MOCA_Services.Interfaces
 {
-    public interface IVnPayService
+    public interface IOrderCourseService
     {
-        string CreatePaymentUrl(PurchasedCourse course, HttpContext context);
-        
+        Task<OrderCourse?> GetByIdWithDetailsAsync(int orderId);
+        Task UpdateAsync(OrderCourse order);
     }
 }

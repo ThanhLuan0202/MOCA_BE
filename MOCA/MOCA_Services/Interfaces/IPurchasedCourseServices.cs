@@ -16,5 +16,6 @@ namespace MOCA_Services.Interfaces
         Task<PurchasedCourse> UpdateAsync(int id, UpdatePurchasedCourseModel update);
         Task<PurchasedCourse> DeleteAsync(int id);
         Task<List<int>> GetEnrolledCourseIdsByUserNameAsync(int userId);
+        Task<List<PurchasedCourse>> CreateFromOrderAsync(OrderCourse order);
     }
 }

@@ -18,6 +18,8 @@ namespace MOCA_Repositories.Interfaces
         Task<PurchasedCourse> DeleteAsync(int id);
         Task<List<int>> GetEnrolledCourseIdsByUserNameAsync(int userId);
         Task<bool> HasUserPurchasedCourse(int userId, int courseId);
+        Task<List<PurchasedCourse>> CreateFromOrderAsync(OrderCourse order);
+        Task AddRangeAsync(List<PurchasedCourse> courses);
 
     }
 }

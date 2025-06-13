@@ -48,5 +48,10 @@ namespace MOCA_Services.Services
         {
             return await _purchasedCourseRepository.UpdateAsync(id, update);
         }
+
+        public async Task<List<PurchasedCourse>> CreateFromOrderAsync(OrderCourse order)
+        {
+            return await _purchasedCourseRepository.CreateFromOrderAsync(order);
+        }
     }
 }

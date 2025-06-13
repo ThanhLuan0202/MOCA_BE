@@ -13,18 +13,21 @@ using MOCA_Services.Interfaces;
 
 namespace MOCA_Services.Services
 {
-    public class VnPayService : IVnPayService
+    public class CourseVnPayService : ICourseVnPayService
     {
         private readonly IConfiguration _config;
-        private readonly MOCAContext _context;
-        public VnPayService(IConfiguration config, MOCAContext context)
+        
+        public CourseVnPayService(IConfiguration config)
         {
             _config = config;
-            _context = context;
+            
         }
 
-        public string CreatePaymentUrl(PurchasedCourse course, HttpContext context)
+        public string CreatePaymentUrl(OrderCourse order, HttpContext context)
         {
+            if (order == null || order.OrderId == 0)
+                throw new ArgumentException("Invalid order.");
+
             var timeZone = TimeZoneInfo.FindSystemTimeZoneById("SE Asia Standard Time");
             var date = TimeZoneInfo.ConvertTimeFromUtc(DateTime.UtcNow, timeZone);
 
@@ -33,14 +36,12 @@ namespace MOCA_Services.Services
             var vnp_TmnCode = _config["Vnpay:TmnCode"];
             var vnp_HashSecret = _config["Vnpay:HashSecret"];
 
-            var orderId = course.PurchasedId.ToString();
+            var orderId = order.OrderId.ToString();
             var createDate = date.ToString("yyyyMMddHHmmss");
 
-            var courseEntity = _context.Courses.FirstOrDefault(c => c.CourseId == course.CourseId);
-            if (courseEntity == null)
-                throw new Exception("Course does not exist");
+            var txnRef = $"{order.OrderId}_{DateTime.Now.Ticks}";
 
-            var amount = (int)(courseEntity.Price * 100); 
+            var amount = (int)(order.OrderPrice * 100);
 
             var vnp_Params = new Dictionary<string, string>
     {
@@ -52,15 +53,17 @@ namespace MOCA_Services.Services
         { "vnp_CurrCode", "VND" },
         { "vnp_IpAddr", context.Connection.RemoteIpAddress?.ToString() ?? "127.0.0.1" },
         { "vnp_Locale", "vn" },
-        { "vnp_OrderInfo", $"Thanh toan khoa hoc {course.CourseId}" },
+        { "vnp_OrderInfo", $"Invoice #{orderId} has been successfully paid." },
         { "vnp_OrderType", "other" },
         { "vnp_ReturnUrl", vnp_ReturnUrl },
-        { "vnp_TxnRef", orderId }
+        { "vnp_TxnRef", txnRef }
     };
 
             var queryUrl = VnPayHelper.CreateRequestUrl(vnp_Params, vnp_HashSecret);
             return vnp_Url + "?" + queryUrl;
         }
+
+
 
     }
 }
