@@ -102,7 +102,7 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
     
 });
 
-
+builder.Services.AddMemoryCache();
 
 var app = builder.Build();
 
@@ -135,7 +135,10 @@ app.UseAuthorization();
 app.MapControllers();
 
 
-app.UseDeveloperExceptionPage();
+if (app.Environment.IsDevelopment())
+{
+    app.UseDeveloperExceptionPage(); // ✅ Chỉ dùng trong Development
+}
 
 
 app.Run();

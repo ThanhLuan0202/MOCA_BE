@@ -36,7 +36,8 @@ namespace MOCA_Services.DependencyInjection
             service.AddTransient<IChatAdviceService, ChatAdviceService>();
             service.AddTransient<IPurchasedPackageService, PurchasedPackageService>();
             service.AddTransient<IDoctorBookingService, DoctorBookingService>();
-
+            service.AddTransient<ICourseCartService, CourseCartService>();
+            
 
 
 

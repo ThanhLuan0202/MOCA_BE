@@ -179,6 +179,11 @@ namespace MOCA_Repositories.Repositories
             return existing;
         }
 
+        public async Task<bool> HasUserPurchasedCourse(int userId, int courseId)
+        {
+            return await _context.PurchasedCourses
+                .AnyAsync(x => x.UserId == userId && x.CourseId == courseId && x.Status == "Completed");
+        }
 
     }
 }

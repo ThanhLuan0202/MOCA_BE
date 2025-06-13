@@ -17,5 +17,7 @@ namespace MOCA_Repositories.Interfaces
         Task<PurchasedCourse> UpdateAsync(int id, UpdatePurchasedCourseModel update);
         Task<PurchasedCourse> DeleteAsync(int id);
         Task<List<int>> GetEnrolledCourseIdsByUserNameAsync(int userId);
+        Task<bool> HasUserPurchasedCourse(int userId, int courseId);
+
     }
 }
