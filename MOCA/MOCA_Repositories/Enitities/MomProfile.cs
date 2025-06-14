@@ -22,4 +22,7 @@ public partial class MomProfile
     public virtual User? User { get; set; }
 
     public virtual ICollection<UserPregnancy> UserPregnancies { get; set; } = new List<UserPregnancy>();
+
+    public virtual ICollection<PregnancyDiary> PregnancyDiaries { get; set; } = new List<PregnancyDiary>();
+
 }

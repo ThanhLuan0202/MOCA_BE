@@ -61,6 +61,8 @@ public partial class MOCAContext : DbContext
 
     public virtual DbSet<PostLike> PostLikes { get; set; }
 
+    public virtual DbSet<PregnancyDiary> PregnancyDiaries { get; set; }
+
     public virtual DbSet<PregnancyTracking> PregnancyTrackings { get; set; }
 
     public virtual DbSet<PurchasePackage> PurchasePackages { get; set; }
@@ -554,6 +556,19 @@ public partial class MOCAContext : DbContext
                 .HasConstraintName("FK_OrderCourseDetails_Courses");
         });
 
+        modelBuilder.Entity<PregnancyDiary>(entity =>
+        {
+            entity.HasKey(e => e.PregnancyID).HasName("PK_PregnancyDiary");
+
+            entity.Property(e => e.Title).HasColumnType("nvarchar(max)");
+            entity.Property(e => e.Feeling).HasMaxLength(100);
+            entity.Property(e => e.CreateDate).HasColumnType("datetime");
+
+            entity.HasOne(d => d.MomProfile)
+                .WithMany(p => p.PregnancyDiaries)
+                .HasForeignKey(d => d.MomID)
+                .HasConstraintName("FK_PregnancyDiary_MomProfile");
+        });
 
         OnModelCreatingPartial(modelBuilder);
     }
