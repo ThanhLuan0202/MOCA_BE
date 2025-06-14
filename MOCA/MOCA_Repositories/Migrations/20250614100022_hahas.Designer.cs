@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace MOCA_Repositories.Migrations
 {
     [DbContext(typeof(MOCAContext))]
-    [Migration("20250614090120_AddPregnancyDiaryTable")]
-    partial class AddPregnancyDiaryTable
+    [Migration("20250614100022_hahas")]
+    partial class hahas
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)

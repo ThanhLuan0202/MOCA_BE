@@ -90,6 +90,23 @@ namespace MOCA_Repositories.Repositories
 
             await _context.AddAsync(newDoctorBooking);
             await _context.SaveChangesAsync();
+
+
+            if (newDoctorBooking.RequiredDeposit > 0)
+            {
+                var payment = new BookingPayment
+                {
+                    BookingId = newDoctorBooking.BookingId,
+                    Amount = newDoctorBooking.RequiredDeposit,
+                    PaymentType = "Deposit",
+                    IsPaid = false,
+                    CreateDate = DateTime.Now,
+                    PaymentMethod = "Paypal"
+                };
+
+                await _context.BookingPayments.AddAsync(payment);
+                await _context.SaveChangesAsync();
+            }
             return newDoctorBooking;
         }
 

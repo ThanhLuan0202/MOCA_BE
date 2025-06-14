@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace MOCA_Repositories.Migrations
 {
     [DbContext(typeof(MOCAContext))]
-    [Migration("20250602164415_AddStatusToCommunityReply")]
-    partial class AddStatusToCommunityReply
+    [Migration("20250614100144_hahass")]
+    partial class hahass
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -350,6 +350,51 @@ namespace MOCA_Repositories.Migrations
                     b.ToTable("CourseCategories");
                 });
 
+            modelBuilder.Entity("MOCA_Repositories.Enitities.CoursePayment", b =>
+                {
+                    b.Property<int>("PaymentId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("PaymentId"));
+
+                    b.Property<double?>("Amount")
+                        .HasColumnType("float");
+
+                    b.Property<DateTime?>("CreatedDate")
+                        .HasColumnType("datetime");
+
+                    b.Property<string>("Description")
+                        .HasMaxLength(500)
+                        .HasColumnType("nvarchar(500)");
+
+                    b.Property<int?>("OrderId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("PaymentCode")
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("PaymentGateway")
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("Status")
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
+
+                    b.Property<string>("TransactionIdResponse")
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.HasKey("PaymentId")
+                        .HasName("PK_CoursePayment");
+
+                    b.HasIndex("OrderId");
+
+                    b.ToTable("CoursePayments");
+                });
+
             modelBuilder.Entity("MOCA_Repositories.Enitities.Discount", b =>
                 {
                     b.Property<int>("DiscountId")
@@ -365,6 +410,11 @@ namespace MOCA_Repositories.Migrations
 
                     b.Property<string>("Description")
                         .HasColumnType("text");
+
+                    b.Property<string>("DiscountType")
+                        .IsRequired()
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
 
                     b.Property<DateTime?>("EndDate")
                         .HasColumnType("datetime");
@@ -643,6 +693,71 @@ namespace MOCA_Repositories.Migrations
                     b.ToTable("MomProfiles");
                 });
 
+            modelBuilder.Entity("MOCA_Repositories.Enitities.OrderCourse", b =>
+                {
+                    b.Property<int>("OrderId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("OrderId"));
+
+                    b.Property<DateTime?>("CreatedDate")
+                        .HasColumnType("datetime");
+
+                    b.Property<int?>("DiscountId")
+                        .HasColumnType("int");
+
+                    b.Property<decimal?>("OrderPrice")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.Property<string>("PaymentMethod")
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
+
+                    b.Property<string>("Status")
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
+
+                    b.Property<int?>("UserId")
+                        .HasColumnType("int");
+
+                    b.HasKey("OrderId")
+                        .HasName("PK__OrderCourse");
+
+                    b.HasIndex("DiscountId");
+
+                    b.HasIndex("UserId");
+
+                    b.ToTable("OrderCourses");
+                });
+
+            modelBuilder.Entity("MOCA_Repositories.Enitities.OrderCourseDetail", b =>
+                {
+                    b.Property<int>("OrderDetailId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("OrderDetailId"));
+
+                    b.Property<int?>("CourseId")
+                        .HasColumnType("int");
+
+                    b.Property<int?>("OrderId")
+                        .HasColumnType("int");
+
+                    b.Property<decimal>("Price")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.HasKey("OrderDetailId")
+                        .HasName("PK__OrderCourseDetail");
+
+                    b.HasIndex("CourseId");
+
+                    b.HasIndex("OrderId");
+
+                    b.ToTable("OrderCourseDetails");
+                });
+
             modelBuilder.Entity("MOCA_Repositories.Enitities.Package", b =>
                 {
                     b.Property<int>("PackageId")
@@ -691,6 +806,37 @@ namespace MOCA_Repositories.Migrations
                     b.HasIndex("UserId");
 
                     b.ToTable("PostLikes");
+                });
+
+            modelBuilder.Entity("MOCA_Repositories.Enitities.PregnancyDiary", b =>
+                {
+                    b.Property<int>("PregnancyID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("PregnancyID"));
+
+                    b.Property<DateTime>("CreateDate")
+                        .HasColumnType("datetime");
+
+                    b.Property<string>("Feeling")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<int>("MomID")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Title")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("PregnancyID")
+                        .HasName("PK_PregnancyDiary");
+
+                    b.HasIndex("MomID");
+
+                    b.ToTable("PregnancyDiaries");
                 });
 
             modelBuilder.Entity("MOCA_Repositories.Enitities.PregnancyTracking", b =>
@@ -783,13 +929,6 @@ namespace MOCA_Repositories.Migrations
                         .HasColumnType("int")
                         .HasColumnName("CourseID");
 
-                    b.Property<int?>("DiscountId")
-                        .HasColumnType("int")
-                        .HasColumnName("DiscountID");
-
-                    b.Property<DateTime?>("PurchaseDate")
-                        .HasColumnType("datetime");
-
                     b.Property<string>("Status")
                         .HasMaxLength(20)
                         .HasColumnType("nvarchar(20)");
@@ -802,8 +941,6 @@ namespace MOCA_Repositories.Migrations
                         .HasName("PK__Purchase__2B7C245C31F15238");
 
                     b.HasIndex("CourseId");
-
-                    b.HasIndex("DiscountId");
 
                     b.HasIndex("UserId");
 
@@ -1031,6 +1168,16 @@ namespace MOCA_Repositories.Migrations
                     b.Navigation("User");
                 });
 
+            modelBuilder.Entity("MOCA_Repositories.Enitities.CoursePayment", b =>
+                {
+                    b.HasOne("MOCA_Repositories.Enitities.OrderCourse", "OrderCourse")
+                        .WithMany("CoursePayments")
+                        .HasForeignKey("OrderId")
+                        .HasConstraintName("FK_CoursePayments_OrderCourses");
+
+                    b.Navigation("OrderCourse");
+                });
+
             modelBuilder.Entity("MOCA_Repositories.Enitities.DoctorBooking", b =>
                 {
                     b.HasOne("MOCA_Repositories.Enitities.DoctorProfile", "Doctor")
@@ -1115,6 +1262,40 @@ namespace MOCA_Repositories.Migrations
                     b.Navigation("User");
                 });
 
+            modelBuilder.Entity("MOCA_Repositories.Enitities.OrderCourse", b =>
+                {
+                    b.HasOne("MOCA_Repositories.Enitities.Discount", "Discount")
+                        .WithMany("OrderCourses")
+                        .HasForeignKey("DiscountId")
+                        .HasConstraintName("FK_OrderCourses_Discounts");
+
+                    b.HasOne("MOCA_Repositories.Enitities.User", "User")
+                        .WithMany("OrderCourses")
+                        .HasForeignKey("UserId")
+                        .HasConstraintName("FK_OrderCourses_Users");
+
+                    b.Navigation("Discount");
+
+                    b.Navigation("User");
+                });
+
+            modelBuilder.Entity("MOCA_Repositories.Enitities.OrderCourseDetail", b =>
+                {
+                    b.HasOne("MOCA_Repositories.Enitities.Course", "Course")
+                        .WithMany("OrderCourseDetails")
+                        .HasForeignKey("CourseId")
+                        .HasConstraintName("FK_OrderCourseDetails_Courses");
+
+                    b.HasOne("MOCA_Repositories.Enitities.OrderCourse", "OrderCourse")
+                        .WithMany("OrderCourseDetails")
+                        .HasForeignKey("OrderId")
+                        .HasConstraintName("FK_OrderCourseDetails_OrderCourses");
+
+                    b.Navigation("Course");
+
+                    b.Navigation("OrderCourse");
+                });
+
             modelBuilder.Entity("MOCA_Repositories.Enitities.PostLike", b =>
                 {
                     b.HasOne("MOCA_Repositories.Enitities.CommunityPost", "Post")
@@ -1130,6 +1311,18 @@ namespace MOCA_Repositories.Migrations
                     b.Navigation("Post");
 
                     b.Navigation("User");
+                });
+
+            modelBuilder.Entity("MOCA_Repositories.Enitities.PregnancyDiary", b =>
+                {
+                    b.HasOne("MOCA_Repositories.Enitities.MomProfile", "MomProfile")
+                        .WithMany("PregnancyDiaries")
+                        .HasForeignKey("MomID")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired()
+                        .HasConstraintName("FK_PregnancyDiary_MomProfile");
+
+                    b.Navigation("MomProfile");
                 });
 
             modelBuilder.Entity("MOCA_Repositories.Enitities.PregnancyTracking", b =>
@@ -1173,19 +1366,12 @@ namespace MOCA_Repositories.Migrations
                         .HasForeignKey("CourseId")
                         .HasConstraintName("FK_PurchasedCourses_Courses");
 
-                    b.HasOne("MOCA_Repositories.Enitities.Discount", "Discount")
-                        .WithMany("PurchasedCourses")
-                        .HasForeignKey("DiscountId")
-                        .HasConstraintName("FK_PurchasedCourses_Discounts");
-
                     b.HasOne("MOCA_Repositories.Enitities.User", "User")
                         .WithMany("PurchasedCourses")
                         .HasForeignKey("UserId")
                         .HasConstraintName("FK_PurchasedCourses_Users");
 
                     b.Navigation("Course");
-
-                    b.Navigation("Discount");
 
                     b.Navigation("User");
                 });
@@ -1245,6 +1431,8 @@ namespace MOCA_Repositories.Migrations
 
                     b.Navigation("Feedbacks");
 
+                    b.Navigation("OrderCourseDetails");
+
                     b.Navigation("PurchasedCourses");
                 });
 
@@ -1255,9 +1443,9 @@ namespace MOCA_Repositories.Migrations
 
             modelBuilder.Entity("MOCA_Repositories.Enitities.Discount", b =>
                 {
-                    b.Navigation("PurchasePackages");
+                    b.Navigation("OrderCourses");
 
-                    b.Navigation("PurchasedCourses");
+                    b.Navigation("PurchasePackages");
                 });
 
             modelBuilder.Entity("MOCA_Repositories.Enitities.DoctorBooking", b =>
@@ -1279,7 +1467,16 @@ namespace MOCA_Repositories.Migrations
 
             modelBuilder.Entity("MOCA_Repositories.Enitities.MomProfile", b =>
                 {
+                    b.Navigation("PregnancyDiaries");
+
                     b.Navigation("UserPregnancies");
+                });
+
+            modelBuilder.Entity("MOCA_Repositories.Enitities.OrderCourse", b =>
+                {
+                    b.Navigation("CoursePayments");
+
+                    b.Navigation("OrderCourseDetails");
                 });
 
             modelBuilder.Entity("MOCA_Repositories.Enitities.Package", b =>
@@ -1307,6 +1504,8 @@ namespace MOCA_Repositories.Migrations
                     b.Navigation("DoctorProfiles");
 
                     b.Navigation("MomProfiles");
+
+                    b.Navigation("OrderCourses");
 
                     b.Navigation("PostLikes");
 

@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace MOCA_Repositories.Migrations
 {
     /// <inheritdoc />
-    public partial class update : Migration
+    public partial class hahas : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -51,6 +51,7 @@ namespace MOCA_Repositories.Migrations
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Code = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: true),
                     Description = table.Column<string>(type: "text", nullable: true),
+                    DiscountType = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
                     Value = table.Column<decimal>(type: "decimal(10,2)", nullable: true),
                     MaxUsage = table.Column<int>(type: "int", nullable: true),
                     StartDate = table.Column<DateTime>(type: "datetime", nullable: true),
@@ -213,6 +214,34 @@ namespace MOCA_Repositories.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "OrderCourses",
+                columns: table => new
+                {
+                    OrderId = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    UserId = table.Column<int>(type: "int", nullable: true),
+                    DiscountId = table.Column<int>(type: "int", nullable: true),
+                    OrderPrice = table.Column<decimal>(type: "decimal(18,2)", nullable: true),
+                    PaymentMethod = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: true),
+                    Status = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: true),
+                    CreatedDate = table.Column<DateTime>(type: "datetime", nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK__OrderCourse", x => x.OrderId);
+                    table.ForeignKey(
+                        name: "FK_OrderCourses_Discounts",
+                        column: x => x.DiscountId,
+                        principalTable: "Discounts",
+                        principalColumn: "DiscountID");
+                    table.ForeignKey(
+                        name: "FK_OrderCourses_Users",
+                        column: x => x.UserId,
+                        principalTable: "Users",
+                        principalColumn: "UserID");
+                });
+
+            migrationBuilder.CreateTable(
                 name: "PurchasePackage",
                 columns: table => new
                 {
@@ -275,6 +304,7 @@ namespace MOCA_Repositories.Migrations
                     PostId = table.Column<int>(type: "int", nullable: true),
                     UserId = table.Column<int>(type: "int", nullable: true),
                     Content = table.Column<string>(type: "text", nullable: true),
+                    Status = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: true),
                     ParentReplyId = table.Column<int>(type: "int", nullable: true),
                     CreatedDate = table.Column<DateTime>(type: "datetime", nullable: true)
                 },
@@ -394,9 +424,7 @@ namespace MOCA_Repositories.Migrations
                         .Annotation("SqlServer:Identity", "1, 1"),
                     CourseID = table.Column<int>(type: "int", nullable: true),
                     UserID = table.Column<int>(type: "int", nullable: true),
-                    PurchaseDate = table.Column<DateTime>(type: "datetime", nullable: true),
-                    Status = table.Column<string>(type: "nvarchar(20)", maxLength: 20, nullable: true),
-                    DiscountID = table.Column<int>(type: "int", nullable: true)
+                    Status = table.Column<string>(type: "nvarchar(20)", maxLength: 20, nullable: true)
                 },
                 constraints: table =>
                 {
@@ -406,11 +434,6 @@ namespace MOCA_Repositories.Migrations
                         column: x => x.CourseID,
                         principalTable: "Courses",
                         principalColumn: "CourseId");
-                    table.ForeignKey(
-                        name: "FK_PurchasedCourses_Discounts",
-                        column: x => x.DiscountID,
-                        principalTable: "Discounts",
-                        principalColumn: "DiscountID");
                     table.ForeignKey(
                         name: "FK_PurchasedCourses_Users",
                         column: x => x.UserID,
@@ -476,6 +499,28 @@ namespace MOCA_Repositories.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "PregnancyDiaries",
+                columns: table => new
+                {
+                    PregnancyID = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    MomID = table.Column<int>(type: "int", nullable: false),
+                    Title = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Feeling = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: false),
+                    CreateDate = table.Column<DateTime>(type: "datetime", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_PregnancyDiary", x => x.PregnancyID);
+                    table.ForeignKey(
+                        name: "FK_PregnancyDiary_MomProfile",
+                        column: x => x.MomID,
+                        principalTable: "MomProfiles",
+                        principalColumn: "MomID",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "UserPregnancies",
                 columns: table => new
                 {
@@ -495,6 +540,56 @@ namespace MOCA_Repositories.Migrations
                         column: x => x.MomID,
                         principalTable: "MomProfiles",
                         principalColumn: "MomID");
+                });
+
+            migrationBuilder.CreateTable(
+                name: "CoursePayments",
+                columns: table => new
+                {
+                    PaymentId = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    OrderId = table.Column<int>(type: "int", nullable: true),
+                    PaymentCode = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: true),
+                    TransactionIdResponse = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: true),
+                    PaymentGateway = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: true),
+                    CreatedDate = table.Column<DateTime>(type: "datetime", nullable: true),
+                    Amount = table.Column<double>(type: "float", nullable: true),
+                    Description = table.Column<string>(type: "nvarchar(500)", maxLength: 500, nullable: true),
+                    Status = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_CoursePayment", x => x.PaymentId);
+                    table.ForeignKey(
+                        name: "FK_CoursePayments_OrderCourses",
+                        column: x => x.OrderId,
+                        principalTable: "OrderCourses",
+                        principalColumn: "OrderId");
+                });
+
+            migrationBuilder.CreateTable(
+                name: "OrderCourseDetails",
+                columns: table => new
+                {
+                    OrderDetailId = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    OrderId = table.Column<int>(type: "int", nullable: true),
+                    CourseId = table.Column<int>(type: "int", nullable: true),
+                    Price = table.Column<decimal>(type: "decimal(18,2)", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK__OrderCourseDetail", x => x.OrderDetailId);
+                    table.ForeignKey(
+                        name: "FK_OrderCourseDetails_Courses",
+                        column: x => x.CourseId,
+                        principalTable: "Courses",
+                        principalColumn: "CourseId");
+                    table.ForeignKey(
+                        name: "FK_OrderCourseDetails_OrderCourses",
+                        column: x => x.OrderId,
+                        principalTable: "OrderCourses",
+                        principalColumn: "OrderId");
                 });
 
             migrationBuilder.CreateTable(
@@ -657,6 +752,11 @@ namespace MOCA_Repositories.Migrations
                 column: "UserId");
 
             migrationBuilder.CreateIndex(
+                name: "IX_CoursePayments_OrderId",
+                table: "CoursePayments",
+                column: "OrderId");
+
+            migrationBuilder.CreateIndex(
                 name: "IX_Courses_CategoryId",
                 table: "Courses",
                 column: "CategoryId");
@@ -712,6 +812,26 @@ namespace MOCA_Repositories.Migrations
                 column: "UserID");
 
             migrationBuilder.CreateIndex(
+                name: "IX_OrderCourseDetails_CourseId",
+                table: "OrderCourseDetails",
+                column: "CourseId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_OrderCourseDetails_OrderId",
+                table: "OrderCourseDetails",
+                column: "OrderId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_OrderCourses_DiscountId",
+                table: "OrderCourses",
+                column: "DiscountId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_OrderCourses_UserId",
+                table: "OrderCourses",
+                column: "UserId");
+
+            migrationBuilder.CreateIndex(
                 name: "IX_PostLikes_PostId",
                 table: "PostLikes",
                 column: "PostId");
@@ -722,6 +842,11 @@ namespace MOCA_Repositories.Migrations
                 column: "UserId");
 
             migrationBuilder.CreateIndex(
+                name: "IX_PregnancyDiaries_MomID",
+                table: "PregnancyDiaries",
+                column: "MomID");
+
+            migrationBuilder.CreateIndex(
                 name: "IX_PregnancyTracking_PregnancyID",
                 table: "PregnancyTracking",
                 column: "PregnancyID");
@@ -730,11 +855,6 @@ namespace MOCA_Repositories.Migrations
                 name: "IX_PurchasedCourses_CourseID",
                 table: "PurchasedCourses",
                 column: "CourseID");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_PurchasedCourses_DiscountID",
-                table: "PurchasedCourses",
-                column: "DiscountID");
 
             migrationBuilder.CreateIndex(
                 name: "IX_PurchasedCourses_UserID",
@@ -791,6 +911,9 @@ namespace MOCA_Repositories.Migrations
                 name: "CommunityReplies");
 
             migrationBuilder.DropTable(
+                name: "CoursePayments");
+
+            migrationBuilder.DropTable(
                 name: "Feedbacks");
 
             migrationBuilder.DropTable(
@@ -800,7 +923,13 @@ namespace MOCA_Repositories.Migrations
                 name: "MessagesWithDoctor");
 
             migrationBuilder.DropTable(
+                name: "OrderCourseDetails");
+
+            migrationBuilder.DropTable(
                 name: "PostLikes");
+
+            migrationBuilder.DropTable(
+                name: "PregnancyDiaries");
 
             migrationBuilder.DropTable(
                 name: "PregnancyTracking");
@@ -824,13 +953,13 @@ namespace MOCA_Repositories.Migrations
                 name: "DoctorContacts");
 
             migrationBuilder.DropTable(
+                name: "OrderCourses");
+
+            migrationBuilder.DropTable(
                 name: "CommunityPosts");
 
             migrationBuilder.DropTable(
                 name: "UserPregnancies");
-
-            migrationBuilder.DropTable(
-                name: "Discounts");
 
             migrationBuilder.DropTable(
                 name: "Packages");
@@ -840,6 +969,9 @@ namespace MOCA_Repositories.Migrations
 
             migrationBuilder.DropTable(
                 name: "DoctorProfiles");
+
+            migrationBuilder.DropTable(
+                name: "Discounts");
 
             migrationBuilder.DropTable(
                 name: "MomProfiles");

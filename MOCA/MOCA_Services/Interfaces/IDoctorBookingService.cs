@@ -12,7 +12,7 @@ namespace MOCA_Services.Interfaces
 
         Task<IEnumerable<DoctorBooking>> GettAllDoctorBookingByUserId(string userId);
         Task<IEnumerable<DoctorBooking>> GettAllDoctorBookingByDoctorId(string userId);
-        Task<DoctorBooking> CreateDoctorBooking(DoctorBooking doctorBooking, string userId);
+        Task<(DoctorBooking booking, string? paymentUrl)> CreateDoctorBooking(DoctorBooking doctorBooking, string userId);
         Task<DoctorBooking> BookingEnd(int id);
         Task<DoctorBooking> CancelDoctorBooking(int id);
         Task<DoctorBooking> GettDoctorBookingById(int id);

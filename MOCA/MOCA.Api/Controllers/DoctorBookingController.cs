@@ -74,22 +74,23 @@ namespace MOCA.Api.Controllers
 
         //POST api/<DoctorBookingController>
         [HttpPost]
-        public async Task<ActionResult<DoctorBooking>> CreateDoctorBooking([FromBody] DoctorBooking value)
+        public async Task<ActionResult> CreateDoctorBooking([FromBody] DoctorBooking value)
         {
             if (!ModelState.IsValid)
-            {
                 return BadRequest(ModelState);
-            }
+
             var userId = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
-
             if (userId == null)
-            {
                 return Unauthorized();
-            }
 
-            var newDtBk = await _service.CreateDoctorBooking(value, userId);
+            var (booking, paymentUrl) = await _service.CreateDoctorBooking(value, userId);
 
-            return Ok(newDtBk);
+            return Ok(new
+            {
+                message = "Tạo lịch và tạo thanh toán thành công",
+                booking = booking,
+                paymentUrl = paymentUrl
+            });
         }
 
         
