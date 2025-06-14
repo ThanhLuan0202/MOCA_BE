@@ -39,6 +39,8 @@ namespace MOCA_Repositories.DependencyInjection
             service.AddTransient<IOrderCourseRepository, OrderCourseRepository>();
             service.AddTransient<ICourseCartRepository, CourseCartRepository>();
             service.AddTransient<IBookingPaymentRepository, BookingPaymentRepository>();
+            service.AddTransient<IPregnancyDiaryRepository, PregnancyDiaryRepository>();
+
 
 
 

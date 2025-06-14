@@ -20,6 +20,6 @@ namespace MOCA_Repositories.Enitities
 
         public DateTime CreateDate { get; set; }
 
-        public virtual MomProfile MomProfile { get; set; }
+        public virtual MomProfile? MomProfile { get; set; }
     }
 }
