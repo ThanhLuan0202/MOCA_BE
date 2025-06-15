@@ -1,4 +1,6 @@
-﻿using MOCA_Repositories.Enitities;
+﻿using Microsoft.EntityFrameworkCore;
+using MOCA_Repositories.DBContext;
+using MOCA_Repositories.Enitities;
 using MOCA_Repositories.Interfaces;
 using MOCA_Services.Interfaces;
 using System;
@@ -12,15 +14,27 @@ namespace MOCA_Services.Services
     public class DoctorProfileService : IDoctorProfileService
     {
         private readonly IDoctorProfileRepository _repo;
-
-        public DoctorProfileService(IDoctorProfileRepository repo)
+        private readonly MOCAContext _context;
+        private  readonly IEmailService _mailService;
+        public DoctorProfileService(IDoctorProfileRepository repo, MOCAContext context, IEmailService mailService)
         {
             _repo = repo;
+            _context = context;
+            _mailService = mailService;
         }
 
-        public Task<DoctorProfile> CreateDoctorProfileAsync(DoctorProfile newDoctorProfile, string userId)
+        public async Task<DoctorProfile> CreateDoctorProfileAsync(DoctorProfile newDoctorProfile, string userId)
         {
-            return _repo.CreateDoctorProfileAsync(newDoctorProfile, userId);
+            if (!int.TryParse(userId, out int idUser))
+            {
+                throw new ArgumentException("Invalid user ID");
+            }
+            var userEmail = await _context.Users
+    .Where(u => u.UserId == idUser).FirstOrDefaultAsync();
+
+
+            await _mailService.SendVerificationEmailToDoctorAsync(userEmail.Email, newDoctorProfile.FullName);
+            return  await _repo.CreateDoctorProfileAsync(newDoctorProfile, userId);
         }
 
         public Task<DoctorProfile> DeleteDoctorProfileAsync(int id)

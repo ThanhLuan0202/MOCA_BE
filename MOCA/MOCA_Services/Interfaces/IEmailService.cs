@@ -9,5 +9,6 @@ namespace MOCA_Services.Interfaces
     public interface IEmailService
     {
         Task SendEmailAsync(string toEmail, string subject, string body);
+        Task SendVerificationEmailToDoctorAsync(string toEmail, string fullName);
     }
 }

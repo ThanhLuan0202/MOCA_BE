@@ -36,13 +36,21 @@ namespace MOCA_Services.Services
                 {
                     var vnZone = TimeZoneInfo.FindSystemTimeZoneById("SE Asia Standard Time");
                     var vnNow = TimeZoneInfo.ConvertTimeFromUtc(DateTime.UtcNow, vnZone);
-                    var tomorrow = DateOnly.FromDateTime(vnNow.AddDays(1)); 
+
+                    
+                    if (vnNow.Hour != 10 && vnNow.Hour != 20)
+                    {
+                        await Task.Delay(TimeSpan.FromMinutes(1), stoppingToken);
+                        continue;
+                    }
+
+                    var targetDate = DateOnly.FromDateTime(vnNow.AddDays(1)); 
 
                     var checkups = await dbContext.BabyTrackings
                         .Include(x => x.Pregnancy)
                             .ThenInclude(p => p.Mom)
                                 .ThenInclude(m => m.User)
-                        .Where(x => x.CheckupDate.HasValue && x.CheckupDate.Value == tomorrow)
+                        .Where(x => x.CheckupDate.HasValue && x.CheckupDate.Value == targetDate)
                         .ToListAsync(stoppingToken);
 
                     foreach (var checkup in checkups)
@@ -64,8 +72,8 @@ namespace MOCA_Services.Services
                     _logger.LogError(ex, "Lỗi khi gửi email nhắc nhở mẹ bầu");
                 }
 
-                
                 await Task.Delay(TimeSpan.FromMinutes(1), stoppingToken);
+
             }
         }
 
