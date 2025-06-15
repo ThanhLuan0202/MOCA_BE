@@ -23,9 +23,9 @@ namespace MOCA_Services.Services
             return _repo.CreateUserPregnancyAsync(newMomPr, momId);
         }
 
-        public Task<IEnumerable<UserPregnancy>> GetAlLUserPregnancyAsync()
+        public Task<IEnumerable<UserPregnancy>> GetAlLUserPregnancyAsync(string userId)
         {
-            return _repo.GetAlLUserPregnancyAsync();
+            return _repo.GetAlLUserPregnancyAsync(userId);
         }
 
         public Task<UserPregnancy> GetUserPregnancyByIdAsync(int id)

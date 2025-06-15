@@ -22,7 +22,13 @@ namespace MOCA.Api.Controllers
         [HttpGet]
         public async Task<ActionResult< IEnumerable<UserPregnancy>>> GetAllUserPregnancy()
         {
-            var query = await _service.GetAlLUserPregnancyAsync();
+            var userId = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
+            if (string.IsNullOrEmpty(userId))
+            {
+                return Unauthorized();
+            }
+
+            var query = await _service.GetAlLUserPregnancyAsync(userId);
 
             return Ok(query);
 

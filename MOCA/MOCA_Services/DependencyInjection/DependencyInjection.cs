@@ -42,6 +42,10 @@ namespace MOCA_Services.DependencyInjection
             service.AddTransient<IBookingPaymentService, BookingPaymentService>();
             service.AddTransient<IPayPalService, PayPalService>();
             service.AddTransient<IPregnancyDiaryService, PregnancyDiaryService>();
+            service.AddTransient<IPayPalPackageService, PayPalPackageService>();
+            service.AddTransient<PrenatalReminderService>();
+
+
 
 
 

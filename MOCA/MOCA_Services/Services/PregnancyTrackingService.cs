@@ -23,9 +23,9 @@ namespace MOCA_Services.Services
             return _repo.CreatePregnancyTrackingAsync(newPr, userId);
         }
 
-        public Task<IEnumerable<PregnancyTracking>> GetAlLPregnancyTrackingAsync()
+        public Task<IEnumerable<PregnancyTracking>> GetAlLPregnancyTrackingAsync(string userId)
         {
-            return _repo.GetAlLPregnancyTrackingAsync();
+            return _repo.GetAlLPregnancyTrackingAsync(userId);
         }
 
         public Task<PregnancyTracking> GetPregnancyTrackingByIdAsync(int id)

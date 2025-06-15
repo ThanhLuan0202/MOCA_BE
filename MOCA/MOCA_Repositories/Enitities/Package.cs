@@ -10,6 +10,8 @@ public partial class Package
     public string? PackageName { get; set; }
 
     public string? Status { get; set; }
+    public decimal Price { get; set; }
+
 
     public virtual ICollection<PurchasePackage> PurchasePackages { get; set; } = new List<PurchasePackage>();
 }

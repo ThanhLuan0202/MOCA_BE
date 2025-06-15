@@ -25,7 +25,12 @@ namespace MOCA.Api.Controllers
         {
             try
             {
-                var query = await _service.GetAlLPregnancyTrackingAsync();
+                var userId = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
+                if (string.IsNullOrEmpty(userId))
+                {
+                    return Unauthorized();
+                }
+                var query = await _service.GetAlLPregnancyTrackingAsync(userId);
                 return Ok(query);
             }
             catch (Exception ex)

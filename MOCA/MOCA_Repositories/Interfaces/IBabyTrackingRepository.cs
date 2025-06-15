@@ -10,7 +10,7 @@ namespace MOCA_Repositories.Interfaces
     public interface IBabyTrackingRepository
     {
 
-        Task<IEnumerable<BabyTracking>> GetAlLBabyTrackingAsync();
+        Task<IEnumerable<BabyTracking>> GetAlLBabyTrackingAsync(string userId);
         Task<BabyTracking> CreateBabyTrackingAsync(BabyTracking newBb, string userId);
         Task<BabyTracking> UpdateBabyTrackingAsync(int id, BabyTracking updateBb);
         Task<BabyTracking> GetBabyTrackingByIdAsync(string id);

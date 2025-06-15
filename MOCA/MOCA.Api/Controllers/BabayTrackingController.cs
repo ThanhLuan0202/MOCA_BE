@@ -25,7 +25,12 @@ namespace MOCA.Api.Controllers
         [HttpGet]
         public async Task<ActionResult<IEnumerable<BabyTracking>>> GetAllBabyTracking()
         {
-           var query = await _service.GetAlLBabyTrackingAsync();
+            var userId = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
+            if (string.IsNullOrEmpty(userId))
+            {
+                return Unauthorized();
+            }
+            var query = await _service.GetAlLBabyTrackingAsync(userId);
 
             return Ok(query);
         }

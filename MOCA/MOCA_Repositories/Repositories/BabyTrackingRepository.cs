@@ -59,7 +59,7 @@ namespace MOCA_Repositories.Repositories
                 PlacentaPosition = newBb.PlacentaPosition,
                 DoctorComment = newBb.DoctorComment,
                 UltrasoundImage = newBb.UltrasoundImage,
-                CreatedAt = DateTime.UtcNow
+                CreatedAt = newBb.CreatedAt
             };
 
             await _context.AddRangeAsync(bbNew);
@@ -68,9 +68,25 @@ namespace MOCA_Repositories.Repositories
             return bbNew;
         }
 
-        public async Task<IEnumerable<BabyTracking>> GetAlLBabyTrackingAsync()
+        public async Task<IEnumerable<BabyTracking>> GetAlLBabyTrackingAsync(string userId)
         {
-            var query = await _context.BabyTrackings.Include(x => x.Pregnancy).ToListAsync();
+            if (!int.TryParse(userId, out int idUser))
+            {
+                throw new ArgumentException("Invalid user ID");
+            }
+
+            var checkMom = await _profileRepository.GetMomProfileByUserIdAsync(idUser);
+            if (checkMom == null)
+            {
+                throw new Exception($"Mom profile not found for user {userId}");
+            }
+
+            var userPre = await _userPregnanciesRepository.GetUserPregnancyByMomIdAsync(checkMom.MomId);
+            if (userPre == null)
+            {
+                throw new Exception($"Pregnancies not found for user {checkMom.MomId}");
+            }
+            var query = await _context.BabyTrackings.Include(x => x.Pregnancy).Where(c => c.PregnancyId == userPre.PregnancyId).ToListAsync();
 
             return query;
         }

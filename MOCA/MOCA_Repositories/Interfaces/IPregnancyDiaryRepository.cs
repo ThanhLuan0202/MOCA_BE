@@ -13,7 +13,7 @@ namespace MOCA_Repositories.Interfaces
 
         Task<IEnumerable<PregnancyDiary>> GetAlLPregnancyDiary(string userId);
         Task<PregnancyDiary> CreatePregnancyDiary(PregnancyDiary newPD, String userId);
-        Task<PregnancyDiary> UpdateMomProfileAsync(int id, PregnancyDiary updatenewPD);
+        Task<PregnancyDiary> UpdatePregnancyDiary(int id, PregnancyDiary updatenewPD);
         Task<PregnancyDiary> GetPregnancyDiaryById(int id);
         Task<PregnancyDiary> DeletePregnancyDiaryById(int id);
 

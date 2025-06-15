@@ -86,7 +86,8 @@ namespace MOCA_Repositories.Repositories
             return checkPreg;
         }
 
-        public async Task<PregnancyDiary> UpdateMomProfileAsync(int id, PregnancyDiary updatenewPD)
+        
+        public async Task<PregnancyDiary> UpdatePregnancyDiary(int id, PregnancyDiary updatenewPD)
         {
             var checkPreg = await _context.PregnancyDiaries
                 .Include(x => x.MomProfile)

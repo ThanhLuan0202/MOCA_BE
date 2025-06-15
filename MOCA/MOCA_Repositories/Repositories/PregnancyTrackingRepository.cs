@@ -52,7 +52,9 @@ namespace MOCA_Repositories.Repositories
                 WeekNumber = newPr.WeekNumber,
                 Weight = newPr.Weight,
                 BellySize = newPr.BellySize,
-                BloodPressure = newPr.BloodPressure
+                BloodPressure = newPr.BloodPressure,
+                
+                 
             };
 
             await _context.AddAsync(prNew);
@@ -60,9 +62,25 @@ namespace MOCA_Repositories.Repositories
             return prNew;
         }
 
-        public async Task<IEnumerable<PregnancyTracking>> GetAlLPregnancyTrackingAsync()
+        public async Task<IEnumerable<PregnancyTracking>> GetAlLPregnancyTrackingAsync(string userId)
         {
-            var query = await _context.PregnancyTrackings.Include(x => x.Pregnancy).ToListAsync();
+            if (!int.TryParse(userId, out int idUser))
+            {
+                throw new ArgumentException("Invalid user ID");
+            }
+
+            var checkMom = await _profileRepository.GetMomProfileByUserIdAsync(idUser);
+            if (checkMom == null)
+            {
+                throw new Exception($"Mom profile not found for user {userId}");
+            }
+
+            var userPre = await _userPregnanciesRepository.GetUserPregnancyByMomIdAsync(checkMom.MomId);
+            if (userPre == null)
+            {
+                throw new Exception($"Pregnancies not found for user {checkMom.MomId}");
+            }
+            var query = await _context.PregnancyTrackings.Include(x => x.Pregnancy).Where(c => c.PregnancyId == userPre.PregnancyId).ToListAsync();
 
             return query;
         }

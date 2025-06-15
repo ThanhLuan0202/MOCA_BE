@@ -8,6 +8,7 @@ using MOCA_Repositories.DependencyInjection;
 using MOCA_Repositories.Mapping;
 using MOCA_Repositories.Models.ModelMail;
 using MOCA_Services.DependencyInjection;
+using MOCA_Services.Services;
 using System.Text;
 using System.Text.Json.Serialization;
 var builder = WebApplication.CreateBuilder(args);
@@ -29,6 +30,7 @@ builder.Services.AddDbContext<MOCAContext>(options =>
 builder.Services.Configure<MailSettings>(builder.Configuration.GetSection("MailSettings"));
 builder.Services.AddAutoMapper(typeof(AutoMapperProfile));
 builder.Services.AddHttpClient();
+builder.Services.AddHostedService<PrenatalReminderService>();
 
 
 builder.Services.AddRepository().AddServices();

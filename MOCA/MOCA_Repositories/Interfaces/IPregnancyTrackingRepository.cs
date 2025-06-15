@@ -10,7 +10,7 @@ namespace MOCA_Repositories.Interfaces
     public interface IPregnancyTrackingRepository
     {
 
-        Task<IEnumerable<PregnancyTracking>> GetAlLPregnancyTrackingAsync();
+        Task<IEnumerable<PregnancyTracking>> GetAlLPregnancyTrackingAsync(string userId);
         Task<PregnancyTracking> CreatePregnancyTrackingAsync(PregnancyTracking newPr, string userId);
         Task<PregnancyTracking> UpdatePregnancyTrackingAsync(int id, PregnancyTracking updatePr);
         Task<PregnancyTracking> GetPregnancyTrackingByIdAsync(int id);

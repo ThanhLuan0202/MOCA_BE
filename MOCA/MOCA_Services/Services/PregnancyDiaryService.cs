@@ -39,7 +39,7 @@ namespace MOCA_Services.Services
 
         public Task<PregnancyDiary> UpdateMomProfileAsync(int id, PregnancyDiary updatenewPD)
         {
-            return _repo.UpdateMomProfileAsync(id, updatenewPD);
+            return _repo.UpdatePregnancyDiary(id, updatenewPD);
         }
     }
 }

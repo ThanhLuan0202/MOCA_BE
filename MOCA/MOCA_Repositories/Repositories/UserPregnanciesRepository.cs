@@ -49,9 +49,14 @@ namespace MOCA_Repositories.Repositories
             return newUserPre;
         }
 
-        public async Task<IEnumerable<UserPregnancy>> GetAlLUserPregnancyAsync()
+        public async Task<IEnumerable<UserPregnancy>> GetAlLUserPregnancyAsync(string userId)
         {
-            var query = await _context.UserPregnancies.Include(x => x.Mom).ToListAsync();
+            if (!int.TryParse(userId, out int idUser))
+            {
+                throw new ArgumentException("Invalid user ID");
+            }
+            var findMom = await _momProfileRepository.GetMomProfileByUserIdAsync(idUser);
+            var query = await _context.UserPregnancies.Include(x => x.Mom).Where(c => c.MomId == findMom.MomId).ToListAsync();
             return query;
         }
 
