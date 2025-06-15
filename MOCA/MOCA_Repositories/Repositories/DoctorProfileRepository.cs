@@ -20,7 +20,19 @@ namespace MOCA_Repositories.Repositories
             _context = context;
         }
 
+        public async Task<DoctorProfile> ConfirmDoctor(int id)
+        {
+            var checkDoc = await _context.DoctorProfiles.Include(x => x.User).FirstOrDefaultAsync(x => x.DoctorId == id);
 
+            if (checkDoc == null)
+            {
+                throw new Exception($"Doctor profile {id} is not exist!");
+            }
+            checkDoc.Status = "Active";
+            _context.Entry(checkDoc).State = EntityState.Modified;
+            await _context.SaveChangesAsync();
+            return checkDoc;
+        }
 
         public async Task<DoctorProfile> CreateDoctorProfileAsync(DoctorProfile newDoctorProfile, string userId)
         {

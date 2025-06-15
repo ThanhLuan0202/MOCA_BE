@@ -42,6 +42,20 @@ namespace MOCA.Api.Controllers
             return Ok(docPro);
         }
 
+
+        [HttpPost("ConfirmDoctor")]
+        public async Task<ActionResult<DoctorProfile>> ConfirmDoctor([FromBody] int id)
+        {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+
+            var docPro = await _service.ConfirmDoctor(id);
+
+            return Ok(docPro);
+        }
+
         // POST api/<DoctorProfileController>
         [HttpPost]
         public async Task<ActionResult<DoctorProfile>> CreateDoctorProfile([FromBody] DoctorProfile value)

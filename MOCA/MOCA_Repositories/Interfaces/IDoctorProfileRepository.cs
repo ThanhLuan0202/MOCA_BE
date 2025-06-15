@@ -14,6 +14,8 @@ namespace MOCA_Repositories.Interfaces
         Task<DoctorProfile> CreateDoctorProfileAsync(DoctorProfile newDoctorProfile, String userId);
         Task<DoctorProfile> UpdateDoctorProfileAsync(int id, DoctorProfile updateDoctorProfile);
         Task<DoctorProfile> DeleteDoctorProfileAsync(int id);
+        Task<DoctorProfile> ConfirmDoctor(int id);
+
 
         Task<DoctorProfile> GetDoctorProfileByIdAsync(int id);
         Task<DoctorProfile> GetDoctorProfileByUserIdAsync(string userId);

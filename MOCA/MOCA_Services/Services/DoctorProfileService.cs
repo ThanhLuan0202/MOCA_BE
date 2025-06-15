@@ -23,6 +23,11 @@ namespace MOCA_Services.Services
             _mailService = mailService;
         }
 
+        public Task<DoctorProfile> ConfirmDoctor(int id)
+        {
+            return _repo.ConfirmDoctor(id);
+        }
+
         public async Task<DoctorProfile> CreateDoctorProfileAsync(DoctorProfile newDoctorProfile, string userId)
         {
             if (!int.TryParse(userId, out int idUser))
