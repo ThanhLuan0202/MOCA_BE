@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using MOCA_Repositories.Enitities;
 using MOCA_Repositories.Models.MomProfileDTO;
@@ -27,6 +28,8 @@ namespace MOCA.Api.Controllers
 
         // GET: api/<MomProfileController>
         [HttpGet]
+        [Authorize(Roles = "Manager")]
+
         public async Task<ActionResult<IEnumerable<MomProfile>>> GetAllMomProfile()
         {
             var query = await _service.GetAlLPackageAsync();
@@ -36,6 +39,8 @@ namespace MOCA.Api.Controllers
 
         // GET api/<MomProfileController>/5
         [HttpGet("{id}")]
+        [Authorize(Roles = "Mom,Doctor,Manager")]
+
         public async Task<ActionResult<MomProfile>> GetMomProfileGetById(int id)
         {
             if (!ModelState.IsValid)
@@ -51,6 +56,8 @@ namespace MOCA.Api.Controllers
 
         // POST api/<MomProfileController>
         [HttpPost]
+        [Authorize(Roles = "User,Manager")]
+
         public async Task<ActionResult<MomProfile>> CreateMomProfile([FromBody] CreateMomProfileModel value)
         {
             if (!ModelState.IsValid)
@@ -71,6 +78,8 @@ namespace MOCA.Api.Controllers
 
         // PUT api/<MomProfileController>/5
         [HttpPut("{id}")]
+        [Authorize(Roles = "Mom,Manager")]
+
         public async Task<ActionResult<MomProfile>> UpdateMomProfile(int id, [FromBody] UpdateMomProfileModel value)
         {
             if (!ModelState.IsValid)

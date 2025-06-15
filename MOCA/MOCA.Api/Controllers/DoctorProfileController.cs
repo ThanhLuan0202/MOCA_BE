@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using MOCA_Repositories.Enitities;
 using MOCA_Services.Interfaces;
 using System.Security.Claims;
@@ -7,6 +8,7 @@ using System.Security.Claims;
 
 namespace MOCA.Api.Controllers
 {
+
     [Route("api/[controller]")]
     [ApiController]
     public class DoctorProfileController : ControllerBase
@@ -20,6 +22,7 @@ namespace MOCA.Api.Controllers
 
 
         // GET: api/<DoctorProfileController>
+
         [HttpGet]
         public async Task<ActionResult<IEnumerable<DoctorProfile>>> GetAllDoctorProfile()
         {
@@ -44,6 +47,8 @@ namespace MOCA.Api.Controllers
 
 
         [HttpPost("ConfirmDoctor")]
+        [Authorize(Roles = "Manager")]
+
         public async Task<ActionResult<DoctorProfile>> ConfirmDoctor([FromBody] int id)
         {
             if (!ModelState.IsValid)
@@ -58,6 +63,8 @@ namespace MOCA.Api.Controllers
 
         // POST api/<DoctorProfileController>
         [HttpPost]
+        [Authorize(Roles = "User,Manager")]
+
         public async Task<ActionResult<DoctorProfile>> CreateDoctorProfile([FromBody] DoctorProfile value)
         {
             if (!ModelState.IsValid)
@@ -79,6 +86,8 @@ namespace MOCA.Api.Controllers
 
         // PUT api/<DoctorProfileController>/5
         [HttpPut("{id}")]
+        [Authorize(Roles = "Doctor,Manager")]
+
         public async Task<ActionResult<DoctorProfile>> UpdateDoctorProfile(int id, [FromBody] DoctorProfile value)
         {
             if (!ModelState.IsValid)
@@ -94,6 +103,8 @@ namespace MOCA.Api.Controllers
 
         // DELETE api/<DoctorProfileController>/5
         [HttpDelete("{id}")]
+        [Authorize(Roles = "Admin")]
+
         public async Task<ActionResult<DoctorProfile>> Delete(int id)
         {
             if (!ModelState.IsValid)

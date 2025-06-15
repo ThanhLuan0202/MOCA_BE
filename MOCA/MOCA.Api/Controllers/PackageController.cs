@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using MOCA_Repositories.Enitities;
 using MOCA_Repositories.Models.PackageDTO;
@@ -47,6 +48,8 @@ namespace MOCA.Api.Controllers
 
         // POST api/<PackageController>
         [HttpPost]
+        [Authorize(Roles = "Manager")]
+
         public async Task<ActionResult<Package>> CreatePackage([FromBody] CreatePackageModel newPackage)
         {
             if (!ModelState.IsValid)
@@ -60,6 +63,8 @@ namespace MOCA.Api.Controllers
 
         // PUT api/<PackageController>/5
         [HttpPut("{id}")]
+        [Authorize(Roles = "Manager")]
+
         public async Task<ActionResult<Package>> UpdatePackage(int id, [FromBody] UpdatePackageModel updatePackage)
         {
             if (!ModelState.IsValid)
@@ -74,6 +79,8 @@ namespace MOCA.Api.Controllers
 
         // DELETE api/<PackageController>/5
         [HttpDelete("{id}")]
+        [Authorize(Roles = "Admin")]
+
         public async Task<ActionResult<Package>> DeletePackage(int id)
         {
             if (!ModelState.IsValid)

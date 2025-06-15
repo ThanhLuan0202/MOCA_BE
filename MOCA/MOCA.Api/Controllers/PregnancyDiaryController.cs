@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using MOCA_Repositories.Enitities;
 using MOCA_Services.Interfaces;
 using System.Security.Claims;
@@ -7,6 +8,8 @@ using System.Security.Claims;
 
 namespace MOCA.Api.Controllers
 {
+    [Authorize(Roles = "Mom,Doctor,Manager")]
+
     [Route("api/[controller]")]
     [ApiController]
     public class PregnancyDiaryController : ControllerBase
