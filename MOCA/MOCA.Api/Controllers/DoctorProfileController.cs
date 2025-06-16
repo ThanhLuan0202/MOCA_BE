@@ -116,5 +116,19 @@ namespace MOCA.Api.Controllers
             return Ok(deleteDoc);
 
         }
+
+        [HttpGet("GetDoctorByUserId")]
+        public async Task<ActionResult<IEnumerable<DoctorProfile>>> GetAllDoctorProfileByUserId()
+        {
+            var userId = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
+
+            if (string.IsNullOrEmpty(userId))
+            {
+                return Unauthorized();
+            }
+            var query = await _service.GetDoctorProfileByUserIdAsync(userId);
+
+            return Ok(query);
+        }
     }
 }

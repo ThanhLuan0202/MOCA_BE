@@ -31,7 +31,7 @@ namespace MOCA_Services.Services
         {
             var user = await _authenRepository.Register(newUser);
 
-            string confirmationLink = $"https://localhost:7066/api/Authen/verify-email?email={user.Email}";
+            string confirmationLink = $"https://moca.mom:2030/api/Authen/verify-email?email={user.Email}";
             string body = $"<h3>Chào {user.FullName}</h3><p>Vui lòng xác nhận email của bạn bằng cách nhấn vào liên kết sau: <a href='{confirmationLink}'>Xác nhận email</a></p>";
 
             await _emailService.SendEmailAsync(user.Email, "Xác nhận Email", body);

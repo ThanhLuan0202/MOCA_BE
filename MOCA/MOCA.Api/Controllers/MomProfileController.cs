@@ -93,5 +93,32 @@ namespace MOCA.Api.Controllers
 
         }
 
+        [HttpGet("GetUserById")]
+
+        public async Task<ActionResult<MomProfile>> GetMomByUser()
+        {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+            var userId = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
+
+            if (string.IsNullOrEmpty(userId))
+            {
+                return Unauthorized();
+            }
+            if (!int.TryParse(userId, out int idd))
+            {
+                throw new ArgumentException("Invalid user ID");
+
+            }
+            var mom = await _service.GetMomProfileByUserIdAsync(idd);
+
+            return Ok(mom);
+
+        }
+
+       
+
     }
 }

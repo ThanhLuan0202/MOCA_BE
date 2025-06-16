@@ -37,6 +37,11 @@ namespace MOCA_Services.Services
             return _repo.GetMomProfileByIdAsync(id);
         }
 
+        public Task<MomProfile> GetMomProfileByUserIdAsync(int id)
+        {
+            return _repo.GetMomProfileByUserIdAsync(id);
+        }
+
         public Task<MomProfile> UpdateMomProfileAsync(int id, UpdateMomProfileModel updateMomPr)
         {
             return _repo.UpdateMomProfileAsync(id, updateMomPr);

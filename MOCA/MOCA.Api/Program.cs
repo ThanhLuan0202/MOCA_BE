@@ -139,7 +139,7 @@ app.MapControllers();
 
 if (app.Environment.IsDevelopment())
 {
-    app.UseDeveloperExceptionPage(); // ✅ Chỉ dùng trong Development
+    app.UseDeveloperExceptionPage(); 
 }
 
 

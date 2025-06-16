@@ -3,11 +3,6 @@ using MOCA_Repositories.DBContext;
 using MOCA_Repositories.Enitities;
 using MOCA_Repositories.Generic;
 using MOCA_Repositories.Interfaces;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace MOCA_Repositories.Repositories
 {
@@ -103,6 +98,10 @@ namespace MOCA_Repositories.Repositories
 
             var checkDoctor = await _context.DoctorProfiles.Include(x => x.User).FirstOrDefaultAsync(c => c.UserId == idUser);
 
+            if (checkDoctor  == null)
+            {
+                throw new Exception($"Doctor {idUser} is not exist!");
+            }
             return checkDoctor;
 
         }
