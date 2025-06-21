@@ -9,7 +9,7 @@ using System.Security.Claims;
 
 namespace MOCA.Api.Controllers
 {
-    [Authorize(Roles = "Mom,Doctor,Manager")]
+    [Authorize(Roles = "Mom,Doctor,Manager,User")]
     [Route("api/[controller]")]
     [ApiController]
     public class PregnancyTrackingController : ControllerBase

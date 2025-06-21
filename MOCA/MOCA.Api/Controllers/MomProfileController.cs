@@ -28,13 +28,12 @@ namespace MOCA.Api.Controllers
 
         // GET: api/<MomProfileController>
         [HttpGet]
-        [Authorize(Roles = "Manager")]
+        [Authorize(Roles = "Manager,Admin")]
 
         public async Task<ActionResult<IEnumerable<MomProfile>>> GetAllMomProfile()
         {
             var query = await _service.GetAlLPackageAsync();
-            var result = _mapper.Map<List<ViewMomProfileModel>>(query);
-            return Ok(result);
+            return Ok(query);
         }
 
         // GET api/<MomProfileController>/5

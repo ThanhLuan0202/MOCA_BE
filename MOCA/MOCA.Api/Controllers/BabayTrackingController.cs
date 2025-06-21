@@ -8,7 +8,7 @@ using System.Security.Claims;
 
 namespace MOCA.Api.Controllers
 {
-    [Authorize(Roles = "Mom,Manager")]
+    [Authorize(Roles = "Mom,Manager,User")]
 
     [Route("api/[controller]")]
     [ApiController]
@@ -39,7 +39,7 @@ namespace MOCA.Api.Controllers
         }
 
         // GET api/<BabayTrackingController>/5
-        [HttpGet("{id}")]
+        [HttpGet("GetBabyTrackingByUser")]
         public async Task<ActionResult<BabyTracking>> GetBabyTrackingById()
         {
             var userId = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
