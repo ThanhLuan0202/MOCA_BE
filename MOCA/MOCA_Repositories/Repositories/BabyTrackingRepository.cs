@@ -43,15 +43,11 @@ namespace MOCA_Repositories.Repositories
                 throw new Exception($"Mom profile not found for user {userId}");
             }
 
-            var userPre = await _userPregnanciesRepository.GetUserPregnancyByMomIdAsync(checkMom.MomId);
-            if (userPre == null)
-            {
-                throw new Exception($"Pregnancies not found for user {checkMom.MomId}");
-            }
+           
 
             var bbNew = new BabyTracking
             {
-                PregnancyId = userPre.PregnancyId,
+                PregnancyId = newBb.PregnancyId,
                 CheckupDate = newBb.CheckupDate,
                 FetalHeartRate = newBb.FetalHeartRate,
                 EstimatedWeight = newBb.EstimatedWeight,
@@ -91,21 +87,10 @@ namespace MOCA_Repositories.Repositories
             return query;
         }
 
-        public async Task<BabyTracking> GetBabyTrackingByIdAsync(string id)
+        public async Task<IEnumerable<BabyTracking>> GetBabyTrackingByIdAsync(int id)
         {
-            if (!int.TryParse(id, out int idUser))
-            {
-                throw new ArgumentException("Invalid user ID");
-            }
-
-            var checkMom = await _profileRepository.GetMomProfileByUserIdAsync(idUser);
-            if (checkMom == null)
-            {
-                throw new Exception($"Mom profile not found for user {idUser}");
-            }
-
-            var userPre = await _userPregnanciesRepository.GetUserPregnancyByMomIdAsync(checkMom.MomId);
-            var check = await _context.BabyTrackings.Include(x => x.Pregnancy).FirstOrDefaultAsync(x => x.PregnancyId == userPre.PregnancyId);
+            
+            var check = await _context.BabyTrackings.Include(x => x.Pregnancy).Where(x => x.PregnancyId == id).ToListAsync();
             if (check == null)
             {
                 throw new Exception($"Baby tracking {id} is not exist!");

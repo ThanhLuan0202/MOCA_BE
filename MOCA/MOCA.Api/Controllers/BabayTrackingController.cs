@@ -39,16 +39,15 @@ namespace MOCA.Api.Controllers
         }
 
         // GET api/<BabayTrackingController>/5
-        [HttpGet("GetBabyTrackingByUser")]
-        public async Task<ActionResult<BabyTracking>> GetBabyTrackingById()
+        [HttpGet("{id}")]
+        public async Task<ActionResult<IEnumerable<BabyTracking>>> GetBabyTrackingById(int id)
         {
-            var userId = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
-            if (string.IsNullOrEmpty(userId))
+            if (!ModelState.IsValid)
             {
-                return Unauthorized();
+                return BadRequest(ModelState);
             }
 
-            var check = await _service.GetBabyTrackingByIdAsync(userId);
+            var check = await _service.GetBabyTrackingByIdAsync(id);
 
             return Ok(check);
 

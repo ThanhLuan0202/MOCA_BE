@@ -12,7 +12,7 @@ namespace MOCA_Services.Interfaces
         Task<IEnumerable<PregnancyTracking>> GetAlLPregnancyTrackingAsync(string userId);
         Task<PregnancyTracking> CreatePregnancyTrackingAsync(PregnancyTracking newPr, string userId);
         Task<PregnancyTracking> UpdatePregnancyTrackingAsync(int id, PregnancyTracking updatePr);
-        Task<PregnancyTracking> GetPregnancyTrackingByIdAsync(int id);
+        Task<IEnumerable<PregnancyTracking>> GetPregnancyTrackingByIdAsync(int id);
 
 
     }

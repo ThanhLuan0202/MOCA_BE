@@ -43,7 +43,7 @@ namespace MOCA.Api.Controllers
 
         // GET api/<PregnancyTrackingController>/5
         [HttpGet("{id}")]
-        public async Task<ActionResult<PregnancyTracking>> GetPregnancyTrackingById(int id)
+        public async Task<ActionResult<IEnumerable<PregnancyTracking>>> GetPregnancyTrackingById(int id)
         {
             if (!ModelState.IsValid)
             {

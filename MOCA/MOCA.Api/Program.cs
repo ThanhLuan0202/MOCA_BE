@@ -1,4 +1,4 @@
-using Microsoft.AspNetCore.Authentication.JwtBearer;
+﻿using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Options;
 using Microsoft.IdentityModel.Tokens;
@@ -11,6 +11,7 @@ using MOCA_Services.DependencyInjection;
 using MOCA_Services.Services;
 using System.Text;
 using System.Text.Json.Serialization;
+using Microsoft.AspNetCore.SignalR;
 var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddCors(options =>
 {
@@ -34,7 +35,7 @@ builder.Services.AddHostedService<PrenatalReminderService>();
 
 
 builder.Services.AddRepository().AddServices();
-
+builder.Services.AddSignalR();
 builder.Services.AddControllers().AddJsonOptions(options =>
 {
     options.JsonSerializerOptions.ReferenceHandler = ReferenceHandler.Preserve;
@@ -90,12 +91,30 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
         {
             OnMessageReceived = context =>
             {
+
+                //if (string.IsNullOrEmpty(context.Token))
+                //{
+                //    var accessToken = context.Request.Cookies["authToken"];
+                //    if (!string.IsNullOrEmpty(accessToken))
+                //    {
+                //        context.Token = accessToken;
+                //    }
+                //}
+                //return Task.CompletedTask;
+                // Ưu tiên lấy token từ query string cho SignalR
+                var accessToken = context.Request.Query["access_token"];
+                var path = context.HttpContext.Request.Path;
+                if (!string.IsNullOrEmpty(accessToken) && path.StartsWithSegments("/chathub"))
+                {
+                    context.Token = accessToken;
+                }
+                // Nếu không có thì lấy từ cookie như cũ
                 if (string.IsNullOrEmpty(context.Token))
                 {
-                    var accessToken = context.Request.Cookies["authToken"];
-                    if (!string.IsNullOrEmpty(accessToken))
+                    var cookieToken = context.Request.Cookies["authToken"];
+                    if (!string.IsNullOrEmpty(cookieToken))
                     {
-                        context.Token = accessToken;
+                        context.Token = cookieToken;
                     }
                 }
                 return Task.CompletedTask;
@@ -136,7 +155,7 @@ app.UseAuthorization();
 
 app.MapControllers();
 
-
+app.MapHub<ChatHub>("/chathub");
 if (app.Environment.IsDevelopment())
 {
     app.UseDeveloperExceptionPage(); 

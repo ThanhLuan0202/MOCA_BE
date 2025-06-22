@@ -44,7 +44,19 @@ namespace MOCA.Api.Controllers
 
             return Ok(docPro);
         }
+        [HttpGet("DoctorByUserId")]
+        public async Task<ActionResult<DoctorProfile>> GetDoctorProfileByUserId()
+        {
+            var userId = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
+            if (string.IsNullOrEmpty(userId))
+            {
+                return Unauthorized();
+            }
 
+            var docPro = await _service.GetDoctorProfileByUserIdAsync(userId);
+
+            return Ok(docPro);
+        }
 
         [HttpPost("ConfirmDoctor")]
         [Authorize(Roles = "Manager")]

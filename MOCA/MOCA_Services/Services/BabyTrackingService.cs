@@ -28,7 +28,7 @@ namespace MOCA_Services.Services
             return _repo.GetAlLBabyTrackingAsync(userId);
         }
 
-        public Task<BabyTracking> GetBabyTrackingByIdAsync(string id)
+        public Task<IEnumerable<BabyTracking>> GetBabyTrackingByIdAsync(int id)
         {
             return _repo.GetBabyTrackingByIdAsync(id);
         }

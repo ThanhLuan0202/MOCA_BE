@@ -39,22 +39,18 @@ namespace MOCA_Repositories.Repositories
                 throw new Exception($"Mom profile not found for user {userId}");
             }
 
-            var userPre = await _userPregnanciesRepository.GetUserPregnancyByMomIdAsync(checkMom.MomId);
-            if (userPre == null)
-            {
-                throw new Exception($"Pregnancies not found for user {checkMom.MomId}");
-            }
+
 
             var prNew = new PregnancyTracking
             {
-                PregnancyId = userPre.PregnancyId,
+                PregnancyId = newPr.PregnancyId,
                 TrackingDate = newPr.TrackingDate,
                 WeekNumber = newPr.WeekNumber,
                 Weight = newPr.Weight,
                 BellySize = newPr.BellySize,
                 BloodPressure = newPr.BloodPressure,
-                
-                 
+
+
             };
 
             await _context.AddAsync(prNew);
@@ -84,10 +80,9 @@ namespace MOCA_Repositories.Repositories
 
             return query;
         }
-
-        public async Task<PregnancyTracking> GetPregnancyTrackingByIdAsync(int id)
+        public async Task<IEnumerable<PregnancyTracking>> GetPregnancyTrackingByIdAsync(int id)
         {
-            var check = await _context.PregnancyTrackings.Include(x => x.Pregnancy).FirstOrDefaultAsync(x => x.TrackingId == id);
+            var check = await _context.PregnancyTrackings.Include(x => x.Pregnancy).Where(x => x.PregnancyId == id).ToListAsync();
 
             if (check == null)
             {
@@ -112,8 +107,8 @@ namespace MOCA_Repositories.Repositories
             check.BellySize = updatePr.BellySize;
             check.BloodPressure = updatePr.BloodPressure;
 
-            _context.Entry(check).State =EntityState.Modified;
-            
+            _context.Entry(check).State = EntityState.Modified;
+
             await _context.SaveChangesAsync();
             return check;
         }
