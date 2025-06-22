@@ -33,11 +33,14 @@ namespace MOCA.Api.Controllers
                 return BadRequest("Invalid user ID format.");
             }
             var role = User.FindFirst(ClaimTypes.Role).Value;
-            var doctorCheck = await _doctor.GetDoctorProfileByUserIdAsync(userId);
+            
             IQueryable<DoctorContact> query = _context.DoctorContacts;
 
-            if (role == "Doctor")
+            if (role == "Doctor") {
+                var doctorCheck = await _doctor.GetDoctorProfileByUserIdAsync(userId);
                 query = query.Where(c => c.DoctorId == doctorCheck.DoctorId);
+
+            }
             else
                 query = query.Where(c => c.UserId == idUser);
 
