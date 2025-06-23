@@ -23,7 +23,7 @@ namespace MOCA.Api.Controllers
             _doctor = doctor;
         }
 
-        // danh sách cuộc trò chuyện 
+        // danh sách 
         [HttpGet("contacts")]
         public async Task<IActionResult> GetContacts()
         {

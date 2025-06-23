@@ -29,7 +29,7 @@ namespace MOCA_Services.Services
             _apiKey = configuration["OpenAI:ApiKey"];
         }
 
-        public async Task<string> GetAdviceAsync(string userId)
+        public async Task<string> GetAdviceAsync(string userId, int id)
         {
             if (!int.TryParse(userId, out int idUser))
             {
@@ -37,32 +37,29 @@ namespace MOCA_Services.Services
             }
             var momPr = await _momProfile.GetMomProfileByUserIdAsync(idUser);
             var userPregnancy = await _context.UserPregnancies.Include(up => up.Mom).Include(x => x.PregnancyTrackings)
-                .FirstOrDefaultAsync(up => up.MomId == momPr.MomId);
-            
+                .FirstOrDefaultAsync(up => up.MomId == momPr.MomId && up.PregnancyId == id);
+
 
             if (userPregnancy == null) return "Không tìm thấy thông tin thai kỳ hiện tại.";
 
             var pregnancyInfo = userPregnancy.PregnancyTrackings.OrderByDescending(x => x.TrackingDate)
-    .FirstOrDefault();
+    .FirstOrDefault(c => c.PregnancyId == id);
 
 
             var trackings = await _context.BabyTrackings
-                .Where(bt => bt.PregnancyId == userPregnancy.PregnancyId)
                 .OrderByDescending(bt => bt.CheckupDate)
-                .Take(5) 
-                .ToListAsync();
+                .FirstOrDefaultAsync(bt => bt.PregnancyId == id);
 
             var prompt = new StringBuilder();
             prompt.AppendLine("Tôi là một bác sĩ tư vấn thai kỳ.");
-            prompt.AppendLine($"Tuần thai: {pregnancyInfo?.WeekNumber/7}, Cân nặng của mẹ: {pregnancyInfo?.Weight}, Kích thước bụng: {pregnancyInfo?.BellySize}, Huyết áp: {pregnancyInfo?.BloodPressure}.");
+            prompt.AppendLine($"Tuần thai: {pregnancyInfo?.WeekNumber / 7}, Cân nặng của mẹ: {pregnancyInfo?.Weight}, Kích thước bụng: {pregnancyInfo?.BellySize}, Huyết áp: {pregnancyInfo?.BloodPressure}.");
             prompt.AppendLine("Các lần theo dõi thai gần đây:");
 
-            foreach (var t in trackings)
-            {
-                prompt.AppendLine($"- Ngày: {t.CheckupDate:dd/MM/yyyy}, Nhịp tim thai: {t.FetalHeartRate}, Ước lượng cân nặng thai nhi : {t.EstimatedWeight}, Chỉ số nước ối : {t.AmnioticFluidIndex}, Vị trí nhau thai:{t.PlacentaPosition}, Ghi chú của bác sĩ sau khi khám:{t.DoctorComment}");
-            }
 
-            prompt.AppendLine("Dựa vào các thông tin trên, hãy phân tích và đưa ra lời khuyên chi tiết nhất cho thai phụ. Nhớ là chi tiết và chính xác nhất nhé, phân tích từng chỉ số, thông tin mà được cung cấp, dễ hiểu, và một điều quan trọng là phải sử dụng thái độ và câu từ dịu dàng và thân thiện nhất. ");
+            prompt.AppendLine($"- Ngày: {trackings.CheckupDate:dd/MM/yyyy}, Nhịp tim thai: {trackings.FetalHeartRate}, Ước lượng cân nặng thai nhi : {trackings.EstimatedWeight}, Chỉ số nước ối : {trackings.AmnioticFluidIndex}, Vị trí nhau thai:{trackings.PlacentaPosition}, Ghi chú của bác sĩ sau khi khám:{trackings.DoctorComment}");
+
+
+            prompt.AppendLine("Dựa vào các thông tin trên, hãy phân tích và đưa ra lời khuyên chi tiết nhất cho thai phụ, như ăn uống, nghỉ dưỡng , ngủ nghỉ, nên đi khám thai vào ngày nào theo bạn tính. Nếu nó bình thường thì vẫn phải đưa lời khuyên để thai phụ tiếp tục duy trì. Nếu không ổn hoặc không bình thường, phải nói cho rõ và phân tích nên làm gì làm gì .Nhớ là chi tiết và chính xác nhất nhé, phân tích từng chỉ số ví dụ như nhịp tim 5: là như nào như nào đó...., thông tin mà bạn được cung cấp, dễ hiểu, và một điều quan trọng là phải sử dụng thái độ và câu từ dịu dàng và thân thiện nhất như một người bạn thân để cho người dùng thoải mái không căng thẳng nhất. ");
 
             var requestBody = new
             {

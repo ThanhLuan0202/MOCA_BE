@@ -19,12 +19,12 @@ namespace MOCA.Api.Controllers
 
         [HttpPost("advice")]
         [Authorize]
-        public async Task<IActionResult> GetAdvice()
+        public async Task<IActionResult> GetAdvice([FromBody] int id)
         {
             var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
             if (userId == null) return Unauthorized("Không xác định được user.");
 
-            var advice = await _adviceService.GetAdviceAsync(userId);
+            var advice = await _adviceService.GetAdviceAsync(userId, id);
             return Ok(new { advice });
         }
     }

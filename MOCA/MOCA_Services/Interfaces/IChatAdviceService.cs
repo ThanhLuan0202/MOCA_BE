@@ -8,7 +8,7 @@ namespace MOCA_Services.Interfaces
 {
     public interface IChatAdviceService
     {
-        Task<string> GetAdviceAsync(string userId);
+        Task<string> GetAdviceAsync(string userId, int id);
     }
 
 }
