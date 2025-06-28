@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
 using MOCA_Repositories.DBContext;
 using MOCA_Repositories.Enitities;
 using MOCA_Repositories.Generic;
@@ -6,7 +7,6 @@ using MOCA_Repositories.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace MOCA_Repositories.Repositories
@@ -22,61 +22,12 @@ namespace MOCA_Repositories.Repositories
             _doctorProfileRepository = doctorProfileRepository;
         }
 
-        public async Task<DoctorBooking> BookingEnd(int id)
-        {
-            var check = await _context.DoctorBookings.Include(x => x.Doctor).Include(c => c.User).FirstOrDefaultAsync(b => b.BookingId == id);
-
-            if (check == null)
-            {
-                throw new Exception($"Doctor Booking {id} is not exist!");
-            }
-
-            check.Status = "Complete";
-
-            _context.Entry(check).State = EntityState.Modified;
-            await _context.SaveChangesAsync();
-
-            return check;
-        }
-
-        public async Task<DoctorBooking> CancelDoctorBooking(int id)
-        {
-            var check = await _context.DoctorBookings.Include(x => x.Doctor).Include(c => c.User).FirstOrDefaultAsync(b => b.BookingId == id);
-
-            if (check == null)
-            {
-                throw new Exception($"Doctor Booking {id} is not exist!");
-            }
-            check.Status = "Inactive";
-            _context.Entry(check).State = EntityState.Modified;
-            await _context.SaveChangesAsync();
-
-            return check;
-        }
-
-        public async Task<DoctorBooking> ConfirmDoctorBooking(int id)
-        {
-            var check = await _context.DoctorBookings.Include(x => x.Doctor).Include(c => c.User).FirstOrDefaultAsync(b => b.BookingId == id && b.Status == "Pending");
-
-            if (check == null)
-            {
-                throw new Exception($"Doctor Booking {id} is not exist!");
-            }
-            check.Status = "Confirm";
-            _context.Entry(check).State = EntityState.Modified;
-            await _context.SaveChangesAsync();
-
-            return check;
-        }
-
         public async Task<DoctorBooking> CreateDoctorBooking(DoctorBooking doctorBooking, string userId)
         {
             if (!int.TryParse(userId, out int idUser))
-            {
-                throw new ArgumentException("User is Invalid!");
-            }
+                throw new ArgumentException("User ID không hợp lệ");
 
-            var newDoctorBooking = new DoctorBooking
+            var newBooking = new DoctorBooking
             {
                 UserId = idUser,
                 DoctorId = doctorBooking.DoctorId,
@@ -88,62 +39,124 @@ namespace MOCA_Repositories.Repositories
                 Price = doctorBooking.Price
             };
 
-            await _context.AddAsync(newDoctorBooking);
+            await _context.DoctorBookings.AddAsync(newBooking);
             await _context.SaveChangesAsync();
 
-
-            if (newDoctorBooking.RequiredDeposit > 0)
+            // Nếu cần đặt cọc thì tạo thanh toán
+            if (newBooking.RequiredDeposit.HasValue && newBooking.RequiredDeposit.Value > 0)
             {
                 var payment = new BookingPayment
                 {
-                    BookingId = newDoctorBooking.BookingId,
-                    Amount = newDoctorBooking.RequiredDeposit,
+                    BookingId = newBooking.BookingId,
+                    Amount = newBooking.RequiredDeposit.Value,
+                    PaymentMethod = "Paypal",
                     PaymentType = "Deposit",
                     IsPaid = false,
                     CreateDate = DateTime.Now,
-                    PaymentMethod = "Paypal"
+                    PaypalOrderId = null // sẽ cập nhật sau từ PayPalService
                 };
 
                 await _context.BookingPayments.AddAsync(payment);
                 await _context.SaveChangesAsync();
+
+                newBooking.BookingPayments = new List<BookingPayment> { payment };
             }
-            return newDoctorBooking;
+
+            return newBooking;
+        }
+
+        public async Task<DoctorBooking> ConfirmDoctorBooking(int id)
+        {
+            var booking = await _context.DoctorBookings
+                .Include(x => x.Doctor)
+                .Include(x => x.User)
+                .FirstOrDefaultAsync(x => x.BookingId == id && x.Status == "Pending");
+
+            if (booking == null)
+                throw new Exception("Không tìm thấy lịch khám để xác nhận");
+
+            booking.Status = "Confirm";
+            await _context.SaveChangesAsync();
+
+            return booking;
+        }
+
+        public async Task<DoctorBooking> CancelDoctorBooking(int id)
+        {
+            var booking = await _context.DoctorBookings
+                .Include(x => x.Doctor)
+                .Include(x => x.User)
+                .FirstOrDefaultAsync(x => x.BookingId == id);
+
+            if (booking == null)
+                throw new Exception("Không tìm thấy lịch khám để huỷ");
+
+            booking.Status = "Inactive";
+            await _context.SaveChangesAsync();
+
+            return booking;
+        }
+
+        public async Task<DoctorBooking> BookingEnd(int id)
+        {
+            var booking = await _context.DoctorBookings
+                .Include(x => x.Doctor)
+                .Include(x => x.User)
+                .FirstOrDefaultAsync(x => x.BookingId == id);
+
+            if (booking == null)
+                throw new Exception("Không tìm thấy lịch khám để hoàn tất");
+
+            booking.Status = "Complete";
+            await _context.SaveChangesAsync();
+
+            return booking;
         }
 
         public async Task<IEnumerable<DoctorBooking>> GettAllDoctorBookingByDoctorId(string userId)
         {
             var doctor = await _doctorProfileRepository.GetDoctorProfileByUserIdAsync(userId);
+            if (doctor == null) return Enumerable.Empty<DoctorBooking>();
 
-
-            var query = await _context.DoctorBookings.Include(x => x.Doctor).Include(c => c.User).Where(b => b.DoctorId == doctor.DoctorId && b.Status == "Confirm" || b.Status == "Complete").ToListAsync();
-
-            return query;
-
+            return await _context.DoctorBookings
+                .Include(x => x.User)
+                .Include(x => x.Doctor)
+                .Where(x => x.DoctorId == doctor.DoctorId && (x.Status == "Confirm" || x.Status == "Complete"))
+                .ToListAsync();
         }
 
         public async Task<IEnumerable<DoctorBooking>> GettAllDoctorBookingByUserId(string userId)
         {
-            if (!int.TryParse(userId, out int idUser))
-            {
-                throw new ArgumentException("Invalid user ID");
+            if (!int.TryParse(userId, out int uid)) return Enumerable.Empty<DoctorBooking>();
 
-            }
-
-            var query = await _context.DoctorBookings.Include(x => x.User).Include(y => y.Doctor).Where(x => x.UserId == idUser && x.Status == "Confirm").ToListAsync();
-
-            return query;
+            return await _context.DoctorBookings
+                .Include(x => x.Doctor)
+                .Include(x => x.User)
+                .Where(x => x.UserId == uid && (x.Status == "Confirm" || x.Status == "Complete"))
+                .ToListAsync();
         }
 
         public async Task<DoctorBooking> GettDoctorBookingById(int id)
         {
-            var check = await _context.DoctorBookings.Include(x => x.Doctor).Include(c => c.User).FirstOrDefaultAsync(b => b.BookingId == id);
+            var booking = await _context.DoctorBookings
+                .Include(x => x.User)
+                .Include(x => x.Doctor)
+                .FirstOrDefaultAsync(x => x.BookingId == id);
 
-            if (check == null)
+            if (booking == null) throw new Exception("Không tìm thấy lịch khám");
+
+            return booking;
+        }
+
+        public async Task<DoctorBooking> GetBookingByUserId(int id)
+        {
+           var checkPay = await _context.DoctorBookings.Include(x => x.User).Include(c => c.BookingPayments).FirstOrDefaultAsync(x => x.UserId == id && x.Status.ToLower().Equals("Pending"));
+
+            if (checkPay == null)
             {
-                throw new Exception($"Doctor Booking {id} is not exist!");
+                throw new Exception($"Booking {checkPay} is not exist!");
             }
-
-            return check;
+            return checkPay;
         }
     }
 }

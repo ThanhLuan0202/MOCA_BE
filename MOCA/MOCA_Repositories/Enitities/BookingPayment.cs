@@ -18,7 +18,7 @@ public partial class BookingPayment
     public DateTime? PaymentDate { get; set; }
 
     public string? PaymentMethod { get; set; }
-
+    public string? PaypalOrderId { get; set; }
     public DateTime? CreateDate { get; set; }
 
     public virtual DoctorBooking? Booking { get; set; }

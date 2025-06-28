@@ -9,5 +9,7 @@ namespace MOCA_Services.Interfaces
     public interface IPayPalService
     {
         Task<string> CreatePaymentUrl(decimal amount, string returnUrl, string cancelUrl);
+        Task<(string orderId, string approvalUrl)> CreatePaymentWithOrderId(decimal amount, string returnUrl, string cancelUrl);
+
     }
 }

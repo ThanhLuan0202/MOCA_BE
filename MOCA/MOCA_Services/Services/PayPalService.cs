@@ -14,11 +14,14 @@ namespace MOCA_Services.Services
     {
         private readonly IConfiguration _config;
         private readonly HttpClient _http;
+        private readonly IHttpClientFactory _httpClientFactory;
 
-        public PayPalService(IConfiguration config)
+
+        public PayPalService(IConfiguration config, IHttpClientFactory httpClientFactory)
         {
             _config = config;
             _http = new HttpClient();
+            _httpClientFactory = httpClientFactory;
         }
 
         public async Task<string> CreatePaymentUrl(decimal amount, string returnUrl, string cancelUrl)
@@ -61,21 +64,59 @@ namespace MOCA_Services.Services
             return approvalUrl!;
         }
 
-        private async Task<string> GetAccessToken()
+        public async Task<(string orderId, string approvalUrl)> CreatePaymentWithOrderId(decimal amount, string returnUrl, string cancelUrl)
         {
-            var clientId = _config.GetValue<string>("PayPal:ClientId");
-            var secret = _config.GetValue<string>("PayPal:Secret");
-            var apiUrl = _config.GetValue<string>("PayPal:ApiUrl");
+            var accessToken = await GetAccessToken();
 
-            var authValue = Convert.ToBase64String(Encoding.UTF8.GetBytes($"{clientId}:{secret}"));
+            var client = _httpClientFactory.CreateClient();
+            client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", accessToken);
 
-            var request = new HttpRequestMessage(HttpMethod.Post, $"{apiUrl}/v1/oauth2/token");
-            request.Headers.Authorization = new AuthenticationHeaderValue("Basic", authValue);
-            request.Content = new StringContent("grant_type=client_credentials", Encoding.UTF8, "application/x-www-form-urlencoded");
+            var requestBody = new
+            {
+                intent = "CAPTURE",
+                purchase_units = new[]
+                {
+                new
+                {
+                    amount = new { currency_code = "USD", value = amount.ToString("F2") }
+                }
+            },
+                application_context = new
+                {
+                    return_url = returnUrl,
+                    cancel_url = cancelUrl
+                }
+            };
 
-            var response = await _http.SendAsync(request);
+            var jsonContent = new StringContent(JsonSerializer.Serialize(requestBody), Encoding.UTF8, "application/json");
+            var response = await client.PostAsync("https://api-m.sandbox.paypal.com/v2/checkout/orders", jsonContent);
             var json = JsonDocument.Parse(await response.Content.ReadAsStringAsync());
 
+            var orderId = json.RootElement.GetProperty("id").GetString();
+            var approvalUrl = json.RootElement.GetProperty("links")
+                .EnumerateArray()
+                .First(x => x.GetProperty("rel").GetString() == "approve")
+                .GetProperty("href").GetString();
+
+            return (orderId, approvalUrl);
+        }
+
+        private async Task<string> GetAccessToken()
+        {
+            var clientId = _config["PayPal:ClientId"];
+            var secret = _config["PayPal:Secret"];
+            var client = _httpClientFactory.CreateClient();
+
+            var byteArray = Encoding.UTF8.GetBytes($"{clientId}:{secret}");
+            client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Basic", Convert.ToBase64String(byteArray));
+
+            var requestBody = new FormUrlEncodedContent(new[]
+            {
+            new KeyValuePair<string, string>("grant_type", "client_credentials")
+        });
+
+            var response = await client.PostAsync("https://api-m.sandbox.paypal.com/v1/oauth2/token", requestBody);
+            var json = JsonDocument.Parse(await response.Content.ReadAsStringAsync());
             return json.RootElement.GetProperty("access_token").GetString();
         }
 

@@ -13,6 +13,8 @@ using System.Text;
 using System.Text.Json.Serialization;
 using Microsoft.AspNetCore.SignalR;
 var builder = WebApplication.CreateBuilder(args);
+System.Net.ServicePointManager.SecurityProtocol = System.Net.SecurityProtocolType.Tls12;
+
 builder.Services.AddCors(options =>
 {
     options.AddPolicy("AllowAll", policy =>

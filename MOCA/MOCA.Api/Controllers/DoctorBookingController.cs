@@ -4,141 +4,89 @@ using MOCA_Repositories.Enitities;
 using MOCA_Services.Interfaces;
 using System.Security.Claims;
 
-// For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-
 namespace MOCA.Api.Controllers
 {
     [Authorize(Roles = "Mom,User,Doctor,Manager")]
-
     [Route("api/[controller]")]
     [ApiController]
     public class DoctorBookingController : ControllerBase
     {
         private readonly IDoctorBookingService _service;
 
-
         public DoctorBookingController(IDoctorBookingService service)
         {
             _service = service;
         }
 
-
-
-        // GET: api/<DoctorBookingController>
+        // GET: api/DoctorBooking/GetAllByUser
         [HttpGet("GetAllByUser")]
         public async Task<ActionResult<IEnumerable<DoctorBooking>>> GetAllDoctorBookingByUser()
         {
             var userId = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
+            if (userId == null) return Unauthorized();
 
-            if (userId == null)
-            {
-                return Unauthorized();
-            }
-
-            var query = await _service.GettAllDoctorBookingByUserId(userId);
-
-            return Ok(query);
-
-
-
+            var bookings = await _service.GettAllDoctorBookingByUserId(userId);
+            return Ok(bookings);
         }
 
+        // GET: api/DoctorBooking/GetAllByDoctor
         [HttpGet("GetAllByDoctor")]
         public async Task<ActionResult<IEnumerable<DoctorBooking>>> GetAllDoctorBookingByDoctor()
         {
             var userId = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
+            if (userId == null) return Unauthorized();
 
-            if (userId == null)
-            {
-                return Unauthorized();
-            }
-
-            var query = await _service.GettAllDoctorBookingByDoctorId(userId);
-
-            return Ok(query);
-
-
-
+            var bookings = await _service.GettAllDoctorBookingByDoctorId(userId);
+            return Ok(bookings);
         }
 
-        // GET api/<DoctorBookingController>/5
+        // GET: api/DoctorBooking/{id}
         [HttpGet("{id}")]
         public async Task<ActionResult<DoctorBooking>> GetDoctorBookingById(int id)
         {
-            if (!ModelState.IsValid)
-            {
-                return BadRequest(ModelState);
-            }
-
-            var doctorBooking = await _service.GettDoctorBookingById(id);
-
-            return Ok(doctorBooking);
+            var booking = await _service.GettDoctorBookingById(id);
+            return Ok(booking);
         }
 
-        //POST api/<DoctorBookingController>
+        // POST: api/DoctorBooking
         [HttpPost]
-        public async Task<ActionResult> CreateDoctorBooking([FromBody] DoctorBooking value)
+        public async Task<ActionResult> CreateDoctorBooking([FromBody] DoctorBooking bookingRequest)
         {
-            if (!ModelState.IsValid)
-                return BadRequest(ModelState);
-
             var userId = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
-            if (userId == null)
-                return Unauthorized();
+            if (userId == null) return Unauthorized();
 
-            var (booking, paymentUrl) = await _service.CreateDoctorBooking(value, userId);
+            var (booking, paymentUrl) = await _service.CreateDoctorBooking(bookingRequest, userId);
 
             return Ok(new
             {
                 message = "Tạo lịch và tạo thanh toán thành công",
-                booking = booking,
-                paymentUrl = paymentUrl
+                booking,
+                paymentUrl
             });
         }
 
-        
-
-        // DELETE api/<DoctorBookingController>/5
-        [HttpDelete("{id}")]
-        public async Task<ActionResult<DoctorBooking>> CancelDoctorBooking(int id)
-        {
-            if (!ModelState.IsValid)
-            {
-                return BadRequest(ModelState);
-            }
-            var bkCancel = await _service.CancelDoctorBooking(id);
-
-            return Ok(bkCancel);
-        }
-
-
-
-        [HttpGet("completeBooking/{id}")]
-        public async Task<ActionResult<DoctorBooking>> CompleteBooking(int id)
-        {
-            if (!ModelState.IsValid)
-            {
-                return BadRequest(ModelState);
-            }
-
-            var doctorBooking = await _service.BookingEnd(id);
-
-            return Ok(doctorBooking);
-        }
-
-
-
+        // PUT: api/DoctorBooking/confirmBooking/5
         [HttpGet("confirmBooking/{id}")]
         public async Task<ActionResult<DoctorBooking>> ConfirmBooking(int id)
         {
-            if (!ModelState.IsValid)
-            {
-                return BadRequest(ModelState);
-            }
+            var result = await _service.ConfirmDoctorBooking(id);
+            return Ok(result);
+        }
 
-            var doctorBooking = await _service.ConfirmDoctorBooking(id);
+        // PUT: api/DoctorBooking/completeBooking/5
+        [HttpGet("completeBooking/{id}")]
+        public async Task<ActionResult<DoctorBooking>> CompleteBooking(int id)
+        {
+            var result = await _service.BookingEnd(id);
+            return Ok(result);
+        }
 
-            return Ok(doctorBooking);
+        // DELETE: api/DoctorBooking/5
+        [HttpDelete("{id}")]
+        public async Task<ActionResult<DoctorBooking>> CancelDoctorBooking(int id)
+        {
+            var result = await _service.CancelDoctorBooking(id);
+            return Ok(result);
         }
     }
 }

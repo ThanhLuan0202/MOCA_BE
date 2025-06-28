@@ -1,78 +1,96 @@
-﻿using MOCA_Repositories.Enitities;
+﻿using Microsoft.Extensions.Configuration;
+using MOCA_Repositories.DBContext;
+using MOCA_Repositories.Enitities;
 using MOCA_Repositories.Interfaces;
 using MOCA_Services.Interfaces;
-using Org.BouncyCastle.Security;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Microsoft.Extensions.Configuration;
 
 namespace MOCA_Services.Services
 {
     public class DoctorBookingService : IDoctorBookingService
     {
-        private readonly IDoctorBookingRepository _repo;
-        private readonly IPayPalService _payPalService;
+        private readonly IDoctorBookingRepository _bookingRepo;
         private readonly IConfiguration _config;
-        public DoctorBookingService(IDoctorBookingRepository repo, IPayPalService payPalService, IConfiguration config)
+        private readonly MOCAContext _context;
+        private readonly IPayPalService _payPalService;
+
+        public DoctorBookingService(
+            IDoctorBookingRepository bookingRepo,
+            IConfiguration config,
+            MOCAContext context,
+            IPayPalService payPalService)
         {
-            _repo = repo;
-            _payPalService = payPalService;
+            _bookingRepo = bookingRepo;
             _config = config;
+            _context = context;
+            _payPalService = payPalService;
+            
+        }
+
+        public async Task<(DoctorBooking booking, string? paymentUrl)> CreateDoctorBooking(DoctorBooking doctorBooking, string userId)
+        {
+
+            if (!int.TryParse(userId, out int idUser))
+            {
+                throw new Exception($"userId {userId} is invalid!");
+            }
+            var booking = await _bookingRepo.CreateDoctorBooking(doctorBooking, userId);
+            string? paymentUrl = null;
+            var payment = booking.BookingPayments?.FirstOrDefault(x => x.IsPaid == false);
+
+            if (booking.RequiredDeposit > 0 && payment != null)
+            {
+                var returnUrl = $"{_config["PayPal:ReturnUrl"]}?paymentId={payment.PaymentId}";
+                var cancelUrl = $"{_config["PayPal:CancelUrl"]}?paymentId={payment.PaymentId}";
+
+                var (paypalOrderId, url) = await _payPalService.CreatePaymentWithOrderId(
+                    booking.RequiredDeposit.Value,
+                    returnUrl,
+                    cancelUrl
+                );
+
+                // Cập nhật lại PaypalOrderId cho payment
+                payment.PaypalOrderId = paypalOrderId;
+                await _context.SaveChangesAsync();
+
+                paymentUrl = url;
+            }
+
+            return (booking, paymentUrl);
         }
 
         public Task<DoctorBooking> BookingEnd(int id)
         {
-            return _repo.BookingEnd(id);
+            return _bookingRepo.BookingEnd(id);
         }
 
         public Task<DoctorBooking> CancelDoctorBooking(int id)
         {
-           return _repo.CancelDoctorBooking(id);
+            return _bookingRepo.CancelDoctorBooking(id);
         }
 
         public Task<DoctorBooking> ConfirmDoctorBooking(int id)
         {
-            return _repo.ConfirmDoctorBooking(id);
-        }
-
-        public async Task<(DoctorBooking booking , string? paymentUrl)> CreateDoctorBooking(DoctorBooking doctorBooking, string userId)
-        {
-            var booking = await _repo.CreateDoctorBooking(doctorBooking, userId);
-
-            string? paymentUrl = null;
-
-            if (booking.RequiredDeposit.HasValue && booking.RequiredDeposit.Value > 0)
-            {
-                paymentUrl = await _payPalService.CreatePaymentUrl(
-                    booking.RequiredDeposit.Value,
-                    _config["PayPal:ReturnUrl"],
-                    _config["PayPal:CancelUrl"]
-                );
-            }
-
-
-
-
-            return (booking, paymentUrl);
-
-        }
-
-        public Task<IEnumerable<DoctorBooking>> GettAllDoctorBookingByDoctorId(string userId)
-        {
-            return _repo.GettAllDoctorBookingByDoctorId(userId);
-        }
-
-        public Task<IEnumerable<DoctorBooking>> GettAllDoctorBookingByUserId(string userId)
-        {
-            return _repo.GettAllDoctorBookingByUserId(userId);
+            return _bookingRepo.ConfirmDoctorBooking(id);
         }
 
         public Task<DoctorBooking> GettDoctorBookingById(int id)
         {
-            return _repo.GettDoctorBookingById(id);
+            return _bookingRepo.GettDoctorBookingById(id);
+        }
+
+        public Task<IEnumerable<DoctorBooking>> GettAllDoctorBookingByDoctorId(string userId)
+        {
+            return _bookingRepo.GettAllDoctorBookingByDoctorId(userId);
+        }
+
+        public Task<IEnumerable<DoctorBooking>> GettAllDoctorBookingByUserId(string userId)
+        {
+            return _bookingRepo.GettAllDoctorBookingByUserId(userId);
+        }
+
+        public Task<DoctorBooking> GetBookingByUserId(int id)
+        {
+            return _bookingRepo.GetBookingByUserId(id);
         }
     }
 }
