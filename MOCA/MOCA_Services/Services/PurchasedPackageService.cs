@@ -39,7 +39,7 @@ namespace MOCA_Services.Services
             return _repo.GetByIdAsync(id);
         }
 
-        public Task<List<int>> GetEnrolledPurchasePackageIdsByUserNameAsync(string userId)
+        public Task<IEnumerable<PurchasePackage>> GetEnrolledPurchasePackageIdsByUserNameAsync(string userId)
         {
             return _repo.GetEnrolledPurchasePackageIdsByUserNameAsync(userId);
         }

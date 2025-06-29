@@ -8,7 +8,7 @@ using System.Security.Claims;
 
 namespace MOCA.Api.Controllers
 {
-    [Authorize(Roles = "Mom,Manager,User")]
+    [Authorize(Roles = "Mom,Manager,User,Doctor")]
 
     [Route("api/[controller]")]
     [ApiController]
@@ -86,6 +86,18 @@ namespace MOCA.Api.Controllers
             return Ok(bbUpdate);
         }
 
-        
+        [HttpGet("GetBabyTrackingByUserId{id}")]
+        public async Task<ActionResult<IEnumerable<BabyTracking>>> GetBabyTrackingByUserId(int id)
+        {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+
+            var check = await _service.GetBabyTrackingByUserId(id);
+
+            return Ok(check);
+
+        }
     }
 }

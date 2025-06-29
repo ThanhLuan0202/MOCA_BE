@@ -116,8 +116,36 @@ namespace MOCA.Api.Controllers
             return Ok(mom);
 
         }
+        [HttpGet("CheckMom{id}")]
 
-       
+        public async Task<ActionResult<MomProfile>> CheckMom(int id)
+        {
 
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+
+            var mom = await _service.CheckMomProfile(id);
+
+            return Ok(mom);
+
+        }
+
+        [HttpGet("MomInputId{id}")]
+
+        public async Task<ActionResult<MomProfile>> MomByIdUser(int id)
+        {
+
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+
+            var mom = await _service.GetMomProfileByUserIdInput(id);
+
+            return Ok(mom);
+
+        }
     }
 }

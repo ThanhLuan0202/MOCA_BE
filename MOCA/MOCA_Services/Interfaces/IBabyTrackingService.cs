@@ -13,6 +13,7 @@ namespace MOCA_Services.Interfaces
         Task<BabyTracking> CreateBabyTrackingAsync(BabyTracking newBb, string userId);
         Task<BabyTracking> UpdateBabyTrackingAsync(int id, BabyTracking updateBb);
         Task<IEnumerable<BabyTracking>> GetBabyTrackingByIdAsync(int id);
+        Task<BabyTracking> GetBabyTrackingByUserId(int id);
 
     }
 }

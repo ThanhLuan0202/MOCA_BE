@@ -85,6 +85,19 @@ namespace MOCA.Api.Controllers
             return Ok(updateUserPre);
         }
 
-        
+        [HttpGet("GetUserPregnancyByUserId{id}")]
+        public async Task<ActionResult<UserPregnancy>> GetUserPregnancyByUserId(int id)
+        {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+            var userPre = await _service.GetUserPregnancyByUserId(id);
+
+            return Ok(userPre);
+
+        }
+
+
     }
 }

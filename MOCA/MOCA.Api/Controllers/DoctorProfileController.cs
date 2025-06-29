@@ -59,7 +59,7 @@ namespace MOCA.Api.Controllers
         }
 
         [HttpPost("ConfirmDoctor")]
-        [Authorize(Roles = "Manager")]
+        [Authorize(Roles = "Manager,Admin")]
 
         public async Task<ActionResult<DoctorProfile>> ConfirmDoctor([FromBody] int id)
         {

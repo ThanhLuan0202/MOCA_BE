@@ -90,7 +90,19 @@ namespace MOCA.Api.Controllers
 
             return Ok(updatePreTrack);
         }
+        [HttpGet("GetPregnancyTrackingByUserId{id}")]
+        public async Task<ActionResult<IEnumerable<PregnancyTracking>>> GetPregnancyTrackingByUserId(int id)
+        {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
 
-      
+            var PreTrack = await _service.GetPregnancyTrackingByUserId(id);
+
+            return Ok(PreTrack);
+
+        }
+        
     }
 }

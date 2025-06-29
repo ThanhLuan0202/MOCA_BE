@@ -14,7 +14,7 @@ namespace MOCA_Repositories.Interfaces
         Task<PurchasePackage?> GetByIdAsync(int id);
         Task<PurchasePackage> AddAsync(string userId, PurchasePackage create);
         Task<PurchasePackage> DeleteAsync(int id);
-        Task<List<int>> GetEnrolledPurchasePackageIdsByUserNameAsync(string userId);
+        Task<IEnumerable<PurchasePackage>> GetEnrolledPurchasePackageIdsByUserNameAsync(string userId);
 
 
     }

@@ -84,7 +84,7 @@ namespace MOCA_Repositories.Repositories
             return checkPurPc;
         }
 
-        public async Task<List<int>> GetEnrolledPurchasePackageIdsByUserNameAsync(string userId)
+        public async Task<IEnumerable<PurchasePackage>> GetEnrolledPurchasePackageIdsByUserNameAsync(string userId)
         {
             if (!int.TryParse(userId, out int idUser)) 
             {
@@ -94,7 +94,7 @@ namespace MOCA_Repositories.Repositories
                                  .Where(pc => pc.UserId == idUser &&
                                               (pc.Status.ToLower() == "Active"))
                                  .Include(x => x.User)
-                                 .Select(pc => pc.PurchasePackageId)
+                                 .Include(c => c.Package)
                                  .ToListAsync();
 
             return courseIds;

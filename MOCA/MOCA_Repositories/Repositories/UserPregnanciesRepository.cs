@@ -84,6 +84,19 @@ namespace MOCA_Repositories.Repositories
             return checkMom;
         }
 
+        public async Task<UserPregnancy> GetUserPregnancyByUserId(int id)
+        {
+            var checkMom = await _momProfileRepository.GetMomProfileByUserIdInput(id);
+
+            var checkUserPregnancy = await _context.UserPregnancies.Include(x => x.Mom).FirstOrDefaultAsync(x => x.MomId == checkMom.MomId);
+
+            if (checkUserPregnancy == null)
+            {
+                throw new Exception($"User pregnancy for mom {id} is not exist!");
+            }
+            return checkUserPregnancy;
+        }
+
         public async Task<UserPregnancy> UpdateUserPregnancyAsync(int id, UserPregnancy updateMomPr)
         {
             var check = await _context.UserPregnancies.Include(x => x.Mom).FirstOrDefaultAsync(x => x.PregnancyId == id);

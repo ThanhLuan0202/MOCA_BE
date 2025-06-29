@@ -46,6 +46,8 @@ namespace MOCA_Services.DependencyInjection
             service.AddTransient<PrenatalReminderService>();
             service.AddTransient<IUserService, UserService>();
             service.AddTransient<ChatService>();
+            service.AddTransient<IDoctorContactService, DoctorContactService>();
+
 
 
 

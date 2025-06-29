@@ -99,6 +99,29 @@ namespace MOCA_Repositories.Repositories
             return check;
         }
 
+        public async Task<BabyTracking> GetBabyTrackingByUserId(int id)
+        {
+            var checkMom = await _profileRepository.GetMomProfileByUserIdAsync(id);
+            if (checkMom == null)
+            {
+                throw new Exception($"Mom profile not found for user {id}");
+            }
+
+            var userPre = await _userPregnanciesRepository.GetUserPregnancyByMomIdAsync(checkMom.MomId);
+            if (userPre == null)
+            {
+                throw new Exception($"Pregnancies not found for user {checkMom.MomId}");
+            }
+            var latestBabyTracking = await _context.BabyTrackings
+    .Include(x => x.Pregnancy)
+    .Where(c => c.PregnancyId == userPre.PregnancyId)
+    .OrderByDescending(c => c.CheckupDate)
+    .FirstOrDefaultAsync();
+
+            return latestBabyTracking;
+
+        }
+
         public async  Task<BabyTracking> UpdateBabyTrackingAsync(int id, BabyTracking updateBb)
         {
             var check = await _context.BabyTrackings.Include(x => x.Pregnancy).FirstOrDefaultAsync(x => x.CheckupBabyId == id);

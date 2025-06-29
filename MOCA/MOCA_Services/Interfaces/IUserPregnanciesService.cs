@@ -14,5 +14,7 @@ namespace MOCA_Services.Interfaces
         Task<UserPregnancy> UpdateUserPregnancyAsync(int id, UserPregnancy updateMomPr);
 
         Task<UserPregnancy> GetUserPregnancyByIdAsync(int id);
+        Task<UserPregnancy> GetUserPregnancyByUserId(int id);
+
     }
 }

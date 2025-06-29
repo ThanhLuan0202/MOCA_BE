@@ -18,6 +18,9 @@ namespace MOCA_Services.Interfaces
         Task<MomProfile> GetMomProfileByIdAsync(int id);
         Task<MomProfile> GetMomProfileByUserIdAsync(int id);
 
+        Task<string> CheckMomProfile(int userId);
+        Task<MomProfile> GetMomProfileByUserIdInput(int id);
+
 
 
     }

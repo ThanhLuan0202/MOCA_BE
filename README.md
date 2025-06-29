@@ -1,4 +1,4 @@
-🩺 MOM CARE API - Backend for Web supporting Pregnant Mothers & Pregnancy, link: https://moca.mom:2030/index.html
+🩺 MOM CARE API - Backend for Web supporting Pregnant Mothers \& Pregnancy, link: https://moca.mom:2030/index.html
 
 📁 Tech Stack: ASP.NET Core 8 · Entity Framework Core · SQL Server · JWT Authentication · SignalR · RESTful API
 
@@ -19,21 +19,28 @@ Quick consultation with AI based on GPT technology.
 🔐 Authentication and authorization using JWT: Register/Login, authorization by Admin, Doctor, User.
 
 
-📄 User information management: Pregnant mother & doctor accounts, update profile pictures, account status.
+
+📄 User information management: Pregnant mother \& doctor accounts, update profile pictures, account status.
 
 
-📅 Make an appointment: Send a consultation appointment with a doctor, with confirmation & deposit payment.
+
+📅 Make an appointment: Send a consultation appointment with a doctor, with confirmation \& deposit payment.
+
 
 
 💬 Real-time chat with doctor: Integrate SignalR to chat between pregnant mother and doctor via ContactId.
 
 
-💳 Online payment: Support VNPAY & PayPal.
+
+💳 Online payment: Support VNPAY \& PayPal.
+
 
 
 🧠 Smart consultation with AI: GPT chat helps pregnant mothers ask and answer all questions about pregnancy.
 
 
+
 🛠️ Installation instructions
 
-git clone https://github.com/ThanhLuan0202/MOCA_BE.git
+git clone https://github.com/ThanhLuan0202/MOCA\_BE.git
+

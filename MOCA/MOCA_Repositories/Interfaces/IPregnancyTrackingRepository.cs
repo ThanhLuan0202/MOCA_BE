@@ -14,6 +14,8 @@ namespace MOCA_Repositories.Interfaces
         Task<PregnancyTracking> CreatePregnancyTrackingAsync(PregnancyTracking newPr, string userId);
         Task<PregnancyTracking> UpdatePregnancyTrackingAsync(int id, PregnancyTracking updatePr);
         Task<IEnumerable<PregnancyTracking>> GetPregnancyTrackingByIdAsync(int id);
+        Task<PregnancyTracking> GetPregnancyTrackingByUserId(int id);
+
 
     }
 }

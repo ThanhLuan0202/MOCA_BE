@@ -33,6 +33,11 @@ namespace MOCA_Services.Services
             return _repo.GetPregnancyTrackingByIdAsync(id);
         }
 
+        public Task<PregnancyTracking> GetPregnancyTrackingByUserId(int id)
+        {
+            return _repo.GetPregnancyTrackingByUserId(id);
+        }
+
         public Task<PregnancyTracking> UpdatePregnancyTrackingAsync(int id, PregnancyTracking updatePr)
         {
             return _repo.UpdatePregnancyTrackingAsync(id, updatePr);

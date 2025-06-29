@@ -19,6 +19,13 @@ namespace MOCA_Services.Services
             _repo = repo;
         }
 
+        public async Task<string> CheckMomProfile(int userId)
+        {
+
+            var  check = await _repo.CheckMomProfile(userId);
+
+            return check;
+        }
 
         public Task<MomProfile> CreateMomProfileAsync(CreateMomProfileModel newMomPr, String userId)
         {
@@ -40,6 +47,11 @@ namespace MOCA_Services.Services
         public Task<MomProfile> GetMomProfileByUserIdAsync(int id)
         {
             return _repo.GetMomProfileByUserIdAsync(id);
+        }
+
+        public Task<MomProfile> GetMomProfileByUserIdInput(int id)
+        {
+            return _repo.GetMomProfileByUserIdInput(id);
         }
 
         public Task<MomProfile> UpdateMomProfileAsync(int id, UpdateMomProfileModel updateMomPr)

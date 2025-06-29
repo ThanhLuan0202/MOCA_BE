@@ -24,6 +24,22 @@ namespace MOCA_Repositories.Repositories
             _context = context;
         }
 
+        public async Task<string> CheckMomProfile(int userId)
+        {
+            
+
+            var check = await _context.MomProfiles.Include(x => x.User).FirstOrDefaultAsync(x => x.UserId == userId);
+
+            if (check != null)
+            {
+                return "Is Mom";
+            }
+            else 
+            { 
+                return "Is Not Mom";
+            }
+        }
+
         public async Task<MomProfile> CreateMomProfileAsync(CreateMomProfileModel newMomPr, String userId)
         {
             if (!int.TryParse(userId, out int idUser))
@@ -73,6 +89,18 @@ namespace MOCA_Repositories.Repositories
         public async Task<MomProfile> GetMomProfileByUserIdAsync(int id)
         {
             var check = await _context.MomProfiles.Include(x => x.User).FirstOrDefaultAsync(x => x.UserId == id);
+            if (check == null)
+            {
+                throw new Exception($"Mom profile {id} is not exist!");
+            }
+
+            return check;
+        }
+
+        public async Task<MomProfile> GetMomProfileByUserIdInput(int id)
+        {
+            var check = await _context.MomProfiles.Include(x => x.User).FirstOrDefaultAsync(x => x.UserId == id);
+
             if (check == null)
             {
                 throw new Exception($"Mom profile {id} is not exist!");
