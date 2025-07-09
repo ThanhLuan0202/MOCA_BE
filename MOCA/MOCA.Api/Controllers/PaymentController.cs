@@ -136,6 +136,64 @@ public class PaymentController : ControllerBase
         // Có thể redirect về trang thông báo "Đã huỷ thanh toán"
         return Redirect("https://localhost:5173/payment-cancel"); // tùy frontend
     }
+    [HttpGet("return_paypalPackage")]
+    public async Task<IActionResult> PayPalPackageReturn([FromQuery] string token, [FromQuery] string purchaseId)
+    {
+        var accessToken = await GetAccessToken();
+        var client = _httpClientFactory.CreateClient();
+        client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", accessToken);
+
+        var request = new HttpRequestMessage(HttpMethod.Post, $"https://api-m.sandbox.paypal.com/v2/checkout/orders/{token}/capture");
+        request.Headers.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+        request.Content = new StringContent("{}", Encoding.UTF8, "application/json");
+
+        var captureResponse = await client.SendAsync(request);
+        var captureJson = await captureResponse.Content.ReadAsStringAsync();
+
+        JsonDocument result;
+        try
+        {
+            result = JsonDocument.Parse(captureJson);
+        }
+        catch (Exception ex)
+        {
+            return BadRequest(new
+            {
+                message = "Lỗi khi đọc phản hồi từ PayPal",
+                error = ex.Message,
+                raw = captureJson
+            });
+        }
+
+        if (!result.RootElement.TryGetProperty("status", out var statusProp) || statusProp.GetString() != "COMPLETED")
+        {
+            return BadRequest(new
+            {
+                message = "Thanh toán chưa hoàn tất",
+                raw = captureJson
+            });
+        }
+
+        // ✅ Cập nhật trạng thái đơn mua package
+        if (!int.TryParse(purchaseId, out int purId))
+        {
+            return BadRequest("Purchase ID không hợp lệ.");
+        }
+
+        var purchase = await _context.PurchasePackages.FindAsync(purId);
+        if (purchase == null)
+        {
+            return NotFound("Không tìm thấy đơn mua package.");
+        }
+
+        purchase.Status = "Paid";
+        purchase.PurchaseDate = DateTime.UtcNow;
+
+        await _context.SaveChangesAsync();
+
+        // ✅ Redirect về frontend (tuỳ bạn cấu hình)
+        return Redirect($"http://localhost:5173/package-success?purchaseId={purchase.PurchasePackageId}");
+    }
 
 
     private async Task<string> GetAccessToken()

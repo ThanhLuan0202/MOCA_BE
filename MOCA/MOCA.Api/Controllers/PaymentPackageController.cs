@@ -31,10 +31,7 @@ namespace MOCA.Api.Controllers
             var package = await _context.Packages.FindAsync(request.PackageId);
             if (package == null) return NotFound("Package not found");
 
-            var returnUrl = $"https://yourdomain.com/api/payment/paypal-return";
-
-            var paymentUrl = await _paypalService.CreatePaymentUrl(package.Price, returnUrl);
-
+            // Tạo bản ghi purchase trước
             var purchase = new PurchasePackage
             {
                 UserId = userId,
@@ -46,8 +43,14 @@ namespace MOCA.Api.Controllers
             _context.PurchasePackages.Add(purchase);
             await _context.SaveChangesAsync();
 
+            // Gắn purchaseId vào returnUrl
+            var returnUrl = $"https://moca-d8fxfqgdb4hxg5ha.southeastasia-01.azurewebsites.net/api/payment/return_paypalPackage?purchaseId={purchase.PurchasePackageId}";
+
+            var paymentUrl = await _paypalService.CreatePaymentUrl(package.Price, returnUrl);
+
             return Ok(new { paymentUrl });
         }
+
 
         [HttpGet("paypal-return")]
         public async Task<IActionResult> PaypalReturn([FromQuery] string token, [FromQuery] string PayerID)
@@ -62,7 +65,8 @@ namespace MOCA.Api.Controllers
 
             if (purchase != null)
             {
-                purchase.Status = "Paid";
+                purchase.Status = "Active"; 
+                _context.Entry(purchase).State = EntityState.Modified;
                 await _context.SaveChangesAsync();
             }
 

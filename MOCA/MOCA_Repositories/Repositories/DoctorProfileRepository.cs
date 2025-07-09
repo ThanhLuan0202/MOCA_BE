@@ -23,6 +23,11 @@ namespace MOCA_Repositories.Repositories
             {
                 throw new Exception($"Doctor profile {id} is not exist!");
             }
+
+            var change = _context.Users.FirstOrDefault(x => x.UserId == checkDoc.UserId);
+            change.RoleId = 4;
+            _context.Entry(change).State = EntityState.Modified;
+
             checkDoc.Status = "Active";
             _context.Entry(checkDoc).State = EntityState.Modified;
             await _context.SaveChangesAsync();

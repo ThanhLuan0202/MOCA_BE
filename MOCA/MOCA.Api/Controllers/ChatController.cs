@@ -10,7 +10,7 @@ namespace MOCA.Api.Controllers
     public class ChatController : ControllerBase
     {
         private readonly HttpClient _httpClient;
-        private readonly string _apiKey = "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";
+        private readonly string _apiKey = "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";
 
         public ChatController(IHttpClientFactory httpClientFactory)
         {

@@ -58,10 +58,10 @@ namespace MOCA.Api.Controllers
             return Ok(docPro);
         }
 
-        [HttpPost("ConfirmDoctor")]
+        [HttpGet("ConfirmDoctor{id}")]
         [Authorize(Roles = "Manager,Admin")]
 
-        public async Task<ActionResult<DoctorProfile>> ConfirmDoctor([FromBody] int id)
+        public async Task<ActionResult<DoctorProfile>> ConfirmDoctor(int id)
         {
             if (!ModelState.IsValid)
             {
