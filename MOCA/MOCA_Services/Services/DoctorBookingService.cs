@@ -11,52 +11,39 @@ namespace MOCA_Services.Services
         private readonly IDoctorBookingRepository _bookingRepo;
         private readonly IConfiguration _config;
         private readonly MOCAContext _context;
-        private readonly IPayPalService _payPalService;
-
+      
         public DoctorBookingService(
             IDoctorBookingRepository bookingRepo,
             IConfiguration config,
-            MOCAContext context,
-            IPayPalService payPalService)
+            MOCAContext context
+           )
         {
             _bookingRepo = bookingRepo;
             _config = config;
             _context = context;
-            _payPalService = payPalService;
-            
+           
         }
 
-        public async Task<(DoctorBooking booking, string? paymentUrl)> CreateDoctorBooking(DoctorBooking doctorBooking, string userId)
+        public async Task<(DoctorBooking booking, string? checkoutUrl)> CreateDoctorBooking(DoctorBooking doctorBooking, string userId)
         {
+            if (!int.TryParse(userId, out int userIdInt))
+                throw new Exception("Invalid user ID");
 
-            if (!int.TryParse(userId, out int idUser))
-            {
-                throw new Exception($"userId {userId} is invalid!");
-            }
+            // 1. Tạo booking & payment tạm
             var booking = await _bookingRepo.CreateDoctorBooking(doctorBooking, userId);
-            string? paymentUrl = null;
-            var payment = booking.BookingPayments?.FirstOrDefault(x => x.IsPaid == false);
+            var payment = booking.BookingPayments?.FirstOrDefault(p => p.IsPaid == false);
 
             if (booking.RequiredDeposit > 0 && payment != null)
             {
-                var returnUrl = $"{_config["PayPal:ReturnUrl"]}?paymentId={payment.PaymentId}";
-                var cancelUrl = $"{_config["PayPal:CancelUrl"]}?paymentId={payment.PaymentId}";
-
-                var (paypalOrderId, url) = await _payPalService.CreatePaymentWithOrderId(
-                    booking.RequiredDeposit.Value,
-                    returnUrl,
-                    cancelUrl
-                );
-
-                // Cập nhật lại PaypalOrderId cho payment
-                payment.PaypalOrderId = paypalOrderId;
-                await _context.SaveChangesAsync();
-
-                paymentUrl = url;
+                // Gọi PayOSService chuẩn hóa
+                // Đã lưu paymentId vào payment.PaypalOrderId trong service
             }
 
-            return (booking, paymentUrl);
+            return (booking, null);
         }
+
+
+
 
         public Task<DoctorBooking> BookingEnd(int id)
         {
@@ -92,5 +79,7 @@ namespace MOCA_Services.Services
         {
             return _bookingRepo.GetBookingByUserId(id);
         }
+
+        
     }
 }

@@ -9,7 +9,7 @@ namespace MOCA_Services.Interfaces
 {
     public interface IBookingPaymentService
     {
-        Task<BookingPayment> ConfirmPayment(int id);
+        Task<BookingPayment> ConfirmPayment(int bookingId);
 
     }
 }

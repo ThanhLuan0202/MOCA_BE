@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.SignalR;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Options;
 using Microsoft.IdentityModel.Tokens;
@@ -7,11 +8,11 @@ using MOCA_Repositories.DBContext;
 using MOCA_Repositories.DependencyInjection;
 using MOCA_Repositories.Mapping;
 using MOCA_Repositories.Models.ModelMail;
+using MOCA_Repositories.Models.PayOS;
 using MOCA_Services.DependencyInjection;
 using MOCA_Services.Services;
 using System.Text;
 using System.Text.Json.Serialization;
-using Microsoft.AspNetCore.SignalR;
 var builder = WebApplication.CreateBuilder(args);
 System.Net.ServicePointManager.SecurityProtocol = System.Net.SecurityProtocolType.Tls12;
 
@@ -20,7 +21,7 @@ builder.Services.AddCors(options =>
     options.AddPolicy("AllowAll", policy =>
     {
         policy.WithOrigins("http://localhost:5173",
-            "https://moca-fe.vercel.app")  
+            "https://moca-fe.vercel.app", "https://moca.mom")  
               .AllowAnyHeader()
               .AllowAnyMethod()
               .AllowCredentials(); 
@@ -35,6 +36,7 @@ builder.Services.Configure<MailSettings>(builder.Configuration.GetSection("MailS
 builder.Services.AddAutoMapper(typeof(AutoMapperProfile));
 builder.Services.AddHttpClient();
 builder.Services.AddHostedService<PrenatalReminderService>();
+builder.Services.Configure<PayOSSettings>(builder.Configuration.GetSection("PayOS"));
 
 
 builder.Services.AddRepository().AddServices();

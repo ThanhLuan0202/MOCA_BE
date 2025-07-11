@@ -16,9 +16,9 @@ namespace MOCA_Services.Services
         {
             _bookingPaymentRepository = bookingPaymentRepository;
         }
-        public Task<BookingPayment> ConfirmPayment(int id)
+        public Task<BookingPayment> ConfirmPayment(int bookingId)
         {
-            return _bookingPaymentRepository.ConfirmPayment(id);
+            return _bookingPaymentRepository.ConfirmPayment(bookingId);
         }
     }
 }

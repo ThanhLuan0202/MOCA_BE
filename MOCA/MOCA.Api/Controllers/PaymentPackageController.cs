@@ -14,63 +14,42 @@ namespace MOCA.Api.Controllers
     [ApiController]
     public class PaymentPackageController : ControllerBase
     {
-        private readonly IPayPalPackageService _paypalService;
-        private readonly MOCAContext _context;
+        private readonly IPurchasedPackageService _purchasedPackageService;
 
-        public PaymentPackageController(IPayPalPackageService paypalService, MOCAContext context)
+        public PaymentPackageController(IPurchasedPackageService purchasedPackageService)
         {
-            _paypalService = paypalService;
-            _context = context;
-        }
-
-        [HttpPost("create")]
-        public async Task<IActionResult> CreatePayment([FromBody] PurchaseRequest request)
-        {
-            var userId = int.Parse(User.FindFirstValue(ClaimTypes.NameIdentifier)!);
-
-            var package = await _context.Packages.FindAsync(request.PackageId);
-            if (package == null) return NotFound("Package not found");
-
-            // Tạo bản ghi purchase trước
-            var purchase = new PurchasePackage
-            {
-                UserId = userId,
-                PackageId = request.PackageId,
-                PurchaseDate = DateTime.UtcNow,
-                Status = "Pending"
-            };
-
-            _context.PurchasePackages.Add(purchase);
-            await _context.SaveChangesAsync();
-
-            // Gắn purchaseId vào returnUrl
-            var returnUrl = $"https://moca-d8fxfqgdb4hxg5ha.southeastasia-01.azurewebsites.net/api/payment/return_paypalPackage?purchaseId={purchase.PurchasePackageId}";
-
-            var paymentUrl = await _paypalService.CreatePaymentUrl(package.Price, returnUrl);
-
-            return Ok(new { paymentUrl });
+           _purchasedPackageService = purchasedPackageService;
         }
 
 
-        [HttpGet("paypal-return")]
-        public async Task<IActionResult> PaypalReturn([FromQuery] string token, [FromQuery] string PayerID)
+
+        [HttpGet("success")]
+        public async Task<IActionResult> SuccessPayment([FromQuery(Name = "orderCode")] int orderId)
         {
-            var success = await _paypalService.CapturePaymentAsync(token);
-            if (!success) return BadRequest("Thanh toán thất bại");
+            var cf = await _purchasedPackageService.ConfirmPackage(orderId);
+            
 
-            var purchase = await _context.PurchasePackages
-                .Where(p => p.Status == "Pending")
-                .OrderByDescending(p => p.PurchaseDate)
-                .FirstOrDefaultAsync();
-
-            if (purchase != null)
+            if (cf != null)
             {
-                purchase.Status = "Active"; 
-                _context.Entry(purchase).State = EntityState.Modified;
-                await _context.SaveChangesAsync();
+
             }
 
-            return Content("Thanh toán thành công");
+            return Redirect($"https://moca.mom/payment-success");
+
+        }
+
+
+        [HttpGet("cancel")]
+        public async Task<IActionResult> CancelPayment([FromQuery(Name = "orderCode")] int orderId)
+        {
+            var ccel = await _purchasedPackageService.CancelPackage(orderId);
+
+            if (ccel != null)
+            {
+
+            }
+
+            return Redirect($"https://moca.mom/payment-cancel");
         }
     }
 }

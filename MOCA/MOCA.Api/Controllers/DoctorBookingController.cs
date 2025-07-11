@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 using MOCA_Repositories.Enitities;
 using MOCA_Services.Interfaces;
+using MOCA_Services.Services;
 using System.Security.Claims;
 
 namespace MOCA.Api.Controllers
@@ -48,22 +49,23 @@ namespace MOCA.Api.Controllers
             return Ok(booking);
         }
 
-        // POST: api/DoctorBooking
-        [HttpPost]
-        public async Task<ActionResult> CreateDoctorBooking([FromBody] DoctorBooking bookingRequest)
+        [HttpPost("create")]
+        public async Task<IActionResult> CreateDoctorBooking([FromBody] DoctorBooking request)
         {
             var userId = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
-            if (userId == null) return Unauthorized();
 
-            var (booking, paymentUrl) = await _service.CreateDoctorBooking(bookingRequest, userId);
+            if (userId == null)
+                return Unauthorized();
+
+            var (booking, checkoutUrl) = await _service.CreateDoctorBooking(request, userId);
 
             return Ok(new
             {
-                message = "Tạo lịch và tạo thanh toán thành công",
                 booking,
-                paymentUrl
+                paymentUrl = checkoutUrl
             });
         }
+
 
         // PUT: api/DoctorBooking/confirmBooking/5
         [HttpGet("confirmBooking/{id}")]

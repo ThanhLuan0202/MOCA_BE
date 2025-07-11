@@ -24,6 +24,16 @@ namespace MOCA_Services.Services
             return _repo.AddAsync(userId, create);
         }
 
+        public Task<PurchasePackage> CancelPackage(int id)
+        {
+            return _repo.CancelPackage(id);
+        }
+
+        public Task<PurchasePackage> ConfirmPackage(int id)
+        {
+            return _repo.ConfirmPackage(id);
+        }
+
         public Task<PurchasePackage> DeleteAsync(int id)
         {
             return _repo.DeleteAsync(id);

@@ -17,14 +17,19 @@ namespace MOCA_Repositories.Repositories
         {
             _context = context;
         }
-        public async Task<BookingPayment> ConfirmPayment(int id)
+        public async Task<BookingPayment> ConfirmPayment(int bookingId)
         {
-            var checkPm = await _context.BookingPayments.Include(x => x.Booking).FirstOrDefaultAsync(c => c.PaymentId == id);
+            var checkPm = await _context.BookingPayments
+                .FirstOrDefaultAsync(c => c.BookingId == bookingId);
 
             if (checkPm == null)
             {
-                throw new Exception($"Payment {id} not found");
+                throw new Exception($"Payment for booking {bookingId} not found");
             }
+
+            checkPm.IsPaid = true;
+            _context.Entry(checkPm).State = EntityState.Modified;
+            await _context.SaveChangesAsync();
             return checkPm;
         }
     }

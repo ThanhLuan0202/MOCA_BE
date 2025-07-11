@@ -42,25 +42,23 @@ namespace MOCA_Repositories.Repositories
             await _context.DoctorBookings.AddAsync(newBooking);
             await _context.SaveChangesAsync();
 
-            // Nếu cần đặt cọc thì tạo thanh toán
-            if (newBooking.RequiredDeposit.HasValue && newBooking.RequiredDeposit.Value > 0)
-            {
-                var payment = new BookingPayment
-                {
-                    BookingId = newBooking.BookingId,
-                    Amount = newBooking.RequiredDeposit.Value,
-                    PaymentMethod = "Paypal",
-                    PaymentType = "Deposit",
-                    IsPaid = false,
-                    CreateDate = DateTime.Now,
-                    PaypalOrderId = null // sẽ cập nhật sau từ PayPalService
-                };
+            
+                //var payment = new BookingPayment
+                //{
+                //    BookingId = newBooking.BookingId,
+                //    Amount = newBooking.Price,
+                //    PaymentMethod = "payOS",
+                //    PaymentType = "Booking",
+                //    IsPaid = false,
+                //    CreateDate = DateTime.Now,
+                //    PaypalOrderId = null 
+                //};
 
-                await _context.BookingPayments.AddAsync(payment);
-                await _context.SaveChangesAsync();
+                //await _context.BookingPayments.AddAsync(payment);
+                //await _context.SaveChangesAsync();
 
-                newBooking.BookingPayments = new List<BookingPayment> { payment };
-            }
+                //newBooking.BookingPayments = new List<BookingPayment> { payment };
+            
 
             return newBooking;
         }
@@ -76,6 +74,7 @@ namespace MOCA_Repositories.Repositories
                 throw new Exception("Không tìm thấy lịch khám để xác nhận");
 
             booking.Status = "Confirm";
+            _context.Entry(booking).State = EntityState.Modified;
             await _context.SaveChangesAsync();
 
             return booking;

@@ -6,7 +6,7 @@ namespace MOCA_Services.Interfaces
 {
     public interface IDoctorBookingService
     {
-        Task<(DoctorBooking booking, string? paymentUrl)> CreateDoctorBooking(DoctorBooking doctorBooking, string userId);
+        Task<(DoctorBooking booking, string? checkoutUrl)> CreateDoctorBooking(DoctorBooking doctorBooking, string userId);
         Task<DoctorBooking> ConfirmDoctorBooking(int id);
         Task<DoctorBooking> CancelDoctorBooking(int id);
         Task<DoctorBooking> BookingEnd(int id);

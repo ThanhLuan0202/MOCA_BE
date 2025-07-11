@@ -36,7 +36,7 @@ namespace MOCA_Repositories.Repositories
                 PackageId = create.PackageId,
                 UserId = idUser,
                 PurchaseDate = vietnamTime,
-                Status = "Active",
+                Status = "Pending",
                 DiscountId = create.DiscountId,
             };
 
@@ -45,6 +45,38 @@ namespace MOCA_Repositories.Repositories
             await _context.SaveChangesAsync();
 
             return newPc;
+        }
+
+        public  async Task<PurchasePackage> CancelPackage(int id)
+        {
+            var checkPl = await _context.PurchasePackages.FirstOrDefaultAsync(x => x.PurchasePackageId == id);
+
+            if (checkPl == null)
+            {
+                throw new Exception($"Purchase Package {id} is not exist !");
+            }
+
+            checkPl.Status = "Inactive";
+            _context.Entry(checkPl).State = EntityState.Modified;
+            await _context.SaveChangesAsync();
+
+            return checkPl;
+        }
+
+        public async Task<PurchasePackage> ConfirmPackage(int id)
+        {
+            var checkPl = await _context.PurchasePackages.FirstOrDefaultAsync(x => x.PurchasePackageId == id);
+
+            if (checkPl == null)
+            {
+                throw new Exception($"Purchase Package {id} is not exist !");
+            }
+
+            checkPl.Status = "Active";
+            _context.Entry(checkPl).State = EntityState.Modified;
+            await _context.SaveChangesAsync();
+
+            return checkPl;
         }
 
         public async Task<PurchasePackage> DeleteAsync(int id)
